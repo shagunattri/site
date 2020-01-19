@@ -2,3 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "SRMIST VDP"
 theme = "ga-hugo-theme"
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  mood = "moods"

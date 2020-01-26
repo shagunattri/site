@@ -1,10 +1,9 @@
 ---
-title: "A's wala md file"
-date: 2020-01-19T16:25:57+05:30
+title: "A"
+date: 2020-01-26T10:12:40+05:30
 draft: true
 author: "Shagun"
-tags: ["hugo"]
-categories: ["tech"]
+
 ---
 
-This is A markdown file
+This is A markdown file in the root directory

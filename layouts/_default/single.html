@@ -1,22 +1,16 @@
-<!-- <h1 style="color: {{ .Params.color}};">Single Template</h1> -->
+<h1 style="color: {{ .Params.color}};">Single Template</h1>
 
 
 
-{{ $title := .Title }}
-{{ range .Site.Pages }}
-    <li><a href="{{.URL}}" style="{{ if eq .Title $title }} background-color:yellow;{{end}}">>{{.Title}}</a></li>
 
-
+<!-- Data Files -->
+{{ range .Site.Data.sample }}
+    {{.name}} <br>
+    {{.email}} <br>
 {{end}}
 
-
-
-
-
-
-
-
-
+<br>
+<hr>
 
 
 <!-- Conditionals -->
@@ -31,6 +25,15 @@
 {{end}}
 
 <br>
+
+<hr>
+
+{{ $title := .Title }}
+{{ range .Site.Pages }}
+    <li><a href="{{.URL}}" style="{{ if eq .Title $title }} background-color:yellow;{{end}}">>{{.Title}}</a></li>
+{{end}}
+
+<hr>
 
 <!-- Variable and Parameters -->
 {{ .Title }}
@@ -47,6 +50,7 @@
 
 <h1>{{ $myVarName }}</h1>
 
+<hr>
 
 <!-- functions -->
 {{ truncate 15 "This is a really long string"}}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ID10t</title>
+</head>
+<body>
+    {{.Content}}
+    <ul>
+        {{ range .Pages }}
+        <li><a href="{{.URL}}">{{.Title}}</a></li>
+        {{end}}
+    </ul>
+</body>
+</html>

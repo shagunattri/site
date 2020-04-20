@@ -1,10 +1,10 @@
 baseurl      = "localhost"
 
-title        = "My Blog"
+title        = "digital home."
 
 languageCode = "en-us"
 
-theme        = "hello-friend-ng"
+theme        = "blog"
 
 
 
@@ -22,7 +22,7 @@ theme        = "hello-friend-ng"
 
   # Subtitle for home
 
-  homeSubtitle = "A simple and beautiful blog"
+  homeSubtitle = "{info,nat,op}sec & opensource;"
 
 
 
@@ -34,7 +34,7 @@ theme        = "hello-friend-ng"
 
   # Metadata mostly used in document's head
 
-  description = "My new homepage or blog"
+  description = ""
 
   keywords = "homepage, blog"
 
@@ -68,9 +68,9 @@ theme        = "hello-friend-ng"
 
   [languages.en]
 
-    title = "Hello Friend NG"
+    title = "id10t"
 
-    subtitle = "A simple theme for Hugo"
+    subtitle = "nerdy Blog"
 
     keywords = ""
 
@@ -82,7 +82,7 @@ theme        = "hello-friend-ng"
 
     [languages.en.params.logo]
 
-      logoText = "hello friend ng"
+      logoText = "id10t"
 
       logoHomeLink = "/"
 

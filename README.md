@@ -1,6 +1,0 @@
-# site
-My digital home 🏡
-
-
-
-

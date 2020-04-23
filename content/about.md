@@ -6,28 +6,14 @@ aliases = ["about-us","about-hugo","contact"]
   name = "Hugo Authors"
 +++
 
+Hugo is the **world’s fastest framework for building websites**. It is written in Go.
 
-Hi.
+It makes use of a variety of open source projects including:
 
-I’m Shagun, and I go by id10t on the Internet. I’m doing my undergrad right now, majoring in Computer Science. My primary interest is security—information, operational and national. Espionage and military tactics interest me deeply, and I love discussing them.
+* https://github.com/russross/blackfriday
+* https://github.com/alecthomas/chroma
+* https://github.com/muesli/smartcrop
+* https://github.com/spf13/cobra
+* https://github.com/spf13/viper
 
-I care about software freedom and digital privacy, and I am a staunch advocate of the same. I try to use free alternatives to software, if they exist.
-
-I write code at times, begrudgingly. Take a look at my projects on GitHub.
-
-Here are some of my links:
-
-    Lobsters
-    Hacker News
-    Reddit
-    Steam
-    Last.fm
-    Twitter
-    Keybase
-
-<!-- My presence on the fediverse -->
-
-Contact
-
-My Twitter DMs are open, but I may take a while to reply. 
-If you’re interested in hiring me—here’s my résumé.
+Learn more and contribute on [GitHub](https://github.com/gohugoio).

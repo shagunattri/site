@@ -1,6 +1,6 @@
-baseurl      = "/"
+baseurl      = ""
 
-title        = "My Blog"
+title        = "nerdyp3ppr"
 
 languageCode = "en-us"
 
@@ -17,6 +17,11 @@ theme        = "hello-friend-ng"
   dateformNum     = "2006-01-02"
 
   dateformNumTime = "2006-01-02 15:04 -0700"
+
+
+[params.logo]
+    
+  logoCursorColor    = "#00ff00"
 
 
 
@@ -72,7 +77,7 @@ theme        = "hello-friend-ng"
 
     keywords = ""
 
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    copyright = ''
 
     readOtherPosts = "Read other posts"
 

@@ -19,11 +19,6 @@ theme        = "hello-friend-ng"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
 
-[params.logo]
-    
-  logoCursorColor    = "#00ff00"
-
-
 
   # Subtitle for home
 

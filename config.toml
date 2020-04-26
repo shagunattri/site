@@ -103,3 +103,29 @@ theme        = "hello-friend-ng"
     name       = "Blog"
 
     url        = "/posts"
+
+     [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "about/"
+
+
+# Social icons
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/nerdyp3ppr"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:pingshaguanattri@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/shagunattri"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/shagunattri"
+
+ [author]
+  name = "shagun attri."

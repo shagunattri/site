@@ -22,7 +22,7 @@ theme        = "hello-friend-ng"
 
   # Subtitle for home
 
-  homeSubtitle = "{info,nat,op}sec & opensource;"
+  homeSubtitle = "{info,nat,op}sec & Threat Intelligence;"
 
 
 

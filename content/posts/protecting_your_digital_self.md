@@ -1,16 +1,17 @@
-+++
-categories = ["Hugo"]
-date = "2020-04-26"
-description = ""
-featured = ""
-featuredalt = ""
-featuredpath = ""
-linktitle = ""
-title = "Protecting Your Digital Self"
-slug = "Protecting Your Digital Self"
-type = "post"
-+++
-
+---
+author:
+  name: "Shagun attri"
+date: 2014-04-25
+linktitle: Protecting Your Digital Self
+title: Protecting Your Digital Self
+type:
+- post
+- posts
+weight: 10
+series:
+aliases:
+- /blog/protecting_your_digital_self/
+---
 
  This simple advice will help to protect you against hackers and government surveillance.
 

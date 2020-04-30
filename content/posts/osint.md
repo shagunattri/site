@@ -1,15 +1,17 @@
-+++
-categories = ["Hugo"]
-date = "2020-04-26"
-description = ""
-featured = ""
-featuredalt = ""
-featuredpath = ""
-linktitle = ""
-title = "Open-Source Intelligence and Digital Foot printing"
-slug = "Open-Source Intelligence and Digital Foot printing"
-type = "post"
-+++
+---
+author:
+  name: "Shagun attri"
+date: 2014-04-26
+linktitle: Open-Source Intelligence and Digital Foot printing
+title: Open-Source Intelligence and Digital Foot printing
+type:
+- post
+- posts
+weight: 10
+series:
+aliases:
+- /blog/osint/
+---
 
  Malicious actors have been using specially crafted tools to collect information (like the police have search tools across a number of databases) and data companies collect so much information about us that a lot of free tools (OSINT) can be used to collect that information. So, what does an innocent individual have in their arsenal to defend himself?  Knowing what information is out there using OSINT tools.
 Digital Footprint

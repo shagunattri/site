@@ -8,6 +8,11 @@ theme        = "hello-friend-ng"
 
 DefaultContentLanguage = "en"
 
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
 
 [params]
 

@@ -11,7 +11,7 @@ weight: 10
 series:
 - Hugo 101
 aliases:
-- /blog/migrate-from-jekyll/
+- /blog/test/
 ---
 
 Ad reiciendis quibusdam consequatur corporis voluptatem. Similique eveniet quo. Necessitatibus repudiandae aperiam ex ut sint ducimus. Dolore quae dicta modi officiis.

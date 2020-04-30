@@ -1,7 +1,7 @@
 ---
 author:
   name: "Shagun attri"
-date: 2014-04-26
+date: 2020-04-26 
 linktitle: Open-Source Intelligence and Digital Foot printing
 title: Open-Source Intelligence and Digital Foot printing
 type:

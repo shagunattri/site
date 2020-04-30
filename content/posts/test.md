@@ -1,11 +1,17 @@
 ---
-title: "Test"
-date: 2020-04-30T16:22:44+05:30
-draft: true
-toc: false
-images:
-tags:
-  - test
+author:
+  name: "Hugo Authors"
+date: 2014-03-10
+linktitle: Test test
+title: Test test
+type:
+- post
+- posts
+weight: 10
+series:
+- Hugo 101
+aliases:
+- /blog/migrate-from-jekyll/
 ---
 
 Ad reiciendis quibusdam consequatur corporis voluptatem. Similique eveniet quo. Necessitatibus repudiandae aperiam ex ut sint ducimus. Dolore quae dicta modi officiis.

@@ -1,0 +1,5 @@
+# Set HTTP headers for Charset
+AddDefaultCharset UTF-8
+
+# Set HTTP headers for Content language
+DefaultLanguage en-US

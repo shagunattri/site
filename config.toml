@@ -141,3 +141,35 @@ publishDir   = "public"
 
  [author]
   name = "shagun attri."
+
+
+
+# 404.html
+#
+[archives]
+other = "Archives"
+
+[home]
+other = "Home"
+
+[notFound]
+other = "Oops, page not found…"
+
+
+# posts/single.html
+[readingTime]
+one   = "One minute"
+other = "{{ .Count }} minutes"
+
+[tableOfContents]
+other = "Table of Contents"
+
+[wordCount]
+one   = "One Word"
+other = "{{ .Count }} Words"
+
+
+
+[sitemap]
+    changefreq = "weekly"
+    priority = 0.5

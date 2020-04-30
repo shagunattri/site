@@ -6,6 +6,7 @@ languageCode = "en-us"
 
 theme        = "hello-friend-ng"
 
+DefaultContentLanguage = "en"
 
 
 [params]
@@ -18,6 +19,12 @@ theme        = "hello-friend-ng"
 
   dateformNumTime = "2006-01-02 15:04 -0700"
 
+
+
+[params.logo]
+    logoCursorDisabled = true
+    logoCursorColor    = "#00ff00"
+    logoCursorAnimate  = "2s"
 
 
   # Subtitle for home
@@ -109,7 +116,7 @@ theme        = "hello-friend-ng"
     name       = "$ whoami"
     url        = "about/"
 
-
+  
 # Social icons
   [[params.social]]
     name = "twitter"

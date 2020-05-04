@@ -1,6 +1,6 @@
 baseurl      = ""
 
-title        = "nerdyp3ppr"
+title        = "sp3ppr"
 
 languageCode = "en-us"
 
@@ -22,7 +22,7 @@ publishDir   = "public"
 
   dateformNum     = "2006-01-02"
 
-  dateformNumTime = "2006-01-02 15:04 -0700"
+  dateformNumTime = "2006-01-02"
 
 
 
@@ -34,7 +34,7 @@ publishDir   = "public"
 
   # Subtitle for home
 
-  homeSubtitle = "{info,nat,op}sec & Threat Intelligence;"
+  homeSubtitle = "(info)sec & opensource;"
 
 
 
@@ -78,7 +78,7 @@ publishDir   = "public"
 
   [languages.en]
 
-    title = "nerdyp3ppr"
+    title = "sp3ppr"
 
     subtitle = ""
 
@@ -92,7 +92,7 @@ publishDir   = "public"
 
     [languages.en.params.logo]
 
-      logoText = "nerdyp3ppr"
+      logoText = "sp3ppr"
 
       logoHomeLink = "/"
 
@@ -102,7 +102,7 @@ publishDir   = "public"
 
     # path = "/img/your-example-logo.svg"
 
-    # alt = "nerdyp3ppr"
+    # alt = "sp3ppr"
 
 
 
@@ -125,11 +125,11 @@ publishDir   = "public"
 # Social icons
   [[params.social]]
     name = "twitter"
-    url  = "https://twitter.com/nerdyp3ppr"
+    url  = "https://twitter.com/sp3ppr"
 
   [[params.social]]
     name = "email"
-    url  = "mailto:nerdyp3ppr@gmail.com"
+    url  = "mailto:pingshagunattri@gmail.com"
 
   [[params.social]]
     name = "github"

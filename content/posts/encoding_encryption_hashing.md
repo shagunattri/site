@@ -2,8 +2,8 @@
 author:
   name: "Shagun attri"
 date: 2020-05-04 
-linktitle: Encoding Encryption and Hashing
-title: Encoding Encryption and Hashing
+linktitle: Encoding,Encryption and Hashing
+title: Encoding,Encryption and Hashing
 type:
 - post
 - posts
@@ -14,17 +14,17 @@ aliases:
 ---
 
 
-Encryption, Encoding, and Hashing are terms that are often confused with each other.
+Encoding, Encryption, and Hashing are terms that are often confused with each other.
 
-Securing things is important and you need tools and technologies to help you secure products.
+Securing things is important and you need tools and technologies to secure products.
 
 Encoding,Encryption and hashing are techniques to convert the format of data and play a important role in the infosec world in terms of securing data.
 
-There is often significant confusion around the differences between encryption, encoding, hashing, 
+There is often significant confusion around the differences between encryption, encoding, hashing,
 
-## ENCODING
+## [ENCODING](https://en.wikipedia.org/wiki/Character_encoding)
 
-Encoding is to transform data so that it can be properly (and safely) be sconsumed by a different type of system,Whether it be sending binary data  over email, or viewing special characters on a web page. 
+Encoding is to transform data so that it can be properly (and safely) be consumed by a different type of system,whether it be sending binary data over email, or viewing special characters on a web page. 
 
 *The goal here is not to keep information secret, but rather to ensure that it’s able to be properly consumed.*
 
@@ -39,7 +39,7 @@ Encoding is also used to do ```compression``` for saving memory or confirmation 
 
 Encoded data can be reversed to the original by knowing the scheme used for encoding.
 
-## ENCRYPTION
+## [ENCRYPTION](https://en.wikipedia.org/wiki/Encryption)
 
 The purpose of encryption is to transform data in order to keep it secret from others,
 If you want to send someone a secret letter that only they should be able to read, 
@@ -62,7 +62,7 @@ Encrypted data is only reversible by using the appropriate key.
 Encryption is mainly divided into two types - *symmetric and asymmetric.*
 
 
-## HASHING
+ ## [HASHING](https://en.wikipedia.org/wiki/Hash)
 
 In hashing, the data is converted to a message digest or hash, which is a number generated from a string of text.These digests are important as one can easily match the hash of sent and received messages to ensure that both are the same and no tempering is done with the data.
 
@@ -97,3 +97,10 @@ This is all about encoding,encrypting and hashing....
 
 
 Encoding != Encryption != Hashing
+
+***For further reading:***
+
+- https://hackercombat.com/forum/network-security/whats-the-difference-between-encoding-encryption-and-hashing/
+- https://www.geeksforgeeks.org/encryption-encoding-hashing/
+- https://danielmiessler.com/study/encoding-encryption-hashing-obfuscation/
+- https://www.differencebetween.info/difference-between-encryption-encoding-and-hashing

@@ -44,7 +44,7 @@ When you are logged into project management or a similar site, changes you make 
 
 - If you want to know what an individual without log-in knows about you use google chrome in hidden mode.
 
-- Use our search tools like ThatsThem or PiPL or SPOKEO ```(paid service: https://www.instantcheckmate.com/ or www.beenverified.com)``` or check what is on your social media using FB People Directory or Facebook Email Search if you just have a personal e-mail (yours)
+- Use our search tools like ThatsThem or PiPL or SPOKEO,[paid service](https://www.instantcheckmate.com/) or check what is on your social media using FB People Directory or Facebook Email Search if you just have a personal e-mail (yours)
 
 - Check the location you’re sharing on social media with Creepy or how much you’re sleeping Facebook Sleep Stats
 

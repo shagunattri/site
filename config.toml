@@ -119,7 +119,7 @@ publishDir   = "public"
      [[menu.main]]
     identifier = "about"
     name       = "$ whoami"
-    url        = "about/"
+    url        = "/about/"
 
   
 # Social icons

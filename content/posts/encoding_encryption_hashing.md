@@ -2,6 +2,8 @@
 author:
   name: "Shagun attri"
 date: 2020-05-04 
+description: "Understanding the 3E's"
+cover: 
 linktitle: Encoding,Encryption and Hashing
 title: Encoding,Encryption and Hashing
 type:

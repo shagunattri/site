@@ -1,6 +1,6 @@
 baseurl      = ""
 title        = "sp3ppr"
-languageCode = "en-us"
+languageCode = "en-US"
 theme        = "hello-friend-ng"
 DefaultContentLanguage = "en"
 copyright = "This work is licensed under Creative Commons Attribution 4.0 International License."
@@ -38,6 +38,8 @@ publishDir   = "public"
   keywords = "sysadmin, privacy, opsec, infosec, linux, floss, foss, libre"
   images = [""]
   contentTypeName = "posts"
+  gitUrl = "https://github.com/shagunattri/site/commit/"
+
 
 [languages]
   [languages.en]
@@ -51,25 +53,18 @@ publishDir   = "public"
       logoText = "sp3ppr"
       logoHomeLink = "/"
 
-
-    # path = "/img/your-example-logo.svg"
-    # alt = "sp3ppr"
-
-
-
-
+ [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
   [[menu.main]]
     identifier = "blog"
     name       = "Blog"
     url        = "/posts"
-     [[menu.main]]
-    identifier = "about"
-    name       = "$ whoami"
-    url        = "/about/"
+    
 
   
-# Social icons
-  [[params.social]]
+    [[params.social]]
     name = "twitter"
     url  = "https://twitter.com/sp3ppr"
   [[params.social]]

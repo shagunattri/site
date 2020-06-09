@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on sp3ppr</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on sp3ppr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
+    
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

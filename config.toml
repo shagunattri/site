@@ -1,12 +1,10 @@
 baseurl      = ""
-
 title        = "sp3ppr"
-
 languageCode = "en-us"
-
 theme        = "hello-friend-ng"
-
 DefaultContentLanguage = "en"
+copyright = "This work is licensed under Creative Commons Attribution 4.0 International License."
+enableGitInfo   = true
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -14,108 +12,56 @@ dataDir      = "data"
 layoutDir    = "layouts"
 publishDir   = "public"
 
-[params]
 
-  dateform        = "Jan 2, 2006"
-
-  dateformShort   = "Jan 2"
-
-  dateformNum     = "2006-01-02"
-
-  dateformNumTime = "2006-01-02"
-
-
-
-[params.logo]
-    logoCursorDisabled = true
-    logoCursorColor    = "#00ff00"
-    logoCursorAnimate  = "2s"
-
-
-  # Subtitle for home
-
-  homeSubtitle = "(info)sec & opensource;"
-
-
-
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-
-  disableReadOtherPosts = false
-
-
-
-  # Metadata mostly used in document's head
-
-  description = ""
-
-  keywords = "homepage, blog"
-
-  images = [""]
-
-
-
-  # Directory name of your blog content (default is `content/posts`)
-
-  contentTypeName = "posts"
-
-
-
-  # Default theme "light" or "dark"
-
-  defaultTheme = "dark"
-
+[markup]
+  [markup.highlight]
+    style = "native"
+    guessSyntax = true
 
 
 [taxonomies]
-
   tag      = "tags"
-
   category = "categories"
 
+ [author]
+  name = "shagun attri."
 
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02"
+  defaultTheme = "dark"
+  description = "Blog of sp3ppr"
+  disableReadOtherPosts = false
+  homeSubtitle = "(info)sec & opensource;"
+  keywords = "sysadmin, privacy, opsec, infosec, linux, floss, foss, libre"
+  images = [""]
+  contentTypeName = "posts"
 
 [languages]
-
   [languages.en]
-
     title = "sp3ppr"
-
     subtitle = ""
-
     keywords = ""
-
-    copyright = ''
-
-    readOtherPosts = "Read other posts"
-
-
+    copyright = "<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>"
+    readOtherPosts = "← Prev | Read more | Next →"
 
     [languages.en.params.logo]
-
       logoText = "sp3ppr"
-
       logoHomeLink = "/"
 
-    # or
-
-    #
 
     # path = "/img/your-example-logo.svg"
-
     # alt = "sp3ppr"
 
 
 
-  # And you can even create generic menu
 
   [[menu.main]]
-
     identifier = "blog"
-
     name       = "Blog"
-
     url        = "/posts"
-
      [[menu.main]]
     identifier = "about"
     name       = "$ whoami"
@@ -126,50 +72,16 @@ publishDir   = "public"
   [[params.social]]
     name = "twitter"
     url  = "https://twitter.com/sp3ppr"
-
   [[params.social]]
     name = "email"
     url  = "mailto:pingshagunattri@gmail.com"
-
   [[params.social]]
     name = "github"
     url  = "https://github.com/shagunattri"
-
   [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/shagunattri"
+  [[params.social]]
+      name = "telegram"
+      url  = "https://t.me/sp3ppr"
 
- [author]
-  name = "shagun attri."
-
-
-
-# 404.html
-#
-[archives]
-other = "Archives"
-
-[home]
-other = "Home"
-
-[notFound]
-other = "Oops, page not found…"
-
-
-# posts/single.html
-[readingTime]
-one   = "One minute"
-other = "{{ .Count }} minutes"
-
-[tableOfContents]
-other = "Table of Contents"
-
-[wordCount]
-one   = "One Word"
-other = "{{ .Count }} Words"
-
-
-
-[sitemap]
-    changefreq = "weekly"
-    priority = 0.5

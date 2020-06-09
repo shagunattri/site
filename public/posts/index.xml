@@ -1,0 +1,236 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on sp3ppr</title>
+        <link>/posts/</link>
+        <description>Recent content in Posts on sp3ppr</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>The Impact of Open Source Software</title>
+            <link>/posts/opensource/</link>
+            <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/opensource/</guid>
+            <description>Open-Source and the free software community has flourished in the recent years with developments and collaborative projects from multi-million dollar corporations to individual ninja devs across the globe many systems across the globe rely on opensource software and their maintainers.
+From servers running the linux kernel to sending encrypted emails with confidential data,opensource libraries and projects have made the software world flourish with projects like flutter,to the code editor I&amp;rsquo;m using to write this blog Vscode,the framework that is used to serve this website Hugo,to the shell that I run on my computer oh-my-fish are made possible by countless opensource software contributors on platforms like Github,Gitlab and Bitbucket that have made this dream come true.</description>
+            <content type="html"><![CDATA[<p>Open-Source and the free software community has flourished in the recent years with developments and collaborative projects from multi-million dollar corporations to individual ninja devs across the globe many systems across the globe rely on opensource software and their maintainers.</p>
+<p>From servers running the linux kernel to sending encrypted emails with confidential data,opensource libraries and projects have made the software world flourish with
+projects like <a href="https://github.com/flutter/flutter/">flutter</a>,to the code editor I&rsquo;m using to write this blog <a href="https://code.visualstudio.com">Vscode</a>,the framework that is used to serve this website <a href="https://gohugo.io/">Hugo</a>,to the shell that I run on my computer <a href="https://github.com/oh-my-fish/oh-my-fish">oh-my-fish</a> are made possible by countless opensource software contributors on platforms like <a href="https://github.com/">Github</a>,<a href="https://about.gitlab.com/">Gitlab</a> and <a href="https://bitbucket.org/">Bitbucket</a> that have made this dream come true.</p>
+<p>Open source tools and softwares are what we rely on to serve our applications.One cannot imagine a future without github,a VCS or any form of open source collaboration tool.But yeah,now that the potential of open source is huge alogn with it&rsquo;s uses I find it amazing that the push to a open-source software development is the way to go and always a option to consider.</p>
+<p>The fact that it offers collaboration,learing and a community around a tool/product is a great by-product that is simply not possible with any closed source tool/project.Your contribution and sense of responbility to maintain a piece of software becomes your job as a maintainer.</p>
+<p>Through the <strong>OSS</strong> movement,the path to opensourcing software is easier than ever and allows for a sense of transperancy among software products,
+but still a lot of software and products comes under the radar when it comes to <em>*cough</em>* #OpensourceAarogyaSetu <em>*cough</em>*  &amp; the ways corporations make software <em>*cough</em>* Xiaomi Mint Browser <em>*cough</em>*.</p>
+<p>Open sourcing is always good as it has a lot to offer.</p>
+<ul>
+<li>Allows transparency and trust.</li>
+<li>Helps secure your products with better eyes to look at your code and improve.</li>
+<li>An online community to care for.</li>
+<li>Better &amp; faster development.</li>
+<li>Constant feedback and updates.</li>
+</ul>
+<p>The fact that you allow the world to look at your code and help improve is not something you would wanna ditch when it comes to learning and collaborating.</p>
+<p>Kudos to github for being a firm believer in <strong>OSS</strong>,helping the devs and becoming a platform for what it is now.</p>
+<p>I&rsquo;ve had yet to make a major contribution to a open source lib but with my current experience and mini-contributions it for sure as hell gonna be a learning adventure I am thrilled to look up for.</p>
+<p>As a part of my contribution to the community I&rsquo;ve made two open source tools&hellip;.</p>
+<ul>
+<li><a href="https://github.com/shagunattri/sub3num">sub3num</a> A sudomain enumeration tools for pentesters.</li>
+<li><a href="https://github.com/shagunattri/pwGen">pwGen</a> A mnml password generator.</li>
+</ul>
+<p>Both these tools were my attempt to making tools for the open source community.</p>
+<p>I plan on writing more tools and sharing them with y&rsquo;all till then keep em pull requests coming..</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Encoding,Encryption and Hashing</title>
+            <link>/posts/encoding_encryption_hashing/</link>
+            <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/encoding_encryption_hashing/</guid>
+            <description>Encoding, Encryption, and Hashing are terms that are often confused with each other.
+Securing things is important and you need tools and technologies to secure products.
+Encoding,Encryption and hashing are techniques to convert the format of data and play a important role in the infosec world in terms of securing data.
+There is often significant confusion around the differences between encryption, encoding, hashing,
+ENCODING Encoding is to transform data so that it can be properly (and safely) be consumed by a different type of system,whether it be sending binary data over email, or viewing special characters on a web page.</description>
+            <content type="html"><![CDATA[<p>Encoding, Encryption, and Hashing are terms that are often confused with each other.</p>
+<p>Securing things is important and you need tools and technologies to secure products.</p>
+<p>Encoding,Encryption and hashing are techniques to convert the format of data and play a important role in the infosec world in terms of securing data.</p>
+<p>There is often significant confusion around the differences between encryption, encoding, hashing,</p>
+<h2 id="encodinghttpsenwikipediaorgwikicharacter_encoding"><a href="https://en.wikipedia.org/wiki/Character_encoding">ENCODING</a></h2>
+<p>Encoding is to transform data so that it can be properly (and safely) be consumed by a different type of system,whether it be sending binary data over email, or viewing special characters on a web page.</p>
+<p><em>The goal here is not to keep information secret, but rather to ensure that it’s able to be properly consumed.</em></p>
+<p>Encoding transforms data into another format using a scheme that is publicly available so that it can easily be reversed. It does not require a key as the only thing required to decode it is the algorithm that was used to encode it.</p>
+<p>Examples of encoding algorithms are <code>ASCII, Unicode, URL Encoding, Base64</code></p>
+<h3 id="encoding-data-ensures-its-protection-and-integrity">Encoding data ensures its protection and integrity.</h3>
+<p>Encoding is also used to do <code>compression</code> for saving memory or confirmation related to transfer of data.</p>
+<p>Encoded data can be reversed to the original by knowing the scheme used for encoding.</p>
+<h2 id="encryptionhttpsenwikipediaorgwikiencryption"><a href="https://en.wikipedia.org/wiki/Encryption">ENCRYPTION</a></h2>
+<p>The purpose of encryption is to transform data in order to keep it secret from others,
+If you want to send someone a secret letter that only they should be able to read,
+or you want securely send a password over the Internet(why would you thou but let&rsquo;s assume).Rather than focusing on usability, our goal is to ensure that data cannot be consumed by anyone other than the intended recipient(s).</p>
+<p>The beauty of Encryption is that it transforms data into another format in such a way that only specific individual(s) can reverse the transformation.</p>
+<p>It uses a key, which is kept secret, in conjunction with the plaintext and the algorithm,to perform the encryption operation. As such, the ciphertext, algorithm, and key are all required to return to the plaintext.</p>
+<p>A few Encryption algorithms are <code>AES, Blowfish and RSA</code></p>
+<p>When you try to encrypt data,your main intention should be to secure data.</p>
+<p>Uses cases of encryption involve transfer of sensitive business info,private email services like proton mail and encrypting your web traffic using the <strong>HTTPS</strong> protocol.</p>
+<p>Encrypted data is only reversible by using the appropriate key.</p>
+<p>Encryption is mainly divided into two types - <em>symmetric and asymmetric.</em></p>
+<h2 id="hashinghttpsenwikipediaorgwikihash"><a href="https://en.wikipedia.org/wiki/Hash">HASHING</a></h2>
+<p>In hashing, the data is converted to a message digest or hash, which is a number generated from a string of text.These digests are important as one can easily match the hash of sent and received messages to ensure that both are the same and no tempering is done with the data.</p>
+<p><em>Hashing serves the purpose of ensuring integrity</em>, i.e. making it so that if something is changed you can know that it’s changed.</p>
+<p>Lookig at hashing it technically takes arbitrary input and produce a fixed-length string that has the following attributes:</p>
+<ul>
+<li>
+<p>The same input will always produce the same output.</p>
+</li>
+<li>
+<p>Multiple disparate inputs should not produce the same output.</p>
+</li>
+<li>
+<p>It should not be possible to go from the output to the input.</p>
+</li>
+<li>
+<p>Any modification of a given input should result in drastic change to the hash.</p>
+</li>
+</ul>
+<p>Hashing is used in conjunction with authentication to produce strong evidence that a given message has not been modified. This is done by taking a given input, hashing it, and then signing the hash with the sender’s private key.</p>
+<p>When the recipient opens the message, they can then validate the signature of the hash with the sender’s public key and then hash the message themselves and compare it to the hash that was signed by the sender.
+If they match it is an unmodified message, sent by the correct person.</p>
+<p>Popular hashes are: <code>SHA-3, MD5</code> which is now obsolete and has been the cause of various hash collisions.</p>
+<p>Hash collision is an attempt to find two input strings of a hash function that produce the same hash result.As hash functions have infinite input length and a predefined output length, there is inevitably going to be the possibility of two different inputs that produce the same output hash.</p>
+<p>This is all about encoding,encrypting and hashing&hellip;.</p>
+<h2 id="tldr"><em><strong>tl;dr</strong></em></h2>
+<p>Encoding != Encryption != Hashing</p>
+<p><em><strong>For further reading:</strong></em></p>
+<ul>
+<li><a href="https://hackercombat.com/forum/network-security/whats-the-difference-between-encoding-encryption-and-hashing/">https://hackercombat.com/forum/network-security/whats-the-difference-between-encoding-encryption-and-hashing/</a></li>
+<li><a href="https://www.geeksforgeeks.org/encryption-encoding-hashing/">https://www.geeksforgeeks.org/encryption-encoding-hashing/</a></li>
+<li><a href="https://danielmiessler.com/study/encoding-encryption-hashing-obfuscation/">https://danielmiessler.com/study/encoding-encryption-hashing-obfuscation/</a></li>
+<li><a href="https://www.differencebetween.info/difference-between-encryption-encoding-and-hashing">https://www.differencebetween.info/difference-between-encryption-encoding-and-hashing</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Open-Source Intelligence and Digital Foot printing</title>
+            <link>/posts/osint/</link>
+            <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/osint/</guid>
+            <description>Malicious actors have been using specially crafted tools to collect information (like the police have search tools across a number of databases) and data companies collect so much information about us that a lot of free tools (OSINT) can be used to collect that information.
+ So, what does an innocent individual have in their arsenal to defend himself? Knowing what information is out there using OSINT tools.
+Digital Footprint</description>
+            <content type="html"><![CDATA[<p>Malicious actors have been using specially crafted tools to collect information (like the police have search tools across a number of databases) and data companies collect so much information about us that a lot of free tools (OSINT) can be used to collect that information.</p>
+<p><code> So, what does an innocent individual have in their arsenal to defend himself?  Knowing what information is out there using OSINT tools.</code></p>
+<p><em><strong>Digital Footprint</strong></em></p>
+<p>Your digital footprint comprises every email you’ve ever sent, every post you’ve shared on social media, or every picture you’ve taken and uploaded on Instagram.</p>
+<p>You know what they say about the internet, once it’s online, it can never be completely erased.</p>
+<p>Your digital footprint also contains everything you aren’t aware that you’re doing online. For instance, every time you agree to let a website store your cookies and digital information or your IP address gets stored somewhere, you’re adding to your digital footprint. One way to think about your digital footprints is to categorize them as either <code>“active” or “passive.”</code></p>
+<p><code>“Passive”</code> footprints are those you leave behind without intending to, or in some cases knowing. For instance, websites that collect information about how many times you have visited in the recent past are adding to your digital footprint in a “passive” fashion. You don’t choose to hand them this data, they collect it when a device at your IP address connects with their websites.</p>
+<p>Because this is a hidden process, you may not realize it is happening at all.</p>
+<p><code>“Active”</code> footprints are those you leave when you make deliberate choices on the Internet. Posts you make to your own social media channels are a well-known form of the active footprint.</p>
+<p>When you are logged into project management or a similar site, changes you make that are connected to your login name are also part of your active footprint.</p>
+<h2 id="how-to-find-yourself-in-4-steps">How to find yourself in 4 steps</h2>
+<ul>
+<li>
+<p>Enter your name into several search engines. – use google, bing, yahoo or if you want to be hidden use duck duck go etc…</p>
+</li>
+<li>
+<p>If you want to know what an individual without log-in knows about you use google chrome in hidden mode.</p>
+</li>
+<li>
+<p>Use our search tools like ThatsThem or PiPL or SPOKEO,<a href="https://www.instantcheckmate.com/">paid service</a> or check what is on your social media using FB People Directory or Facebook Email Search if you just have a personal e-mail (yours)</p>
+</li>
+<li>
+<p>Check the location you’re sharing on social media with Creepy or how much you’re sleeping Facebook Sleep Stats</p>
+</li>
+</ul>
+<h2 id="some-consequence-of-identity-theft"><em><strong>Some consequence of identity theft</strong></em></h2>
+<ul>
+<li>A good example story of a person who got his identity stolen Bennett Arron and made a stand-up of it.</li>
+</ul>
+<p>Identity profiling can lead to very targeted phishing campaigns and ultimately result in damage to companies and individuals as it happened to these two C-Levels.</p>
+<p>Burglars target households when people are away. How do they know? Simply watching social media activity or another example.</p>
+<p>A fraudster can collect information from a bank account using the statement that you trash. They can call you and impersonate the bank. In those case always hang up and call directly the bank number.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Protecting Your Digital Self</title>
+            <link>/posts/protecting_your_digital_self/</link>
+            <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/protecting_your_digital_self/</guid>
+            <description>This simple advice will help to protect you against hackers and government surveillance.
+The internet today is filled with news of breached and compromised accounts on various platforms and how the governments are able to surveil there own citizens.
+The question now is Whether the government is the good guy or the bad guy and I certainly have had a hard time figuring it out.
+Well if you are like, “I got nothing to hide” then you should probably reconsider.</description>
+            <content type="html"><![CDATA[<p>This simple advice will help to protect you against <em><strong>hackers and government surveillance.</strong></em></p>
+<p>The internet today is filled with news of breached and compromised accounts on various platforms and how the governments are able to surveil there own citizens.</p>
+<p>The question now is Whether the government is the good guy or the bad guy and I certainly have had a hard time figuring it out.</p>
+<p>Well if you are like, <code>“I got nothing to hide”</code> then you should probably reconsider.</p>
+<p><strong>Privacy</strong> is what sets us apart from the animals. People often don’t think about their rights until they need them — whether it’s when they’re arrested at a protest or pulled over for a routine traffic stop.</p>
+<p><em><strong>Surveillance</strong></em> is also a part of life, and it’s getting progressively more invasive.</p>
+<h4 id="government-eavesdropping-is-increasing-carried-out-in-wider-secrecy-and-its-becoming-far-more-localized-in-fact-the-last-three-presidents-have-pushed-for-greater-surveillance-clinton-introduced-mandated-wiretapping-laws-bush-expanded-mass-domestic-surveillance-and-obama-expanded-the-intelligence-services-reach--just-in-time-for-trump">Government eavesdropping is increasing, carried out in wider secrecy, and it’s becoming far more localized. In fact, the last three presidents have pushed for greater surveillance: Clinton introduced mandated wiretapping laws, Bush expanded mass domestic surveillance, and Obama expanded the intelligence service’s reach — just in time for Trump.</h4>
+<p>Now, with a new president in the Oval Office, many are concerned about the future of their fundamental freedoms and constitutional rights.</p>
+<h2 id="there-is-no-such-thing-as-perfect-security">There is no such thing as perfect security.</h2>
+<p>But no matter who you are or where you are in the world, there are a lot of things you can do — many of which are simple — to protect yourself in this turbulent time.</p>
+<p>Protecting your digital self can be a tedious task and requires you to use the online resources very carefully and staying secure.</p>
+<p>Let’s Start your security assessment with what’s known as a threat-modeling exercise.</p>
+<ul>
+<li>Ask yourself what you want to protect and from whom, and estimate the likelihood that the specific parties would compromise your data. Plug the high-risk holes first. Everything else, you can sweat a little less.</li>
+</ul>
+<p>The following are the points I find should be helpful to  protect one and his/her Digital self.</p>
+<ul>
+<li>
+<p>Consider whatever you post on social media, a good example is considered what you post on social media as being displayed on a big print on the side of a building.</p>
+</li>
+<li>
+<p>Always Try Using  Strong Password (8-11 characters if possible and  if you find them difficult to remember to use a password tool like 1password.</p>
+</li>
+<li>
+<p>Check on HaveIbeenPwned, also Firefox Monitor if your credentials have been leaked in one of the many credential leak(LinkedIn, Dropbox, mail etc…)</p>
+</li>
+<li>
+<p>Use different username and password across social media (CheckUserNames finds the same username across different media). Try to use a variation of your name in social media unless you want to be identified.</p>
+</li>
+<li>
+<p>Remove metadata from the image in Windows and Mac Android or Iphone. JPEG image has a lot of information including the location where it was taken. This can be used to track where you are at a particular date in time. The information gets also read on social media. Nonetheless, only a few social media preserve the EXIF <code>(photo metadata) </code> details. This means that when a picture gets downloaded it will not contain Geo-tagging and other details.</p>
+</li>
+<li>
+<p>Do not  share your location on social media apps or directly on your phone (iphone or android).</p>
+</li>
+<li>
+<p>Double-check your privacy settings, but don’t trust them. l only share material  with a specific individual <code>(e.g. a picture of your kids, where you go for a holiday when you are away).</code></p>
+</li>
+<li>
+<p>When moving apartment use redirection services. Royal Mail and other postal service offer a redirection service. Consider it when moving house If you move house, also informing : your bank, the credit card company, Utility bill providers and other organizations that send material by post is a good idea.</p>
+</li>
+<li>
+<p>Be mindful of people that might have access to your post <code>(left in open place, on the patio or in the trash)</code>: Contact Royal Mail or other post providers if you think your post is being stolen.  Check whether a mail redirection order has been made in your name without your knowledge.</p>
+</li>
+<li>
+<p>Be mindful of document you trash that might contain sensitive information. Everyone gets access to the bin. Also be mindful on recycling paper that contains confidential information. Get hold of privacy ink. Shred paper with a shredder.Verify credit score to see if your identity has been compromised to open a new credit card or another line of credit.</p>
+</li>
+<li>
+<p>Setup Google alerts when new information about you appears: <code>www.google.com/alerts. </code> This will notify you if suddenly your name appears where it shouldn’t</p>
+</li>
+<li>
+<p>Service from Experian and similar are paid services that help to track identity use or whenever someone opens a new line of credit in your behalf.</p>
+</li>
+<li>
+<p>Browse safely in public places by using privacy screen on your devices <code>(Privacy screen mac or iphone or android-Samsung)</code></p>
+</li>
+<li>
+<p>When connected in public places use VPN to prevent profiting from the local WiFi or from a possible rogue WiFi hotspot.</p>
+</li>
+</ul>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

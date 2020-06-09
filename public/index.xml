@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sp3ppr</title>
+    <link>/</link>
+    <description>Recent content on sp3ppr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Impact of Open Source Software</title>
+      <link>/posts/opensource/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/opensource/</guid>
+      <description>Open-Source and the free software community has flourished in the recent years with developments and collaborative projects from multi-million dollar corporations to individual ninja devs across the globe many systems across the globe rely on opensource software and their maintainers.
+From servers running the linux kernel to sending encrypted emails with confidential data,opensource libraries and projects have made the software world flourish with projects like flutter,to the code editor I&amp;rsquo;m using to write this blog Vscode,the framework that is used to serve this website Hugo,to the shell that I run on my computer oh-my-fish are made possible by countless opensource software contributors on platforms like Github,Gitlab and Bitbucket that have made this dream come true.</description>
+    </item>
+    
+    <item>
+      <title>Encoding,Encryption and Hashing</title>
+      <link>/posts/encoding_encryption_hashing/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/encoding_encryption_hashing/</guid>
+      <description>Encoding, Encryption, and Hashing are terms that are often confused with each other.
+Securing things is important and you need tools and technologies to secure products.
+Encoding,Encryption and hashing are techniques to convert the format of data and play a important role in the infosec world in terms of securing data.
+There is often significant confusion around the differences between encryption, encoding, hashing,
+ENCODING Encoding is to transform data so that it can be properly (and safely) be consumed by a different type of system,whether it be sending binary data over email, or viewing special characters on a web page.</description>
+    </item>
+    
+    <item>
+      <title>Open-Source Intelligence and Digital Foot printing</title>
+      <link>/posts/osint/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/osint/</guid>
+      <description>Malicious actors have been using specially crafted tools to collect information (like the police have search tools across a number of databases) and data companies collect so much information about us that a lot of free tools (OSINT) can be used to collect that information.
+ So, what does an innocent individual have in their arsenal to defend himself? Knowing what information is out there using OSINT tools.
+Digital Footprint</description>
+    </item>
+    
+    <item>
+      <title>Protecting Your Digital Self</title>
+      <link>/posts/protecting_your_digital_self/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/protecting_your_digital_self/</guid>
+      <description>This simple advice will help to protect you against hackers and government surveillance.
+The internet today is filled with news of breached and compromised accounts on various platforms and how the governments are able to surveil there own citizens.
+The question now is Whether the government is the good guy or the bad guy and I certainly have had a hard time figuring it out.
+Well if you are like, “I got nothing to hide” then you should probably reconsider.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hi. #!/usr/bin/env bash echo &amp;#34;sp3ppr&amp;#34; University = SRM Institute of Science and Technology I&amp;rsquo;m Shagun, and I go by sp3ppr on the Internet. I&amp;rsquo;m a Compsci student. My primary interest is information security and love contributing to opensource projects. I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with Arch Linux.
+The existence of this blog The most important characteristic of people is their ability to think.</description>
+    </item>
+    
+  </channel>
+</rss>

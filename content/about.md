@@ -9,7 +9,7 @@ aliases = ["about","about-me","contact"]
 
 ## Hi.
 
-```bash
+```console
 #!/usr/bin/env bash
 echo "sp3ppr"
 University = SRM Institute of Science and Technology
@@ -33,9 +33,7 @@ The more people know, the more ignorance they will find. It ’s a great pleasur
 I write code at times. Take a look at my projects on
 [GitHub](https://github.com/shagunattri).
 
-some of my links:
+Some of my social links:
 
-- [Hacker News](https://news.ycombinator.com/user?id=nerdyp3ppr)
-- [Reddit](https://www.reddit.com/user/nerdyp3ppr)
 - [Twitter](https://twitter.com/sp3ppr)
 

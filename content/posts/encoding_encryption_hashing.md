@@ -11,6 +11,12 @@ type:
 - posts
 weight: 10
 series:
+categories:
+  - Technology
+tags:
+  - Encoding
+  - Encryption
+  - Hashing
 aliases:
 - /blog/encoding_encryption_hashing/
 ---

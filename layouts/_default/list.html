@@ -1,0 +1,59 @@
+{{ define "main" }}
+    <main class="posts">
+        <h1>{{ .Title }}</h1>
+        <div class="post-info">
+            <p>There are RSS feeds for <i>all</i> of the categories and tags here. If you want to subscribe to one of them, navigate to that list and <a href="index.xml">click here</a>; it'll take you to that specific feed.</p>
+        </div>
+        {{ $title := .Title }}
+        {{ if eq $title "Posts" }}
+        <div class="categories">
+            <h2>Categories</h2>
+            {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+                <a href="{{.Permalink}}">
+                    <span class="categories-button" >{{.Title}}</a></span>
+                </a>
+            {{end}}
+        </div>
+        {{ end }}
+        {{ if eq $title "Dungeons & Dragons" }}
+        {{ $taxo := "dnd" }}
+        {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
+        {{ range .Pages }}
+        <h2>{{ .Title }}</h2>
+        <div class="posts-group">
+            <div class="post-year">{{ .Date.Format "2006" }}</div>
+            <ul class="posts-list">
+                {{ range .Pages.ByParam "dnd" }}
+                <li class="post-item">
+                    <a href="{{.Permalink}}">
+                        <span class="post-title">{{.Title}}</span>
+                        <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+        {{ end }}
+        {{- if .Content }}
+            <div class="content">{{ .Content }}</div>
+        {{- end }}
+        {{ else }}
+        {{- range .Data.Pages.GroupByDate "2006" }}
+            <div class="posts-group">
+                <div class="post-year">{{ .Key }}</div>
+                <ul class="posts-list">
+                    {{- range .Pages }}
+                        <li class="post-item">
+                            <a href="{{.Permalink}}">
+                                <span class="post-title">{{.Title}}</span>
+                                <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
+                            </a>
+                        </li>
+                    {{- end }}
+                </ul>
+            </div>
+        {{- end }}
+    </main>
+{{ end }}
+{{ end }}

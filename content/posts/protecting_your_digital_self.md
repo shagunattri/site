@@ -9,6 +9,13 @@ type:
 - posts
 weight: 10
 series:
+categories:
+  - Technology
+  - Privacy
+tags:
+  - Digital Privacy
+  - Online Attacks
+  - Surveillance
 aliases:
 - /blog/protecting_your_digital_self/
 ---

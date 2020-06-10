@@ -9,6 +9,12 @@ type:
 - posts
 weight: 10
 series:
+categories:
+  - Technology
+tags:
+  - OSINT
+  - Foot Printing
+  - Forensics
 aliases:
 - /blog/osint/
 ---

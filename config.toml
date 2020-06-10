@@ -18,10 +18,11 @@ publishDir   = "public"
     style = "native"
     guessSyntax = true
 
-
 [taxonomies]
-  tag      = "tags"
   category = "categories"
+  series = "series"
+  tag = "tags"
+  dnd = "dnd"
 
  [author]
   name = "shagun attri."

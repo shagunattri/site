@@ -2,13 +2,19 @@
 author:
   name: "Shagun attri"
 date: 2020-05-17
-linktitle: The Impact of Open Source Software
-title: The Impact of Open Source Software
+linktitle: Open Source Software
+title: Open Source Software
 type:
 - post
 - posts
 weight: 10
 series:
+categories:
+  - Technology
+tags:
+  - OSS
+  - FLOSS
+  - opensource
 aliases:
 - /blog/opensource/
 ---

@@ -11,11 +11,11 @@ aliases = ["about","about-me","contact"]
 
 ```console
 #!/usr/bin/env bash
-echo "sp3ppr"
+echo "shagun."
 University = SRM Institute of Science and Technology
 ```
 
-I'm Shagun, and I go by **sp3ppr** on the Internet. I'm a Compsci student.
+I'm Shagun, and I go by **shagun.** on the Internet. I'm a Compsci student.
 My primary interest is information security and love contributing to opensource projects.
 I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with Arch Linux.
 

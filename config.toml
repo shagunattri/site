@@ -1,5 +1,5 @@
 baseurl      = ""
-title        = "sp3ppr"
+title        = "shagun's blog."
 languageCode = "en-US"
 theme        = "hello-friend-ng"
 DefaultContentLanguage = "en"
@@ -33,7 +33,7 @@ publishDir   = "public"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02"
   defaultTheme = "dark"
-  description = "Blog of sp3ppr"
+  description = "Blog of shagun attri"
   disableReadOtherPosts = false
   homeSubtitle = "(info)sec & opensource;"
   keywords = "sysadmin, privacy, opsec, infosec, linux, floss, foss, libre"
@@ -44,14 +44,14 @@ publishDir   = "public"
 
 [languages]
   [languages.en]
-    title = "sp3ppr"
+    title = "shagun"
     subtitle = ""
     keywords = ""
     copyright = "<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>"
     readOtherPosts = "← Prev | Read more | Next →"
 
     [languages.en.params.logo]
-      logoText = "sp3ppr"
+      logoText = "shagun attri."
       logoHomeLink = "/"
 
  [[menu.main]]

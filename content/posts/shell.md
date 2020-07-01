@@ -36,7 +36,7 @@ Useful Shell Tools:
 - rg
 - tree
 - bat
-- and manu many more..........
+- and many more..........
 
 ```bash
 foo=bar 
@@ -59,7 +59,7 @@ Spaces in the shell is reserved and are for separating arguments.
 ## Defining strings 
 with " " or ' ' for literal strings
 
-but single quotes don't replace the value
+But single quotes don't replace the value
 
 ```bash
 $ echo 'value is $foo' -> value is $foo
@@ -68,7 +68,7 @@ $ echo Value\ is\ '$foo' -> Value is $foo
 $ echo Value\ is\ "$foo" -> Value is bar
 ```
 
-You can assig variables with `$`
+You can assign variables with `$`
 
 ### Useful Shortcodes
 
@@ -127,7 +127,8 @@ which echo -> where is echo in the fs
 `..` -> prev dir
 
 
-`mv -i` -> move -interactive
+`mv -i` -> move 
+        -> -i for interactive mode
 
 `cp`    -> copy
 
@@ -176,14 +177,14 @@ hello
 
 >sysfs exposes a number of kernel parameters as files, so that you can easily reconfigure the kernel on the fly without specialized tools.
 
-#### To chage the the brightness of your laptop’s screen is exposed through a file called brightness
+#### To change the the brightness of your laptop’s screen is exposed through a file called brightness
 
 ```bash
 sudo find -L /sys/class/backlight -maxdepth 2 -name '*brightness*'
 /sys/class/backlight/thinkpad_screen/brightness
 ```
 
-#### Another eg of Data Wrangling
+#### Another Eg of Data Wrangling
 
 ```bash
 $ echo 1 | sudo tee /sys/class/leds/input6::scrolllock/brightness
@@ -211,7 +212,7 @@ $ fasle ; echo "This will always print" -> This will always print
 ```bash
 foo=$(pwd)
 
-echo $foo -> gives pwd o/p
+echo $foo -> prints the present dir
 ```
 
 

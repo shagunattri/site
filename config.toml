@@ -4,7 +4,7 @@ languageCode = "en-US"
 theme        = "hello-friend-ng"
 DefaultContentLanguage = "en"
 copyright = "This work is licensed under Creative Commons Attribution 4.0 International License."
-enableGitInfo   = false
+enableGitInfo   = true
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -25,14 +25,14 @@ publishDir   = "public"
   dnd = "dnd"
 
  [author]
-  name = "shagun attri."
+  name = "shagun attri"
 
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02"
-  defaultTheme = "dark"
+  defaultTheme = "light"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
   homeSubtitle = "(info)sec & opensource;"
@@ -65,9 +65,6 @@ publishDir   = "public"
     
 
   
-    [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/sp3ppr"
   [[params.social]]
     name = "email"
     url  = "mailto:pingshagunattri@gmail.com"
@@ -78,6 +75,6 @@ publishDir   = "public"
     name = "linkedin"
     url  = "https://www.linkedin.com/in/shagunattri"
   [[params.social]]
-      name = "telegram"
-      url  = "https://t.me/sp3ppr"
+    name = "twitter"
+    url  = "https://twitter.com/sp3ppr"
 

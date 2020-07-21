@@ -24,9 +24,9 @@ Git[^git] is a tool to keep tracks of files,folders and code.
 Version controls systems such as **Git** facilitate collaboration.
 
 Version control systems(VCSs):
-- save files/folders/code in a series of snapshots and encapsulates them together
+- saves files/folders/code in a series of snapshots and encapsulates them together.
 
-- They store metadata including author,messasge,timestamps and so on.
+- Store metadata including author,messasge,timestamps and so on.
 
 ### Why use Git?
 - To look at older versions of code
@@ -42,7 +42,7 @@ In a scenario where your unit tests are not passing you often look at changes in
 
 ![xkcd 1597](https://imgs.xkcd.com/comics/git.png)
 
-Git has a bleak interface and needs to be understood properly while the design underlying is great when looking at the data models,things get complicated.
+Git has a well thought-out model and needs to be understood properly while the design underlying is great when looking at the data models,things get complicated.
 
 
 ### Git’s data model
@@ -54,8 +54,10 @@ Git has a bleak interface and needs to be understood properly while the design u
     |
     |
     + -- files  (blob)
-    |
-    + -- more files 
+        |
+        + -- more files 
+        |
+        + -- more files 
 ```
 
 >History generally is a linear sequence of snapshots.
@@ -101,7 +103,9 @@ A  clean, simple model of history.
 Defines a object(blob,tree,commit).
 Blobs, trees, and commits are unified in this way: they are all objects.
 
+```bash
 objects = map<string,object>
+```
 
 All objects are content addressed and are maintained as a content address store
 where the key is the hash of the object.
@@ -148,6 +152,9 @@ $ git diff hello.txt #diff
 
 
 ### Basics of Git
+
+
+Git has a lot of tools and GUI environments to make working with code easier,but we will focus on the git CLI and all you can do with it.
 
 ***let's git gud with git***
 

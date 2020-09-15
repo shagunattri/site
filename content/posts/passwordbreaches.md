@@ -1,3 +1,21 @@
+---
+author:
+  name: "Shagun Attri"
+date: 2020-09-15
+linktitle: passwordbreaches
+title: Password Breaches
+type:
+- post
+- posts
+weight: 10
+series:
+categories:
+  - infosec
+tags:
+  - sec
+aliases:
+- /blog/passwords/
+---
 ### Password breaches and it's Types
 
 As a Developer and software engineer it is always a priority to make the perfect software solution with the best security policies implemented.

@@ -29,7 +29,7 @@ tags:
 
 Google is your friend.
 
->631
+>63?
 
 ### Unit 3
 
@@ -40,7 +40,7 @@ Google is your friend.
 Look around, the answer is hiding in plain sight. 
 http://hacking-printers.net/wiki/index.php/Printer_Security_Testing_Cheat_Sheet
 
->while true; do nc printer 9100; done
+>while true; do nc printer 9100; ????
 
 **Task 2**
 
@@ -49,7 +49,7 @@ http://hacking-printers.net/wiki/index.php/Printer_Security_Testing_Cheat_Sheet
 
 The question itself gives away the answer with the keyword `buffer` and we can work out from there and the cheatsheet also has a example for such a vulnerability.
 
->Buffer Overflow
+>Buffer ????????
 
 **Task 3**
 
@@ -57,7 +57,7 @@ The question itself gives away the answer with the keyword `buffer` and we can w
 
 Browse the site at port 631 and find the location of the printer from the printers tab in the site.
 
->Skidy's basement
+>?kidy's basement
 
 **Task 4**
 
@@ -65,4 +65,4 @@ Browse the site at port 631 and find the location of the printer from the printe
 
 Navigate to the Fox_printer page and try to run a print test,look out for the size at the jobs where all the requests are available.
 
->1k
+>1?

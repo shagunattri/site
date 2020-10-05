@@ -40,6 +40,9 @@ Some of my social links:
 
 Send mail to [pingshagunattri@gmail.com](mailto:pingshagunattri@gmail.com).
 
+If you're interested in **hiring me** -- here's my
+[résumé](../static/resume.pdf).
+
 ## This website
 
 This site is built using [hugo](https://gohugo.io/).The source for this website is

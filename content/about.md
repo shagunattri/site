@@ -41,7 +41,7 @@ Some of my social links:
 Send mail to [pingshagunattri@gmail.com](mailto:pingshagunattri@gmail.com).
 
 If you're interested in **hiring me** -- here's my
-[resume](https://shagunfirstbucket.s3.ap-south-1.amazonaws.com/Shagun+Attri-Resume.pdf).
+[resume](https://shagunfirstbucket.s3.ap-south-1.amazonaws.com/Shagun-Attri-Resume.pdf).
 
 ## This website
 

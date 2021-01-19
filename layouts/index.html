@@ -1,12 +1,13 @@
 {{ define "main" }}
     <main aria-role="main">
         <div>
-            <h1>{{ .Site.Title }}</h1>
-
+            <figure>
+                <img src="https://avatars2.githubusercontent.com/u/29366864?s=460&u=ba40917b716db915c6cafa226cd58bf9c0391d7d&v=4" position="center" style="border-radius: 8px;"/>
+              </figure>
+              <!-- <h4>{{ .Site.Title }}</h4>               -->
             {{- with .Site.Params.homeSubtitle }}
                 <p>{{.}}</p>
             {{- end }}
-
             {{- with .Site.Params.social }}
                 <div>
                     {{ partial "social-icons.html" . }}

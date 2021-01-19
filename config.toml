@@ -45,14 +45,14 @@ paginate = 10
 
 [languages]
   [languages.en]
-    title = "shagun"
+    title = "Shagun's Blog"
     subtitle = ""
     keywords = ""
     copyright = "<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>"
     readOtherPosts = "← Prev | Read more | Next →"
 
     [languages.en.params.logo]
-      logoText = "shagun attri."
+      logoText = "shagun attri"
       logoHomeLink = "/"
 
  [[menu.main]]
@@ -82,4 +82,3 @@ paginate = 10
   [[params.social]]
     name = "twitter"
     url  = "https://twitter.com/sp3ppr"
-

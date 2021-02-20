@@ -17,9 +17,7 @@ aliases:
 - /blog/dockerarchitecture/
 ---
 
-### Docker Architecture
-
-One of the main parts of the docker ecosystem is the docker engine.
+One of the main parts of the docker ecosystem is the `Docker Engine.`
 
 ### Docker engine 
 

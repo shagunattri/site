@@ -8,18 +8,20 @@ aliases = ["about","about-me","contact"]
 
 
 
+
 ```console
 #!/usr/bin/env bash
 echo "shagun."
 University = SRM Institute of Science and Technology
+Employed at = Sennovate Inc.,CA
 ```
 
 ## Hi.
 
-I'm Shagun,a Compsci undergrad student.
+I'm Shagun,a Compsci undergrad student.Infosec Intern at [Sennovate](https://sennovate.com/)
 
 My primary interest is information security,love contributing to opensource projects and participating in CTFs.
-I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with Arch Linux.
+I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with ~~Arch Linux~~ Windows 10 for office work at this moment.
 
 ## The existence of this blog
 
@@ -35,6 +37,7 @@ Some of my social links:
 - [Twitter](https://twitter.com/sp3ppr)
 - [Reddit](https://www.reddit.com/u/shagunattri)
 - [Hacker News](https://news.ycombinator.com/user?id=shagunattri)
+- [LinkedIn](https://www.linkedin.com/in/shagunattri/)
 
 ## Contact
 

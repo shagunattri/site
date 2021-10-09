@@ -64,9 +64,9 @@ paginate = 10
     name       = "Blog"
     url        = "/posts"
   [[menu.main]]
-    identifier = "writeups"
-    name       = "Writeups"
-    url        = "/writeups/"
+    identifier = "books"
+    name       = "books"
+    url        = "/books/"
     
 
   

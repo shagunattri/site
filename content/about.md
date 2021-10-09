@@ -38,6 +38,7 @@ Some of my social links:
 - [Reddit](https://www.reddit.com/u/shagunattri)
 - [Hacker News](https://news.ycombinator.com/user?id=shagunattri)
 - [LinkedIn](https://www.linkedin.com/in/shagunattri/)
+- [GoodReads](https://www.goodreads.com/user/show/69167061-shagun-attri)
 
 ## Contact
 

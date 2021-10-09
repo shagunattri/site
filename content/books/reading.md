@@ -1,7 +1,7 @@
 ---
 author:
   name: "Shagun attri"
-date: 2020-09-29
+date: 2021-10-09
 linktitle: reading
 title: Books
 type:

@@ -13,6 +13,7 @@ categories:
   - reading
   - books
 tags:
+  - reading
 ---
 
 Started picking up books to read.This section of the site is dedicated to writing my thoughts and reviews of books I read.

@@ -70,7 +70,7 @@ paginate = 10
   [[menu.main]]
     identifier = "bookshelf"
     name       = "BookShelf"
-    url        = "/bookshelf"
+    url        = "/bookshelf/"
     
 
   

@@ -33,7 +33,7 @@ paginate = 10
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02"
-  defaultTheme = "light"
+  defaultTheme = "dark"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
   homeSubtitle = "(info)sec & opensource;"
@@ -67,6 +67,10 @@ paginate = 10
     identifier = "books"
     name       = "Books"
     url        = "/books/"
+  [[menu.main]]
+    identifier = "bookshelf"
+    name       = "BookShelf"
+    url        = "/bookshelf"
     
 
   

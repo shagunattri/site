@@ -23,11 +23,9 @@ I'm Shagun,a Compsci undergrad student.Infosec Intern at [Sennovate](https://sen
 My primary interest is information security,love contributing to opensource projects and participating in CTFs.
 I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with ~~Arch Linux~~ Windows 10 for office work at this moment.
 
-## The existence of this blog
+## This blog
 
-The most important characteristic of people is their ability to think. The original intention of blogging was to save electronic snapshots of their thinking. Of course, a variety of documentation tools or simple text editors can also record at any time, choosing to build a personal website is nothing more than to satisfy the paranoia of technology enthusiasts.
-
-But if you think about it, every article published on the website is different from the thought fragments you just wrote down.
+But if you think about it, every article published on the website is just to to save electronic snapshots of things I am thinking of.
 
 I write code at times. Take a look at my projects on
 [GitHub](https://github.com/shagunattri).

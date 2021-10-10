@@ -1,9 +1,9 @@
 ---
 author:
   name: "Shagun attri"
-date: 2021-10-09
+date: 2021-10-10
 linktitle: reading
-title: Books
+title: Reading Now!
 type:
 - post
 - posts

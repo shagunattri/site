@@ -9,10 +9,6 @@
                 <p>{{.}}</p>
             {{- end }}
             {{ end }}
-            {{ if eq $title "Dungeons & Dragons" }}
-            {{ $taxo := "dnd" }}
-            {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
-            {{ range .Pages }}
             <div class="posts-group">
                 <div class="post-year">{{ .Date.Format "2006" }}</div>
                 <ul class="posts-list">

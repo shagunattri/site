@@ -36,7 +36,7 @@ paginate = 10
   defaultTheme = "dark"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "(info)sec & opensource;"
+  homeSubtitle = "I’m Shagun, a Comp sci undergrad student. My primary interest is Information security. I have great interest in security technologies,identity security and the cloud."
   keywords = "sysadmin, privacy, opsec, infosec, linux, floss, foss, libre"
   images = [""]
   contentTypeName = "posts"
@@ -56,17 +56,17 @@ paginate = 10
       logoHomeLink = "/"
 
  [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about/"
-  [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/posts"
+    url        = "/posts/"
   [[menu.main]]
     identifier = "books"
     name       = "Books"
     url        = "/books/"
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
     
 
   

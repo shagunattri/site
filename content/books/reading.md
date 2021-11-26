@@ -32,5 +32,4 @@ List of Books I've read
 
 Want to know what I am reading now?
 - [Reading now](https://www.goodreads.com/book/show/40745.Mindset) - Mindset
-
-
+- [Reading now](https://www.goodreads.com/book/show/53138083-working-backwards) - Working Backwards

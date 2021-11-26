@@ -13,7 +13,6 @@
             {{ $taxo := "dnd" }}
             {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
             {{ range .Pages }}
-            <h2>{{ .Title }}</h2>
             <div class="posts-group">
                 <div class="post-year">{{ .Date.Format "2006" }}</div>
                 <ul class="posts-list">

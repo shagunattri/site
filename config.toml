@@ -67,10 +67,6 @@ paginate = 10
     identifier = "books"
     name       = "Books"
     url        = "/books/"
-  [[menu.main]]
-    identifier = "bookshelf"
-    name       = "BookShelf"
-    url        = "/bookshelf/"
     
 
   

@@ -36,9 +36,7 @@ paginate = 10
   defaultTheme = "dark"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "I’m Shagun, a Comp sci undergrad student.
-                  My primary interest is Information security.
-                  I have great interest in security technologies,identity security and the cloud."
+  homeSubtitle = "I’m Shagun,my interests is in Information security."
   keywords = "sysadmin, privacy, opsec, infosec, linux, floss, foss, libre"
   images = [""]
   contentTypeName = "posts"

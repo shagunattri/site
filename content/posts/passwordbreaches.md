@@ -10,7 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - infosec
+  - security
 tags:
   - sec
 aliases:

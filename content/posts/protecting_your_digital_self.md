@@ -10,8 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - Technology
-  - Privacy
+  - security
 tags:
   - Digital Privacy
   - Online Attacks

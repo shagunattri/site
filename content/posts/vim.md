@@ -12,9 +12,7 @@ series:
 categories:
   - vim
 tags:
-  - linux
-  - cli
-  - vim 
+  - dev
 aliases:
 - /blog/vim/
 ---

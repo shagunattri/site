@@ -10,8 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - thm
-  - c4ptur3-th3-fl4g
+  - ctf
 tags:
   - ctf
   - thm

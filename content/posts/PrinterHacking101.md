@@ -10,7 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - printer hacking
+  - security
 tags:
   - printer hacking
   - 101

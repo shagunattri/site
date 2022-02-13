@@ -10,7 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - Technology
+  - security
 tags:
   - OSINT
   - Foot Printing

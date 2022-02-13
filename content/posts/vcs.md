@@ -12,10 +12,7 @@ series:
 categories:
   - git
 tags:
-  - linux
-  - cli
-  - git
-  - version control
+  - dev
 aliases:
 - /blog/vcs/
 ---

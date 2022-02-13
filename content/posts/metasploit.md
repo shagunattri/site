@@ -10,8 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - thm
-  - metasploit
+  - security
 tags:
   - rapid7
   - metasploit

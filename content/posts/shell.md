@@ -12,10 +12,7 @@ series:
 categories:
   - shell
 tags:
-  - linux
-  - shell
-  - tools
-  - cli
+  - nix
 aliases:
 - /blog/shell/
 ---

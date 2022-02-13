@@ -1,8 +1,8 @@
 ---
 author:
   name: "Shagun attri"
-date: 2022-28-01
-linktitle: 28-01-2022
+date: 2022-01-28
+linktitle: Network Security - An Introduction
 title: Network Security - An Introduction
 type:
 - post
@@ -17,8 +17,6 @@ tags:
 aliases:
 - /blog/passwordtips/
 ---
-
-### Cyber Network Security
 
 This blogs covers the basic introduction of topics related to Network Security from various resources I used to learn and note my learnings about the topic.
 

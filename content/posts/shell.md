@@ -10,7 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - shell
+  - nix
 tags:
   - nix
 aliases:

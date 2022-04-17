@@ -1,19 +1,198 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sp3ppr</title>
+    <title>Shagun&#39;s Blog</title>
     <link>/</link>
-    <description>Recent content on sp3ppr</description>
+    <description>Recent content on Shagun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Network Security - An Introduction</title>
+      <link>/posts/networksecurity/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/networksecurity/</guid>
+      <description>This blogs covers the basic introduction of topics related to Network Security from various resources I used to learn and note my learnings about the topic.
+CIA Triad  Confidentiality Integrity Availability  DAD Triangles  Disclosure Alteration Denial  CIA and DAD are mutually exclusive.
+Want the CIA points not the DAD points
+Nonrepudiation Not being able to deny having sent a message
+Leads to integrity.
+Access Control Defines the degree of permission granted to a resource</description>
+    </item>
     
     <item>
-      <title>The Impact of Open Source Software</title>
+      <title>Reading Now!</title>
+      <link>/books/reading/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/books/reading/</guid>
+      <description>Started picking up books to read.This section of the site is dedicated to writing my thoughts and reviews of books I read.
+The goal is to read a book every month.
+Let&amp;rsquo;s see.
+List of Books I&amp;rsquo;ve read
+ Everyone has a Story Savi Sharma Two Billion Heart Beats MN Raju Midnight Machines Arun Mohan Sukumar  Want to know what I am reading now?
+ Reading now - Mindset Reading now - Working Backwards  </description>
+    </item>
+    
+    <item>
+      <title>Tips for better Passwords</title>
+      <link>/posts/passwordtips/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/passwordtips/</guid>
+      <description>Tips for Better Passwords. Recently in my intership with Sennovate,I am writing a few blogs as a technical blogger regarding some security topics and tips for the internet.This one is about passwords.In a few points I have discussed about the tips I would give anyone for a better making a better password/passphrase and Internet Hygiene.So check it out and let me know if there are any other points you would like to add upon that I missed.</description>
+    </item>
+    
+    <item>
+      <title>Docker Architecture</title>
+      <link>/posts/dockerarchitechture/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/dockerarchitechture/</guid>
+      <description>One of the main parts of the docker ecosystem is the Docker Engine.
+Docker engine Consists of:
+Docker CLI &amp;lt;===&amp;gt; API &amp;lt;===&amp;gt; Docker Daemon  It has an underlying client server architecture that communicates through a REST API. Thus the client the docker CLI talks to the docker daemon using the API Docker CLI is easy with using built,run,ps and other commands.  You can have other clients working with the daemon apart form the CLI,you can build your own client or use a web interface to manage/control the objects.</description>
+    </item>
+    
+    <item>
+      <title>Containerization</title>
+      <link>/posts/containerization/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/containerization/</guid>
+      <description>Containerizaiton &amp;amp; Docker Before introduction to docker we used linux contaniers(LXC) and made our suitable environment by configuring different libraries &amp;amp; dependecies to develop our product.
+Most of the time when pushing to production,the production environment/server setup had different or conflictiong dependencies that would not allow for deployment and then you have to manage these packages and dependencies to make sure they don&amp;rsquo;t have conflicts and update.
+Conflicting dependencies The addition of more and more dependencies to your project and making it all a mess when you try to add new projects with packages and dependencies of different version and different modules.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Docker</title>
+      <link>/posts/docker/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/docker/</guid>
+      <description>In the following series of blogs,I try to explain Docker and the DevOps ecosystem.This is the one of many blog posts to be featuring Docker and many other tools utilized in the ecosystem.
+These are notes from my learnings about docker and virtualization.
+Docker  docker is a tool for running applications in an isolated environment similar to virtual machine app run in same environment just works standard for software deployement  Containers vs VMS  Containers  containers are an abstraction at the app layer that package code and dependencies together.</description>
+    </item>
+    
+    <item>
+      <title>THM - Printer Hacking 101</title>
+      <link>/posts/printerhacking101/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/printerhacking101/</guid>
+      <description>Printer Hacking  Learn about (and get hands on with) printer hacking and understand the basics of IPP.
+ Unit 2 Task #1
+ What port does IPP run on?
+Google is your friend.
+ 63?
+ Unit 3 Task #1
+How would a simple printer TCP DoS attack look as a one-line command?
+Look around, the answer is hiding in plain sight. http://hacking-printers.net/wiki/index.php/Printer_Security_Testing_Cheat_Sheet
+ while true; do nc printer 9100; ?</description>
+    </item>
+    
+    <item>
+      <title>THM - c4ptur3-th3-fl4g</title>
+      <link>/posts/c4ptur3-th3-fl4g/</link>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/c4ptur3-th3-fl4g/</guid>
+      <description>c4ptur3-th3-fl4g  A beginner level CTF challenge
+ Task #1
+c4n y0u c4p7u23 7h3 f149?
+Understanding leet text shouldn&amp;rsquo;t be hard,and if you get stuck use Universal Leet (L337, L33T, 1337) Converter 
+Decrypted:
+can you capture the flag
+Task #2
+01101100 01100101 01110100 01110011 00100000 01110100 01110010 01111001 00100000 01110011 01101111 01101101 01100101 00100000 01100010 01101001 01101110 01100001 01110010 01111001 00100000 01101111 01110101 01110100 00100001
+Straight of this is binary code and to decode it you can either use pen and paper or use rapidTables to decode the text.</description>
+    </item>
+    
+    <item>
+      <title>Password Breaches</title>
+      <link>/posts/passwordbreaches/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/passwordbreaches/</guid>
+      <description>Password breaches and it&amp;rsquo;s Types As a Developer and software engineer it is always a priority to make the perfect software solution with the best security policies implemented.
+Passwords are often a way to secure products and act as a barrier to access information of an individual or major corporations. We hear about these passwords being leaked and breached by hackers on the internet being referred to as password breaches.</description>
+    </item>
+    
+    <item>
+      <title>THM - Metasploit</title>
+      <link>/posts/metasploit/</link>
+      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/metasploit/</guid>
+      <description>Metasploit, an open-source pentesting framework, is a powerful tool utilized by security engineers around the world. Maintained by Rapid 7, Metasploit is a collection of not only thoroughly tested exploits but also auxiliary and post-exploitation tools. Throughout this room, we will explore the basics of using this massive framework and a few of the modules it includes.
+Metasploit does support different types of port scans from within the auxiliary modules. Metasploit can also import other scans from nmap and Nessus just to name a few.</description>
+    </item>
+    
+    <item>
+      <title>Getting Good with Git</title>
+      <link>/posts/vcs/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/vcs/</guid>
+      <description>Git1 is a tool to keep tracks of files,folders and code.
+Version controls systems such as Git facilitate collaboration.
+Version control systems(VCSs):
+  saves files/folders/code in a series of snapshots and encapsulates them together.
+  Store metadata including author,messasge,timestamps and so on.
+  Why use Git?  To look at older versions of code Fixing bugs while working Send patches and resolving conflicts Find module data and figure out all changes and updates Maintain a log of changes Work on parallel branches of development  In a scenario where your unit tests are not passing you often look at changes in the code and git helps identify errors and searches the history to look at the change that broke your project.</description>
+    </item>
+    
+    <item>
+      <title>The fundamentals of VIm</title>
+      <link>/posts/vim/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/vim/</guid>
+      <description>Vim (/vɪm/;) is a contraction of Vi IMproved, originated from the Vi editor (1976).
+Vscode is great but have you ever used command-line editors more or less vim for your daily development tasks. I’ve been using Vim for the last few months as my IDE and env of choice for writing all my code and I must say I can never think of switching back.
+Vim is one of the most popular command-line-based editor and comes with a lot of features your IDE isn’t really capable unless it supports Vim emulation mode.</description>
+    </item>
+    
+    <item>
+      <title>Shell Scripting-101</title>
+      <link>/posts/shellscripting/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/shellscripting/</guid>
+      <description>Shell Scripting Shell scripting is an important utility to improve your workflow and automate tasks.
+Check out my Understanding the shell blogpost to understand the basics of shell.
+Though shell scripting is not fast as compared to your C programs it is useful if you are looking to run regular tasks and schedule jobs on your system. In this article I&amp;rsquo;ll try to highlight a few tips and ways to improve,understand shell scripting a little better.</description>
+    </item>
+    
+    <item>
+      <title>Understanding the Shell</title>
+      <link>/posts/shell/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/shell/</guid>
+      <description>Shell  Bourne Again SHell, or “bash”
+  In computing, a shell is a user interface for access to an operating system&amp;rsquo;s services. In general, operating system shells use either a command-line interface (CLI) or graphical user interface (GUI), depending on a computer&amp;rsquo;s role and particular operation.
+  It is named a shell because it is the outermost layer around the operating system.
+ Useful Shell Tools:
+ grep fzf broot mlocate rg tree bat and many more&amp;hellip;&amp;hellip;&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Status Update</title>
+      <link>/posts/14-06-2020/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/14-06-2020/</guid>
+      <description>Health One thing that we often neglect to look after in this busy life schedule is to look after our health,start to take care of your health and making sure that health should be the first priority kyuki jaan he to jaha he,as someone told. The quarantine has helped me focus on my health and things are amazing.Take care of your health y&amp;rsquo;all.
+Vim I am in love with vim,not that is use it as my main &amp;ldquo;IDE&amp;rdquo; editor.</description>
+    </item>
+    
+    <item>
+      <title>Open Source Software</title>
       <link>/posts/opensource/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
       
@@ -64,8 +243,9 @@ Well if you are like, “I got nothing to hide” then you should probably recon
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Hi. #!/usr/bin/env bash echo &amp;#34;sp3ppr&amp;#34; University = SRM Institute of Science and Technology I&amp;rsquo;m Shagun, and I go by sp3ppr on the Internet. I&amp;rsquo;m a Compsci student. My primary interest is information security and love contributing to opensource projects. I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with Arch Linux.
-The existence of this blog The most important characteristic of people is their ability to think.</description>
+      <description>#!/usr/bin/env bash echo &amp;#34;shagun.&amp;#34; University = SRM Institute of Science and Technology Employed at = Sennovate Inc.,CA Hi. I&amp;rsquo;m Shagun,a Compsci undergrad student.Infosec Intern at Sennovate
+My primary interest is information security,love contributing to opensource projects and participating in CTFs. I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with Arch Linux Windows 10 for office work at this moment.
+This blog But if you think about it, every article published on the website is just to to save electronic snapshots of things I am thinking of.</description>
     </item>
     
   </channel>

@@ -1,15 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on sp3ppr</title>
+    <title>Categories on Shagun&#39;s Blog</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on sp3ppr</description>
+    <description>Recent content in Categories on Shagun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>security</title>
+      <link>/categories/security/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/security/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>books</title>
+      <link>/categories/books/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/books/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>reading</title>
+      <link>/categories/reading/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>/categories/devops/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ctf</title>
+      <link>/categories/ctf/</link>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dev</title>
+      <link>/categories/dev/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nix</title>
+      <link>/categories/nix/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/nix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>update</title>
+      <link>/categories/update/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/update/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

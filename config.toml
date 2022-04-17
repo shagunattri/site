@@ -60,9 +60,9 @@ paginate = 10
     name       = "Blog"
     url        = "/posts/"
   [[menu.main]]
-    identifier = "books"
-    name       = "Books"
-    url        = "/books/"
+    identifier = "docs"
+    name       = "Docs"
+    url        = "/docs/"
   [[menu.main]]
     identifier = "about"
     name       = "About"

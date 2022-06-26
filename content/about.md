@@ -6,33 +6,32 @@ aliases = ["about","about-me","contact"]
   name = "Shagun Attri"
 +++
 
-
-
-
 ```console
 #!/usr/bin/env bash
-echo "shagun."
-University = SRM Institute of Science and Technology
+echo "shagun attri"
 Employed at = Sennovate Inc.,CA
+Role = Associate Product Manager
+University = SRM Institute of Science and Technology,Chennai
 ```
 
 ## Hi.
 
-I'm Shagun,a Compsci undergrad student.Infosec Intern at [Sennovate](https://sennovate.com/)
+I'm Shagun,a Compsci undergrad student.Associate Product Manager at [Sennovate+](https://plus.sennovate.com/)
 
-My primary interest is information security,love contributing to opensource projects and participating in CTFs.
-I have great interest in GNU/Linux. After a long time of distro-hopping, I now settle with ~~Arch Linux~~ Windows 10 for office work at this moment.
+My primary interest is information security and building products,I currently solve security problems for B2B cybersecurity space in Identity and Access Management(IAM) and Security Operations Center(SOC) building new products in the process to optimize for better distribution.
+
+I now settle with ~~Arch Linux~~ MacBook Air M1 for office work at this moment.
 
 ## This blog
 
-But if you think about it, every article published on the website is just to to save electronic snapshots of things I am thinking of.
+But if you think about it, every article published on the website is just to to save electronic snapshots of things I am thinking of and share intersting insights.
 
 I write code at times. Take a look at my projects on
 [GitHub](https://github.com/shagunattri).
 
 Some of my social links:
 
-- [Twitter](https://twitter.com/sp3ppr)
+- [Twitter](https://twitter.com/shagunattri_)
 - [Reddit](https://www.reddit.com/u/shagunattri)
 - [Hacker News](https://news.ycombinator.com/user?id=shagunattri)
 - [LinkedIn](https://www.linkedin.com/in/shagunattri/)
@@ -49,8 +48,4 @@ If you're interested in **hiring me** -- here's my
 ## This website
 
 This site is built using [hugo](https://gohugo.io/).The source for this website is
-[here](https://github.com/shagunattri/site). 
-
-I don't really care about site traffic/analytics, and I am not interested in who is reading and I respect your privacy.
-
-All the content on this site is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International ([BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)). The source for this site is licensed under [MIT](https://opensource.org/licenses/MIT).
+[here](https://github.com/shagunattri/site).

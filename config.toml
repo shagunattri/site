@@ -36,8 +36,8 @@ paginate = 10
   defaultTheme = "dark"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "I’m Shagun,my interests - infosec,oss."
-  keywords = "sysadmin, privacy, opsec, infosec, linux, floss, foss, libre"
+  homeSubtitle = "👋,I’m shagun,this is my personal site - covering security and product management."
+  keywords = "infosec, product management"
   images = [""]
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
@@ -45,7 +45,7 @@ paginate = 10
 
 [languages]
   [languages.en]
-    title = "Shagun's Blog"
+    title = "Shagun's 📦"
     subtitle = ""
     keywords = ""
     copyright = "<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>"
@@ -60,10 +60,6 @@ paginate = 10
     name       = "Blog"
     url        = "/posts/"
   [[menu.main]]
-    identifier = "docs"
-    name       = "Docs"
-    url        = "/docs/"
-  [[menu.main]]
     identifier = "about"
     name       = "About"
     url        = "/about/"
@@ -72,7 +68,7 @@ paginate = 10
   
   [[params.social]]
     name = "email"
-    url  = "mailto:pingshagunattri@gmail.com"
+    url  = "mailto:mail@shagun.xyz"
   [[params.social]]
     name = "github"
     url  = "https://github.com/shagunattri"
@@ -81,4 +77,4 @@ paginate = 10
     url  = "https://www.linkedin.com/in/shagunattri"
   [[params.social]]
     name = "twitter"
-    url  = "https://twitter.com/sp3ppr"
+    url  = "https://twitter.com/shagunattri_"

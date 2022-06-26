@@ -10,7 +10,6 @@ type:
 weight: 10
 series:
 categories:
-  - reading
   - books
 tags:
   - reading

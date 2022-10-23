@@ -70,7 +70,7 @@ paginate = 10
     name = "email"
     url  = "mailto:mail@shagun.xyz"
   [[params.social]]
-    name = "Instagram"
+    name = "instagram"
     url  = "https://instagram.com/shagunattri_"   
   [[params.social]]
     name = "github"

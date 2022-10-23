@@ -50,4 +50,4 @@ If you're interested in **hiring me** -- here's my
 
 ## This website
 
-This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site).w
+This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site).

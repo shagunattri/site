@@ -1,33 +1,33 @@
 +++
 title = "About"
 date = "2014-04-09"
-aliases = ["about","about-me","contact"]
+aliases = ["about","about me","contact"]
 [ author ]
   name = "Shagun Attri"
 +++
 
 ```console
 #!/usr/bin/env bash
-echo "shagun attri"
-Employed at = Sennovate Inc.,CA
+echo "Shagun Attri"
+Employed at = Sennovate Inc., CA
 Role = Associate Product Manager
-University = SRM Institute of Science and Technology,Chennai
+University = SRM Institute of Science and Technology, Chennai
 ```
 
 ## Hi.
 
-I'm Shagun,.Associate Product Manager at [Sennovate+](https://plus.sennovate.com/)
+I'm Shagun,.Associate Product Manager at [Sennovate](https://sennovate.com) building [Sennovate+](https://plus.sennovate.com/)
 
-My interests are in information security and building security products,I'm currently building products for B2B cybersecurity space in Identity and Access Management(IAM) and Security Operations Center(SOC) categories to optimize for better distribution and accelerate growth for Sennovate.
+My interests are in information security and building security products. I'm currently building products for the B2B cybersecurity space in Identity and Access Management(IAM) and Security Operations Center(SOC) categories to optimize for better distribution and accelerate growth for Sennovate.
 
-I now settle with ~~Arch Linux~~ MacBook Air M1 for office work at this moment.My setup details are covered [here](https://shagun.xyz/posts/setup/).
+I now settle with ~~Arch Linux~~ MacBook Air M1 for office work at this moment. My setup details are covered [here](https://shagun.xyz/posts/setup/).
 
 ## This blog
 
-But if you think about it, every article published on the website is just to to save electronic snapshots of things I am thinking of and share intersting insights.
+Articles published on this site are electronic snapshots of my learnings and exciting insights.
 
 
-I write code at times. Take a look at my projects on
+I write code at times. My projects are available on
 [GitHub](https://github.com/shagunattri).
 
 Some of my social links:
@@ -47,5 +47,4 @@ If you're interested in **hiring me** -- here's my
 
 ## This website
 
-This site is built using [hugo](https://gohugo.io/).The source for this website is
-[here](https://github.com/shagunattri/site).
+This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site).

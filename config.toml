@@ -38,7 +38,7 @@ paginate = 10
   disableReadOtherPosts = false
   homeSubtitle = "👋,I’m shagun,this is my personal site - covering security and product management."
   keywords = "infosec, product management"
-  images = "static/Shagun_Attri.jpeg"
+  images = ""
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
 
@@ -53,7 +53,7 @@ paginate = 10
 
     [languages.en.params.logo]
       logoText = "shagun attri"
-      logoHomeLink = "static/Shagun_Attri.jpeg"
+      logoHomeLink = "/"
 
  [[menu.main]]
     identifier = "blog"

@@ -9,16 +9,19 @@ aliases = ["about","about me","contact"]
 ```console
 #!/usr/bin/env bash
 echo "Shagun Attri"
-Employed at = Sennovate Inc., CA
+Employed at = Sennovate Inc
 Role = Associate Product Manager
-University = SRM Institute of Science and Technology, Chennai
+University = SRM Institute of Science and Technology, Chennai (2018 - 2022)
+From = Himachal Pradesh
+Hobbies = Photography, Writing, Travel
+Sports = NBA, F1, Cricket
 ```
 
-## Hi.
+## About Me
 
-I'm Shagun,.Associate Product Manager at [Sennovate](https://sennovate.com) building [Sennovate+](https://plus.sennovate.com/)
+Hi, I'm Shagun - Associate Product Manager at [Sennovate](https://sennovate.com) building [Sennovate+](https://plus.sennovate.com/).
 
-My interests are in information security and building security products. I'm currently building products for the B2B cybersecurity space in Identity and Access Management(IAM) and Security Operations Center(SOC) categories to optimize for better distribution and accelerate growth for Sennovate.
+My interests are in cybersecurity and building security products. I'm currently building B2B product in the cybersecurity space for Identity and Access Management(IAM) and Security Operations Center(SOC) categories to optimize for better distribution and accelerate growth for Sennovate.
 
 I now settle with ~~Arch Linux~~ MacBook Air M1 for office work at this moment. My setup details are covered [here](https://shagun.xyz/posts/setup/).
 
@@ -47,4 +50,4 @@ If you're interested in **hiring me** -- here's my
 
 ## This website
 
-This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site).
+This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site).w

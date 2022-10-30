@@ -74,7 +74,7 @@ paginate = 10
     url  = "https://instagram.com/shagunattri_"   
   [[params.social]]
     name = "github"
-    url  = "https://github.com/shagunattri
+    url  = "https://github.com/shagunattri"
   [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/shagunattri"

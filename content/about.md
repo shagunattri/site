@@ -46,7 +46,7 @@ Some of my social links:
 Send mail to [mail@shagun.xyz](mailto:mail@shagun.xyz).
 
 If you're interested in **hiring me** -- here's my
-[resume](https://github.com/shagunattri/site/files/9935767/Shagun_Attri_Resume.pdf).
+[resume](https://d1fdloi71mui9q.cloudfront.net/alpnyzJhQAO4IekxDnNm_Shagun_Attri_Resume.pdf).
 
 ## This website
 

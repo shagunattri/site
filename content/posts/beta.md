@@ -2,7 +2,7 @@
 author:
   name: "Shagun attri"
 date: 2022-11-08
-linktitle: beta-launch
+linktitle: beta
 title: Suno Beta! This is how you do a Beta Launch.
 type:
 - post
@@ -15,7 +15,7 @@ tags:
   - beta
   - launch
 aliases:
-- /blog/beta-launch/
+- /blog/beta/
 ---
 
 So, you are trying to do a beta launch of a new Product? Here are the ingredients you'll need for a successful beta launch!

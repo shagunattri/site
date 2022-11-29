@@ -20,7 +20,9 @@ aliases:
 
 So, you are trying to do a beta launch of a new Product? Here are the ingredients you'll need for a successful beta launch!
 
-The beta launch is a way to takeoff your product from the ground and gets a few customers that have the problem your product solves. 
+Launching products is more like event management! You've to make all arrangements to capture insights from a product that is not fully complete but is in the initial stages of product development.
+
+The beta launch is a way to take off from the ground and get the initial traction attracting users.
 
 Be very deliberate about the problem you are trying to solve.
 
@@ -33,7 +35,7 @@ A Beta has room for errors in the process and functionalities without compromisi
   - Onboard them as the first users to use the products 
 - One Problem
   - Focus on One problem and solve that better than anyone else 
-- One a Product that helps builds trust
+- One Product that helps builds trust
   - Build a Minimum Loveable Product over MVP
 - One Hook
   - Make sure the hook enables an easy word-of-mouth referral loop among users of the product

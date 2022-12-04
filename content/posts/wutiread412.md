@@ -1,7 +1,7 @@
 ---
 author:
   name: "Shagun attri"
-date: 2022-11-08
+date: 2022-12-04
 linktitle: beta
 title: What I read this week - 04/12
 type:

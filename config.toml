@@ -38,7 +38,7 @@ paginate = 10
   disableReadOtherPosts = false
   homeSubtitle = "site covering product management and cybersecurity - shagun's digital 🏡"
   keywords = "infosec, product management"
-  images = ""
+  images = "https://avatars.githubusercontent.com/u/29366864?s=400&v=4"
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
 
@@ -58,7 +58,7 @@ paginate = 10
  [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/blog/"
+    url        = "/posts/"
   [[menu.main]]
     identifier = "about"
     name       = "About"

@@ -18,7 +18,7 @@ aliases:
 - /blog/r1/
 ---
 
-Interesting reads and references from the week
+Interesting reads and references from the week.
 
 Will keep this going every week and see how it grows.
 
@@ -43,7 +43,7 @@ Personal brands are all over the place and everyone has a brand of their own eve
 
 Now, after being part of building a brand and observing multiple brands experiment, will be interesting to see how I build my own.
 
-### Video Records
+### Video for the week
 
 [Naval Ravikant - Life is a Single-player Game](https://youtu.be/CtvZrJYputI)
 

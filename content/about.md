@@ -32,8 +32,7 @@ Articles published on this site are electronic snapshots of my learnings with ex
 I write code at times. My projects are available on
 [GitHub](https://github.com/shagunattri).
 
-### Socials
-
+## Socials
 [https://linktr.ee/shagunattri](https://linktr.ee/shagunattri)
 
 ## Contact

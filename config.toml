@@ -36,7 +36,7 @@ paginate = 10
   defaultTheme = "dark"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "personal site covering product management and cybersecurity - 🏡 A Digital Home"
+  homeSubtitle = "site covering product management and cybersecurity - shagun's digital 🏡"
   keywords = "infosec, product management"
   images = ""
   contentTypeName = "posts"
@@ -58,7 +58,7 @@ paginate = 10
  [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/posts/"
+    url        = "/blog/"
   [[menu.main]]
     identifier = "about"
     name       = "About"
@@ -70,14 +70,17 @@ paginate = 10
     name = "email"
     url  = "mailto:mail@shagun.xyz"
   [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/shagunattri"
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/shagunattri_"        
+  [[params.social]]
     name = "instagram"
     url  = "https://instagram.com/shagunattri_"   
   [[params.social]]
     name = "github"
     url  = "https://github.com/shagunattri"
   [[params.social]]
-    name = "linkedin"
-    url  = "https://www.linkedin.com/in/shagunattri"
-  [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/shagunattri_"
+    name = "spotify"
+    url  = "https://open.spotify.com/user/11twx4n57awx31ahsskdsqo00?si=c0c5f25637684ea5"    

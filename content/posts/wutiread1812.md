@@ -60,7 +60,7 @@ Phase 3 - Power Money
 
 ### Muzic Reccos
 
-- [Fred again.. - DJ Set in ](https://youtu.be/WiSXx_GcJ-c)
+- [Fred again.. @TheLotRadio 12-06-2021](https://youtu.be/WiSXx_GcJ-c)
 
 Till next time,
 ✌️

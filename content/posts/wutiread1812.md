@@ -46,9 +46,9 @@ List of curated experiences and instances from Morgan Housel that have helped ch
 Talks about how money is your gateway to status and is different for everyone based on their relationship with money.
 Mentions the phases of having money and how its flows in a spectrum of thoughts.
 
-Phase 1 - Survival Money
-Phase 2 - Freedom Money
-Phase 3 - Power Money
+- Phase 1 - Survival Money
+- Phase 2 - Freedom Money
+- Phase 3 - Power Money
 
 >Money. It’s the greatest story humanity has ever subscribed to, so it will always be a central character in the theater of everyday life. What has changed isn’t money itself, but how it colors the way I view the world.
 
@@ -56,7 +56,7 @@ Phase 3 - Power Money
 
 ### Video for the week
 
-[THow To Operate In A Changing Startup Environment w/ David Sacks](https://youtu.be/xU0F8VZj_cY)
+[How To Operate In A Changing Startup Environment w/ David Sacks](https://youtu.be/xU0F8VZj_cY)
 
 ### Muzic Reccos
 

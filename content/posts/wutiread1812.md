@@ -28,8 +28,6 @@ Covers how the best leaders are both demanding and supportive and why these qual
 
 ### [Link](https://rkg.blog/demanding.php)
 
-> Sometimes we have to take the punch of regret, in order to stop our life from being wasted.
-
 ## [#2 Ideas that changed my life by Morgan Housel](https://collabfund.com/blog/ideas-that-changed-my-life/)
 
 ![image](https://user-images.githubusercontent.com/29366864/208315393-059bfe18-aec5-4f67-9225-7ef8eb0d70c1.png)

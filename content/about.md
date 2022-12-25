@@ -9,25 +9,23 @@ aliases = ["about","about me","contact"]
 ```console
 #!/usr/bin/env bash
 echo "Shagun Attri"
-Employed at = Sennovate Inc
+Employed at = ArmorCode
 Role = Associate Product Manager
-University = SRM Institute of Science and Technology
-From = India
 Hobbies = Photography, Writing, Travel
 Sports = NBA, F1, Cricket
 ```
 
 ## About Me
 
-Hi, I'm Shagun - Associate Product Manager at [Sennovate](https://sennovate.com).
+Hi, I'm Shagun - Associate Product Manager at [ArmorCode](https://armorcode.com).
 
-My interests are in product management and building security products. I'm currently building B2B products in the cybersecurity space for Identity and Access Management(IAM) and Security Operations Center(SOC) categories to optimize for better distribution and accelerate growth for Sennovate.
+My interests are in product management and building security products. I'm currently building B2B products in the cybersecurity space for AppSecOps to optimize for better distribution and accelerate growth for the ArmorCode Platform.
 
 I now settle with ~~Arch Linux~~ MacBook for work at this moment. My setup details are covered [here](https://shagun.xyz/posts/setup/).
 
 ## This blog
 
-Articles published on this site are electronic snapshots of my learnings with exciting insights.
+Articles published on this site are digital snapshots of my learnings with "exciting" insights.
 
 I write code at times. My projects are available on
 [GitHub](https://github.com/shagunattri).

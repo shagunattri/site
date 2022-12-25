@@ -36,7 +36,7 @@ paginate = 10
   defaultTheme = "dark"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "site covering product management and cybersecurity - shagun's digital 🏡"
+  homeSubtitle = "site covering product management, cybersecurity and ... - shagun's digital 🏡"
   keywords = "infosec, product management"
   images = "https://avatars.githubusercontent.com/u/29366864?s=400&v=4"
   contentTypeName = "posts"

@@ -81,6 +81,3 @@ paginate = 10
   [[params.social]]
     name = "github"
     url  = "https://github.com/shagunattri"
-  [[params.social]]
-    name = "spotify"
-    url  = "https://open.spotify.com/user/11twx4n57awx31ahsskdsqo00?si=c0c5f25637684ea5"    

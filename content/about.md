@@ -19,7 +19,7 @@ Sports = NBA, F1, Cricket
 
 Hi, I'm Shagun - Associate Product Manager at [ArmorCode](https://armorcode.com).
 
-My interests are in product management and building security products. I'm currently building B2B products in the cybersecurity space for AppSecOps to optimize for better distribution and accelerate growth for the ArmorCode Platform.
+My interests are in product management and building security products. I'm currently building B2B products in the cybersecurity space for AppSecOps to optimize for better distribution,usage,adoption and accelerate growth for the ArmorCode Platform.
 
 I now settle with ~~Arch Linux~~ MacBook for work at this moment. My setup details are covered [here](https://shagun.xyz/posts/setup/).
 

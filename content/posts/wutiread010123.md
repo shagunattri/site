@@ -22,12 +22,11 @@ aliases:
 
 It's 2023 already, excited for what's to come!👻
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">New Year’s Day is our collective birthday. Happy birthday!</p>&mdash; Balaji (@balajis) <a href="https://twitter.com/balajis/status/1609395476994064386?ref_src=twsrc%5Etfw">January 1, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+![HNY](https://user-images.githubusercontent.com/29366864/210183960-4d075383-6738-4465-8429-e39eb8154fb3.png)
 
 ## [#1 Why and how to write things on the Internet](https://www.benkuhn.net/writing/#set-up-your-blog)
 
-![thumbnail](https://pbs.twimg.com/media/FlLe0kIWIAA0DiO?format=jpg&name=orig)
+![thumbnail](https://user-images.githubusercontent.com/29366864/210183903-5b74f19b-5420-4c09-8f67-4e67513ef05b.png)
 
 With writing being more and more part of my day, it is important to get those writing muscles in the best shape. Writing a blog or writing in general is a process in itself. First figure out what you want to write and then make it interesting and not divert from the original topic.
 
@@ -43,7 +42,7 @@ Few tips mentioned on why to write on the internet:
 
 ## [#2 Maintaining momentum](https://tbenthompson.com/post/maintaining_momentum/)
 
-![image](https://user-images.githubusercontent.com/29366864/210183755-c63283e9-652e-4a38-adb4-91495e9e2c67.png)
+![image](https://user-images.githubusercontent.com/29366864/210183926-a29da104-f236-4858-9d3e-19c25b894093.png)
 
 Maintaining momentum with peers in a work-from-home setting is harder than working under the same roof and being able to share ideas and get quick feedback on work. Ben covers how having close co-collaborators at work can help maintain momentum. Other ideas that help maintain momentum are:
 - Do projects for people
@@ -80,7 +79,8 @@ An exhaustive list of things you can do to optimize across all aspects of your d
  
 ### Muzic Recommends
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4iZ4pt7kvcaH6Yo8UoZ4s2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+![Album Cover](https://t2.genius.com/unsafe/441x441/https%3A%2F%2Fimages.genius.com%2Fcde31e780d76c90305bc02d73bf4640b.1000x1000x1.png)
+[Snooze by SZA - SOS](https://open.spotify.com/track/4iZ4pt7kvcaH6Yo8UoZ4s2?si=5df119119c5246cb)
 
 SZA delivers it again after a long wait, worth it tho - 👌 album. Cold, brutual and hitting.
 

@@ -82,7 +82,7 @@ An exhaustive list of things you can do to optimize across all aspects of your d
 ![Album Cover](https://t2.genius.com/unsafe/441x441/https%3A%2F%2Fimages.genius.com%2Fcde31e780d76c90305bc02d73bf4640b.1000x1000x1.png)
 [Snooze by SZA - SOS](https://open.spotify.com/track/4iZ4pt7kvcaH6Yo8UoZ4s2?si=5df119119c5246cb)
 
-SZA delivers it again after a long wait, worth it tho - 👌 album. Cold, brutual and hitting.
+SZA delivers it again after a long wait, worth it tho - 👌 album. Cold, brutal and hitting.
 
 Till next time,
 ✌️

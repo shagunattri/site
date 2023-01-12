@@ -1,9 +1,9 @@
 ---
 author:
   name: "Shagun attri"
-date: 2023-01-13
+date: 2023-01-12
 linktitle: beta
-title: The problem with JarApp!
+title: The problems with JarAppHQ!
 type:
 - post
 - posts
@@ -12,10 +12,10 @@ series:
 categories:
   - pm
 tags:
-  - jarapp
-  - products
+  - product
+  - review
 aliases:
-- /blog/r7/
+- /blog/jarapp/
 ---
 
 ### Jar's Core Insights

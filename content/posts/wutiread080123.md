@@ -3,7 +3,7 @@ author:
   name: "Shagun attri"
 date: 2023-01-08
 linktitle: beta
-title: Habits, Philosophy and Branding - 08/01
+title: Habits, Philosophy and Branding
 type:
 - post
 - posts

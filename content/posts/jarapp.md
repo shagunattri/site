@@ -3,7 +3,7 @@ author:
   name: "Shagun attri"
 date: 2023-01-12
 linktitle: beta
-title: The problems with JarAppHQ!
+title: My Beef with JarApp and ways to improve!
 type:
 - post
 - posts

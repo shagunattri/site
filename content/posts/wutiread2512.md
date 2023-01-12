@@ -3,7 +3,7 @@ author:
   name: "Shagun attri"
 date: 2022-12-25
 linktitle: beta
-title: What I read this week - 25/12
+title: Marketing Cycle, Porter's Strategies and Character Alarms
 type:
 - post
 - posts

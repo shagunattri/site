@@ -3,7 +3,7 @@ author:
   name: "Shagun attri"
 date: 2022-12-11
 linktitle: beta
-title: What I read this week - 11/12
+title: Sunk Cost Fallacy, Twitter and Product Decisions
 type:
 - post
 - posts

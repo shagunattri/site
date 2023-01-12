@@ -3,7 +3,7 @@ author:
   name: "Shagun attri"
 date: 2022-12-18
 linktitle: beta
-title: What I read this week - 18/12
+title: Great Leader Demands, Ideas and Megaphone Money 
 type:
 - post
 - posts

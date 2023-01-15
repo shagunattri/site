@@ -16,6 +16,7 @@ tags:
 aliases:
 - /blog/passwords/
 ---
+
 ### Password breaches and it's Types
 
 As a Developer and software engineer it is always a priority to make the perfect software solution with the best security policies implemented.

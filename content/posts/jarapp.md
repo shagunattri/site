@@ -1,7 +1,7 @@
 ---
 author:
   name: "Shagun attri"
-date: 2023-01-12
+date: 2023-01-13
 linktitle: beta
 title: My Beef with JarApp and ways to improve!
 type:
@@ -18,19 +18,22 @@ aliases:
 - /blog/jarapp/
 ---
 
-### Jar's Core Insights
+Jar brings conventional gold investment that is now trusted for generations to the digital world with a simple usecase to solve for - make investing in digital gold seamless and easy.
 
-A lot of the Indian population grew up in a small town, aspirational, and watched their heroes flaunt everything in movies, saw their cousins from tier-one cities flaunt everything, and wanted all those things, but they could never afford one.
-
-With money:
-No one taught us how to behave with money.
-No one taught us how to build the right habits and right relationships with money.
-No one taught us to discipline around money. 
-
-JarApp brings conventional investment type - gold online with gamification and the ability to invest with ease - availing rewards and purchasing gold in the process in the simplest way possible.
+Jar added features with gamification and ability to invest with ease by availing rewards and purchasing gold in the process in the simplest way possible.
 
 It helps invest in a habit that can then be automated with the help of AutoPay.
 
+### Jar's Core Insights
+
+A lot of the Indian population from Tier 2/3 region have always dreamed of making it big, having watched heroes flaunt money in movies, their cousins from Tier 1 cities flaunting brands, and wanted all those things, but could never afford one.
+
+With money,:
+- No one taught us how to behave with money.
+- No one taught us how to build the right habits and relationships.
+- No one taught us discipline around money. 
+
+Jar main intention was to bring the concept of investing to the masses and define the ability for
 ### Here's my beef with JarApp
 
 The JarApp has a lot of features that are rare for me at least to use and manage my goal of releasing input every.
@@ -45,7 +48,7 @@ The JarApp has a lot of features that are rare for me at least to use and manage
 - recently funded
 - Helps build habits
 - rewards users
-- simple and sleek UI
+- simple and sleek UI inspired from CRED neumorphism
 - crazy numbers
 - do the simple basics right
 

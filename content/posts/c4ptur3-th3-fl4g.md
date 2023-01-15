@@ -10,7 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - ctf
+  - security
 tags:
   - ctf
   - thm

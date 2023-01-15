@@ -21,8 +21,6 @@ aliases:
 
  Malicious actors have been using specially crafted tools to collect information (like the police have search tools across a number of databases) and data companies collect so much information about us that a lot of free tools (OSINT) can be used to collect that information.
  
- 
- 
  ``` So, what does an innocent individual have in their arsenal to defend himself?  Knowing what information is out there using OSINT tools.```
 
 

@@ -21,7 +21,7 @@ Started picking up books to read. This section of the site is dedicated to writi
 
 The goal is to read a book every month. Let's see.
 
-![GoodReads](https://www.goodreads.com/user/show/69167061-shagun-attri)
+[GoodReads](https://www.goodreads.com/user/show/69167061-shagun-attri)
 
 ### List of Books I've read
 

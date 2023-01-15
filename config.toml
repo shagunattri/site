@@ -58,16 +58,15 @@ paginate = 10
  [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/blog/"
-  [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about/"
+    url        = "/posts/"
   [[menu.main]]
     identifier = "books"
     name       = "Bookshelf"
     url        = "/blog/bookshelf"
-    
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
 
   
   [[params.social]]

@@ -10,9 +10,10 @@ type:
 weight: 10
 series:
 categories:
-  - devops
+  - dev
 tags:
   - cloud
+  - devops
 aliases:
 - /blog/dockerarchitecture/
 ---

@@ -11,8 +11,8 @@ aliases = ["about","about me","contact"]
 echo "Shagun Attri"
 Employed at = ArmorCode
 Role = Associate Product Manager
-Hobbies = Photography, Writing, Travel
-Sports = NBA, F1, Cricket
+Hobbies = Photography, Writing, Reading, Travel
+Sports = NBA, F1, Cricket, Football
 ```
 
 ## About Me

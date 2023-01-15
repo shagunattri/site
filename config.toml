@@ -58,7 +58,7 @@ paginate = 10
  [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/posts/"
+    url        = "/blog/"
   [[menu.main]]
     identifier = "about"
     name       = "About"
@@ -66,7 +66,7 @@ paginate = 10
   [[menu.main]]
     identifier = "books"
     name       = "Bookshelf"
-    url        = "/bookshelf/"
+    url        = "/blog/bookshelf"
     
 
   

@@ -32,6 +32,6 @@ The goal is to read a book every month. Let's see.
 - Working Backwards `Colin Bryar and Bill Carr`
 - Good to Great `Jim Collins`
 - Zero to One `Peter Theil`
-- Mindset `Dr. Carol S. Dweck` [Currently Reading]
+- Mindset `Dr. Carol S. Dweck` 🔖
 - Don't Shut Up! `Prakhar Gupta`
-- Totochan `Tetsuko Kuroyanagi` [Currently Reading]
+- Totochan `Tetsuko Kuroyanagi` 🔖

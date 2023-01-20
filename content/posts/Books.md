@@ -25,13 +25,16 @@ The goal is to read a book every month. Let's see.
 
 ### List of Books I've read
 
-- Everyone has a Story `Savi Sharma`
-- Two Billion Heart Beats `MN Raju`
-- Hit Refresh `Satya Nadella`
-- Midnight Machines `Arun Mohan Sukumar`
-- Working Backwards `Colin Bryar and Bill Carr`
-- Good to Great `Jim Collins`
-- Zero to One `Peter Theil`
-- Mindset `Dr. Carol S. Dweck` 🔖
-- Don't Shut Up! `Prakhar Gupta`
-- Totochan `Tetsuko Kuroyanagi` 🔖
+| Book | Author| Ratings |
+|-----|------|-------|
+| Everyone has a Story | `Savi Sharma` | ⭐️⭐️⭐️ |
+| Two Billion Heart Beats | `MN Raju` | ⭐️⭐️⭐️⭐️ |
+| Hit Refresh | `Satya Nadella` | ⭐️⭐️⭐️⭐️ |
+| Midnight Machines |  `Arun Mohan Sukumar` | ⭐️⭐️⭐️ |
+| Working Backwards |  `Colin Bryar and Bill Carr` | ⭐️⭐️⭐️⭐️ |
+| Good to Great | `Jim Collins` | ⭐️⭐️⭐️ |
+| Zero to One | `Peter Theil` | ⭐️⭐️⭐️⭐️ |
+| Mindset | `Dr. Carol S. Dweck` | ⭐️⭐️ |
+| Don't Shut Up! | `Prakhar Gupta` | ⭐️⭐️⭐️ |
+| Totochan | `Tetsuko Kuroyanagi` 🔖 | ⭐️⭐️⭐️⭐️ |
+| Invisible Cities | `Italo Calvino` 🔖 | ⭐️⭐️⭐️ |

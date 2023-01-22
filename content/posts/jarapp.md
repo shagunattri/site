@@ -84,3 +84,11 @@ Another eg of gamification and forming habits for users is with Apple Fitness Ri
 - Expand and allow to make rules on gold investments based on transaction triggers
 - Provide a better overview and transaction state of affairs with recommendations
 - Reduce the wasted white space across pages
+
+### Final Thoughts
+
+- The JarApp will need more robust habit building features to solve for Daily Savings habit building.
+- The usecases are limited but will need findings problems that are regular among massess.
+- Super apps like Paytm, PhonePe and others can just build the same feature and beat them.
+- Need to incentivise usage with features they offer.
+- Build better journeys for delighting customers.

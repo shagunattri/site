@@ -3,9 +3,17 @@
 - Hubspot
 - Twitter
 - Instagram
+- ArmorCode
+- Okta
+- Cron
+- Twitter
+- 
 
-- Cred(too many gimmicks, but works for its segment - though need revamp to justify valuation and improve prod. features)
 
+My criteria for fav products
 
+the goods and bads for each
 
 the key to good products
+
+A dream product

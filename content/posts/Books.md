@@ -37,4 +37,4 @@ The goal is to read a book every month. Let's see.
 | [Mindset](https://www.goodreads.com/book/show/40745.Mindset) | `Dr. Carol S. Dweck` | ⭐️⭐️ |
 | [Don't Shut Up!](https://www.goodreads.com/book/show/62910347-don-t-shut-up) | `Prakhar Gupta` | ⭐️⭐️⭐️ |
 | [Totochan](https://www.goodreads.com/book/show/328802.Totto_chan) | `Tetsuko Kuroyanagi` 🔖 | ⭐️⭐️⭐️⭐️ |
-| [Invisible Cities](https://www.goodreads.com/book/show/9809.Invisible_Cities) | `Italo Calvino` 🔖 | ⭐️⭐️⭐️ |
+| [Invisible Cities](https://www.goodreads.com/book/show/9809.Invisible_Cities) | `Italo Calvino` | ~ |

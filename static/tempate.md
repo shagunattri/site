@@ -11,7 +11,6 @@ weight: 10
 series:
 categories:
   - reads
-  - XX
 tags:
   - links
   - Sunday

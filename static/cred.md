@@ -3,7 +3,7 @@ author:
   name: "Shagun attri"
 date: 2023-XX-XX
 linktitle: beta
-title: The CRED Blackhole
+title: The CRED Blackhole 
 type:
 - post
 - posts
@@ -42,4 +42,6 @@ aliases:
         - the cred team will not be able to figure out what to do with all these resources and only the founders and their founding team can get them out of this blackhole
         - They will probably look to incentivise some govt. scheme or policy change and capture the market through that - see their credit card solution
         - exclusivity works to a certain scale and audience, but beyond that you have to diversify and it is a delicate balance you have to deal with between numbers for growth and dilution of the experience and the quality  for the masses.
-        - 
+
+
+### The piece with CRED Coins

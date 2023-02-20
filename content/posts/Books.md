@@ -38,3 +38,4 @@ The goal is to read a book every month. Let's see.
 | [Don't Shut Up!](https://www.goodreads.com/book/show/62910347-don-t-shut-up) | `Prakhar Gupta` | ⭐️⭐️⭐️ |
 | [Totochan](https://www.goodreads.com/book/show/328802.Totto_chan) | `Tetsuko Kuroyanagi` 🔖 | ⭐️⭐️⭐️⭐️ |
 | [Invisible Cities](https://www.goodreads.com/book/show/9809.Invisible_Cities) | `Italo Calvino` | ~ |
+| [Love in the time of Cholera](https://www.goodreads.com/book/show/9809.Invisible_Cities) | `Gabriel García Márquez` | ⭐️⭐️⭐️ |

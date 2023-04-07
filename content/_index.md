@@ -10,3 +10,5 @@ framed: true
 ## Shagun Attri - Digital Home 🏡
 
 Welcome to the site with infomation ranging from product mangagement, interesting reads, essays, cybersecurity and persnoal notes.
+
+[https://linktr.ee/shagunattri](https://linktr.ee/shagunattri) to know more.

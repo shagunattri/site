@@ -10,7 +10,7 @@ type:
 weight: 10
 series:
 categories:
-  - security
+  - sec
 tags:
   - Digital Privacy
   - Online Attacks

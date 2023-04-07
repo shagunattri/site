@@ -3,14 +3,14 @@ author:
   name: "Shagun attri"
 date: 2020-07-06
 linktitle: 14-06-2020
-title: Shell Scripting-101
+title: Shell Scripting - 101
 type:
 - post
 - posts
 weight: 10
 series:
 categories:
-  - security
+  - sec
 tags:
   - nix
 aliases:

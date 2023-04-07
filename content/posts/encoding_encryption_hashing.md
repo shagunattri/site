@@ -12,7 +12,7 @@ type:
 weight: 10
 series:
 categories:
-  - security
+  - sec
 tags:
   - Encoding
   - Encryption

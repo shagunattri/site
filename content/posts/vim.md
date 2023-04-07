@@ -32,7 +32,6 @@ Initially vim might make you slow with your work and you’ll be frustrated but 
 
 It starts up in normal mode and key combinations help change the modes.
 
-
 *Vim’s interface itself is a programming language*
 
 The end result is an editor that lets you

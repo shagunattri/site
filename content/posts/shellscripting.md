@@ -18,7 +18,6 @@ aliases:
 ---
 ## Shell Scripting
 
-
 Shell scripting is an important utility to improve your workflow and automate tasks.
 
 Check out my [Understanding the shell](../shell) blogpost to understand the basics of shell.

@@ -1,5 +1,5 @@
 ---
-title: "Aditya Saligrama"
+title: "Shagun Attri"
 draft: false
 image: ""
 framed: true
@@ -7,8 +7,8 @@ framed: true
 
 {{< image src="https://user-images.githubusercontent.com/29366864/230671438-42a51d8f-fee9-4d84-924b-ae6bff2adb33.jpeg" alt="shagun attri" position="center" style="border-radius: 8px;" >}}
 
-## Shagun Attri - Digital Home 🏡
+## shagun's digital home 🏡
 
-Welcome to the site with infomation ranging from product mangagement, interesting reads, essays, cybersecurity and persnoal notes.
+this site contains essays and reads ranging from psychology, technology, product mangagement, cybersecurity and notes.
 
-[https://linktr.ee/shagunattri](https://linktr.ee/shagunattri) to know more.
+To know more, 👉[🔗](https://linktr.ee/shagunattri)👈

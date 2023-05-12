@@ -29,7 +29,7 @@ From empowering globalisation, to you reading this essay, internet has simplifie
 
 But internet is not a garden where it's all rosy and happy, it can be a dark place too. A large part of the internet is not indexed and visible in your search results. Exploring these sites is a rabbit hole in itself.
 
-Look at hobby fishermen for a moment, when they are out fishing, they scout locations, check the type of water, what type of fish breed in them and then pick the spot to fish for the day, scouting these locations is similar to how you would find sites on the nternet.
+<!-- Look at hobby fishermen for a moment, when they are out fishing, they scout locations, check the type of water, what type of fish breed in them and then pick the spot to fish for the day, scouting these locations is similar to how you would find sites on the internet. -->
 
 Now with technology you can hide, anonymize, secure information without getting tracked or noticed by anyone. Combine that with the ability to limit your visibilty on the internet by not allowing search engines to index your site. This is a perfect breeding ground for illegal activities leveraging the powers of the internet.
  

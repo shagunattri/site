@@ -37,7 +37,7 @@ aliases:
   - Headphones of choice cause why not
   - Great audio and mic quality for office meetings so my Bluetooth headphones don't give up in the middle of a meeting.
 - Logitech Pebble Mouse
-  - Great mic
+  - Great mice
   - Feels odd at first but great ergonimics once you get used to it
   - No noise click - helps work late in the night
 - Syska LED Lamp

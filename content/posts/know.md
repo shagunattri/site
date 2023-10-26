@@ -1,8 +1,8 @@
 ---
 author:
   name: "Shagun attri"
-date: 2020-06-14
-linktitle: 14-06-2020
+date: 26-10-2023
+linktitle: 26-10-2023
 title: How todo it?
 type:
 - post

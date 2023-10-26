@@ -1,8 +1,8 @@
 ---
 author:
   name: "Shagun attri"
-date: 26-10-2023
-linktitle: 26-10-2023
+date: 2023-10-26
+linktitle: doit
 title: How todo it?
 type:
 - post
@@ -16,7 +16,7 @@ tags:
   - progress
   - status
 aliases:
-- /blog/26-10-2023/
+- /blog/doit/
 ---
 ### How to Know?
 

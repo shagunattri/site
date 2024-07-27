@@ -52,23 +52,20 @@ paginate = 10
     readOtherPosts = "← Prev | Read more | Next →"
 
     [languages.en.params.logo]
-      logoText = "shagun attri"
+      logoText = "Knownsense Labs"
       logoHomeLink = "/"
-
- [[menu.main]]
+  
+[menu]
+   [[menu.main]]
     identifier = "blog"
-    name       = "Blog"
-    url        = "/posts/"
-  [[menu.main]]
-    identifier = "books"
-    name       = "Bookshelf"
-    url        = "/blog/bookshelf"
+    name       = "blog"
+    url        = "/blog/"
   [[menu.main]]
     identifier = "about"
-    name       = "About"
-    url        = "/about/"
+    name       = "whoami"
+    url        = "about/"
 
-  
+
   [[params.social]]
     name = "email"
     url  = "mailto:mail@shagun.xyz"

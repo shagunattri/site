@@ -1,5 +1,5 @@
 +++
-title = "About"
+title = "$whoami"
 date = "2014-04-09"
 aliases = ["about","about me","contact"]
 [ author ]
@@ -7,16 +7,14 @@ aliases = ["about","about me","contact"]
 +++
 
 ```console
-#!/usr/bin/env bash
 echo "Shagun Attri"
-Hobbies = Photography, Writing, Reading, Travel
-Sports = NBA, F1, Cricket, Football, Badminton
-Role = Associate PM
+Interests = Products, SaaS, Startups, B2B
+Hobbies = Photography, Writing, Travel, Reading
+Sports = F1, Cricket
+Role = PM
 ```
 
-## About Me
-
-Hi, I'm shagun, this site is a digital library to share blogs on trending and insighful products, book reviews, guides and more.
+👋 , I'm shagun, this site is a digital library to share blogs on trending and insighful products, book reviews, guides and more.
 
 Currently working at the intersection of technology and psychology in the product management space and building security products in the B2B space.
 
@@ -32,4 +30,4 @@ I now settle with ~~Arch Linux~~ a Mac for personal use and work. I write code a
 <!-- If you're interested in **hiring me** -- here's my
 [resume](https://d1fdloi71mui9q.cloudfront.net/alpnyzJhQAO4IekxDnNm_Shagun_Attri_Resume.pdf). -->
 
-This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site).
+<!-- This site uses [hugo](https://gohugo.io/) - a static site generator. The source for this website is [here](https://github.com/shagunattri/site). -->

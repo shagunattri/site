@@ -8,12 +8,25 @@
   {{ end }}
   {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
 
+  
+
   {{ if .Content }}
     <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
       {{ .Content }}
     </div>
   {{ end }}
 
+  <div>
+    {{ if .Site.Params.Portrait.Path }}
+       <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+    {{ end }}
+    
+    {{- with .Site.Params.social }}
+        <div>
+            {{ partial "social-icons.html" . }}
+        </div>
+    {{- end }}
+</div>
   {{ if $.Params.showPosts }}
     <div class="posts">
       {{ range $paginator.Pages }}
@@ -52,6 +65,7 @@
         {{ end }}
 
         <div class="post-content">
+          
           {{ with .Description }}
             {{ . | markdownify }}
           {{ else }}
@@ -60,6 +74,7 @@
             {{ end }}
           {{ end }}
         </div>
+
         {{ if not .Params.hideReadMore }}
           <div><a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a></div>
         {{ end }}
@@ -67,5 +82,7 @@
       {{ end }}
       {{ partial "pagination.html" . }}
     </div>
+
+    
   {{ end }}
 {{ end }}

@@ -1,84 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Shagun&#39;s Blog</title>
-    <link>/categories/</link>
-    <description>Recent content in Categories on Shagun&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <title>Categories on Shagun Attri</title>
+    <link>//localhost:1313/categories/</link>
+    <description>Recent content in Categories on Shagun Attri</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 27 Jul 2024 16:10:44 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>security</title>
-      <link>/categories/security/</link>
+      <title>Pm</title>
+      <link>//localhost:1313/categories/pm/</link>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/pm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Essay</title>
+      <link>//localhost:1313/categories/essay/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/essay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reads</title>
+      <link>//localhost:1313/categories/reads/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/reads/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Update</title>
+      <link>//localhost:1313/categories/update/</link>
+      <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/update/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sec</title>
+      <link>//localhost:1313/categories/sec/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/security/</guid>
+      <guid>//localhost:1313/categories/sec/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>books</title>
-      <link>/categories/books/</link>
+      <title>Books</title>
+      <link>//localhost:1313/categories/books/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/books/</guid>
+      <guid>//localhost:1313/categories/books/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>reading</title>
-      <link>/categories/reading/</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/reading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
-      <link>/categories/devops/</link>
+      <title>Dev</title>
+      <link>//localhost:1313/categories/dev/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/devops/</guid>
+      <guid>//localhost:1313/categories/dev/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>ctf</title>
-      <link>/categories/ctf/</link>
-      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ctf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dev</title>
-      <link>/categories/dev/</link>
-      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/dev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nix</title>
-      <link>/categories/nix/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/nix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update</title>
-      <link>/categories/update/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/update/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

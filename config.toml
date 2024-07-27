@@ -1,5 +1,5 @@
 baseurl      = ""
-title        = "shagun's blog."
+title        = "Shagun Attri"
 languageCode = "en-US"
 theme        = "hello-friend-ng"
 DefaultContentLanguage = "en"
@@ -36,25 +36,23 @@ paginate = 10
   defaultTheme = "light"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "site covering product management, cybersecurity and ... - shagun's digital 🏡"
+  homeSubtitle = "Thanks for checking out my blog. Have a great day 🤗"
   keywords = "infosec, product management"
-  images = "https://avatars.githubusercontent.com/u/29366864?s=400&v=4"
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
 
 
 [languages]
   [languages.en]
-    title = "Shagun's 📦"
-    subtitle = ""
-    keywords = ""
-    copyright = "<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>"
-    readOtherPosts = "← Prev | Read more | Next →"
-
-    [languages.en.params.logo]
+    [languages.en.params]
       logoText = "Knownsense Labs"
       logoHomeLink = "/"
-  
+      title = "Shagun's 📦"
+      subtitle = ""
+      keywords = ""
+      copyright = "<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>"
+      readOtherPosts = "← Prev | Read more | Next →"
+
 [menu]
    [[menu.main]]
     identifier = "blog"

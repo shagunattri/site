@@ -1,88 +1,23 @@
+{{ define "body" }}
+    <body class="{{ if .Site.Params.backgroundImage }} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{ else }}"{{ end }}>
+{{ end }}
+
 {{ define "main" }}
-  {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
-  {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
-
-  {{ $PageContext := . }}
-  {{ if .IsHome }}
-    {{ $PageContext = .Site }}
-  {{ end }}
-  {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
-
-  
-
-  {{ if .Content }}
-    <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
-      {{ .Content }}
-    </div>
-  {{ end }}
-
-  <div>
-    {{ if .Site.Params.Portrait.Path }}
-       <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
-    {{ end }}
-    
-    {{- with .Site.Params.social }}
+    <main aria-role="main">
         <div>
-            {{ partial "social-icons.html" . }}
-        </div>
-    {{- end }}
-</div>
-  {{ if $.Params.showPosts }}
-    <div class="posts">
-      {{ range $paginator.Pages }}
-      <article class="post on-list">
-        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-        <div class="post-meta">
-          {{ if .Date }}
-            <time class="post-date">
-              {{ .Date.Format ($.Site.Params.DateFormatList | default "2006-01-02") }}
-            </time>
-
-            {{ if $.Site.Params.LastModDisplay }}
-              {{ partial "lastmod.html" . }}
+            {{ if .Site.Params.Portrait.Path }}
+               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
             {{ end }}
-          {{ end }}
 
-          {{ with .Params.Author }}
-            <span class="post-author">— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>
-          {{ end }}
+            <h1>{{ .Site.Title }}</h1>
 
-          {{ if $.Site.Params.ShowReadingTime }}
-            <span class="post-read-time">— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
-          {{ end }}
+            {{ partial "subtitle.html" . }}
+
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                </div>
+            {{- end }}
         </div>
-
-        {{ if .Params.tags }}
-          <span class="post-tags">
-            {{ range .Params.tags }}
-              <a href="{{ (urlize (printf "tags/%s" . )) | absLangURL }}/">#{{ . }}</a>&nbsp;
-            {{ end }}
-          </span>
-        {{ end }}
-
-        {{ if .Params.Cover }}
-          {{ partial "postcover.html" . }}
-        {{ end }}
-
-        <div class="post-content">
-          
-          {{ with .Description }}
-            {{ . | markdownify }}
-          {{ else }}
-            {{ if .Truncated }}
-              {{ .Summary }}
-            {{ end }}
-          {{ end }}
-        </div>
-
-        {{ if not .Params.hideReadMore }}
-          <div><a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a></div>
-        {{ end }}
-      </article>
-      {{ end }}
-      {{ partial "pagination.html" . }}
-    </div>
-
-    
-  {{ end }}
+    </main>
 {{ end }}

@@ -1,273 +1,300 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Shagun&#39;s Blog</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on Shagun&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>&lt;a href=&#39;https://creativecommons.org/licenses/by/4.0/&#39; target=&#39;_blank&#39;&gt;CC-BY 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <title>Tags on Shagun Attri</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on Shagun Attri</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 27 Jul 2024 16:10:44 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>infosec</title>
-      <link>/tags/infosec/</link>
-      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/infosec/</guid>
+      <title>Fintech</title>
+      <link>//localhost:1313/tags/fintech/</link>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/fintech/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>network security</title>
-      <link>/tags/network-security/</link>
-      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/network-security/</guid>
+      <title>Pm</title>
+      <link>//localhost:1313/tags/pm/</link>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/pm/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>reading</title>
-      <link>/tags/reading/</link>
+      <title>Products</title>
+      <link>//localhost:1313/tags/products/</link>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/products/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Progress</title>
+      <link>//localhost:1313/tags/progress/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/progress/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Status</title>
+      <link>//localhost:1313/tags/status/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/status/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Update</title>
+      <link>//localhost:1313/tags/update/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/update/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Roles</title>
+      <link>//localhost:1313/tags/roles/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/roles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Essay</title>
+      <link>//localhost:1313/tags/essay/</link>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/essay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Links</title>
+      <link>//localhost:1313/tags/links/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/links/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sunday</title>
+      <link>//localhost:1313/tags/sunday/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/sunday/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Product</title>
+      <link>//localhost:1313/tags/product/</link>
+      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/product/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Review</title>
+      <link>//localhost:1313/tags/review/</link>
+      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/review/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Beta</title>
+      <link>//localhost:1313/tags/beta/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/beta/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Launch</title>
+      <link>//localhost:1313/tags/launch/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/launch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infosec</title>
+      <link>//localhost:1313/tags/infosec/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/infosec/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network Security</title>
+      <link>//localhost:1313/tags/network-security/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/network-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reading</title>
+      <link>//localhost:1313/tags/reading/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/reading/</guid>
+      <guid>//localhost:1313/tags/reading/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>passwords</title>
-      <link>/tags/passwords/</link>
+      <title>Passwords</title>
+      <link>//localhost:1313/tags/passwords/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/passwords/</guid>
+      <guid>//localhost:1313/tags/passwords/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cloud</title>
-      <link>/tags/cloud/</link>
+      <title>Cloud</title>
+      <link>//localhost:1313/tags/cloud/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cloud/</guid>
+      <guid>//localhost:1313/tags/cloud/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Devops</title>
+      <link>//localhost:1313/tags/devops/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/devops/</guid>
+      <description></description>
+    </item>
     <item>
       <title>101</title>
-      <link>/tags/101/</link>
+      <link>//localhost:1313/tags/101/</link>
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/101/</guid>
+      <guid>//localhost:1313/tags/101/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>printer hacking</title>
-      <link>/tags/printer-hacking/</link>
+      <title>Printer Hacking</title>
+      <link>//localhost:1313/tags/printer-hacking/</link>
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/printer-hacking/</guid>
+      <guid>//localhost:1313/tags/printer-hacking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>thm</title>
-      <link>/tags/thm/</link>
+      <title>Thm</title>
+      <link>//localhost:1313/tags/thm/</link>
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/thm/</guid>
+      <guid>//localhost:1313/tags/thm/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ctf</title>
-      <link>/tags/ctf/</link>
+      <title>Ctf</title>
+      <link>//localhost:1313/tags/ctf/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ctf/</guid>
+      <guid>//localhost:1313/tags/ctf/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sec</title>
-      <link>/tags/sec/</link>
+      <title>Sec</title>
+      <link>//localhost:1313/tags/sec/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/sec/</guid>
+      <guid>//localhost:1313/tags/sec/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>metasploit</title>
-      <link>/tags/metasploit/</link>
+      <title>Metasploit</title>
+      <link>//localhost:1313/tags/metasploit/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/metasploit/</guid>
+      <guid>//localhost:1313/tags/metasploit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rapid7</title>
-      <link>/tags/rapid7/</link>
+      <title>Rapid7</title>
+      <link>//localhost:1313/tags/rapid7/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rapid7/</guid>
+      <guid>//localhost:1313/tags/rapid7/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dev</title>
-      <link>/tags/dev/</link>
+      <title>Dev</title>
+      <link>//localhost:1313/tags/dev/</link>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/dev/</guid>
+      <guid>//localhost:1313/tags/dev/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nix</title>
-      <link>/tags/nix/</link>
+      <title>Nix</title>
+      <link>//localhost:1313/tags/nix/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/nix/</guid>
+      <guid>//localhost:1313/tags/nix/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>progress</title>
-      <link>/tags/progress/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/progress/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>status</title>
-      <link>/tags/status/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/status/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update</title>
-      <link>/tags/update/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/update/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>FLOSS</title>
-      <link>/tags/floss/</link>
+      <link>//localhost:1313/tags/floss/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/floss/</guid>
+      <guid>//localhost:1313/tags/floss/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>opensource</title>
-      <link>/tags/opensource/</link>
+      <title>Opensource</title>
+      <link>//localhost:1313/tags/opensource/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/opensource/</guid>
+      <guid>//localhost:1313/tags/opensource/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OSS</title>
-      <link>/tags/oss/</link>
+      <link>//localhost:1313/tags/oss/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/oss/</guid>
+      <guid>//localhost:1313/tags/oss/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Encoding</title>
-      <link>/tags/encoding/</link>
+      <link>//localhost:1313/tags/encoding/</link>
       <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/encoding/</guid>
+      <guid>//localhost:1313/tags/encoding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Encryption</title>
-      <link>/tags/encryption/</link>
+      <link>//localhost:1313/tags/encryption/</link>
       <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/encryption/</guid>
+      <guid>//localhost:1313/tags/encryption/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hashing</title>
-      <link>/tags/hashing/</link>
+      <link>//localhost:1313/tags/hashing/</link>
       <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/hashing/</guid>
+      <guid>//localhost:1313/tags/hashing/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Foot Printing</title>
-      <link>/tags/foot-printing/</link>
+      <link>//localhost:1313/tags/foot-printing/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/foot-printing/</guid>
+      <guid>//localhost:1313/tags/foot-printing/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Forensics</title>
-      <link>/tags/forensics/</link>
+      <link>//localhost:1313/tags/forensics/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/forensics/</guid>
+      <guid>//localhost:1313/tags/forensics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OSINT</title>
-      <link>/tags/osint/</link>
+      <link>//localhost:1313/tags/osint/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/osint/</guid>
+      <guid>//localhost:1313/tags/osint/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Digital Privacy</title>
-      <link>/tags/digital-privacy/</link>
+      <link>//localhost:1313/tags/digital-privacy/</link>
       <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/digital-privacy/</guid>
+      <guid>//localhost:1313/tags/digital-privacy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Online Attacks</title>
-      <link>/tags/online-attacks/</link>
+      <link>//localhost:1313/tags/online-attacks/</link>
       <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/online-attacks/</guid>
+      <guid>//localhost:1313/tags/online-attacks/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Surveillance</title>
-      <link>/tags/surveillance/</link>
+      <link>//localhost:1313/tags/surveillance/</link>
       <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/surveillance/</guid>
+      <guid>//localhost:1313/tags/surveillance/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

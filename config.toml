@@ -36,7 +36,7 @@ paginate = 10
   defaultTheme = "light"
   description = "Blog of shagun attri"
   disableReadOtherPosts = false
-  homeSubtitle = "Thanks for checking out my blog. Have a great day 🤗"
+  homeSubtitle = "Unique Perspectives to Transform Cybersecurity!"
   keywords = "infosec, product management"
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
@@ -45,7 +45,7 @@ paginate = 10
 [languages]
   [languages.en]
     [languages.en.params]
-      logoText = "Knownsense Labs"
+      logoText = "Shagun Attri"
       logoHomeLink = "/"
       title = "Shagun's 📦"
       subtitle = ""

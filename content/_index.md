@@ -9,4 +9,4 @@ framed: true
 
 Hi, I am Shagun Attri
 
-Thanks for checking out my blog. Have a great day 🤗
+Trasforming cybersecurity!

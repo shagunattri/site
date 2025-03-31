@@ -2,60 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Shagun Attri</title>
-    <link>/categories/</link>
+    <link>//localhost:1313/categories/</link>
     <description>Recent content in Categories on Shagun Attri</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 27 Jul 2024 16:10:44 +0530</lastBuildDate>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security</title>
+      <link>//localhost:1313/categories/security/</link>
+      <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/security/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Pm</title>
-      <link>/categories/pm/</link>
+      <link>//localhost:1313/categories/pm/</link>
       <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>/categories/pm/</guid>
+      <guid>//localhost:1313/categories/pm/</guid>
       <description></description>
     </item>
     <item>
       <title>Essay</title>
-      <link>/categories/essay/</link>
+      <link>//localhost:1313/categories/essay/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/categories/essay/</guid>
+      <guid>//localhost:1313/categories/essay/</guid>
       <description></description>
     </item>
     <item>
       <title>Reads</title>
-      <link>/categories/reads/</link>
+      <link>//localhost:1313/categories/reads/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>/categories/reads/</guid>
+      <guid>//localhost:1313/categories/reads/</guid>
       <description></description>
     </item>
     <item>
       <title>Update</title>
-      <link>/categories/update/</link>
+      <link>//localhost:1313/categories/update/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>/categories/update/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sec</title>
-      <link>/categories/sec/</link>
-      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>/categories/sec/</guid>
+      <guid>//localhost:1313/categories/update/</guid>
       <description></description>
     </item>
     <item>
       <title>Books</title>
-      <link>/categories/books/</link>
+      <link>//localhost:1313/categories/books/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>/categories/books/</guid>
+      <guid>//localhost:1313/categories/books/</guid>
       <description></description>
     </item>
     <item>
       <title>Dev</title>
-      <link>/categories/dev/</link>
+      <link>//localhost:1313/categories/dev/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/categories/dev/</guid>
+      <guid>//localhost:1313/categories/dev/</guid>
       <description></description>
     </item>
   </channel>

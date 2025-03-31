@@ -2,287 +2,290 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/blog/cred/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/blog/wiz/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/know/</loc>
+    <loc>//localhost:1313/blog/cred/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/amazon_search/</loc>
+    <loc>//localhost:1313/blog/know/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/polishing_products/</loc>
+    <loc>//localhost:1313/blog/amazon_search/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/12-05.23/</loc>
+    <loc>//localhost:1313/blog/polishing_products/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/04-05-23/</loc>
+    <loc>//localhost:1313/blog/12-05.23/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/phishing/</loc>
+    <loc>//localhost:1313/blog/04-05-23/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/microsoft/</loc>
+    <loc>//localhost:1313/blog/phishing/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/31-03-23/</loc>
+    <loc>//localhost:1313/blog/microsoft/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/21-02-23/</loc>
+    <loc>//localhost:1313/blog/31-03-23/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/10-02-23/</loc>
+    <loc>//localhost:1313/blog/21-02-23/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/15-01-23/</loc>
+    <loc>//localhost:1313/blog/10-02-23/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/jarapp/</loc>
+    <loc>//localhost:1313/blog/15-01-23/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/wutiread080123/</loc>
+    <loc>//localhost:1313/blog/jarapp/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/wutiread010123/</loc>
+    <loc>//localhost:1313/blog/wutiread080123/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/wutiread2512/</loc>
+    <loc>//localhost:1313/blog/wutiread010123/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/wutiread1812/</loc>
+    <loc>//localhost:1313/blog/wutiread2512/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/wutiread1112/</loc>
+    <loc>//localhost:1313/blog/wutiread1812/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/wutiread412/</loc>
+    <loc>//localhost:1313/blog/wutiread1112/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/beta/</loc>
+    <loc>//localhost:1313/blog/wutiread412/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/setup/</loc>
+    <loc>//localhost:1313/blog/beta/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/networksecurity/</loc>
+    <loc>//localhost:1313/blog/setup/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/books/</loc>
+    <loc>//localhost:1313/blog/networksecurity/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/passwordtips/</loc>
+    <loc>//localhost:1313/blog/books/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/dockerarchitechture/</loc>
+    <loc>//localhost:1313/blog/passwordtips/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/containerization/</loc>
+    <loc>//localhost:1313/blog/dockerarchitechture/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/docker/</loc>
+    <loc>//localhost:1313/blog/containerization/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/printerhacking101/</loc>
+    <loc>//localhost:1313/blog/docker/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/c4ptur3-th3-fl4g/</loc>
+    <loc>//localhost:1313/blog/printerhacking101/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/passwordbreaches/</loc>
+    <loc>//localhost:1313/blog/c4ptur3-th3-fl4g/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/metasploit/</loc>
+    <loc>//localhost:1313/blog/passwordbreaches/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/vcs/</loc>
+    <loc>//localhost:1313/blog/metasploit/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/vim/</loc>
+    <loc>//localhost:1313/blog/vcs/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/shellscripting/</loc>
+    <loc>//localhost:1313/blog/vim/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/shell/</loc>
+    <loc>//localhost:1313/blog/shellscripting/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/14-06-2020/</loc>
+    <loc>//localhost:1313/blog/shell/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/opensource/</loc>
+    <loc>//localhost:1313/blog/14-06-2020/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/encoding_encryption_hashing/</loc>
+    <loc>//localhost:1313/blog/opensource/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/osint/</loc>
+    <loc>//localhost:1313/blog/encoding_encryption_hashing/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/protecting_your_digital_self/</loc>
+    <loc>//localhost:1313/blog/osint/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/blog/</loc>
+    <loc>//localhost:1313/blog/protecting_your_digital_self/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/blog/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/fintech/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/pm/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/tags/pm/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/pm/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/tags/products/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/products/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/tags/security/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2024-07-27T16:10:44+05:30</lastmod>
+    <loc>//localhost:1313/categories/security/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2025-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/essay/</loc>
+    <loc>//localhost:1313/tags/fintech/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/progress/</loc>
+    <loc>//localhost:1313/categories/pm/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/status/</loc>
+    <loc>//localhost:1313/categories/essay/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/update/</loc>
+    <loc>//localhost:1313/tags/progress/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/roles/</loc>
+    <loc>//localhost:1313/tags/status/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/essay/</loc>
+    <loc>//localhost:1313/tags/update/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/links/</loc>
+    <loc>//localhost:1313/tags/roles/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/sunday/</loc>
+    <loc>//localhost:1313/tags/essay/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/categories/reads/</loc>
+    <loc>//localhost:1313/tags/links/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/product/</loc>
+    <loc>//localhost:1313/tags/sunday/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/review/</loc>
+    <loc>//localhost:1313/categories/reads/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/beta/</loc>
+    <loc>//localhost:1313/tags/product/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/launch/</loc>
+    <loc>//localhost:1313/tags/review/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/categories/update/</loc>
+    <loc>//localhost:1313/tags/beta/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/infosec/</loc>
+    <loc>//localhost:1313/tags/launch/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/network-security/</loc>
+    <loc>//localhost:1313/categories/update/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/categories/sec/</loc>
+    <loc>//localhost:1313/tags/infosec/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/categories/books/</loc>
+    <loc>//localhost:1313/tags/network-security/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/reading/</loc>
+    <loc>//localhost:1313/categories/books/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/passwords/</loc>
+    <loc>//localhost:1313/tags/reading/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/cloud/</loc>
+    <loc>//localhost:1313/tags/passwords/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/categories/dev/</loc>
+    <loc>//localhost:1313/tags/cloud/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/devops/</loc>
+    <loc>//localhost:1313/categories/dev/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/101/</loc>
+    <loc>//localhost:1313/tags/devops/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/printer-hacking/</loc>
+    <loc>//localhost:1313/tags/101/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/thm/</loc>
+    <loc>//localhost:1313/tags/printer-hacking/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/ctf/</loc>
+    <loc>//localhost:1313/tags/thm/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/sec/</loc>
+    <loc>//localhost:1313/tags/ctf/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/metasploit/</loc>
+    <loc>//localhost:1313/tags/metasploit/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/rapid7/</loc>
+    <loc>//localhost:1313/tags/rapid7/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/dev/</loc>
+    <loc>//localhost:1313/tags/dev/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/nix/</loc>
+    <loc>//localhost:1313/tags/nix/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/floss/</loc>
+    <loc>//localhost:1313/tags/floss/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/opensource/</loc>
+    <loc>//localhost:1313/tags/opensource/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/oss/</loc>
+    <loc>//localhost:1313/tags/oss/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/encoding/</loc>
+    <loc>//localhost:1313/tags/encoding/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/encryption/</loc>
+    <loc>//localhost:1313/tags/encryption/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/hashing/</loc>
+    <loc>//localhost:1313/tags/hashing/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/foot-printing/</loc>
+    <loc>//localhost:1313/tags/foot-printing/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/forensics/</loc>
+    <loc>//localhost:1313/tags/forensics/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/osint/</loc>
+    <loc>//localhost:1313/tags/osint/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/digital-privacy/</loc>
+    <loc>//localhost:1313/tags/digital-privacy/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/online-attacks/</loc>
+    <loc>//localhost:1313/tags/online-attacks/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/tags/surveillance/</loc>
+    <loc>//localhost:1313/tags/surveillance/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>//localhost:1313/about/</loc>
     <lastmod>2024-07-27T16:10:44+05:30</lastmod>
   </url><url>
-    <loc>/dnd/</loc>
+    <loc>//localhost:1313/dnd/</loc>
   </url><url>
-    <loc>/series/</loc>
+    <loc>//localhost:1313/series/</loc>
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2024-07-27T19:28:10+05:30</lastmod>
   </url>
 </urlset>

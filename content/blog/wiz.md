@@ -31,7 +31,7 @@ Let me share why this deal is so special, from someone who's had a front-row sea
 
 ## Four Friends, Two Startups, and Billions of Dollars
 
-![wiz](https://github-production-user-asset-6210df.s3.amazonaws.com/29366864/428602460-c06338d1-53fa-4760-aa81-2c4024921c45.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T115857Z&X-Amz-Expires=300&X-Amz-Signature=b003f90624de4a9f0a4695a50d7ec994798bb862d217a49c48e292048dcd9b96&X-Amz-SignedHeaders=host)
+![wiz](../../static/image1.png)
 
 Every great tech story starts with brilliant minds coming together, and Wiz's tale begins with four friends who met in the Israeli army back in 2001: Ami Luttwak, Assaf Rappaport, Yinon Costiva, and Roy Reznik.
 
@@ -51,7 +51,7 @@ This philosophy of simplifying complex security challenges would become the foun
 
 ## Watching Wiz Scale: From Zero to $350 Million in Record Time
 
-![Growth chart showing Wiz's unprecedented rise](https://github-production-user-asset-6210df.s3.amazonaws.com/29366864/428603570-509de87d-5315-464d-89de-444e7aa58afc.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T120246Z&X-Amz-Expires=300&X-Amz-Signature=08ce36ec0062e45f2b95a5e0ce2ffce7066089551e04bde959ef5fceaf5f82e7&X-Amz-SignedHeaders=host)
+![Growth chart showing Wiz's unprecedented rise](../../static/image2.png)
 
 When the four founders launched Wiz in January 2020, they weren't just creating another security tool—they were addressing a fundamental problem in cloud security.
 
@@ -76,7 +76,7 @@ This approach earned Wiz the 2023 Global Cloud Security Entrepreneurial Company 
 
 ## Why Google Paid $32 Billion: An Insider's Perspective
 
-![Infographic showing the value proposition](https://github-production-user-asset-6210df.s3.amazonaws.com/29366864/428605223-5bee2bef-9001-48d6-be2b-2f733a4421b4.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T120900Z&X-Amz-Expires=300&X-Amz-Signature=68628a2a272400366a7d6861a73dc4d8081635129c370f61fffaf0e79089d1eb&X-Amz-SignedHeaders=host)
+![Infographic showing the value proposition](../../static/wiz-google.jpeg)
 
 Having collaborated with Wiz on integration efforts, I understand why Google was willing to pay this staggering premium—nearly three times Wiz's last private valuation and more than Google paid for Motorola ($12 billion in 2012).
 
@@ -110,7 +110,7 @@ This acquisition will likely trigger a wave of investment and innovation in cybe
 
 ## The Future of Cloud Security: My Predictions
 
-![Future trends visual](https://github-production-user-asset-6210df.s3.amazonaws.com/29366864/428619518-64df7101-df4e-458d-b875-67f46520c305.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T124809Z&X-Amz-Expires=300&X-Amz-Signature=dbb133889ee5cc1819bca1e9aa6a6c325ffd71484cd695c5e48c9c785fbf9fc6&X-Amz-SignedHeaders=host)
+![Future trends visual](../../static/image4.png)
 
 Google's acquisition of Wiz marks the beginning of a new era in cloud security. Here's what to watch for:
 

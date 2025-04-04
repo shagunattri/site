@@ -31,7 +31,7 @@ Let me share why this deal is so special, from someone who's had a front-row sea
 
 ## Four Friends, Two Startups, and Billions of Dollars
 
-![wiz](/static/image1.png)
+![wiz](image1.png)
 
 Every great tech story starts with brilliant minds coming together, and Wiz's tale begins with four friends who met in the Israeli army back in 2001: Ami Luttwak, Assaf Rappaport, Yinon Costiva, and Roy Reznik.
 
@@ -51,7 +51,7 @@ This philosophy of simplifying complex security challenges would become the foun
 
 ## Watching Wiz Scale: From Zero to $350 Million in Record Time
 
-![Growth chart showing Wiz's unprecedented rise](/static/image2.png)
+![Growth chart showing Wiz's unprecedented rise](image2.png)
 
 When the four founders launched Wiz in January 2020, they weren't just creating another security tool—they were addressing a fundamental problem in cloud security.
 
@@ -76,7 +76,7 @@ This approach earned Wiz the 2023 Global Cloud Security Entrepreneurial Company 
 
 ## Why Google Paid $32 Billion: An Insider's Perspective
 
-![Infographic showing the value proposition](/static/wiz-google.jpeg)
+![Infographic showing the value proposition](wiz-google.jpeg)
 
 Having collaborated with Wiz on integration efforts, I understand why Google was willing to pay this staggering premium—nearly three times Wiz's last private valuation and more than Google paid for Motorola ($12 billion in 2012).
 
@@ -110,7 +110,7 @@ This acquisition will likely trigger a wave of investment and innovation in cybe
 
 ## The Future of Cloud Security: My Predictions
 
-![Future trends visual](/static/image4.png)
+![Future trends visual](image4.png)
 
 Google's acquisition of Wiz marks the beginning of a new era in cloud security. Here's what to watch for:
 

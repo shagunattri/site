@@ -1,4 +1,4 @@
-baseurl      = ""
+baseurl      = "https://www.shagun.xyz/"
 title        = "Shagun Attri"
 languageCode = "en-US"
 theme        = "hello-friend-ng"
@@ -26,7 +26,7 @@ paginate = 10
   dnd = "dnd"
 
  [author]
-  name = "shogun attri"
+  name = "shasgun attri"
 
 [params]
   dateform        = "Jan 2, 2006"

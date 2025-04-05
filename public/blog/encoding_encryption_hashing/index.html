@@ -1,10 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>http://localhost:1313/blog/encoding_encryption_hashing/</title>
-    <link rel="canonical" href="http://localhost:1313/blog/encoding_encryption_hashing/">
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=http://localhost:1313/blog/encoding_encryption_hashing/">
-  </head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Shagun attri]">
+<meta name="description" content="Understanding the 3E&#39;s" />
+<meta name="keywords" content=", Encoding, Encryption, Hashing" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/blog/encoding_encryption_hashing/" />
+
+
+    <title>
+        
+            Encoding,Encryption and Hashing :: Shagun Attri 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.136392474f29a02c40f7eb8fc774beaed915968bec265a565e48b9ed6501cfc8.css" integrity="sha256-E2OSR08poCxA9&#43;uPx3S&#43;rtkVlovsJlpWXki57WUBz8g=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/static/image1.png">
+  <meta name="twitter:title" content="Encoding,Encryption and Hashing">
+  <meta name="twitter:description" content="Understanding the 3E&#39;s">
+
+
+
+    <meta property="og:url" content="http://localhost:1313/blog/encoding_encryption_hashing/">
+  <meta property="og:site_name" content="Shagun Attri">
+  <meta property="og:title" content="Encoding,Encryption and Hashing">
+  <meta property="og:description" content="Understanding the 3E&#39;s">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-05-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-31T18:24:05+05:30">
+    <meta property="article:tag" content="Encoding">
+    <meta property="article:tag" content="Encryption">
+    <meta property="article:tag" content="Hashing">
+    <meta property="og:image" content="http://localhost:1313/static/image1.png">
+
+
+
+
+    <meta property="article:section" content="security" />
+
+
+
+    <meta property="article:published_time" content="2020-05-04 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+  <body class="light-theme">
+    <div class="container">
+      <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Shagun Attri</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/blog/">blog</a></li><li><a href="/about/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://localhost:1313/blog/encoding_encryption_hashing/">Encoding,Encryption and Hashing</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Encoding, Encryption, and Hashing are terms that are often confused with each other.</p>
+<p>Securing things is important and you need tools and technologies to secure products.</p>
+<p>Encoding,Encryption and hashing are techniques to convert the format of data and play a important role in the infosec world in terms of securing data.</p>
+<p>There is often significant confusion around the differences between encryption, encoding, hashing,</p>
+<h2 id="encodinghttpsenwikipediaorgwikicharacter_encoding"><a href="https://en.wikipedia.org/wiki/Character_encoding">ENCODING</a></h2>
+<p>Encoding is to transform data so that it can be properly (and safely) be consumed by a different type of system,whether it be sending binary data over email, or viewing special characters on a web page.</p>
+<p><em>The goal here is not to keep information secret, but rather to ensure that it’s able to be properly consumed.</em></p>
+<p>Encoding transforms data into another format using a scheme that is publicly available so that it can easily be reversed. It does not require a key as the only thing required to decode it is the algorithm that was used to encode it.</p>
+<p>Examples of encoding algorithms are <code>ASCII, Unicode, URL Encoding, Base64</code></p>
+<h3 id="encoding-data-ensures-its-protection-and-integrity">Encoding data ensures its protection and integrity.</h3>
+<p>Encoding is also used to do <code>compression</code> for saving memory or confirmation related to transfer of data.</p>
+<p>Encoded data can be reversed to the original by knowing the scheme used for encoding.</p>
+<h2 id="encryptionhttpsenwikipediaorgwikiencryption"><a href="https://en.wikipedia.org/wiki/Encryption">ENCRYPTION</a></h2>
+<p>The purpose of encryption is to transform data in order to keep it secret from others,
+If you want to send someone a secret letter that only they should be able to read,
+or you want securely send a password over the Internet(why would you thou but let&rsquo;s assume).Rather than focusing on usability, our goal is to ensure that data cannot be consumed by anyone other than the intended recipient(s).</p>
+<p>The beauty of Encryption is that it transforms data into another format in such a way that only specific individual(s) can reverse the transformation.</p>
+<p>It uses a key, which is kept secret, in conjunction with the plaintext and the algorithm,to perform the encryption operation. As such, the ciphertext, algorithm, and key are all required to return to the plaintext.</p>
+<p>A few Encryption algorithms are <code>AES, Blowfish and RSA</code></p>
+<p>When you try to encrypt data,your main intention should be to secure data.</p>
+<p>Uses cases of encryption involve transfer of sensitive business info,private email services like proton mail and encrypting your web traffic using the <strong>HTTPS</strong> protocol.</p>
+<p>Encrypted data is only reversible by using the appropriate key.</p>
+<p>Encryption is mainly divided into two types - <em>symmetric and asymmetric.</em></p>
+<h2 id="hashinghttpsenwikipediaorgwikihash"><a href="https://en.wikipedia.org/wiki/Hash">HASHING</a></h2>
+<p>In hashing, the data is converted to a message digest or hash, which is a number generated from a string of text.These digests are important as one can easily match the hash of sent and received messages to ensure that both are the same and no tempering is done with the data.</p>
+<p><em>Hashing serves the purpose of ensuring integrity</em>, i.e. making it so that if something is changed you can know that it’s changed.</p>
+<p>Lookig at hashing it technically takes arbitrary input and produce a fixed-length string that has the following attributes:</p>
+<ul>
+<li>
+<p>The same input will always produce the same output.</p>
+</li>
+<li>
+<p>Multiple disparate inputs should not produce the same output.</p>
+</li>
+<li>
+<p>It should not be possible to go from the output to the input.</p>
+</li>
+<li>
+<p>Any modification of a given input should result in drastic change to the hash.</p>
+</li>
+</ul>
+<p>Hashing is used in conjunction with authentication to produce strong evidence that a given message has not been modified. This is done by taking a given input, hashing it, and then signing the hash with the sender’s private key.</p>
+<p>When the recipient opens the message, they can then validate the signature of the hash with the sender’s public key and then hash the message themselves and compare it to the hash that was signed by the sender.
+If they match it is an unmodified message, sent by the correct person.</p>
+<p>Popular hashes are: <code>SHA-3, MD5</code> which is now obsolete and has been the cause of various hash collisions.</p>
+<p>Hash collision is an attempt to find two input strings of a hash function that produce the same hash result.As hash functions have infinite input length and a predefined output length, there is inevitably going to be the possibility of two different inputs that produce the same output hash.</p>
+<p>This is all about encoding,encrypting and hashing&hellip;.</p>
+<h2 id="tldr"><em><strong>tl;dr</strong></em></h2>
+<p>Encoding != Encryption != Hashing</p>
+<p><em><strong>For further reading:</strong></em></p>
+<ul>
+<li><a href="https://hackercombat.com/forum/network-security/whats-the-difference-between-encoding-encryption-and-hashing/">https://hackercombat.com/forum/network-security/whats-the-difference-between-encoding-encryption-and-hashing/</a></li>
+<li><a href="https://www.geeksforgeeks.org/encryption-encoding-hashing/">https://www.geeksforgeeks.org/encryption-encoding-hashing/</a></li>
+<li><a href="https://danielmiessler.com/study/encoding-encryption-hashing-obfuscation/">https://danielmiessler.com/study/encoding-encryption-hashing-obfuscation/</a></li>
+<li><a href="https://www.differencebetween.info/difference-between-encryption-encoding-and-hashing">https://www.differencebetween.info/difference-between-encryption-encoding-and-hashing</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/encoding/">Encoding</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/encryption/">Encryption</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/hashing/">Hashing</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/security/">security</a></span>
+        
+    </p>
+
+			    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg><a href="https://github.com/shagunattri/site/commit/3212bf33015882cd3979c2aa855d45444c472f2b" target="_blank" rel="noopener">3212bf3</a> @ 2025-03-31</p>
+  		</div>
+        <br/>
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+
+    </body>
 </html>

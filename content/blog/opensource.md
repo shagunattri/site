@@ -11,6 +11,7 @@ weight: 10
 series:
 categories:
   - dev
+  - security
 tags:
   - OSS
   - FLOSS

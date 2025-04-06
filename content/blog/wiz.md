@@ -11,8 +11,8 @@ weight: 10
 series:
 categories:
   - security
+  - startups
 tags:
-  - pm
   - products
   - security
 aliases:

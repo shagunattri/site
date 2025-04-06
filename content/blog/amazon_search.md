@@ -9,9 +9,8 @@ type:
 weight: 10
 series:
 categories:
-  - pm
+  - product
 tags:
-  - pm
 ---
 
 Among all things Amazon is involved in it is interstingly also a Search Engine Company!

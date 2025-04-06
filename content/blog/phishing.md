@@ -10,9 +10,9 @@ type:
 weight: 10
 series:
 categories:
-  - essay
+  - startups
+  - security
 tags:
-- essay
 aliases:
 - /blog/r14/
 ---

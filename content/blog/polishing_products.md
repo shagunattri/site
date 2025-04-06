@@ -9,9 +9,8 @@ type:
 weight: 10
 series:
 categories:
-  - pm
+  - Product
 tags:
-  - pm
 ---
 
 ### Polishing Products

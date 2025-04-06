@@ -10,9 +10,9 @@ type:
 weight: 10
 series:
 categories:
-  - pm
+  - Product
 tags:
-  - pm
+
   - products
   - fintech
 aliases:

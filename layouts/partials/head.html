@@ -75,3 +75,43 @@
 {{- if $.Site.Params.plausibleDataDomain }}
     <script defer data-domain="{{ .Site.Params.plausibleDataDomain }}" src="{{ .Site.Params.plausibleScriptSource }}"></script>
 {{- end}}
+
+{{- /* Schema.org JSON-LD */}}
+{{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name -}} {{- /* Assumes author name is set in config */ -}}
+{{- $websiteSchema := dict "@type" "WebSite" "url" .Site.BaseURL "name" .Site.Title "publisher" $personSchema -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+    {{ $websiteSchema | jsonify (dict "indent" "  ") | safeJS }}
+    {{- if and (.IsPage) (not .IsHome) }}
+    ,
+    {
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+      },
+      "headline": "{{ .Title }}",
+      {{- with .Params.images -}}
+        {{- /* Use images from front matter if available */ -}}
+        "image": [
+          {{- range $i, $e := . -}}
+            {{- if $i }}, {{ end -}}"{{ absURL . }}"
+          {{- end -}}
+         ],
+      {{- end }}
+      "datePublished": "{{ .PublishDate.Format $iso8601 }}",
+      "dateModified": "{{ .Lastmod.Format $iso8601 }}",
+      "author": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+      {{- /* Publisher can be Person or Organization */}}
+      "publisher": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+      "description": "{{ .Description | default (.Summary | plainify) }}"
+    }
+    {{- end }}
+  ]
+}
+</script>

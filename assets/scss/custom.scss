@@ -1,0 +1,143 @@
+/* Custom SCSS for Hello Friend NG Homepage */
+
+/* Helper/Utility classes (if needed, otherwise theme's might suffice) */
+.container {
+    max-width: 800px; /* Adjust as per theme or preference */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Homepage specific styles */
+.homepage-main {
+    padding: 20px 0;
+}
+
+.homepage-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .profile-picture {
+        max-width: 150px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    h1 {
+        margin-bottom: 0.25em;
+        font-size: 2.5em; /* Adjust to match theme */
+    }
+
+    .tagline {
+        font-size: 1.1em;
+        color: var(--grey);
+        margin-top: 0;
+    }
+}
+
+/* Styles for sections */
+.homepage-intro,
+.homepage-focus-areas,
+.homepage-philosophy,
+.homepage-recent-posts,
+.homepage-social {
+    margin-bottom: 30px; /* Reduced from 40px */
+
+    h2 {
+        font-size: 1.8em; /* Adjust to match theme */
+        margin-bottom: 15px; /* Reduced from 20px */
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 8px; /* Reduced from 10px */
+    }
+
+    h3 {
+        font-size: 1.3em; /* Adjust to match theme */
+        margin-bottom: 8px; /* Reduced from 10px */
+    }
+
+    p {
+        line-height: 1.5; /* Slightly reduced line-height */
+        margin-bottom: 0.8em; /* Reduced from 1em */
+    }
+
+    a {
+       // color: var(--accent-color); // Assuming theme has an accent color
+       text-decoration: underline;
+    }
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Slightly reduced gap */
+}
+
+.focus-item {
+    background-color: var(--secondary-bg-color); 
+    padding: 15px; /* Reduced from 20px */
+    border-radius: 8px;
+
+    p {
+        margin-bottom: 0.6em; /* Further reduce paragraph bottom margin specifically in focus items */
+    }
+    p:last-of-type { /* Remove bottom margin from the last paragraph (often the "More on..." link) */
+        margin-bottom: 0;
+    }
+}
+
+.focus-item:nth-child(3) {
+    text-align: center;
+
+    // To ensure the link within also behaves as centered text would:
+    p a {
+        display: inline-block; // Keeps it flow but respects text-align
+    }
+}
+
+.homepage-recent-posts {
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+
+            a {
+                font-weight: bold;
+                margin-right: 10px; 
+            }
+
+            .date {
+                font-size: 0.9em;
+                color: var(--grey);
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.homepage-social {
+    text-align: center;
+    // Styles for social icons will likely be inherited from the theme via `social-icons.html` partial
+}
+
+/* Dark mode adjustments - assuming hello-friend-ng uses similar variables */
+body.dark-mode {
+    .homepage-header .tagline {
+        color: var(--secondary-text-color); // Or a lighter grey for dark mode
+    }
+    .focus-item {
+        background-color: var(--bg-color); // Slightly different background for items in dark mode
+        // border: 1px solid var(--border-color-dark); // if using borders
+    }
+    .homepage-recent-posts li .date {
+         color: var(--secondary-text-color);
+    }
+    .homepage-focus-areas h2, .homepage-recent-posts h2, .homepage-philosophy h2 {
+        border-bottom: 1px solid var(--border-color-dark);
+    }
+} 

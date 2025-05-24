@@ -3,21 +3,89 @@
 {{ end }}
 
 {{ define "main" }}
-    <main aria-role="main">
-        <div>
+<main aria-role="main" class="homepage-main">
+    <div class="container">
+
+        <header class="homepage-header">
             {{ if .Site.Params.Portrait.Path }}
-               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+                <img src="{{ .Site.Params.Portrait.Path }}" class="circle profile-picture" alt="{{ .Site.Params.Portrait.Alt | default .Site.Author.name }}" />
             {{ end }}
+            <h1>{{ .Site.Author.name | default .Site.Title }}</h1>
+            <p class="tagline">{{ .Site.Params.homeSubtitle | default "Cybersecurity | Startups | Development" }}</p>
+        </header>
 
-            <h1>{{ .Site.Title }}</h1>
+        <section class="homepage-intro">
+            {{ with .Site.GetPage "about.md" }}
+                {{/* Extract the first two paragraphs from about.md for a concise intro */}}
+                {{ $content := .Content }}
+                {{ $paragraphs := findRE `<p>(.|
+)*?</p>` $content }}
+                {{ range $i, $p := $paragraphs }}
+                    {{ if lt $i 2 }} {{/* Display first 2 paragraphs */}}
+                        {{ $p | safeHTML }}
+                    {{ end }}
+                {{ end }}
+                <p><a href="{{ .Permalink }}">Read more about me...</a></p>
+            {{ else }}
+                <p>Welcome to my personal space where I explore topics around technology, security, and product.</p>
+            {{ end }}
+        </section>
 
-            {{ partial "subtitle.html" . }}
-
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
+        <section class="homepage-focus-areas">
+            <h2>Key Interests</h2>
+            <div class="focus-grid">
+                <div class="focus-item">
+                    <h3>Cybersecurity</h3>
+                    <p>Exploring defensive strategies, privacy best practices, and the latest in security tools and vulnerabilities. Ensuring digital safety in an evolving landscape.</p>
+                    {{/* Consider linking to your cybersecurity category or a key post */}}
+                    <p><a href="{{ "/categories/security/" | relURL }}">More on Security...</a></p>
                 </div>
-            {{- end }}
-        </div>
-    </main>
+                <div class="focus-item">
+                    <h3>Startups & Product</h3>
+                    <p>Building impactful B2B SaaS products, focusing on user needs, and the intersection of technology and human psychology to create better solutions.</p>
+                    {{/* Consider linking to your product/startup category or a key post */}}
+                     <p><a href="{{ "/categories/startup/" | relURL }}">More on Startups/Product...</a></p>
+                </div>
+                <div class="focus-item">
+                    <h3>Development & Tech</h3>
+                    <p>Diving into the technical weeds with Linux, Docker, Git, Vim, and shell scripting. Sharing tips, configurations, and explorations.</p>
+                    {{/* Consider linking to your dev category or a key post */}}
+                    <p><a href="{{ "/categories/dev/" | relURL }}">More on Dev & Tech...</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="homepage-philosophy">
+            {{ with .Site.GetPage "about.md" }}
+                 {{/* Try to extract the paragraph starting with "I'm fascinated by the intersection..." or a similar general statement */}}
+                 {{ $philosophy := index (findRE `(?s)(<p>I\'m fascinated by the intersection of technology and human psychology.*?</p>)` .Content) 0 }}
+                 {{ if $philosophy }}
+                     {{ $philosophy | safeHTML }}
+                 {{ else }}
+                    <p>My approach is to continuously learn, experiment, and share knowledge to help build a more informed and secure digital world.</p>
+                 {{ end }}
+            {{ end }}
+        </section>
+
+        <section class="homepage-recent-posts">
+            <h2>Recent Blog Posts</h2>
+            <ul>
+                {{ range first 5 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        <span class="date">{{ .Date.Format .Site.Params.dateformShort }}</span>
+                    </li>
+                {{ end }}
+            </ul>
+            <p><a href="{{ "/blog/" | relURL }}">See all posts...</a></p>
+        </section>
+
+        {{- with .Site.Params.social }}
+            <section class="homepage-social">
+                {{ partial "social-icons.html" . }}
+            </section>
+        {{- end }}
+
+    </div>
+</main>
 {{ end }}

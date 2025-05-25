@@ -42,6 +42,13 @@ paginate = 50
   gitUrl = "https://github.com/shagunattri/site/commit/"
   images = ["/static/image1.png"]
 
+  [params.Logo]
+    logoCursorColor = "#6B8E23"
+
+[params.Portrait]
+  Path = "images/cover.jpg"
+  Alt = "Shagun"
+  MaxWidth = "150px"
 
 [languages]
   [languages.en]

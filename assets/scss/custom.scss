@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
+
 /* Custom SCSS for Hello Friend NG Homepage */
+
+// Accent Colors
+$primary-accent-color: #6B8E23; // Military green
+$primary-accent-color-hover: #556B2F; // Darker military green for hover
 
 /* Helper/Utility classes (if needed, otherwise theme's might suffice) */
 .container {
@@ -32,6 +39,7 @@
         font-size: 1.1em;
         color: var(--grey);
         margin-top: 0;
+        font-family: "IBM Plex Sans", sans-serif;
     }
 }
 
@@ -43,54 +51,83 @@
 .homepage-social {
     margin-bottom: 30px; /* Reduced from 40px */
 
+    h1, h2, h3 {
+        font-family: "IBM Plex Sans", sans-serif; // Ensure headings also use Plex Sans
+    }
+
+    h1 {
+        font-size: 2.8em; /* Slightly larger for more impact */
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700; // Bolder
+        color: $primary-accent-color; // Use accent for main titles
+    }
+
     h2 {
-        font-size: 1.8em; /* Adjust to match theme */
-        margin-bottom: 15px; /* Reduced from 20px */
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 8px; /* Reduced from 10px */
+        font-size: 1.8em;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+        margin-bottom: 15px; /* Retain or adjust margin as needed */
     }
 
     h3 {
-        font-size: 1.3em; /* Adjust to match theme */
-        margin-bottom: 8px; /* Reduced from 10px */
+        font-size: 1.4em; /* Slightly larger */
+        font-weight: 500; // Medium weight
+        color: $primary-accent-color-hover; // Use darker accent for H3s
     }
 
     p {
-        line-height: 1.5; /* Slightly reduced line-height */
-        margin-bottom: 0.8em; /* Reduced from 1em */
+        line-height: 1.5;
+        margin-bottom: 0.8em;
+        text-align: left;
+        overflow-wrap: break-word; /* Allow breaking long words to prevent overflow */
+        word-wrap: break-word; /* Older browsers compatibility */
     }
 
     a {
-       // color: var(--accent-color); // Assuming theme has an accent color
-       text-decoration: underline;
+       color: $primary-accent-color; // Apply military green to links
+       text-decoration: none; // Remove underline by default
+       transition: color 0.2s ease-in-out; // Smooth color transition
+
+       &:hover {
+           color: $primary-accent-color-hover; // Darker military green on hover
+           text-decoration: underline; // Add underline on hover for clarity
+       }
     }
 }
 
 .focus-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* Slightly reduced gap */
+    gap: 20px; /* Keeps the existing gap */
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for desktop */
+
+    @media #{$media-size-tablet} { /* Using theme variable for tablet: (max-width: 900px) */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+    }
+
+    @media #{$media-size-phone} { /* Using theme variable for phone: (max-width: 684px) */
+        grid-template-columns: 1fr; /* 1 column for phone */
+    }
 }
 
 .focus-item {
-    background-color: var(--secondary-bg-color); 
-    padding: 15px; /* Reduced from 20px */
+    background-color: var(--secondary-bg-color);
+    padding: 15px;
     border-radius: 8px;
+    /* Removed flex: 0 0 auto; */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Added transition */
+
+    &:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
 
     p {
-        margin-bottom: 0.6em; /* Further reduce paragraph bottom margin specifically in focus items */
+        margin-bottom: 0.6em;
     }
-    p:last-of-type { /* Remove bottom margin from the last paragraph (often the "More on..." link) */
+    p:last-of-type {
         margin-bottom: 0;
-    }
-}
-
-.focus-item:nth-child(3) {
-    text-align: center;
-
-    // To ensure the link within also behaves as centered text would:
-    p a {
-        display: inline-block; // Keeps it flow but respects text-align
     }
 }
 
@@ -140,4 +177,27 @@ body.dark-mode {
     .homepage-focus-areas h2, .homepage-recent-posts h2, .homepage-philosophy h2 {
         border-bottom: 1px solid var(--border-color-dark);
     }
+}
+
+/* Style for single post titles to ensure no border */
+.post-title {
+    border-bottom: none !important; /* Ensure no border under post titles */
+    padding-bottom: 0 !important; /* Ensure no extra padding if a border was there */
+}
+
+/* Responsive iframes (e.g., for embedded videos) */
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 } 

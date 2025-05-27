@@ -15,6 +15,9 @@ publishDir   = "public"
 paginate = 50
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     style = "native"
     guessSyntax = true

@@ -1,0 +1,23 @@
+<footer class="homepage-custom-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="{{ .Site.BaseURL | relURL }}">{{ .Site.Title }}</a>
+            {{/* You can also use an image logo if preferred */}}
+            {{/* <img src="/images/your-logo-dark-bg.svg" alt="{{ .Site.Title }} Logo"> */}}
+        </div>
+        <nav class="footer-nav">
+            {{ with .Site.GetPage "about.md" }}
+                <a href="{{ .Permalink }}">About</a>
+            {{ end }}
+            <a href="{{ "/blog/" | relURL }}">Blog</a>
+            {{/* Add other links as needed, e.g., Contact */}}
+            {{/* <a href="{{ "/contact/" | relURL }}">Contact</a> */}}
+            
+            {{/* Example external link if needed */}}
+            {{/* <a href="https://patentpilot.vercel.app/" target="_blank" rel="noopener noreferrer">PatentPilot</a> */}}
+        </nav>
+        <div class="footer-copyright">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Author.name | default .Site.Title }}. {{ .Site.Copyright | safeHTML }}</p>
+        </div>
+    </div>
+</footer> 

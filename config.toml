@@ -66,6 +66,10 @@ paginate = 50
 
 [menu]
    [[menu.main]]
+    identifier = "projects"
+    name       = "projects"
+    url        = "/projects/"
+   [[menu.main]]
     identifier = "blog"
     name       = "blog"
     url        = "/blog/"

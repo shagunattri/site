@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Agentic AI Startups Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A multi-page SPA structure is used, with navigation to switch between a main dashboard and a new Tier List Maker. 1) The Dashboard provides an analytical overview with stats, charts, and AI-powered analysis tools. 2) The Tier List Maker offers an interactive, hands-on experience for users to create their own qualitative rankings using drag-and-drop. This separation caters to two different user tasks—analysis and categorization—within a single, cohesive application. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Aggregate startup counts and relevance scores -> Goal: Inform -> Viz: Dynamic Text Cards -> Interaction: Updates on filter -> Justification: Provides a quick, high-level summary of the current data view. -> Library/Method: Vanilla JS.
+        - Report Info: Relevance Score for each startup -> Goal: Compare/Show Distribution -> Viz: Bar Chart -> Interaction: Chart updates based on active filters -> Justification: Clearly visualizes the maturity of the startup landscape. -> Library/Method: Chart.js/Canvas.
+        - Report Info: Full startup details -> Goal: Organize/Rank -> Viz: Interactive Drag-and-Drop Tier List -> Interaction: Users can drag startups from an unranked pool into S, A, B, C, D tiers -> Justification: Provides a highly interactive and engaging way for users to apply their own judgment and create a personalized ranking. -> Library/Method: HTML5 Drag & Drop API + JS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .table-link {
+            word-break: break-all;
+        }
+        .description-cell {
+            max-width: 300px;
+            white-space: normal;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ca8a04;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .modal-content {
+            white-space: pre-wrap;
+        }
+        .nav-btn.active {
+            background-color: #d97706; /* amber-600 */
+            color: white;
+        }
+        .tier-row {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border: 2px dashed transparent;
+            transition: border-color 0.2s;
+        }
+        .tier-row.drag-over {
+            border-color: #fbbf24; /* amber-400 */
+        }
+        .startup-item {
+            cursor: grab;
+            transition: background-color 0.2s;
+        }
+        .startup-item:active {
+            cursor: grabbing;
+        }
+        .dragging {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div id="ai-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-slate-200 sticky top-0 bg-white">
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900">AI Analysis</h3>
+                <button id="modal-close" class="absolute top-6 right-6 text-slate-500 hover:text-slate-800 text-3xl leading-none">&times;</button>
+            </div>
+            <div class="p-6">
+                <div id="modal-loader" class="flex justify-center items-center h-48">
+                    <div class="loader"></div>
+                </div>
+                <div id="modal-content" class="text-slate-700 leading-relaxed modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Indian Agentic AI Startup Landscape</h1>
+            <p class="mt-2 text-slate-600 max-w-3xl mx-auto">An interactive dashboard to explore, analyze, and rank agentic AI startups in India.</p>
+            <nav class="mt-6 flex justify-center gap-4">
+                <button id="nav-dashboard" class="nav-btn active px-6 py-2 bg-slate-200 text-slate-800 rounded-lg font-semibold transition">Dashboard</button>
+                <button id="nav-tier-list" class="nav-btn px-6 py-2 bg-slate-200 text-slate-800 rounded-lg font-semibold transition">Tier Maker</button>
+            </nav>
+            <div class="mt-4 flex items-center justify-center gap-2 text-sm">
+                <button id="set-api-key" class="px-3 py-1.5 bg-slate-100 border border-slate-300 rounded">Set Gemini API Key</button>
+                <span id="api-key-status" class="text-slate-500"></span>
+            </div>
+        </header>
+
+        <div id="dashboard-page">
+            <main>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-center items-center">
+                        <h2 class="text-lg font-semibold text-slate-500">Total Startups</h2>
+                        <p id="total-startups" class="text-4xl font-bold text-amber-600 mt-2">0</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-center items-center">
+                        <h2 class="text-lg font-semibold text-slate-500">Avg. Relevance Score</h2>
+                        <p id="avg-relevance" class="text-4xl font-bold text-amber-600 mt-2">0.0</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-center items-center">
+                        <h2 class="text-lg font-semibold text-slate-500">Highest Score</h2>
+                        <p id="highest-score" class="text-4xl font-bold text-amber-600 mt-2">0</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+                     <h2 class="text-xl font-bold text-slate-900 mb-4 text-center">Relevance Score Distribution</h2>
+                     <p class="text-center text-slate-600 mb-6">This chart shows the number of startups at each relevance score, providing a quick overview of the ecosystem's maturity. Higher scores indicate greater market traction. The chart updates as you apply filters.</p>
+                    <div class="chart-container">
+                        <canvas id="relevanceChart"></canvas>
+                    </div>
+                </div>
+                
+                <div id="industry-analysis-section" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">✨ AI-Powered Industry Trend Analysis</h2>
+                    <p class="text-slate-600 mb-4">Select an industry from the filter below, then click the button to generate an analysis of key trends, challenges, and opportunities based on the currently visible startups.</p>
+                    <button id="analyze-industry-btn" class="px-5 py-2.5 bg-amber-600 text-white rounded-lg shadow-sm hover:bg-amber-700 transition disabled:bg-slate-300 disabled:cursor-not-allowed">Analyze Trends for Selected Industry</button>
+                    <div id="industry-analysis-loader" class="hidden flex justify-center items-center mt-6">
+                        <div class="loader"></div>
+                    </div>
+                    <div id="industry-analysis-content" class="mt-4 text-slate-700 leading-relaxed hidden whitespace-pre-wrap"></div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">Startup Explorer</h2>
+                     <p class="text-slate-600 mb-6">Use the controls to filter and search the list. Click headers to sort. Click the 'Analyze ✨' button to get an AI-powered summary for any startup.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <input type="text" id="search-input" placeholder="Search by name..." class="p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                        <select id="industry-filter" class="p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            <option value="all">All Industries</option>
+                        </select>
+                        <div id="filter-buttons" class="flex flex-wrap gap-2 items-center">
+                            <button class="filter-btn active px-4 py-2 bg-amber-600 text-white rounded-lg shadow-sm" data-filter="all">All Tiers</button>
+                            <button class="filter-btn px-4 py-2 bg-slate-200 text-slate-700 rounded-lg" data-filter="top">Top Tier</button>
+                            <button class="filter-btn px-4 py-2 bg-slate-200 text-slate-700 rounded-lg" data-filter="mid">Mid Tier</button>
+                            <button class="filter-btn px-4 py-2 bg-slate-200 text-slate-700 rounded-lg" data-filter="emerging">Emerging</button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-slate-100">
+                                <tr>
+                                    <th class="p-4 rounded-tl-lg cursor-pointer" data-sort="Name">Name &#x2195;</th>
+                                    <th class="p-4">Description</th>
+                                    <th class="p-4 cursor-pointer" data-sort="Industry">Industry &#x2195;</th>
+                                    <th class="p-4 text-center cursor-pointer" data-sort="Relevance Score">Score &#x2195;</th>
+                                    <th class="p-4 text-center">Links</th>
+                                    <th class="p-4 rounded-tr-lg text-center">AI Analysis</th>
+                                </tr>
+                            </thead>
+                            <tbody id="startup-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="tier-list-page" class="hidden">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2 text-center">AI Startup Tier Maker</h2>
+                <p class="text-slate-600 mb-6 text-center">Drag and drop startups from the pool below into your desired tier.</p>
+                <div class="space-y-1">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-full flex items-center justify-center bg-red-500 text-white font-bold text-2xl rounded-l-lg">S</div>
+                        <div id="tier-s" class="tier-row flex-1 bg-gray-800 rounded-r-lg flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-full flex items-center justify-center bg-orange-500 text-white font-bold text-2xl rounded-l-lg">A</div>
+                        <div id="tier-a" class="tier-row flex-1 bg-gray-800 rounded-r-lg flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-full flex items-center justify-center bg-yellow-500 text-white font-bold text-2xl rounded-l-lg">B</div>
+                        <div id="tier-b" class="tier-row flex-1 bg-gray-800 rounded-r-lg flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-full flex items-center justify-center bg-lime-500 text-white font-bold text-2xl rounded-l-lg">C</div>
+                        <div id="tier-c" class="tier-row flex-1 bg-gray-800 rounded-r-lg flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-full flex items-center justify-center bg-green-500 text-white font-bold text-2xl rounded-l-lg">D</div>
+                        <div id="tier-d" class="tier-row flex-1 bg-gray-800 rounded-r-lg flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                     <h3 class="text-xl font-bold text-slate-900 mb-4">Unranked Startups</h3>
+                     <div id="unranked-pool" class="tier-row bg-slate-100 rounded-lg p-4 flex flex-wrap gap-2">
+                        <!-- Draggable startup items will be populated here -->
+                     </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const startupData = [
+            { "Name": "Uniphore", "Description": "A conversational AI platform that combines NLP, speech recognition, and automation to enhance customer service and enterprise workflows.", "Industry": "Conversational AI / CX", "Website": "https://www.uniphore.com/", "LinkedIn Profile": "https://www.linkedin.com/company/uniphore/", "Relevant Article": "https://techcrunch.com/2022/02/16/uniphore-hits-2-5b-valuation-with-400m-in-series-e-funding-for-its-conversational-ai-platform/", "Relevance Score": 15 },
+            { "Name": "Gupshup", "Description": "A leading conversational messaging platform that enables businesses to engage with customers across various messaging channels.", "Industry": "Conversational Messaging", "Website": "https://www.gupshup.io/", "LinkedIn Profile": "https://www.linkedin.com/company/gupshup/", "Relevant Article": "https://www.forbes.com/sites/davidprosser/2021/09/21/how-gupshup-is-powering-the-conversational-messaging-boom/", "Relevance Score": 15 },
+            { "Name": "Yellow.ai", "Description": "Offers a Total Experience (TX) Automation Platform that helps enterprises create personalized interactions across marketing, sales, and support.", "Industry": "Customer Experience (CX)", "Website": "https://yellow.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/yellowdotai/", "Relevant Article": "https://techcrunch.com/2021/08/04/yellow-ai-raises-78-15m-to-automate-customer-support-in-southeast-asia-india-and-elsewhere/", "Relevance Score": 14 },
+            { "Name": "Sarvam AI", "Description": "Focuses on building foundational AI models and platforms for India-specific use cases, supporting diverse Indian languages and contexts.", "Industry": "Generative AI / LLM", "Website": "https://www.sarvam.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/sarvam-ai/", "Relevant Article": "https://techcrunch.com/2023/12/07/lightspped-and-peak-xv-back-indian-generative-ai-startup-sarvam-ai/", "Relevance Score": 13 },
+            { "Name": "SquadStack", "Description": "A sales acceleration platform that combines AI, data science, and a remote workforce to help businesses improve lead engagement and conversion.", "Industry": "Sales Tech / Lead Engagement", "Website": "https://www.squadstack.com/", "LinkedIn Profile": "https://www.linkedin.com/company/squadstack/", "Relevant Article": "https://inc42.com/buzz/squadstack-bags-17-5-mn-to-help-sales-teams-improve-conversions-with-ai/", "Relevance Score": 13 },
+            { "Name": "Verloop.io", "Description": "A conversational AI platform specializing in customer support automation, helping businesses deliver better support across various channels.", "Industry": "Customer Support Automation", "Website": "https://verloop.io/", "LinkedIn Profile": "https://www.linkedin.com/company/verloopio/", "Relevant Article": "https://yourstory.com/2022/04/customer-support-automation-verloop-io-acquired-by-freshworks", "Relevance Score": 12 },
+            { "Name": "Avataar", "Description": "An AI and Computer Vision platform that creates immersive 3D and Augmented Reality (AR) experiences for e-commerce and retail.", "Industry": "E-commerce Tech / AR/VR", "Website": "https://avataar.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/avataar-ai/", "Relevant Article": "https://techcrunch.com/2022/01/06/avataar-raises-45-million-for-ai-and-3d-play-in-e-commerce/", "Relevance Score": 12 },
+            { "Name": "Clearfeed", "Description": "An AI platform that streamlines customer and employee support on enterprise collaboration tools like Slack by turning conversations into trackable tickets.", "Industry": "IT Service Management (ITSM)", "Website": "https://www.clearfeed.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/clearfeed/", "Relevant Article": "https://techcrunch.com/2023/02/22/clearfeed-raises-2-7m-to-turn-slack-into-a-customer-service-ticketing-platform/", "Relevance Score": 11 },
+            { "Name": "LimeChat", "Description": "An AI-powered chatbot platform designed for D2C and e-commerce brands to drive sales and provide customer support on messaging apps.", "Industry": "E-commerce Tech / Chatbots", "Website": "https://www.limechat.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/limechat/", "Relevant Article": "https://www.vccircle.com/limechat-gets-4-2-mn-in-seed-funding-led-by-stellaris-venture-partners", "Relevance Score": 11 },
+            { "Name": "KOGO", "Description": "An AI-driven platform for travel, offering automated content creation, trip planning, and navigation solutions for travelers and creators.", "Industry": "Travel Tech / Content Creation", "Website": "https://kogo.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/kogo-ai/", "Relevant Article": "https://inc42.com/startups/mapmyindia-backed-kogo-launches-bharatgpt-eyes-global-expansion/", "Relevance Score": 10 },
+            { "Name": "Gnani.ai", "Description": "Provides a suite of conversational AI products, including voice bots and analytics, for automating customer interactions in various languages.", "Industry": "Voice AI / Automation", "Website": "https://www.gnani.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/gnani-ai/", "Relevant Article": "https://www.livemint.com/companies/start-ups/samsung-venture-backs-conversational-ai-startup-gnani-ai-11642571212871.html", "Relevance Score": 10 },
+            { "Name": "Rezo.ai", "Description": "An AI-powered contact center automation platform that analyzes customer conversations and automates responses across voice, chat, and email.", "Industry": "Contact Center AI", "Website": "https://rezo.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/rezo-ai/", "Relevant Article": "https://yourstory.com/2022/09/delhi-ncr-based-ai-startup-rezoai-funding", "Relevance Score": 10 },
+            { "Name": "threado.com", "Description": "A community management platform that helps businesses engage, manage, and grow their online communities on platforms like Slack and Discord.", "Industry": "Community Management / SaaS", "Website": "https://www.threado.com/", "LinkedIn Profile": "https://www.linkedin.com/company/threado-hq/", "Relevant Article": "https://techcrunch.com/2022/01/26/threado-raises-3-1-million-to-help-companies-better-manage-their-online-communities/", "Relevance Score": 9 },
+            { "Name": "Humpum", "Description": "A generative AI platform that enables businesses to automate complex workflows and build AI agents without writing code.", "Industry": "Workflow Automation", "Website": "https://humpum.com/", "LinkedIn Profile": "https://www.linkedin.com/company/humpum/", "Relevant Article": "https://inc42.com/buzz/generative-ai-startup-humpum-bags-funding-to-help-businesses-automate-workflows/", "Relevance Score": 9 },
+            { "Name": "Fieldproxy", "Description": "A no-code platform for businesses to create custom applications for managing their field teams and operations efficiently.", "Industry": "Field Service Management", "Website": "https://www.fieldproxy.com/", "LinkedIn Profile": "https://www.linkedin.com/company/fieldproxy/", "Relevant Article": "https://yourstory.com/2023/04/y-combinator-backed-fieldproxy-launches-ai-field-force-management-platform", "Relevance Score": 9 },
+            { "Name": "Uservox", "Description": "A conversational AI platform for building intelligent voice and chat assistants to automate user interactions.", "Industry": "Conversational AI", "Website": "https://www.uservox.co/", "LinkedIn Profile": "https://www.linkedin.com/company/uservox/", "Relevant Article": "https://economictimes.indiatimes.com/tech/funding/uservox-raises-seed-funding-to-expand-its-conversational-ai-platform/articleshow/94042861.cms", "Relevance Score": 8 },
+            { "Name": "Knit", "Description": "An AI-powered market research platform that helps brands understand consumer behavior through automated qualitative research.", "Industry": "Market Research / MarTech", "Website": "https://www.knit.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/knit-ai/", "Relevant Article": "N/A", "Relevance Score": 8 },
+            { "Name": "Dhee.AI", "Description": "Specializes in developing AI-based voice and text assistants that support various Indian languages for enterprise use cases.", "Industry": "Vernacular AI / NLP", "Website": "https://www.dhee.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/dhee-ai/", "Relevant Article": "N/A", "Relevance Score": 8 },
+            { "Name": "Floworks", "Description": "Develops AI assistants to automate repetitive tasks for sales teams within their existing CRM and communication tools.", "Industry": "Sales Tech / Automation", "Website": "https://www.floworks.io/", "LinkedIn Profile": "https://www.linkedin.com/company/floworks-io/", "Relevant Article": "N/A", "Relevance Score": 8 },
+            { "Name": "Floatbot", "Description": "A no-code platform for building AI-powered voicebots and chatbots for contact center automation and digital self-service.", "Industry": "Contact Center AI", "Website": "https://floatbot.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/floatbot/", "Relevant Article": "N/A", "Relevance Score": 7 },
+            { "Name": "Pulsegen", "Description": "An AI platform that provides real-time insights from customer conversations to help businesses improve products and services.", "Industry": "Customer Insights / Analytics", "Website": "https://www.pulsegen.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/pulsegen-ai/", "Relevant Article": "N/A", "Relevance Score": 7 },
+            { "Name": "Kenyt", "Description": "Offers AI chatbot solutions for various industries, including real estate and e-commerce, to enhance customer engagement and lead generation.", "Industry": "Chatbots / Lead Generation", "Website": "https://www.kenyt.com/", "LinkedIn Profile": "https://www.linkedin.com/company/kenyt/", "Relevant Article": "N/A", "Relevance Score": 7 },
+            { "Name": "UnifyApps", "Description": "A generative AI platform for enterprise application integration and workflow automation.", "Industry": "Enterprise Software / iPaaS", "Website": "https://www.unifyapps.com/", "LinkedIn Profile": "https://www.linkedin.com/company/unifyapps/", "Relevant Article": "https://www.business-standard.com/companies/news/unifyapps-raises-11-mn-in-seed-funding-led-by-elevation-capital-124022800452_1.html", "Relevance Score": 7 },
+            { "Name": "awaaz.ai", "Description": "Focuses on speech technology for Indian languages, providing ASR and TTS solutions for businesses.", "Industry": "Speech Technology / Vernacular AI", "Website": "https://awaaz.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/awaaz-ai/", "Relevant Article": "N/A", "Relevance Score": 7 },
+            { "Name": "TaxBotGPT", "Description": "An AI-powered assistant designed to provide information and guidance on tax-related queries.", "Industry": "FinTech / LegalTech", "Website": "https://taxbotgpt.com/", "LinkedIn Profile": "https://www.linkedin.com/company/taxbotgpt/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Writeplus.ai", "Description": "An AI writing assistant that helps users generate, improve, and edit content for various purposes.", "Industry": "Content Creation / Generative AI", "Website": "https://writeplus.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/writeplusai/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Vizard", "Description": "An AI-powered tool that automatically edits long videos into shorter, shareable clips for social media.", "Industry": "Video Editing / MarTech", "Website": "https://vizard.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/vizard-ai/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "SayData", "Description": "An AI tool that allows users to interact with their data using natural language, automating data analysis and reporting.", "Industry": "Data Analytics / BI", "Website": "https://www.saydata.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/saydata/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Swirl", "Description": "A platform that enables live video shopping for e-commerce stores, integrating interactive video into the customer experience.", "Industry": "E-commerce Tech / Video", "Website": "https://www.swirl.today/", "LinkedIn Profile": "https://www.linkedin.com/company/swirl-video-shopping/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Babblebots", "Description": "Develops AI-driven chatbots and voice assistants for businesses to automate customer interactions.", "Industry": "Chatbots / Conversational AI", "Website": "https://www.babblebots.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/babblebots/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Copilot", "Description": "An AI-powered platform that helps businesses automate their customer experience and communication workflows.", "Industry": "Customer Experience (CX)", "Website": "https://copilot.cx/", "LinkedIn Profile": "https://www.linkedin.com/company/copilot-cx/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "PodLabs", "Description": "An AI tool for podcasters that automates tasks like content generation, transcription, and social media post creation.", "Industry": "Content Creation / Media Tech", "Website": "https://www.podlabs.io/", "LinkedIn Profile": "https://www.linkedin.com/company/podlabs-io/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Therix.ai", "Description": "An AI platform for the healthcare industry, focused on automating clinical documentation and administrative tasks.", "Industry": "HealthTech / AI", "Website": "https://therix.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/therixai/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "NeuralHQ", "Description": "Develops custom AI solutions and agents for businesses to optimize processes and decision-making.", "Industry": "AI Development / Consulting", "Website": "https://www.neuralhq.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/neuralhq/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "LatentForce.ai", "Description": "An AI platform that provides predictive intelligence and automation for sales and marketing teams.", "Industry": "Sales Tech / MarTech", "Website": "https://www.latentforce.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/latentforce-ai/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "NWORX", "Description": "An AI-based platform for leadership and professional development, offering personalized coaching and performance tracking.", "Industry": "HR Tech / EdTech", "Website": "https://www.nworx.com/", "LinkedIn Profile": "https://www.linkedin.com/company/nworx-team/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Karta", "Description": "An AI-powered tool for creating and managing digital business cards and networking.", "Industry": "Productivity / Networking", "Website": "https://www.karta.io/", "LinkedIn Profile": "https://www.linkedin.com/company/karta-io/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Quoqo", "Description": "A legal tech platform that uses AI to automate contract lifecycle management and legal operations for businesses.", "Industry": "LegalTech / AI", "Website": "https://quoqo.com/", "LinkedIn Profile": "https://www.linkedin.com/company/quoqo/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Word Works AI", "Description": "An AI writing tool designed to help users generate high-quality marketing copy, articles, and other content.", "Industry": "Content Creation / MarTech", "Website": "https://wordworks.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/wordworksai/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "BluSapphire", "Description": "A cybersecurity platform that uses AI and big data analytics to detect and respond to cyber threats in real-time.", "Industry": "Cybersecurity / AI", "Website": "https://www.blusapphire.com/", "LinkedIn Profile": "https://www.linkedin.com/company/blusapphire-cyber-systems/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "SyntX", "Description": "An AI platform for synthesizing data and generating insights for complex business problems.", "Industry": "Data Analytics / AI", "Website": "https://www.syntx.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/syntx/", "Relevant Article": "N/A", "Relevance Score": 6 },
+            { "Name": "Jivi", "Description": "An AI platform for healthcare diagnostics, assisting doctors with medical imaging analysis.", "Industry": "HealthTech / Medical Imaging", "Website": "https://jivi.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/jivi-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Sixeye", "Description": "An AI-powered observability platform for monitoring and troubleshooting complex software systems.", "Industry": "DevOps / IT Operations", "Website": "https://www.sixeye.tech/", "LinkedIn Profile": "https://www.linkedin.com/company/sixeye/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "NeoBound.ai", "Description": "An AI sales agent for outbound calling and lead qualification, automating the initial stages of the sales process.", "Industry": "Sales Tech / Automation", "Website": "https://neobound.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/neobound/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "SurveyAgent", "Description": "An AI tool for creating conversational surveys and collecting feedback through interactive chat.", "Industry": "Market Research / CX", "Website": "https://www.surveyagent.io/", "LinkedIn Profile": "https://www.linkedin.com/company/surveyagent/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "LizPlus", "Description": "An AI-powered virtual assistant for managing tasks, schedules, and communications.", "Industry": "Productivity / Virtual Assistant", "Website": "https://liz.plus/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Cluster Protocol", "Description": "A decentralized AI network for building and deploying AI models and applications.", "Industry": "Web3 / Decentralized AI", "Website": "https://clusterprotocol.com/", "LinkedIn Profile": "https://www.linkedin.com/company/cluster-protocol/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Kandid", "Description": "An AI platform for recruitment that helps companies source, screen, and assess job candidates.", "Industry": "HR Tech / Recruitment", "Website": "https://kandid.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/kandid-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "DexyAI", "Description": "An AI-powered code assistant that helps developers write, debug, and optimize code faster.", "Industry": "Developer Tools / AI", "Website": "https://www.dexy.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/dexyai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "GATI", "Description": "An AI platform for logistics and supply chain management, optimizing routes and predicting delivery times.", "Industry": "Logistics / Supply Chain Tech", "Website": "https://gati.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/gati-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Rootle", "Description": "An AI-powered tool for product managers to gather user feedback and build better products.", "Industry": "Product Management / SaaS", "Website": "https://www.rootle.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/rootleai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Sales Agents AI", "Description": "Provides AI-powered agents to handle sales tasks like prospecting, lead qualification, and appointment setting.", "Industry": "Sales Tech / AI Agents", "Website": "https://salesagents.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/salesagents-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "AUGMENIO", "Description": "An augmented reality platform for industrial and enterprise use cases, providing remote assistance and training.", "Industry": "AR/VR / Enterprise", "Website": "https://www.augmenio.com/", "LinkedIn Profile": "https://www.linkedin.com/company/augmenio/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Periscope", "Description": "A data analytics platform that uses AI to help businesses explore data and create visualizations.", "Industry": "Data Analytics / BI", "Website": "https://www.periscope.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/periscope-inc/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Verbolyze", "Description": "An AI-powered SEO tool that automates content creation and keyword research for websites.", "Industry": "SEO / MarTech", "Website": "https://verbolyze.com/", "LinkedIn Profile": "https://www.linkedin.com/company/verbolyze/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "OnFinance AI", "Description": "An AI platform for financial analysis, providing insights and data for investment professionals.", "Industry": "FinTech / AI", "Website": "https://onfinance.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Super AGI", "Description": "An open-source framework for building and running autonomous AI agents.", "Industry": "Developer Tools / AI Agents", "Website": "https://superagi.com/", "LinkedIn Profile": "https://www.linkedin.com/company/superagi/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "RevBag", "Description": "An AI-powered tool for e-commerce to optimize pricing and promotions.", "Industry": "E-commerce Tech / Pricing", "Website": "https://www.revbag.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Logistiex", "Description": "An AI platform for the logistics industry to automate and optimize supply chain operations.", "Industry": "Logistics / Supply Chain Tech", "Website": "https://www.logistiex.com/", "LinkedIn Profile": "https://www.linkedin.com/company/logistiex/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Origamis AI", "Description": "An AI platform for creating and managing autonomous agents for various business tasks.", "Industry": "AI Agents / Automation", "Website": "https://www.origamis.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Othor AI", "Description": "An AI research and development company building custom solutions for enterprises.", "Industry": "AI R&D / Consulting", "Website": "https://www.othor.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/othor/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Snowmountain AI", "Description": "Focuses on building AI solutions for data-intensive industries.", "Industry": "Data Analytics / AI", "Website": "https://www.snowmountain.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "GenFuse AI", "Description": "A generative AI platform for creating various types of content, from text to images.", "Industry": "Generative AI / Content Creation", "Website": "https://www.genfuse.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/genfuse-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Niti", "Description": "An AI platform for legal and compliance, helping businesses navigate regulatory requirements.", "Industry": "LegalTech / RegTech", "Website": "https://niti.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/niti-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Mercuri", "Description": "An AI tool for sales teams to automate email outreach and follow-ups.", "Industry": "Sales Tech / Automation", "Website": "https://mercuri.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/mercuri-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Dobr.AI", "Description": "An AI assistant for automating daily tasks and workflows for individuals and teams.", "Industry": "Productivity / Automation", "Website": "https://dobr.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "GoCodeo", "Description": "An AI platform that automates software testing and quality assurance processes.", "Industry": "Developer Tools / Testing", "Website": "https://gocodeo.com/", "LinkedIn Profile": "https://www.linkedin.com/company/gocodeo/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Zigment", "Description": "An AI-powered sales assistant that helps businesses convert leads from social media and messaging apps.", "Industry": "Sales Tech / Social Commerce", "Website": "https://www.zigment.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/zigment-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Round Infinity", "Description": "An AI and data analytics consulting firm that helps businesses implement data-driven strategies.", "Industry": "AI Consulting / Data Analytics", "Website": "https://roundinfinity.com/", "LinkedIn Profile": "https://www.linkedin.com/company/roundinfinity/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Dot.agent", "Description": "A platform for building and deploying autonomous AI agents for various business functions.", "Industry": "AI Agents / Automation", "Website": "https://dotagent.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/dotagent/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Conel Labs", "Description": "An AI research lab focused on developing advanced machine learning models and applications.", "Industry": "AI R&D", "Website": "https://www.conelabs.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/conel-labs/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Tabbly", "Description": "An AI-powered workspace that helps organize tabs, notes, and tasks to improve productivity.", "Industry": "Productivity Tools", "Website": "https://tabbly.com/", "LinkedIn Profile": "https://www.linkedin.com/company/tabbly/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Alazka", "Description": "An AI platform for creating personalized marketing content at scale.", "Industry": "MarTech / Content Creation", "Website": "https://alazka.com/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Columsprout AI", "Description": "An AI tool for generating insights and content from unstructured data.", "Industry": "Data Analytics / NLP", "Website": "https://www.columsprout.com/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Arvat AI", "Description": "Develops AI solutions for industrial automation and predictive maintenance.", "Industry": "Industrial AI / IoT", "Website": "https://www.arvat.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/arvat-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "LitWiz Labs", "Description": "An AI-powered platform for legal research and case analysis for legal professionals.", "Industry": "LegalTech", "Website": "https://www.litwizlabs.com/", "LinkedIn Profile": "https://www.linkedin.com/company/litwiz-labs/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Detoxio", "Description": "An AI tool for content moderation and detecting harmful content online.", "Industry": "Content Moderation / Trust & Safety", "Website": "https://detoxio.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/detoxioai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "TargetGrid", "Description": "An AI-powered platform for sales and marketing teams to identify and target potential customers.", "Industry": "Sales Tech / Lead Generation", "Website": "https://targetgrid.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/targetgrid/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Saleasy", "Description": "An AI tool for e-commerce sellers to automate sales and marketing tasks.", "Industry": "E-commerce Tech / Automation", "Website": "https://www.saleasy.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Happsales", "Description": "A mobile CRM platform that uses AI to help sales teams manage leads and customers more effectively.", "Industry": "Sales Tech / CRM", "Website": "https://www.happsales.com/", "LinkedIn Profile": "https://www.linkedin.com/company/happsales/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Verifast", "Description": "An AI-powered identity verification and background check platform.", "Industry": "Identity Verification / RegTech", "Website": "https://www.verifast.io/", "LinkedIn Profile": "https://www.linkedin.com/company/verifast-inc/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Prompt World", "Description": "A platform and community for prompt engineering, providing tools and resources for working with large language models.", "Industry": "AI Development / Prompt Engineering", "Website": "https://www.promptworld.io/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "ascimov.com", "Description": "Develops autonomous AI agents for various industrial and enterprise applications.", "Industry": "AI Agents / Robotics", "Website": "https://ascimov.com/", "LinkedIn Profile": "https://www.linkedin.com/company/ascimov/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "wizr.ai", "Description": "An AI platform for automating business processes and workflows without code.", "Industry": "Workflow Automation / No-Code", "Website": "https://www.wizr.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/wizr-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "HertzAI", "Description": "An AI platform focused on audio and speech analysis for various applications.", "Industry": "Audio Technology / AI", "Website": "https://www.hertzai.com/", "LinkedIn Profile": "https://www.linkedin.com/company/hertzai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "KautalAI", "Description": "An AI-powered tool for strategic planning and decision-making for businesses.", "Industry": "Business Intelligence / Strategy", "Website": "https://kautal.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/kautalai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Strivalabs", "Description": "A technology consulting company that builds custom AI and software solutions for businesses.", "Industry": "IT Consulting / AI Development", "Website": "https://strivalabs.com/", "LinkedIn Profile": "https://www.linkedin.com/company/strivalabs/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "PowerCode.AI", "Description": "An AI platform that assists developers in writing and optimizing code.", "Industry": "Developer Tools / AI", "Website": "https://powercode.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/powercode-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Actalyst.ai", "Description": "An AI platform for financial services that automates compliance and risk management tasks.", "Industry": "FinTech / RegTech", "Website": "https://www.actalyst.com/", "LinkedIn Profile": "https://www.linkedin.com/company/actalyst/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Kis.ai", "Description": "An AI-powered knowledge management platform for teams to capture and share information.", "Industry": "Knowledge Management / SaaS", "Website": "https://kis.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/kis-ai/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Ask On Data", "Description": "A natural language interface for databases, allowing users to ask questions and get insights from their data.", "Industry": "Data Analytics / BI", "Website": "https://www.askondata.com/", "LinkedIn Profile": "https://www.linkedin.com/company/askondata/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Solarpunk", "Description": "An AI research initiative focused on developing AI for positive social and environmental impact.", "Industry": "AI for Good / Research", "Website": "https://solarpunk.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/solarpunk-agem/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Pulastya", "Description": "A legal tech startup using AI to streamline legal workflows and research for law firms.", "Industry": "LegalTech", "Website": "https://www.pulastya.ai/", "LinkedIn Profile": "https://www.linkedin.com/company/pulastya-legal-tech-pvt-ltd/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "OrangeCat", "Description": "An AI platform for automating marketing and customer engagement for small businesses.", "Industry": "MarTech / SMB", "Website": "https://www.orangecat.in/", "LinkedIn Profile": "https://www.linkedin.com/company/orangecat-in/", "Relevant Article": "N/A", "Relevance Score": 5 },
+            { "Name": "Chop Finance", "Description": "An AI tool for personal finance management and investment tracking.", "Industry": "FinTech / Personal Finance", "Website": "https://www.chop.finance/", "LinkedIn Profile": "https://www.linkedin.com/company/chop-finance/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Conscience AI Labs", "Description": "An AI research lab focused on building ethical and transparent AI systems.", "Industry": "Ethical AI / R&D", "Website": "https://www.conscienceai.com/", "LinkedIn Profile": "https://www.linkedin.com/company/conscience-ai-labs/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "depX", "Description": "An AI platform for deploying and managing machine learning models in production.", "Industry": "MLOps / DevOps", "Website": "https://www.depx.in/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Third Eye Social", "Description": "A social media analytics platform that uses AI to track trends and measure brand performance.", "Industry": "Social Media Analytics / MarTech", "Website": "https://www.thirdeyesocial.io/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Tulu Health", "Description": "An AI-powered mental wellness platform that provides personalized support and resources.", "Industry": "HealthTech / Mental Wellness", "Website": "https://www.tulu.health/", "LinkedIn Profile": "https://www.linkedin.com/company/tulu-health/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "9ai.in", "Description": "A provider of various AI-based solutions for businesses in India.", "Industry": "AI Services", "Website": "http://9ai.in/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Nexby", "Description": "Develops AI-powered drones and robotics solutions for industrial inspection and monitoring.", "Industry": "Robotics / Drones", "Website": "https://www.nexby.io/", "LinkedIn Profile": "https://www.linkedin.com/company/nexby/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "KRAS AI", "Description": "Focuses on AI solutions for the defense and aerospace industries.", "Industry": "Defense Tech / Aerospace", "Website": "https://www.kras.ai/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "OpenGig", "Description": "An AI-powered platform that connects freelancers and businesses for project-based work.", "Industry": "HR Tech / Freelance Platform", "Website": "https://www.opengig.work/", "LinkedIn Profile": "https://www.linkedin.com/company/opengig-work/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Vaani Research Labs", "Description": "A research lab focused on speech and language technologies for Indian languages.", "Industry": "Speech Technology / R&D", "Website": "https://vaaniresearch.com/", "LinkedIn Profile": "https://www.linkedin.com/company/vaani-research-labs/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Thub", "Description": "A technology incubator and ecosystem enabler that supports AI and deep-tech startups.", "Industry": "Venture Capital / Incubator", "Website": "https://thub.io/", "LinkedIn Profile": "https://www.linkedin.com/company/thub-io/", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Vomyra", "Description": "An AI platform for the fashion and apparel industry for trend forecasting and design.", "Industry": "Fashion Tech", "Website": "https://www.vomyra.com/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "Aviara Labs", "Description": "An AI research and development company building solutions for various industries.", "Industry": "AI R&D / Consulting", "Website": "https://www.aviaralabs.com/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 4 },
+            { "Name": "pooddleai.in", "Description": "An AI-based educational platform for personalized learning.", "Industry": "EdTech", "Website": "http://pooddleai.in/", "LinkedIn Profile": "N/A", "Relevant Article": "N/A", "Relevance Score": 3 }
+        ];
+
+        let chartInstance = null;
+        let currentSort = { key: 'Relevance Score', direction: 'desc' };
+        let activeFilter = 'all';
+        let activeIndustry = 'all';
+
+        const API_URL_BASE = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
+
+        function getApiKey() {
+            return localStorage.getItem('gemini_api_key') || '';
+        }
+
+        function setApiKey(key) {
+            if (key) localStorage.setItem('gemini_api_key', key);
+        }
+
+        async function callGeminiAPI(prompt, retries = 3, delay = 1000) {
+            const payload = { contents: [{ parts: [{ text: prompt }] }] };
+            try {
+                const apiKey = getApiKey();
+                if (!apiKey) {
+                    return 'Error: No API key set. Click "Set Gemini API Key" and paste a valid key.';
+                }
+                const response = await fetch(API_URL_BASE + encodeURIComponent(apiKey), {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) {
+                    if (response.status === 403) {
+                        return 'Error: 403 Forbidden. Possible causes: invalid API key, key disabled, or HTTP referrer restrictions blocking this origin. Ensure the key allows requests from this domain (or localhost during local dev).';
+                    }
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const result = await response.json();
+                return result.candidates?.[0]?.content?.parts?.[0]?.text || "No summary available.";
+            } catch (error) {
+                if (retries > 0) {
+                    await new Promise(res => setTimeout(res, delay));
+                    return callGeminiAPI(prompt, retries - 1, delay * 2);
+                }
+                return `Error: Could not retrieve analysis. ${error.message}`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dashboardPage = document.getElementById('dashboard-page');
+            const tierListPage = document.getElementById('tier-list-page');
+            const navDashboard = document.getElementById('nav-dashboard');
+            const navTierList = document.getElementById('nav-tier-list');
+
+            function switchPage(page) {
+                if (page === 'dashboard') {
+                    dashboardPage.classList.remove('hidden');
+                    tierListPage.classList.add('hidden');
+                    navDashboard.classList.add('active');
+                    navTierList.classList.remove('active');
+                } else {
+                    dashboardPage.classList.add('hidden');
+                    tierListPage.classList.remove('hidden');
+                    navDashboard.classList.remove('active');
+                    navTierList.classList.add('active');
+                    initializeTierList();
+                }
+            }
+
+            navDashboard.addEventListener('click', () => switchPage('dashboard'));
+            navTierList.addEventListener('click', () => switchPage('tier-list'));
+
+            populateIndustryFilter();
+            document.getElementById('search-input').addEventListener('input', () => renderAll());
+            document.getElementById('industry-filter').addEventListener('change', (e) => {
+                activeIndustry = e.target.value;
+                renderAll();
+                updateIndustryAnalysisButton();
+            });
+            document.getElementById('analyze-industry-btn').addEventListener('click', handleIndustryAnalysis);
+            document.getElementById('modal-close').addEventListener('click', () => document.getElementById('ai-modal').classList.add('hidden'));
+
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    document.querySelector('.filter-btn.active').classList.remove('active', 'bg-amber-600', 'text-white');
+                    document.querySelector('.filter-btn.active').classList.add('bg-slate-200', 'text-slate-700');
+                    e.target.classList.add('active', 'bg-amber-600', 'text-white');
+                    e.target.classList.remove('bg-slate-200', 'text-slate-700');
+                    activeFilter = e.target.dataset.filter;
+                    renderAll();
+                });
+            });
+
+            document.querySelectorAll('th[data-sort]').forEach(header => {
+                header.addEventListener('click', (e) => {
+                    const sortKey = e.currentTarget.dataset.sort;
+                    if (currentSort.key === sortKey) {
+                        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        currentSort.key = sortKey;
+                        currentSort.direction = 'asc';
+                    }
+                    renderAll();
+                });
+            });
+            
+            document.getElementById('startup-table-body').addEventListener('click', (e) => {
+                if (e.target && e.target.matches('button.analyze-btn')) {
+                    const startupName = e.target.dataset.name;
+                    handleStartupAnalysis(startupName);
+                }
+            });
+            
+            renderAll();
+            updateIndustryAnalysisButton();
+
+            // API key UI
+            const setApiKeyBtn = document.getElementById('set-api-key');
+            const apiKeyStatus = document.getElementById('api-key-status');
+            function refreshApiKeyStatus() {
+                apiKeyStatus.textContent = getApiKey() ? 'API key configured' : 'No API key set';
+            }
+            refreshApiKeyStatus();
+            setApiKeyBtn.addEventListener('click', () => {
+                const current = getApiKey();
+                const val = prompt('Paste your Gemini API key:', current || '');
+                if (val !== null) {
+                    setApiKey(val.trim());
+                    refreshApiKeyStatus();
+                }
+            });
+        });
+        
+        let draggedItem = null;
+
+        function initializeTierList() {
+            const unrankedPool = document.getElementById('unranked-pool');
+            unrankedPool.innerHTML = '';
+            
+            ['s','a','b','c','d'].forEach(tier => {
+                document.getElementById(`tier-${tier}`).innerHTML = '';
+            });
+
+            startupData.forEach(startup => {
+                const item = document.createElement('div');
+                item.id = `startup-${startup.Name.replace(/\s+/g, '-')}`;
+                item.className = 'startup-item bg-white p-2 rounded-md shadow-sm border border-slate-200 text-sm font-semibold';
+                item.draggable = true;
+                item.textContent = startup.Name;
+                unrankedPool.appendChild(item);
+
+                item.addEventListener('dragstart', (e) => {
+                    draggedItem = e.target;
+                    setTimeout(() => e.target.classList.add('dragging'), 0);
+                });
+
+                item.addEventListener('dragend', () => {
+                    draggedItem.classList.remove('dragging');
+                    draggedItem = null;
+                });
+            });
+            
+            document.querySelectorAll('.tier-row').forEach(row => {
+                row.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    row.classList.add('drag-over');
+                });
+                
+                row.addEventListener('dragleave', () => {
+                   row.classList.remove('drag-over');
+                });
+
+                row.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    row.classList.remove('drag-over');
+                    if (draggedItem) {
+                        row.appendChild(draggedItem);
+                    }
+                });
+            });
+        }
+
+        function populateIndustryFilter() {
+            const industryFilter = document.getElementById('industry-filter');
+            const industries = [...new Set(startupData.map(s => s.Industry))].sort();
+            industries.forEach(industry => {
+                const option = document.createElement('option');
+                option.value = industry;
+                option.textContent = industry;
+                industryFilter.appendChild(option);
+            });
+        }
+
+        function filterAndSortData() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            
+            let filteredData = startupData.filter(item => {
+                const nameMatch = item.Name.toLowerCase().includes(searchTerm);
+                const industryMatch = activeIndustry === 'all' || item.Industry === activeIndustry;
+                
+                const score = item['Relevance Score'];
+                let tierMatch = false;
+                if (activeFilter === 'all') tierMatch = true;
+                else if (activeFilter === 'top') tierMatch = score >= 10;
+                else if (activeFilter === 'mid') tierMatch = score >= 6 && score < 10;
+                else if (activeFilter === 'emerging') tierMatch = score < 6;
+                
+                return nameMatch && industryMatch && tierMatch;
+            });
+            
+            return filteredData.sort((a, b) => {
+                const aValue = a[currentSort.key];
+                const bValue = b[currentSort.key];
+                
+                let comparison = 0;
+                if (typeof aValue === 'number') comparison = aValue > bValue ? -1 : 1;
+                else comparison = aValue.localeCompare(bValue);
+                
+                return currentSort.direction === 'asc' ? comparison * -1 : comparison;
+            });
+        }
+        
+        function renderAll() {
+            const processedData = filterAndSortData();
+            renderStats(processedData);
+            renderTable(processedData);
+            renderChart(processedData);
+        }
+
+        function renderStats(data) {
+            document.getElementById('total-startups').textContent = data.length;
+            const totalRelevance = data.reduce((acc, item) => acc + item['Relevance Score'], 0);
+            const avgRelevance = data.length > 0 ? (totalRelevance / data.length).toFixed(1) : '0.0';
+            document.getElementById('avg-relevance').textContent = avgRelevance;
+            const highestScore = data.length > 0 ? Math.max(...data.map(item => item['Relevance Score'])) : '0';
+            document.getElementById('highest-score').textContent = highestScore;
+        }
+
+        function renderTable(data) {
+            const tableBody = document.getElementById('startup-table-body');
+            tableBody.innerHTML = '';
+            if (data.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="6" class="text-center p-8 text-slate-500">No startups found.</td></tr>`;
+                return;
+            }
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-slate-200 hover:bg-slate-100/50';
+                
+                const formatLink = (url, text) => {
+                    if (!url || url === 'N/A') return `<span class="text-slate-400">${text}</span>`;
+                    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-amber-600 hover:underline">${text}</a>`;
+                };
+
+                row.innerHTML = `
+                    <td class="p-4 font-semibold">${item.Name}</td>
+                    <td class="p-4 text-sm text-slate-600 description-cell">${item.Description}</td>
+                    <td class="p-4 text-sm font-medium text-slate-700">${item.Industry}</td>
+                    <td class="p-4 text-center text-lg font-bold">${item['Relevance Score']}</td>
+                    <td class="p-4 text-center text-sm space-y-1">
+                        ${formatLink(item.Website, 'Website')}<br>
+                        ${formatLink(item['LinkedIn Profile'], 'LinkedIn')}<br>
+                        ${formatLink(item['Relevant Article'], 'Article')}
+                    </td>
+                    <td class="p-4 text-center">
+                        <button class="analyze-btn px-3 py-1.5 bg-sky-600 text-white text-sm rounded-md shadow-sm hover:bg-sky-700" data-name="${item.Name}">Analyze ✨</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        async function handleStartupAnalysis(startupName) {
+            const startup = startupData.find(s => s.Name === startupName);
+            if (!startup) return;
+
+            const modal = document.getElementById('ai-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            const modalLoader = document.getElementById('modal-loader');
+            
+            modalTitle.textContent = `AI Analysis: ${startup.Name}`;
+            modalContent.innerHTML = '';
+            modalLoader.style.display = 'flex';
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            const prompt = `Provide an investor-style analysis for the Indian AI startup "${startup.Name}". 
+                - Industry: ${startup.Industry}
+                - Description: ${startup.Description}
+
+                Analyze the following in distinct sections with markdown formatting:
+                1.  **Core Business Model:** What problem do they solve and for whom? How do they likely make money?
+                2.  **Market Potential & Positioning:** How significant is their target market in India? What is their unique selling proposition (USP)?
+                3.  **Potential Challenges:** What are 1-2 key challenges or risks they might face (e.g., competition, technology adoption, regulation)?`;
+            
+            const summary = await callGeminiAPI(prompt);
+            modalContent.innerHTML = summary;
+            modalLoader.style.display = 'none';
+        }
+
+        async function handleIndustryAnalysis() {
+            const industry = activeIndustry;
+            if (industry === 'all') return;
+            
+            const btn = document.getElementById('analyze-industry-btn');
+            const loader = document.getElementById('industry-analysis-loader');
+            const contentDiv = document.getElementById('industry-analysis-content');
+
+            btn.disabled = true;
+            loader.style.display = 'flex';
+            contentDiv.classList.add('hidden');
+
+            const filteredStartups = filterAndSortData();
+            const startupInfo = filteredStartups.map(s => `- ${s.Name}: ${s.Description}`).join('\n');
+
+            const prompt = `Based on this list of Indian AI startups in the "${industry}" sector, analyze the industry landscape.
+                
+                Startup Data:
+                ${startupInfo}
+
+                Provide a concise analysis covering these points in distinct sections with markdown formatting:
+                1.  **Key Trends:** What are the dominant trends or technologies based on what these companies are doing?
+                2.  **Common Problems Solved:** What common customer or business problems are these startups addressing?
+                3.  **Potential Growth Areas & Opportunities:** Where might the next big opportunity in this sector lie in the Indian context?`;
+            
+            const analysis = await callGeminiAPI(prompt);
+            contentDiv.innerHTML = analysis;
+            contentDiv.classList.remove('hidden');
+            loader.style.display = 'none';
+            btn.disabled = false;
+        }
+
+        function updateIndustryAnalysisButton() {
+            const btn = document.getElementById('analyze-industry-btn');
+            const contentDiv = document.getElementById('industry-analysis-content');
+            if (activeIndustry === 'all') {
+                btn.disabled = true;
+                btn.textContent = 'Select an Industry to Analyze';
+                contentDiv.classList.add('hidden');
+            } else {
+                btn.disabled = false;
+                btn.textContent = `Analyze Trends for ${activeIndustry}`;
+                contentDiv.classList.add('hidden');
+            }
+        }
+
+        function renderChart(data) {
+            const ctx = document.getElementById('relevanceChart').getContext('2d');
+            const scoreCounts = data.reduce((acc, item) => {
+                const score = item['Relevance Score'];
+                acc[score] = (acc[score] || 0) + 1;
+                return acc;
+            }, {});
+
+            const labels = Object.keys(scoreCounts).sort((a,b) => a-b);
+            const chartData = labels.map(label => scoreCounts[label]);
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# of Startups',
+                        data: chartData,
+                        backgroundColor: 'rgba(217, 119, 6, 0.7)',
+                        borderColor: 'rgba(217, 119, 6, 1)',
+                        borderWidth: 1,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'Number of Startups' }, ticks: { stepSize: 1 } },
+                        x: { title: { display: true, text: 'Relevance Score' } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (c) => ` ${c.parsed.y} startups` } }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+{{ define "main" }}
+    <main class="projects">
+        <h1>{{ .Title }}</h1>
+
+        {{ if .Content }}
+            <div class="content">{{ .Content }}</div>
+        {{ end }}
+
+        <div class="projects-grid">
+            {{ range .Pages.ByPublishDate.Reverse }}
+                {{ $link := .Permalink }}
+                {{ with .Params.external_url }}
+                    {{ $link = . | relURL }}
+                {{ end }}
+                <a href="{{ $link }}" class="project-card" {{ if .Params.external_url }}target="_blank" rel="noopener"{{ end }}>
+                    <div class="project-thumb">
+                        {{ if .Params.thumbnail }}
+                            <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}">
+                        {{ else }}
+                            <div class="project-thumb-placeholder">{{ .Title | substr 0 1 }}</div>
+                        {{ end }}
+                    </div>
+                    <div class="project-meta">
+                        <h3 class="project-title">{{ .Title }}</h3>
+                        {{ with .Params.summary }}
+                            <p class="project-summary">{{ . }}</p>
+                        {{ end }}
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </main>
+{{ end }}
+
+

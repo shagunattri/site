@@ -392,3 +392,263 @@ body.dark-mode {
 .project-meta { padding: 14px 16px 18px; }
 .project-title { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.35; }
 .project-summary { margin: 0; color: var(--grey); font-size: .95rem; line-height: 1.45; }
+
+/* ===========================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   =========================================== */
+
+// Mobile-first responsive improvements
+@media #{$media-size-phone} {
+  // Global container fixes
+  body {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  // Typography scaling
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  h3 { font-size: 1.2rem !important; }
+  
+  p, li {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+}
+
+// Homepage Mobile Fixes
+@media #{$media-size-phone} {
+  .homepage-header {
+    padding: 20px 10px;
+    
+    h1 {
+      font-size: 1.8em !important;
+    }
+    
+    .tagline {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+    
+    .profile-picture {
+      max-width: 120px;
+    }
+  }
+  
+  .homepage-intro,
+  .homepage-focus-areas,
+  .homepage-philosophy,
+  .homepage-recent-posts {
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
+  
+  .focus-grid {
+    gap: 15px;
+  }
+  
+  .focus-item {
+    padding: 12px;
+  }
+}
+
+// Projects Page Mobile Optimization
+@media #{$media-size-phone} {
+  .projects {
+    padding: 10px;
+    
+    h1 {
+      font-size: 1.8rem !important;
+      margin-bottom: 15px;
+    }
+  }
+  
+  .projects-grid {
+    gap: 16px;
+    padding: 0;
+  }
+  
+  .project-card {
+    margin: 0;
+    border-radius: 8px;
+  }
+  
+  .project-meta {
+    padding: 12px 14px 14px;
+  }
+  
+  .project-title {
+    font-size: 1rem !important;
+    line-height: 1.3;
+  }
+  
+  .project-summary {
+    font-size: 0.9rem;
+  }
+}
+
+// Blog List & Single Post Fixes
+@media #{$media-size-phone} {
+  // Blog listing
+  .posts {
+    padding: 15px 10px;
+    max-width: 100%;
+  }
+  
+  .homepage-recent-posts {
+    ul li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      
+      a {
+        margin-right: 0;
+        font-size: 0.95rem;
+      }
+      
+      .date {
+        font-size: 0.85rem;
+      }
+    }
+  }
+  
+  // Single post
+  .post {
+    padding: 15px 10px;
+    max-width: 100%;
+    
+    &-title {
+      font-size: 1.6rem !important;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+    
+    &-content {
+      img {
+        width: 100%;
+        height: auto;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// Code Blocks & Pre-formatted Content
+@media #{$media-size-phone} {
+  pre {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    code {
+      font-size: 0.8rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  }
+  
+  code {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+}
+
+// CTA & Special Sections
+@media #{$media-size-phone} {
+  .patent-pilot-cta {
+    padding: 30px 20px;
+    margin-top: 30px;
+    
+    h3 {
+      font-size: 1.5em !important;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      font-size: 1rem !important;
+      max-width: 100%;
+    }
+    
+    .cta-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+  }
+}
+
+// Footer Mobile Adjustments
+@media #{$media-size-phone} {
+  .homepage-custom-footer {
+    padding: 30px 15px;
+    
+    .footer-container {
+      padding: 0 10px;
+    }
+    
+    .footer-nav a {
+      font-size: 0.9rem;
+      margin: 0 8px 8px;
+    }
+    
+    .footer-copyright p {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Utility Classes & Edge Cases
+@media #{$media-size-phone} {
+  // Prevent horizontal scroll
+  .content {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  // Responsive iframes (videos, embeds)
+  .iframe-container {
+    padding-top: 56.25%;
+  }
+  
+  // Images
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  // Blockquotes
+  blockquote {
+    margin: 20px 10px;
+    padding: 10px 15px;
+    
+    &:before {
+      left: -20px;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+// Tablet Optimization (900px breakpoint)
+@media #{$media-size-tablet} {
+  .homepage-header h1 {
+    font-size: 2.2em;
+  }
+  
+  .projects {
+    padding: 15px;
+  }
+  
+  .post {
+    padding: 20px 15px;
+  }
+}

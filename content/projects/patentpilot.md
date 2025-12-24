@@ -1,6 +1,6 @@
 ---
 title: "PatentPilot - AI-Powered Patent Filing Platform"
-date: 2025-01-27T00:00:00Z
+date: 2025-01-26T00:00:00Z
 thumbnail: "/images/patentpilot-logo.png"
 external_url: "https://patentpilot.vercel.app/?utm_source=shagun.xyz&utm_medium=project_referral&utm_campaign=website"
 summary: "India's leading patent filing platform with AI-powered analysis. File patents with expert guidance, accurate fee calculation, and complete support."

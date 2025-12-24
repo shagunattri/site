@@ -324,13 +324,6 @@
       <description>This simple advice will help to protect you against hackers and government surveillance.&#xA;The internet today is filled with news of breached and compromised accounts on various platforms and how the governments are able to surveil there own citizens.&#xA;The question now is Whether the government is the good guy or the bad guy and I certainly have had a hard time figuring it out.&#xA;Well if you are like, “I got nothing to hide” then you should probably reconsider.</description>
     </item>
     <item>
-      <title>Indian Agentic AI startup analysis</title>
-      <link>http://localhost:1313/projects/indian-agentic-ai-startups/</link>
-      <pubDate>Thu, 02 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/indian-agentic-ai-startups/</guid>
-      <description>Interactive dashboard exploring Indian agentic AI startups with filters, charts and AI-powered analysis.</description>
-    </item>
-    <item>
       <title>India&#39;s Patent Revolution - How Research Led to PatentPilot!</title>
       <link>http://localhost:1313/blog/patent/</link>
       <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
@@ -338,11 +331,25 @@
       <description>When I began investigating India&amp;rsquo;s patent ecosystem six months ago, I approached it as a systematic research endeavour. What emerged was not only a comprehensive understanding of our nation&amp;rsquo;s intellectual property transformation but also a clear recognition of unprecedented opportunities. Opportunities that ultimately led me to develop PatentPilot, a platform designed to democratise sophisticated patent intelligence for Indian innovators.&#xA;The Data That Revealed India&amp;rsquo;s Patent Renaissance The numbers that fundamentally shifted my perspective on India&amp;rsquo;s innovation landscape tell a remarkable story.</description>
     </item>
     <item>
+      <title>Indian Agentic AI startup analysis</title>
+      <link>http://localhost:1313/projects/indian-agentic-ai-startups/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/indian-agentic-ai-startups/</guid>
+      <description>Interactive dashboard exploring Indian agentic AI startups with filters, charts and AI-powered analysis.</description>
+    </item>
+    <item>
       <title>PatentPilot - AI-Powered Patent Filing Platform</title>
       <link>http://localhost:1313/projects/patentpilot/</link>
-      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/patentpilot/</guid>
       <description>India&amp;rsquo;s leading patent filing platform with AI-powered analysis. File patents with expert guidance, accurate fee calculation, and complete support.</description>
+    </item>
+    <item>
+      <title>Knownsense Labs - YouTube Channel</title>
+      <link>http://localhost:1313/projects/knownsense-labs/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/knownsense-labs/</guid>
+      <description>A YouTube channel exploring product management, cybersecurity, AI, and technology through in-depth videos and live coding sessions.</description>
     </item>
     <item>
       <title>$whoami</title>

@@ -70,7 +70,9 @@
         <section class="homepage-recent-posts">
             <h2>Recent Blog Posts</h2>
             <ul>
-                {{ range first 5 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") }}
+                {{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+                {{ $blogPosts = where $blogPosts ".Params.unlisted" "!=" true }}
+                {{ range first 5 ($blogPosts.ByDate.Reverse) }}
                     <li>
                         <a href="{{ .Permalink }}">{{ .Title }}</a>
                         <span class="date">{{ .Date.Format .Site.Params.dateformShort }}</span>

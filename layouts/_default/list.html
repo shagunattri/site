@@ -1,5 +1,6 @@
 {{ define "main" }}
-    {{ $paginator := .Paginate .Data.Pages }}
+    {{ $pages := where .Data.Pages ".Params.unlisted" "!=" true }}
+    {{ $paginator := .Paginate $pages }}
     
     <main class="posts">
         <h1>{{ .Title }}</h1>

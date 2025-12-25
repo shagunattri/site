@@ -137,9 +137,6 @@
     <loc>http://localhost:1313/blog/protecting_your_digital_self/</loc>
     <lastmod>2025-03-31T18:24:05+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/knownsense-labs/</loc>
-    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-12-23T23:21:30+05:30</lastmod>
   </url><url>
@@ -154,9 +151,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-12-23T23:21:30+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/indian-agentic-ai-startups/</loc>
-    <lastmod>2025-10-10T23:58:39+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ai/</loc>
     <lastmod>2025-09-28T01:43:15+05:30</lastmod>
@@ -194,8 +188,14 @@
     <loc>http://localhost:1313/categories/security/</loc>
     <lastmod>2025-04-06T21:08:27+05:30</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/indian-agentic-ai-startups/</loc>
+    <lastmod>2025-12-24T23:49:33+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/patentpilot/</loc>
-    <lastmod>2025-10-10T23:58:39+05:30</lastmod>
+    <lastmod>2025-12-24T23:49:33+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/knownsense-labs/</loc>
+    <lastmod>2025-12-24T23:49:33+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/fintech/</loc>
     <lastmod>2025-04-06T21:08:27+05:30</lastmod>

@@ -11,12 +11,12 @@ echo "Shagun Attri"
 Interests = Products, SaaS, Startups, B2B
 Hobbies = Photography, Writing, Travel, Reading
 Sports = F1, Cricket
-Role = PM
+Role = Senior PM
 ```
 
 👋 , I'm Shagun. This site serves as my digital notebook and library where I share insights from my professional life, technical explorations, book reviews, and guides.
 
-Currently, I'm a Product Manager at ArmorCode, focusing on ASPM and RBVM within the B2B cybersecurity space. I'm fascinated by the intersection of technology and human psychology, applying these insights to build better, more secure products. 
+Currently, I'm a Senior Product Manager at ArmorCode, focusing on ASPM and RBVM within the B2B cybersecurity space. I'm fascinated by the intersection of technology and human psychology, applying these insights to build better, more secure products. 
 
 My interest in security extends beyond my day job; on this site, I frequently delve into topics ranging from defensive best practices and privacy - 
 - [Protecting Your Digital Self](blog/protecting_your_digital_self)

@@ -7,12 +7,12 @@
         {{ end }}
 
         <div class="projects-grid">
-            {{ range .Pages.ByPublishDate.Reverse }}
+            {{ range $index, $project := .Pages.ByPublishDate.Reverse }}
                 {{ $link := .Permalink }}
                 {{ with .Params.external_url }}
-                    {{ $link = . | relURL }}
+                    {{ $link = . }}
                 {{ end }}
-                <a href="{{ $link }}" class="project-card" {{ if .Params.external_url }}target="_blank" rel="noopener"{{ end }}>
+                <div class="project-card" data-modal="project-modal-{{ $index }}" style="cursor: pointer;">
                     <div class="project-thumb">
                         {{ if .Params.thumbnail }}
                             <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}">
@@ -26,10 +26,74 @@
                             <p class="project-summary">{{ . }}</p>
                         {{ end }}
                     </div>
-                </a>
+                </div>
+
+                <!-- Modal for this project -->
+                <div id="project-modal-{{ $index }}" class="project-modal">
+                    <div class="project-modal-overlay"></div>
+                    <div class="project-modal-content">
+                        <div class="project-modal-header">
+                            <button class="project-modal-close" aria-label="Close modal">&times;</button>
+                            {{ if .Params.thumbnail }}
+                                <a href="{{ $link }}" target="_blank" rel="noopener" title="Visit {{ .Title }}">
+                                    <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" class="project-modal-thumb">
+                                </a>
+                            {{ end }}
+                            <h2 class="project-modal-title">{{ .Title }}</h2>
+                        </div>
+                        <div class="project-modal-body">
+                            {{ .Content }}
+                        </div>
+                        <div class="project-modal-footer">
+                            {{ if $link }}
+                                <a href="{{ $link }}" class="project-modal-button" target="_blank" rel="noopener">
+                                    <span>🚀</span> Visit Project
+                                </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
             {{ end }}
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Open modal when clicking on project card
+            document.querySelectorAll('.project-card').forEach(function(card) {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal when clicking close button or overlay
+            document.querySelectorAll('.project-modal-close, .project-modal-overlay').forEach(function(element) {
+                element.addEventListener('click', function() {
+                    const modal = this.closest('.project-modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.project-modal.active').forEach(function(modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+            });
+        });
+    </script>
 {{ end }}
 
 

@@ -3,15 +3,485 @@
 
 /* Custom SCSS for Hello Friend NG Homepage */
 
-// Accent Colors
-$primary-accent-color: #6B8E23; // Military green
-$primary-accent-color-hover: #556B2F; // Darker military green for hover
+// Accent Colors - UNC Dunks inspired (Bright Sky Blue + Orange)
+$primary-accent-color: #4FC3F7; // Bright Sky Blue (Light Blue 300)
+$primary-accent-color-hover: #29B6F6; // Slightly darker sky blue for hover
+$secondary-accent-color: #FF7043; // Vibrant Orange accent
+$secondary-accent-color-hover: #E65100; // Darker Orange for hover
 
-/* Helper/Utility classes (if needed, otherwise theme's might suffice) */
+// Override the global accent color
+:root {
+  --accent: #{$primary-accent-color};
+  --accent-hover: #{$primary-accent-color-hover};
+  --accent-secondary: #{$secondary-accent-color};
+  --accent-secondary-hover: #{$secondary-accent-color-hover};
+  --gradient-primary: linear-gradient(135deg, #{$primary-accent-color}, #{$secondary-accent-color});
+  --gradient-subtle: linear-gradient(135deg, rgba(79, 195, 247, 0.1), rgba(255, 112, 67, 0.1));
+}
+
+// Apply gradient accents to links and interactive elements
+a {
+  color: $primary-accent-color;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $secondary-accent-color;
+  }
+}
+
+// Animated gradient background for the entire site
+body {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+      background: 
+      radial-gradient(ellipse at 20% 20%, rgba(79, 195, 247, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(255, 112, 67, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 40%, rgba(79, 195, 247, 0.04) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+    animation: gradientShift 20s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* ===========================================
+   FULL-WIDTH LAYOUT OVERRIDES
+   =========================================== */
+
+// Make the container full width with reasonable padding
 .container {
-    max-width: 800px; /* Adjust as per theme or preference */
+    max-width: 100% !important;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 60px;
+    overflow-x: hidden;
+    
+    @media (min-width: 1600px) {
+        padding: 0 80px;
+    }
+    
+    @media (max-width: 1200px) {
+        padding: 0 40px;
+    }
+    
+    @media #{$media-size-tablet} {
+        padding: 0 30px;
+    }
+    
+    @media #{$media-size-phone} {
+        padding: 0 15px;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 0 12px;
+    }
+}
+
+// Full-width header with gradient effects
+.header {
+    width: 100%;
+    max-width: 100% !important;
+    padding: 20px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+    z-index: 1000; // High z-index for header, but lower than menu
+    
+    // Removed the bottom border line - keeping it clean
+    
+    .header__inner {
+        width: auto !important;
+        max-width: 90% !important;
+        min-width: 280px;
+        padding: 12px 24px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        gap: 16px;
+        
+        @media (prefers-color-scheme: dark) {
+            background: rgba(26, 26, 46, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-theme=dark] & {
+            background: rgba(26, 26, 46, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-theme=light] & {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 900px) {
+            max-width: 92% !important;
+            padding: 11px 20px;
+            gap: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            max-width: 95% !important;
+            min-width: 260px;
+            padding: 10px 16px;
+            gap: 12px;
+        }
+        
+        @media (max-width: 684px) {
+            min-width: 240px;
+            padding: 8px 12px;
+            gap: 8px;
+        }
+        
+        @media (max-width: 600px) {
+            min-width: 230px;
+            padding: 7px 11px;
+            gap: 7px;
+        }
+        
+        @media (max-width: 480px) {
+            min-width: 200px;
+            padding: 6px 10px;
+            gap: 6px;
+        }
+        
+        @media (max-width: 375px) {
+            min-width: 180px;
+            padding: 5px 8px;
+            gap: 5px;
+        }
+        
+        &:hover {
+            box-shadow: 0 6px 30px rgba(79, 195, 247, 0.15);
+            border-color: rgba(79, 195, 247, 0.3);
+        }
+    }
+    
+    // Animated logo
+    .logo a {
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+// Menu link hover effects - updated for pill design
+.menu {
+    z-index: 99999 !important; // Override theme z-index
+    pointer-events: auto !important;
+    
+    &__inner {
+        gap: 8px;
+        position: relative;
+        z-index: 100000 !important;
+        pointer-events: auto !important;
+        
+        li {
+            margin: 0 4px;
+            position: relative;
+            z-index: 100001 !important;
+            pointer-events: auto !important;
+            
+            @media (max-width: 768px) {
+                margin: 0 2px;
+            }
+        }
+    }
+    
+    a {
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 6px 12px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        min-width: 44px;
+        white-space: nowrap;
+        z-index: 100002 !important;
+        pointer-events: auto !important;
+        cursor: pointer;
+        
+        @media (max-width: 900px) {
+            padding: 5px 10px;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            padding: 4px 8px;
+            font-size: 0.9rem;
+            min-height: 36px;
+            min-width: 40px;
+            z-index: 100002 !important;
+            pointer-events: auto !important;
+        }
+        
+        @media (max-width: 600px) {
+            padding: 4px 6px;
+            font-size: 0.85rem;
+            min-width: 36px;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 3px 5px;
+            font-size: 0.8rem;
+            min-height: 32px;
+            min-width: 32px;
+        }
+        
+        &:hover {
+            color: $secondary-accent-color;
+            background: rgba(79, 195, 247, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        // Active state for current page
+        &[aria-current="page"] {
+            color: $secondary-accent-color;
+            background: rgba(79, 195, 247, 0.15);
+            font-weight: 600;
+        }
+    }
+}
+
+// Menu trigger button
+.menu-trigger {
+    z-index: 100003 !important;
+    pointer-events: auto !important;
+    cursor: pointer;
+    position: relative;
+    
+    @media (max-width: 768px) {
+        z-index: 100003 !important;
+        pointer-events: auto !important;
+    }
+}
+
+// Theme toggle styling within pill
+.theme-toggle {
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    @media (max-width: 480px) {
+        min-width: 28px;
+        min-height: 28px;
+        padding: 4px;
+        margin-left: 4px;
+    }
+    
+    &:hover {
+        background: rgba(79, 195, 247, 0.1);
+        transform: scale(1.1);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+// Make the main content area wider
+.post {
+    max-width: 100% !important;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+    margin: 20px 0;
+    
+    @media #{$media-size-tablet} {
+        max-width: 100% !important;
+    }
+    
+    .post-title {
+        text-align: left;
+        font-size: 2.8rem;
+        background: linear-gradient(135deg, $primary-accent-color, $secondary-accent-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        
+        @media #{$media-size-phone} {
+            font-size: 2rem;
+        }
+    }
+    
+    .post-content {
+        max-width: 100%;
+        
+        p, li {
+            line-height: 1.75;
+        }
+        
+        // Add gradient hover to links in content
+        a {
+            position: relative;
+            background: linear-gradient(135deg, $primary-accent-color, $secondary-accent-color);
+            -webkit-background-clip: text;
+            background-clip: text;
+            transition: all 0.3s ease;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, $primary-accent-color, $secondary-accent-color);
+                transition: width 0.3s ease;
+            }
+            
+            &:hover {
+                -webkit-text-fill-color: transparent;
+                
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+        
+        // Styled blockquotes with gradient
+        blockquote {
+            border-left: 4px solid transparent;
+            border-image: linear-gradient(180deg, $primary-accent-color, $secondary-accent-color) 1;
+            padding: 20px 24px;
+            margin: 24px 0;
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.05), rgba(255, 112, 67, 0.05));
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            
+            &::before {
+                content: '"';
+                position: absolute;
+                top: -10px;
+                left: 10px;
+                font-size: 4rem;
+                background: linear-gradient(135deg, $primary-accent-color, $secondary-accent-color);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                opacity: 0.3;
+                font-family: Georgia, serif;
+            }
+        }
+        
+        // Styled code blocks
+        code:not(pre code) {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.1), rgba(255, 112, 67, 0.1));
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        // Styled horizontal rules
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, $primary-accent-color, $secondary-accent-color, transparent);
+            margin: 40px 0;
+        }
+        
+        // Styled headings with hover effect
+        h2, h3, h4 {
+            position: relative;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                color: $primary-accent-color;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 0;
+                background: linear-gradient(180deg, $primary-accent-color, $secondary-accent-color);
+                border-radius: 2px;
+                transition: height 0.3s ease;
+            }
+            
+            &:hover::before {
+                height: 100%;
+            }
+        }
+    }
+    
+    .post-cover {
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.1), rgba(255, 112, 67, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+}
+
+// Posts list page
+.posts {
+    max-width: 100% !important;
+    width: 100%;
+    padding: 20px 0;
+    
+    .post {
+        margin-bottom: 40px;
+    }
+}
+
+// List pages
+.list {
+    max-width: 100%;
+    width: 100%;
 }
 
 /* Homepage specific styles */
@@ -99,14 +569,18 @@ $primary-accent-color-hover: #556B2F; // Darker military green for hover
 
 .focus-grid {
     display: grid;
-    gap: 20px; /* Keeps the existing gap */
-    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for desktop */
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
 
-    @media #{$media-size-tablet} { /* Using theme variable for tablet: (max-width: 900px) */
+    @media (max-width: 1400px) {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+
+    @media #{$media-size-tablet} {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
     }
 
-    @media #{$media-size-phone} { /* Using theme variable for phone: (max-width: 684px) */
+    @media #{$media-size-phone} {
         grid-template-columns: 1fr; /* 1 column for phone */
     }
 }
@@ -115,12 +589,31 @@ $primary-accent-color-hover: #556B2F; // Darker military green for hover
     background-color: var(--secondary-bg-color);
     padding: 15px;
     border-radius: 8px;
-    /* Removed flex: 0 0 auto; */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Added transition */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, $primary-accent-color, $secondary-accent-color);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
 
     &:hover {
-        transform: translateY(-5px); /* Slight lift on hover */
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(79, 195, 247, 0.15), 0 4px 8px rgba(255, 112, 67, 0.1);
+      border-color: rgba(79, 195, 247, 0.2);
+        
+        &::before {
+            transform: scaleX(1);
+        }
     }
 
     p {
@@ -338,14 +831,62 @@ body.dark-mode {
 
 /* Projects grid (thumbnail-first cards) */
 .projects {
-    .content { margin-bottom: 1.2rem; }
+    .content { 
+        margin-bottom: 1.2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 24px;
+        width: 100%;
+        overflow-x: hidden;
+        
+        @media (max-width: 900px) {
+            padding: 0 20px;
+        }
+        
+        @media (max-width: 768px) {
+            padding: 0 16px;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 0 12px;
+        }
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        
+        @media (max-width: 900px) {
+            font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 1.75rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+    }
+    
+    > .content {
+        text-align: center;
+    }
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 
+    @media (max-width: 1400px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
     @media #{$media-size-tablet} {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -363,11 +904,53 @@ body.dark-mode {
     text-decoration: none;
     color: inherit;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform .15s ease, box-shadow .15s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid transparent;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(93, 165, 216, 0.03), rgba(255, 112, 67, 0.03));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, $primary-accent-color, $secondary-accent-color);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+    }
 
     &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 
+        0 20px 40px rgba(79, 195, 247, 0.15),
+        0 8px 16px rgba(255, 112, 67, 0.1);
+      border-color: rgba(79, 195, 247, 0.3);
+        
+        &::before {
+            opacity: 1;
+        }
+        
+        &::after {
+            transform: scaleX(1);
+        }
+        
+        .project-title {
+            background: linear-gradient(135deg, $primary-accent-color, $secondary-accent-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     }
 }
 
@@ -980,32 +1563,65 @@ body.dark-mode {
 
 // Utility Classes & Edge Cases
 @media #{$media-size-phone} {
+  // Prevent horizontal scroll globally
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   // Prevent horizontal scroll
   .content {
     max-width: 100%;
     overflow-x: hidden;
+    word-wrap: break-word;
   }
   
   // Responsive iframes (videos, embeds)
   .iframe-container {
     padding-top: 56.25%;
+    width: 100%;
+    max-width: 100%;
   }
   
   // Images
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
   
   // Blockquotes
   blockquote {
     margin: 20px 10px;
     padding: 10px 15px;
+    max-width: 100%;
+    overflow-x: hidden;
     
     &:before {
       left: -20px;
       font-size: 2.5rem;
     }
+  }
+  
+  // Tables
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+  
+  // Code blocks
+  pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    word-wrap: break-word;
   }
 }
 
@@ -1021,5 +1637,233 @@ body.dark-mode {
   
   .post {
     padding: 20px 15px;
+  }
+}
+
+/* ===========================================
+   TABLE OF CONTENTS SIDEBAR
+   =========================================== */
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  
+  @media (max-width: 1200px) {
+    gap: 0;
+    justify-content: center;
+  }
+}
+
+.content {
+  flex: 1;
+  max-width: calc(100% - 320px);
+  min-width: 0;
+  margin: 0 auto;
+  
+  @media (min-width: 1600px) {
+    max-width: calc(100% - 360px);
+  }
+  
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  // Center content when there's no TOC sidebar (like on projects page)
+  &:only-child {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.toc-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  position: relative;
+  margin-top: 60px;
+  
+  // Auto-hide/show animation
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  
+  &.toc-hidden {
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+  }
+  
+  @media (min-width: 1600px) {
+    width: 320px;
+  }
+  
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.toc-sidebar-inner {
+  position: sticky;
+  top: 100px;
+  padding-right: 10px;
+  
+  // No scrollbar - show all content
+  overflow: visible;
+}
+
+.toc-sidebar-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, $primary-accent-color, $secondary-accent-color) 1;
+}
+
+.toc-sidebar-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, $primary-accent-color, $secondary-accent-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.toc-sidebar-nav {
+  // Navigation container - Hugo's TableOfContents structure
+  
+  #TableOfContents {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      // Nested levels (h3, h4, etc.)
+      ul {
+        margin-left: 0;
+        
+        li a {
+          padding-left: 24px;
+          font-size: 0.85rem;
+        }
+        
+        ul li a {
+          padding-left: 36px;
+          font-size: 0.82rem;
+        }
+      }
+    }
+    
+    li {
+      position: relative;
+      margin-bottom: 2px;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: transparent;
+        border-radius: 3px;
+        transition: background-color 0.2s ease;
+      }
+      
+      &.active::before {
+        background: $primary-accent-color;
+      }
+      
+      &.active {
+        transform: translateX(2px);
+        transition: transform 0.2s ease;
+      }
+    }
+    
+    a {
+      display: block;
+      padding: 8px 12px 8px 14px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: var(--grey);
+      text-decoration: none;
+      font-family: "IBM Plex Sans", sans-serif;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      border-radius: 4px;
+      
+      &:hover {
+        color: $primary-accent-color;
+        background: rgba(79, 195, 247, 0.1);
+        text-decoration: none;
+      }
+      
+      li.active & {
+        color: $primary-accent-color;
+        font-weight: 500;
+        background: rgba(79, 195, 247, 0.15);
+      }
+    }
+  }
+}
+
+// Dark mode adjustments for TOC
+[data-theme="dark"] {
+  .toc-sidebar-header {
+    border-bottom-color: rgba(79, 195, 247, 0.5);
+  }
+  
+  .toc-link {
+    color: #a0a0a0;
+    
+    &:hover {
+      background: rgba(79, 195, 247, 0.2);
+    }
+    
+    .toc-item.active & {
+      background: rgba(79, 195, 247, 0.25);
+    }
+  }
+}
+
+// Animation for scroll highlighting
+.toc-item {
+  transition: transform 0.2s ease;
+  
+  &.active {
+    transform: translateX(2px);
+  }
+}
+
+// Reading progress indicator (optional enhancement)
+.toc-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: var(--reading-progress, 0%);
+  background: linear-gradient(to bottom, $primary-accent-color, $secondary-accent-color);
+  border-radius: 2px;
+  transition: height 0.1s ease;
+  box-shadow: 0 0 10px rgba(255, 112, 67, 0.3);
+}
+
+// Animated indicator for active TOC items
+.toc-sidebar-nav #TableOfContents li.active {
+  &::before {
+    background: linear-gradient(180deg, $primary-accent-color, $secondary-accent-color);
+    box-shadow: 0 0 8px rgba(255, 112, 67, 0.4);
+  }
+  
+  a {
+    background: linear-gradient(90deg, rgba(93, 165, 216, 0.12), rgba(255, 112, 67, 0.08));
   }
 }

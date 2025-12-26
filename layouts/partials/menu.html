@@ -5,6 +5,10 @@
             <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
         {{- end }}
 
+        {{- if .Site.Params.EnableThemeToggle }}
+            <li class="theme-toggle not-selectable">{{ partial "theme-toggle-icon.html" . }}</li>
+        {{- end}}
+
         {{- if .Site.Params.EnableGlobalLanguageMenu }}
         <div class="submenu">
             <li class="dropdown">

@@ -2,74 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Shagun Attri</title>
-    <link>http://localhost:55518/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Shagun Attri</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
     <lastBuildDate>Tue, 23 Dec 2025 23:21:30 +0530</lastBuildDate>
-    <atom:link href="http://localhost:55518/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Essay</title>
-      <link>http://localhost:55518/categories/essay/</link>
+      <link>http://localhost:1313/categories/essay/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/essay/</guid>
+      <guid>http://localhost:1313/categories/essay/</guid>
       <description></description>
     </item>
     <item>
       <title>Product</title>
-      <link>http://localhost:55518/categories/product/</link>
+      <link>http://localhost:1313/categories/product/</link>
       <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/product/</guid>
+      <guid>http://localhost:1313/categories/product/</guid>
       <description></description>
     </item>
     <item>
       <title>Ux</title>
-      <link>http://localhost:55518/categories/ux/</link>
+      <link>http://localhost:1313/categories/ux/</link>
       <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/ux/</guid>
+      <guid>http://localhost:1313/categories/ux/</guid>
       <description></description>
     </item>
     <item>
       <title>Startups</title>
-      <link>http://localhost:55518/categories/startups/</link>
+      <link>http://localhost:1313/categories/startups/</link>
       <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/startups/</guid>
+      <guid>http://localhost:1313/categories/startups/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>http://localhost:55518/categories/security/</link>
+      <link>http://localhost:1313/categories/security/</link>
       <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/security/</guid>
+      <guid>http://localhost:1313/categories/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Reads</title>
-      <link>http://localhost:55518/categories/reads/</link>
+      <link>http://localhost:1313/categories/reads/</link>
       <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/reads/</guid>
+      <guid>http://localhost:1313/categories/reads/</guid>
       <description></description>
     </item>
     <item>
       <title>Update</title>
-      <link>http://localhost:55518/categories/update/</link>
+      <link>http://localhost:1313/categories/update/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/update/</guid>
+      <guid>http://localhost:1313/categories/update/</guid>
       <description></description>
     </item>
     <item>
       <title>Books</title>
-      <link>http://localhost:55518/categories/books/</link>
+      <link>http://localhost:1313/categories/books/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/books/</guid>
+      <guid>http://localhost:1313/categories/books/</guid>
       <description></description>
     </item>
     <item>
       <title>Dev</title>
-      <link>http://localhost:55518/categories/dev/</link>
+      <link>http://localhost:1313/categories/dev/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:55518/categories/dev/</guid>
+      <guid>http://localhost:1313/categories/dev/</guid>
       <description></description>
     </item>
   </channel>

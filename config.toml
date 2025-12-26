@@ -18,9 +18,16 @@ paginate = 50
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
   [markup.highlight]
     style = "native"
     guessSyntax = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
 
 [taxonomies]
   category = "categories"
@@ -37,6 +44,7 @@ paginate = 50
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02"
   defaultTheme = "light"
+  EnableThemeToggle = true
   description = "Shagun Attri's blog sharing perspectives and insights on cybersecurity, startups, and software development."
   disableReadOtherPosts = false
   homeSubtitle = "Sharing Perspectives on Cybersecurity & Startups!"
@@ -46,7 +54,7 @@ paginate = 50
   images = ["/static/image1.png"]
 
   [params.Logo]
-    logoCursorColor = "#6B8E23"
+    logoCursorColor = "#4FC3F7"
 
 [params.Portrait]
   Path = "images/cover.jpg"
@@ -75,7 +83,7 @@ paginate = 50
     url        = "/blog/"
   [[menu.main]]
     identifier = "about"
-    name       = "whoami"
+    name       = "about"
     url        = "about/"
 
 

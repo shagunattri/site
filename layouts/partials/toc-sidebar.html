@@ -1,0 +1,13 @@
+{{- $toc := .TableOfContents -}}
+{{- if and (ne $toc "") (gt (len $toc) 100) -}}
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-sidebar-inner">
+        <div class="toc-sidebar-header">
+            <span class="toc-sidebar-title">Table of contents</span>
+        </div>
+        <nav class="toc-sidebar-nav" id="toc-nav">
+            {{ $toc }}
+        </nav>
+    </div>
+</aside>
+{{- end -}}

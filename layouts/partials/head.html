@@ -3,14 +3,14 @@
 {{ if .Params.noindex }}
 <meta name="robots" content="noindex" />
 {{ end }}
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Google Fonts - Flex & Sans Flex -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}">
-<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.homeSubtitle }}{{ else }}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Summary | plainify }}{{ end }}{{ end }}" />
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Summary | plainify }}{{ end }}{{ end }}" />
 <meta name="keywords" content="{{ .Site.Params.keywords }}{{ if .Params.tags }}{{ range .Params.tags }}, {{ . }}{{ end }}{{ end }}" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
@@ -19,9 +19,9 @@
 {{ block "title" . }}
     <title>
         {{ if .IsHome }}
-            {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }}
+            {{ $.Site.Title }}
         {{ else }}
-            {{ .Title }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+            {{ .Title }} | {{ $.Site.Title }}
         {{ end }}
     </title>
 {{ end }}
@@ -40,8 +40,50 @@
 <!-- Icons -->
 {{- partial "favicons.html" . }}
 
-<!-- {{ template "_internal/schema.html" . }} -->
-{{ template "_internal/twitter_cards.html" . }}
+<!-- Twitter Card Meta Tags -->
+{{- $twitterCard := "summary_large_image" -}}
+{{- $twitterTitle := .Title -}}
+{{- $twitterDescription := "" -}}
+{{- $twitterImage := "" -}}
+{{- if .IsHome -}}
+    {{- $twitterTitle = .Site.Title -}}
+    {{- $twitterDescription = .Site.Params.description -}}
+    {{- if .Site.Params.Portrait.Path -}}
+        {{- $twitterImage = absURL (printf "images/%s" .Site.Params.Portrait.Path) -}}
+    {{- else if .Site.Params.images -}}
+        {{- $twitterImage = absURL (index .Site.Params.images 0) -}}
+    {{- end -}}
+{{- else -}}
+    {{- $twitterDescription = .Description | default (.Summary | plainify | truncate 200) -}}
+    {{- if .Params.images -}}
+        {{- $twitterImage = absURL (index .Params.images 0) -}}
+    {{- else if .Site.Params.images -}}
+        {{- $twitterImage = absURL (index .Site.Params.images 0) -}}
+    {{- end -}}
+{{- end -}}
+<meta name="twitter:card" content="{{ $twitterCard }}" />
+<meta name="twitter:title" content="{{ $twitterTitle }}" />
+<meta name="twitter:description" content="{{ $twitterDescription }}" />
+{{- if $twitterImage -}}
+<meta name="twitter:image" content="{{ $twitterImage }}" />
+{{- end -}}
+{{- if .Site.Params.social -}}
+    {{- range .Site.Params.social -}}
+        {{- if eq .name "twitter" -}}
+<meta name="twitter:site" content="{{ .url | replaceRE "^https?://(www\\.)?(twitter\\.com|x\\.com)/" "@" | replaceRE "/$" "" }}" />
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default (.Summary | plainify) }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+{{- if $twitterImage -}}
+<meta property="og:image" content="{{ $twitterImage }}" />
+{{- end -}}
 
 {{ if isset .Site.Taxonomies "series" }}
     {{ template "_internal/opengraph.html" . }}
@@ -83,8 +125,22 @@
 
 {{- /* Schema.org JSON-LD */}}
 {{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
-{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name -}} {{- /* Assumes author name is set in config */ -}}
-{{- $websiteSchema := dict "@type" "WebSite" "url" .Site.BaseURL "name" .Site.Title "publisher" $personSchema -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL -}}
+{{- $sameAs := slice -}}
+{{- if .Site.Params.social -}}
+    {{- range .Site.Params.social -}}
+        {{- if or (eq .name "linkedin") (eq .name "twitter") (eq .name "github") -}}
+            {{- $sameAs = $sameAs | append .url -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if gt (len $sameAs) 0 -}}
+        {{- $personSchema = merge $personSchema (dict "sameAs" $sameAs) -}}
+    {{- end -}}
+{{- end -}}
+{{- $websiteSchema := dict "@type" "WebSite" "url" .Site.BaseURL "name" .Site.Title "description" .Site.Params.description "publisher" $personSchema -}}
+{{- if .IsHome -}}
+    {{- $websiteSchema = merge $websiteSchema (dict "potentialAction" (dict "@type" "SearchAction" "target" (printf "%ssearch?q={search_term_string}" .Site.BaseURL) "query-input" "required name=search_term_string")) -}}
+{{- end -}}
 
 <script type="application/ld+json">
 {
@@ -92,8 +148,15 @@
   "@graph": [
     {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
     {{ $websiteSchema | jsonify (dict "indent" "  ") | safeJS }}
-    {{- if and (.IsPage) (not .IsHome) }}
-    ,
+    {{- if .IsHome }},
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ .Permalink }}",
+      "mainEntity": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+      "headline": "{{ .Site.Title }}",
+      "description": "{{ .Site.Params.description }}"
+    }
+    {{- else if and (.IsPage) (not .IsHome) }},
     {
       "@type": "BlogPosting",
       "mainEntityOfPage": {

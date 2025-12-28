@@ -1,5 +1,5 @@
 baseurl      = "https://www.shagun.xyz/"
-title        = "Shagun Attri"
+title        = "Shagun Attri | Senior Product Manager | Cybersecurity & B2B SaaS"
 languageCode = "en-US"
 theme        = "hello-friend-ng"
 DefaultContentLanguage = "en"
@@ -13,6 +13,11 @@ layoutDir    = "layouts"
 publishDir   = "public"
 
 paginate = 50
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [markup]
   [markup.goldmark]
@@ -45,9 +50,9 @@ paginate = 50
   dateformNumTime = "2006-01-02"
   defaultTheme = "light"
   EnableThemeToggle = true
-  description = "Shagun Attri's blog sharing perspectives and insights on cybersecurity, startups, and software development."
+  description = "Shagun Attri - Senior Product Manager building AI-powered cybersecurity solutions. Expert in ASPM, RBVM, and B2B SaaS. Sharing insights on cybersecurity, product management, startups, and software development."
   disableReadOtherPosts = false
-  homeSubtitle = "Sharing Perspectives on Cybersecurity & Startups!"
+  homeSubtitle = "Senior Product Manager building secure products that scale. Expert in AI-powered cybersecurity, ASPM, and B2B SaaS solutions."
   keywords = "cybersecurity, startups, software development, infosec, technology, blog, shagun attri"
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
@@ -63,6 +68,8 @@ paginate = 50
 
 [languages]
   [languages.en]
+    languageName = "English"
+    weight = 1
     [languages.en.params]
       logoText = "Shagun Attri"
       logoHomeLink = "/"

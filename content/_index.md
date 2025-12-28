@@ -65,6 +65,18 @@ I regularly write about my experiences building security products, managing comp
 
 For product managers and security professionals looking to stay updated on the latest trends in ASPM, RBVM, and DevSecOps, my [blog](/blog/) offers regular updates and deep dives into these critical areas of cybersecurity product development.
 
+## Technical Expertise & Tools
+
+My technical background includes hands-on experience with various security tools and platforms. I've worked extensively with [Docker and containerization](/blog/dockerarchitechture/), [version control systems](/blog/vcs/), and [shell scripting](/blog/shellscripting/) for automation. For those interested in learning more about my technical setup and development environment, check out my [development environment guide](/blog/setup/).
+
+When it comes to security tools, I've written about [Metasploit](/blog/metasploit/) for penetration testing, [network security fundamentals](/blog/networksecurity/), and [capture the flag competitions](/blog/c4ptur3-th3-fl4g/). These resources provide practical insights for anyone looking to understand cybersecurity from both offensive and defensive perspectives.
+
+## Product Management Insights
+
+Building products in the cybersecurity space requires a unique blend of technical understanding and business acumen. Through my work at ArmorCode, I've learned valuable lessons about scaling security integrations, managing product roadmaps, and driving user adoption. My [projects section](/projects/) showcases some of the research and initiatives I've led, including work on [Indian Agentic AI Startups](/projects/indian-agentic-ai-startups/) and insights into [product development methodologies](/projects/knownsense-labs/).
+
+If you're interested in learning more about my professional background, detailed work history, and achievements, visit my comprehensive [about page](/about/) which includes my full professional timeline, skills, and certifications.
+
 ---
 
-*Transforming cybersecurity, one product at a time.*
+*Transforming cybersecurity, one product at a time. Visit [shagun.xyz](/about/) to learn more about my work in product management and cybersecurity.*

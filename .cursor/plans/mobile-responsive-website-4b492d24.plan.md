@@ -382,4 +382,3 @@ After implementation, verify on mobile:
 - ✅ Footer: Links, copyright text
 - ✅ No horizontal scrolling on any page
 - ✅ All text readable without zooming
-- ✅ Tap targets appropriately sized (min 44px)

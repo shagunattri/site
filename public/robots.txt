@@ -1,5 +1,9 @@
+# robots.txt for shagun.xyz
+# Allow all search engines to crawl the site
+
 User-agent: *
 Allow: /
+Disallow: 
 
 Sitemap: https://shagun.xyz/sitemap.xml
 Sitemap: https://www.shagun.xyz/sitemap.xml

@@ -18,7 +18,11 @@
 <meta name="application-name" content="shagun.xyz" />
 <meta name="apple-mobile-web-app-title" content="shagun.xyz" />
 {{- end -}}
-<link rel="canonical" href="{{ .Permalink | absURL }}" />
+{{- $canonicalURL := .Permalink | absURL -}}
+{{- if .IsHome -}}
+{{- $canonicalURL = .Site.BaseURL -}}
+{{- end -}}
+<link rel="canonical" href="{{ $canonicalURL }}" />
 
 {{ block "title" . }}
     <title>
@@ -148,6 +152,45 @@
     {{- $websiteSchema = merge $websiteSchema (dict "potentialAction" (dict "@type" "SearchAction" "target" (printf "%ssearch?q={search_term_string}" .Site.BaseURL) "query-input" "required name=search_term_string")) -}}
 {{- end -}}
 
+{{- if .IsHome -}}
+<!-- Organization Schema for Homepage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "alternateName": ["shagun.xyz", "shagunattri"],
+  "founder": {
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}",
+    "url": "{{ .Site.BaseURL }}",
+    "alternateName": "shagunattri",
+    "jobTitle": "Senior Product Manager"
+  }
+}
+</script>
+<!-- Website Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "shagun.xyz",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}"
+  }
+}
+</script>
+<!-- Person Schema -->
+<script type="application/ld+json">
+{{ $personSchema | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- else -}}
+<!-- Schema for non-homepage pages -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -155,24 +198,15 @@
     {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
     {{ $organizationSchema | jsonify (dict "indent" "  ") | safeJS }},
     {{ $websiteSchema | jsonify (dict "indent" "  ") | safeJS }}
-    {{- if .IsHome }},
-    {
-      "@type": "ProfilePage",
-      "@id": "{{ .Permalink | absURL }}",
-      "mainEntity": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
-      "headline": "{{ .Site.Title }}",
-      "description": "{{ .Site.Params.description }}"
-    }
-    {{- else if and (.IsPage) (not .IsHome) }},
+    {{- if and (.IsPage) (not .IsHome) }},
     {
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "{{ .Permalink }}"
+        "@id": "{{ .Permalink | absURL }}"
       },
       "headline": "{{ .Title }}",
       {{- with .Params.images -}}
-        {{- /* Use images from front matter if available */ -}}
         "image": [
           {{- range $i, $e := . -}}
             {{- if $i }}, {{ end -}}"{{ absURL . }}"
@@ -182,7 +216,6 @@
       "datePublished": "{{ .PublishDate.Format $iso8601 }}",
       "dateModified": "{{ .Lastmod.Format $iso8601 }}",
       "author": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
-      {{- /* Publisher can be Person or Organization */}}
       "publisher": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
       "description": "{{ .Description | default (.Summary | plainify) }}"
     }
@@ -190,3 +223,4 @@
   ]
 }
 </script>
+{{- end -}}

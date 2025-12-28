@@ -14,7 +14,11 @@
 <meta name="keywords" content="{{ .Site.Params.keywords }}{{ if .Params.tags }}{{ range .Params.tags }}, {{ . }}{{ end }}{{ end }}" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
-<link rel="canonical" href="{{ .Permalink }}" />
+{{- if .IsHome -}}
+<meta name="application-name" content="shagun.xyz" />
+<meta name="apple-mobile-web-app-title" content="shagun.xyz" />
+{{- end -}}
+<link rel="canonical" href="{{ .Permalink | absURL }}" />
 
 {{ block "title" . }}
     <title>
@@ -125,7 +129,8 @@
 
 {{- /* Schema.org JSON-LD */}}
 {{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
-{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL -}}
+{{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Senior Product Manager" "worksFor" (dict "@type" "Organization" "name" "ArmorCode") -}}
 {{- $sameAs := slice -}}
 {{- if .Site.Params.social -}}
     {{- range .Site.Params.social -}}
@@ -137,7 +142,8 @@
         {{- $personSchema = merge $personSchema (dict "sameAs" $sameAs) -}}
     {{- end -}}
 {{- end -}}
-{{- $websiteSchema := dict "@type" "WebSite" "url" .Site.BaseURL "name" .Site.Title "description" .Site.Params.description "publisher" $personSchema -}}
+{{- $organizationSchema := dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL "description" .Site.Params.description "founder" $personSchema "alternateName" (slice "shagun.xyz" "shagunattri") -}}
+{{- $websiteSchema := dict "@type" "WebSite" "url" .Site.BaseURL "name" "shagun.xyz" "description" .Site.Params.description "publisher" $organizationSchema "alternateName" (slice "shagun.xyz" "shagunattri website") -}}
 {{- if .IsHome -}}
     {{- $websiteSchema = merge $websiteSchema (dict "potentialAction" (dict "@type" "SearchAction" "target" (printf "%ssearch?q={search_term_string}" .Site.BaseURL) "query-input" "required name=search_term_string")) -}}
 {{- end -}}
@@ -147,11 +153,12 @@
   "@context": "https://schema.org",
   "@graph": [
     {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+    {{ $organizationSchema | jsonify (dict "indent" "  ") | safeJS }},
     {{ $websiteSchema | jsonify (dict "indent" "  ") | safeJS }}
     {{- if .IsHome }},
     {
       "@type": "ProfilePage",
-      "@id": "{{ .Permalink }}",
+      "@id": "{{ .Permalink | absURL }}",
       "mainEntity": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
       "headline": "{{ .Site.Title }}",
       "description": "{{ .Site.Params.description }}"

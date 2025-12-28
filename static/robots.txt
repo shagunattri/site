@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://shagun.xyz/sitemap.xml
 Sitemap: https://www.shagun.xyz/sitemap.xml

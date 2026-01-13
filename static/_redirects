@@ -1,0 +1,6 @@
+# Netlify redirects file
+# Redirect non-www to www
+https://shagun.xyz/* https://www.shagun.xyz/:splat 301!
+http://shagun.xyz/* https://www.shagun.xyz/:splat 301!
+http://www.shagun.xyz/* https://www.shagun.xyz/:splat 301!
+

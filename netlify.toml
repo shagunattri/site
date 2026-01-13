@@ -6,25 +6,6 @@ TZ = "America/Los_Angeles"
 publish = "public"
 command = "hugo --gc --minify"
 
-# Redirects configuration
-[[redirects]]
-  from = "https://shagun.xyz/*"
-  to = "https://www.shagun.xyz/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://shagun.xyz/*"
-  to = "https://www.shagun.xyz/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.shagun.xyz/*"
-  to = "https://www.shagun.xyz/:splat"
-  status = 301
-  force = true
-
 # Security headers
 [[headers]]
   for = "/*"

@@ -1,0 +1,22 @@
+{{- /* FAQ Section - Renders visible FAQ from frontmatter */}}
+{{- /* This partial renders the FAQ visually on the page */}}
+{{- /* The schema is handled by schema-faq.html */}}
+
+{{- if .Params.faq -}}
+{{- $faqs := .Params.faq -}}
+{{- if gt (len $faqs) 0 -}}
+<section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+    <h2 class="faq-section__title">Frequently Asked Questions</h2>
+    <div class="faq-section__list">
+        {{- range $faqs -}}
+        <details class="faq-section__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-section__question" itemprop="name">{{ .question }}</summary>
+            <div class="faq-section__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div itemprop="text">{{ .answer | markdownify }}</div>
+            </div>
+        </details>
+        {{- end -}}
+    </div>
+</section>
+{{- end -}}
+{{- end -}}

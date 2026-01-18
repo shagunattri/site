@@ -1,0 +1,23 @@
+{{- /* Person Schema */}}
+{{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Senior Product Manager" "worksFor" (dict "@type" "Organization" "name" "ArmorCode") -}}
+
+{{- /* Add social links */}}
+{{- $sameAs := slice -}}
+{{- if .Site.Params.social -}}
+    {{- range .Site.Params.social -}}
+        {{- if or (eq .name "linkedin") (eq .name "twitter") (eq .name "github") -}}
+            {{- $sameAs = $sameAs | append .url -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if gt (len $sameAs) 0 -}}
+        {{- $personSchema = merge $personSchema (dict "sameAs" $sameAs) -}}
+    {{- end -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }}
+}
+</script>

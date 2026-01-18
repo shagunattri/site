@@ -1,0 +1,22 @@
+[
+  {
+    "source": "docker",
+    "related": ["containerization", "kubernetes", "devops"]
+  },
+  {
+    "source": "aspm",
+    "related": ["appsec", "devsecops", "security-tools"]
+  },
+  {
+    "source": "devsecops",
+    "related": ["aspm", "appsec", "ci-cd"]
+  },
+  {
+    "source": "kubernetes",
+    "related": ["docker", "containerization", "devops"]
+  },
+  {
+    "source": "startup-lessons",
+    "related": ["scaling", "fundraising", "product-market-fit"]
+  }
+]

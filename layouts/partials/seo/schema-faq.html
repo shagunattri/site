@@ -1,0 +1,33 @@
+{{- /* FAQPage Schema - reads from faq frontmatter array */}}
+{{- /* Usage in frontmatter:
+faq:
+  - question: "What is ASPM?"
+    answer: "Application Security Posture Management is..."
+  - question: "How does it work?"
+    answer: "It works by..."
+*/}}
+
+{{- if .Params.faq -}}
+{{- $faqs := .Params.faq -}}
+{{- if gt (len $faqs) 0 -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{- range $i, $faq := $faqs -}}
+    {{- if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": "{{ $faq.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ $faq.answer | plainify }}"
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end -}}
+{{- end -}}

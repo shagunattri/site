@@ -1,0 +1,16 @@
+{{- /* Organization Schema */}}
+{{- /* Build person schema for founder */}}
+{{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" "shagunattri" "jobTitle" "Senior Product Manager" -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "alternateName": ["shagun.xyz", "shagunattri"],
+  "founder": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }}
+}
+</script>

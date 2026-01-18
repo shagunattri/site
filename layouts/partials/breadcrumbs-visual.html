@@ -1,0 +1,46 @@
+{{- /* Visual Breadcrumb Navigation */}}
+{{- if not .IsHome -}}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {{- /* Home */}}
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ .Site.BaseURL }}" itemprop="item">
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+
+        {{- $position := 2 -}}
+
+        {{- /* Section */}}
+        {{- if .Section -}}
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ .Site.BaseURL }}{{ .Section }}/" itemprop="item">
+                <span itemprop="name">{{ .Section | humanize | title }}</span>
+            </a>
+            <meta itemprop="position" content="{{ $position }}" />
+        </li>
+        {{- $position = add $position 1 -}}
+        {{- end -}}
+
+        {{- /* Category */}}
+        {{- if .Params.categories -}}
+        {{- $category := index .Params.categories 0 -}}
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ .Site.BaseURL }}categories/{{ $category | urlize }}/" itemprop="item">
+                <span itemprop="name">{{ $category }}</span>
+            </a>
+            <meta itemprop="position" content="{{ $position }}" />
+        </li>
+        {{- $position = add $position 1 -}}
+        {{- end -}}
+
+        {{- /* Current Page */}}
+        <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{{ .Title | truncate 50 }}</span>
+            <meta itemprop="item" content="{{ .Permalink }}" />
+            <meta itemprop="position" content="{{ $position }}" />
+        </li>
+    </ol>
+</nav>
+{{- end -}}

@@ -1,0 +1,49 @@
+{{- /* BreadcrumbList Schema for SERP breadcrumb display */}}
+{{- if not .IsHome -}}
+{{- $breadcrumbs := slice -}}
+
+{{- /* Level 1: Home */}}
+{{- $breadcrumbs = $breadcrumbs | append (dict "name" "Home" "url" .Site.BaseURL "position" 1) -}}
+
+{{- /* Level 2: Section (blog, projects, etc.) */}}
+{{- $position := 2 -}}
+{{- if .Section -}}
+    {{- $sectionTitle := .Section | humanize | title -}}
+    {{- $sectionURL := printf "%s%s/" .Site.BaseURL .Section -}}
+    {{- $breadcrumbs = $breadcrumbs | append (dict "name" $sectionTitle "url" $sectionURL "position" $position) -}}
+    {{- $position = add $position 1 -}}
+{{- end -}}
+
+{{- /* Level 3: Category (if exists) */}}
+{{- if .Params.categories -}}
+    {{- $category := index .Params.categories 0 -}}
+    {{- $categoryURL := printf "%scategories/%s/" .Site.BaseURL ($category | urlize) -}}
+    {{- $breadcrumbs = $breadcrumbs | append (dict "name" $category "url" $categoryURL "position" $position) -}}
+    {{- $position = add $position 1 -}}
+{{- end -}}
+
+{{- /* Level 4: Current Page */}}
+{{- $pageTitle := .Title -}}
+{{- if .Params.seoTitle -}}
+    {{- $pageTitle = .Params.seoTitle -}}
+{{- end -}}
+{{- $breadcrumbs = $breadcrumbs | append (dict "name" $pageTitle "url" .Permalink "position" $position) -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{- range $i, $crumb := $breadcrumbs -}}
+    {{- if $i }},{{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ $crumb.position }},
+      "name": "{{ $crumb.name }}",
+      "item": "{{ $crumb.url }}"
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end -}}

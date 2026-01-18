@@ -1,0 +1,84 @@
+{{- /* Internal Links Partial - Hub-and-spoke linking based on topic clusters */}}
+
+{{- $cluster := .Params.cluster -}}
+{{- $clusterType := .Params.clusterType | default "spoke" -}}
+{{- $currentPage := . -}}
+
+{{- /* Find cluster data */}}
+{{- $clusterData := dict -}}
+{{- if and $cluster site.Data.clusters -}}
+    {{- if site.Data.clusters.topics -}}
+        {{- range site.Data.clusters.topics.clusters -}}
+            {{- if eq .id $cluster -}}
+                {{- $clusterData = . -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Render hub-spoke navigation if cluster exists */}}
+{{- if $clusterData.id -}}
+<nav class="topic-navigation" aria-label="Explore this topic">
+    <h3 class="topic-navigation__title">Explore {{ $clusterData.id | humanize | title }}</h3>
+
+    {{- /* If this is a spoke page, link to the pillar */}}
+    {{- if eq $clusterType "spoke" -}}
+        {{- if $clusterData.pillar -}}
+        <div class="topic-navigation__pillar">
+            <span class="topic-navigation__label">Main Guide:</span>
+            {{- $pillarSlug := $clusterData.pillar.slug -}}
+            {{- range site.RegularPages -}}
+                {{- if eq .File.ContentBaseName $pillarSlug -}}
+                <a href="{{ .Permalink }}" class="topic-navigation__pillar-link">
+                    {{ $clusterData.pillar.title }}
+                </a>
+                {{- end -}}
+            {{- end -}}
+        </div>
+        {{- end -}}
+    {{- end -}}
+
+    {{- /* Show spoke pages (for both pillar and spoke pages) */}}
+    {{- if $clusterData.spokes -}}
+    <div class="topic-navigation__spokes">
+        <span class="topic-navigation__label">{{ if eq $clusterType "pillar" }}In This Guide:{{ else }}Related Guides:{{ end }}</span>
+        <ul class="topic-navigation__list">
+            {{- range $clusterData.spokes -}}
+                {{- $spokeSlug := .slug -}}
+                {{- $spokeTitle := .title -}}
+                {{- range site.RegularPages -}}
+                    {{- if eq .File.ContentBaseName $spokeSlug -}}
+                        {{- if ne .Permalink $currentPage.Permalink -}}
+                        <li class="topic-navigation__item">
+                            <a href="{{ .Permalink }}">{{ $spokeTitle }}</a>
+                        </li>
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        </ul>
+    </div>
+    {{- end -}}
+</nav>
+{{- end -}}
+
+{{- /* Fallback: Show category-based navigation if no cluster */}}
+{{- if and (not $clusterData.id) .Params.categories -}}
+{{- $category := index .Params.categories 0 -}}
+{{- $categoryPages := where site.RegularPages "Params.categories" "intersect" (slice $category) -}}
+{{- $categoryPages = $categoryPages | first 6 -}}
+{{- if gt (len $categoryPages) 1 -}}
+<nav class="topic-navigation" aria-label="More in {{ $category }}">
+    <h3 class="topic-navigation__title">More in {{ $category | humanize | title }}</h3>
+    <ul class="topic-navigation__list">
+        {{- range $categoryPages -}}
+            {{- if ne .Permalink $currentPage.Permalink -}}
+            <li class="topic-navigation__item">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{- end -}}
+        {{- end -}}
+    </ul>
+</nav>
+{{- end -}}
+{{- end -}}

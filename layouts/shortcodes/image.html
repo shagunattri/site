@@ -1,3 +1,84 @@
-{{ if .Get "src" }}
-    <img src="{{ .Get "src" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }} class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}" {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} />
-{{ end }}
+{{- /* Optimized Image Shortcode */}}
+{{- /* Usage: {{< image src="path/to/image.jpg" alt="Description" position="center" >}} */}}
+{{- /* Supports: WebP conversion, responsive srcset, lazy loading, explicit dimensions */}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $position := .Get "position" | default "center" -}}
+{{- $style := .Get "style" | default "" -}}
+{{- $caption := .Get "caption" -}}
+
+{{- if $src -}}
+    {{- /* Check if src is a local resource or external URL */}}
+    {{- $isExternal := or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
+    {{- $isStatic := hasPrefix $src "/static" -}}
+
+    {{- if and (not $isExternal) (not $isStatic) -}}
+        {{- /* Try to get the image as a page resource or global resource */}}
+        {{- $img := $.Page.Resources.GetMatch $src -}}
+        {{- if not $img -}}
+            {{- $img = resources.Get $src -}}
+        {{- end -}}
+
+        {{- if $img -}}
+            {{- /* Generate responsive images */}}
+            {{- $imgSmall := $img.Resize "400x webp" -}}
+            {{- $imgMedium := $img.Resize "800x webp" -}}
+            {{- $imgLarge := $img.Resize "1200x webp" -}}
+            {{- $imgOriginal := $img -}}
+
+            <figure class="image-figure {{ $position }}">
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="{{ $imgSmall.RelPermalink }} 400w,
+                                {{ $imgMedium.RelPermalink }} 800w,
+                                {{ $imgLarge.RelPermalink }} 1200w"
+                        sizes="(max-width: 400px) 400px,
+                               (max-width: 800px) 800px,
+                               1200px">
+                    <img
+                        src="{{ $imgMedium.RelPermalink }}"
+                        alt="{{ $alt | plainify }}"
+                        width="{{ $imgOriginal.Width }}"
+                        height="{{ $imgOriginal.Height }}"
+                        loading="lazy"
+                        decoding="async"
+                        class="image-shortcode {{ $position }}"
+                        {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
+                </picture>
+                {{- with $caption -}}
+                <figcaption>{{ . | markdownify }}</figcaption>
+                {{- end -}}
+            </figure>
+        {{- else -}}
+            {{- /* Fallback: render as standard img if resource not found */}}
+            <figure class="image-figure {{ $position }}">
+                <img
+                    src="{{ $src | safeURL }}"
+                    alt="{{ $alt | plainify }}"
+                    loading="lazy"
+                    decoding="async"
+                    class="image-shortcode {{ $position }}"
+                    {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
+                {{- with $caption -}}
+                <figcaption>{{ . | markdownify }}</figcaption>
+                {{- end -}}
+            </figure>
+        {{- end -}}
+    {{- else -}}
+        {{- /* External URL or static image - render without processing */}}
+        <figure class="image-figure {{ $position }}">
+            <img
+                src="{{ $src | safeURL }}"
+                alt="{{ $alt | plainify }}"
+                loading="lazy"
+                decoding="async"
+                class="image-shortcode {{ $position }}"
+                {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
+            {{- with $caption -}}
+            <figcaption>{{ . | markdownify }}</figcaption>
+            {{- end -}}
+        </figure>
+    {{- end -}}
+{{- end -}}

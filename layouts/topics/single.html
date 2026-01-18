@@ -1,0 +1,112 @@
+{{ define "main" }}
+<main class="topic-page">
+    {{- /* Hero Section */}}
+    <header class="topic-hero">
+        <h1 class="topic-hero__title">{{ .Title | markdownify }}</h1>
+        {{ with .Params.Description }}
+        <p class="topic-hero__description">{{ . }}</p>
+        {{ end }}
+
+        {{- /* Topic metadata */}}
+        <div class="topic-hero__meta">
+            {{ if .Params.clusterType }}
+            <span class="topic-badge topic-badge--{{ .Params.clusterType }}">
+                {{ if eq .Params.clusterType "pillar" }}Complete Guide{{ else }}Topic Guide{{ end }}
+            </span>
+            {{ end }}
+            <span class="topic-hero__reading-time">{{ i18n "readingTime" .Page.ReadingTime }}</span>
+        </div>
+    </header>
+
+    {{- /* Dynamic Table of Contents */}}
+    {{ if .Params.toc }}
+    <nav class="topic-toc">
+        <h2 class="topic-toc__title">In This Guide</h2>
+        {{ .TableOfContents }}
+    </nav>
+    {{ end }}
+
+    {{- /* Main Content */}}
+    <article class="topic-content">
+        {{ .Content }}
+    </article>
+
+    {{- /* Spoke Content Grid - for pillar pages */}}
+    {{ if eq .Params.clusterType "pillar" }}
+    {{ $cluster := .Params.cluster }}
+    {{ if and $cluster site.Data.clusters.topics }}
+        {{ range site.Data.clusters.topics.clusters }}
+            {{ if eq .id $cluster }}
+            {{ $spokes := .spokes }}
+            {{ if $spokes }}
+            <section class="topic-spokes">
+                <h2 class="topic-spokes__title">Explore the {{ .id | humanize | title }} Guides</h2>
+                <div class="topic-spokes__grid">
+                    {{ range $spokes }}
+                        {{ $spokeSlug := .slug }}
+                        {{ $spokeTitle := .title }}
+                        {{ range site.RegularPages }}
+                            {{ if eq .File.ContentBaseName $spokeSlug }}
+                            <a href="{{ .Permalink }}" class="topic-spokes__card">
+                                <h3 class="topic-spokes__card-title">{{ $spokeTitle }}</h3>
+                                {{ with .Params.Description }}
+                                <p class="topic-spokes__card-desc">{{ . | truncate 120 }}</p>
+                                {{ end }}
+                                <span class="topic-spokes__card-link">Read Guide →</span>
+                            </a>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </section>
+            {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{- /* FAQ Section */}}
+    {{ partial "seo/faq-section.html" . }}
+
+    {{- /* Related Content */}}
+    {{ partial "seo/related-content.html" . }}
+
+    {{- /* Internal Links / Topic Navigation */}}
+    {{ partial "seo/internal-links.html" . }}
+
+    <hr />
+
+    {{- /* Post metadata */}}
+    <div class="post-info">
+        {{ partial "tags.html" .Params.tags }}
+        {{ partial "categories.html" . }}
+
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            {{ i18n "wordCount" .Page.WordCount }}
+        </p>
+
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            {{ if .Site.Params.dateformNumTime }}
+                {{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
+            {{ else }}
+                {{ dateFormat "2006-01-02 15:04" .Date.Local }}
+            {{ end }}
+        </p>
+    </div>
+
+    {{ partial "pagination-single.html" . }}
+</main>
+{{ end }}

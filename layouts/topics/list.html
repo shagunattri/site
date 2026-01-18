@@ -1,0 +1,73 @@
+{{ define "main" }}
+<main class="topics-list">
+    <header class="topics-header">
+        <h1 class="topics-header__title">Topic Guides</h1>
+        <p class="topics-header__description">
+            Comprehensive guides and resources organized by topic. Each guide covers a subject in depth.
+        </p>
+    </header>
+
+    {{- /* Group by cluster */}}
+    {{ if site.Data.clusters.topics }}
+    <div class="topics-clusters">
+        {{ range site.Data.clusters.topics.clusters }}
+        {{ $cluster := . }}
+        <section class="topics-cluster">
+            <h2 class="topics-cluster__title">{{ .id | humanize | title }}</h2>
+
+            {{- /* Pillar page */}}
+            {{ if .pillar }}
+            {{ $pillarSlug := .pillar.slug }}
+            {{ range site.RegularPages }}
+                {{ if eq .File.ContentBaseName $pillarSlug }}
+                <a href="{{ .Permalink }}" class="topics-cluster__pillar">
+                    <span class="topics-cluster__pillar-badge">Complete Guide</span>
+                    <h3 class="topics-cluster__pillar-title">{{ $cluster.pillar.title }}</h3>
+                    {{ with .Params.Description }}
+                    <p class="topics-cluster__pillar-desc">{{ . | truncate 150 }}</p>
+                    {{ end }}
+                </a>
+                {{ end }}
+            {{ end }}
+            {{ end }}
+
+            {{- /* Spoke pages */}}
+            {{ if .spokes }}
+            <div class="topics-cluster__spokes">
+                {{ range .spokes }}
+                {{ $spokeSlug := .slug }}
+                {{ $spokeTitle := .title }}
+                {{ range site.RegularPages }}
+                    {{ if eq .File.ContentBaseName $spokeSlug }}
+                    <a href="{{ .Permalink }}" class="topics-cluster__spoke">
+                        <h4 class="topics-cluster__spoke-title">{{ $spokeTitle }}</h4>
+                    </a>
+                    {{ end }}
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </section>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{- /* All topic pages not in clusters */}}
+    <section class="topics-unclustered">
+        <h2 class="topics-unclustered__title">All Topic Pages</h2>
+        <div class="topics-grid">
+            {{ range .Pages }}
+            <article class="topics-grid__item">
+                <a href="{{ .Permalink }}">
+                    <h3 class="topics-grid__title">{{ .Title }}</h3>
+                    {{ with .Params.Description }}
+                    <p class="topics-grid__desc">{{ . | truncate 100 }}</p>
+                    {{ end }}
+                    <span class="topics-grid__date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+</main>
+{{ end }}

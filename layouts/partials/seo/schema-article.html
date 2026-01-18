@@ -1,0 +1,72 @@
+{{- /* BlogPosting Schema for article pages */}}
+{{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
+
+{{- /* Build person schema */}}
+{{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Senior Product Manager" "worksFor" (dict "@type" "Organization" "name" "ArmorCode") -}}
+
+{{- /* Add social links to person schema */}}
+{{- $sameAs := slice -}}
+{{- if .Site.Params.social -}}
+    {{- range .Site.Params.social -}}
+        {{- if or (eq .name "linkedin") (eq .name "twitter") (eq .name "github") -}}
+            {{- $sameAs = $sameAs | append .url -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if gt (len $sameAs) 0 -}}
+        {{- $personSchema = merge $personSchema (dict "sameAs" $sameAs) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Get page title */}}
+{{- $pageTitle := .Title -}}
+{{- if .Params.seoTitle -}}
+    {{- $pageTitle = .Params.seoTitle -}}
+{{- end -}}
+
+{{- /* Get description */}}
+{{- $description := .Description | default (.Summary | plainify | truncate 160) -}}
+{{- if .Params.seoDescription -}}
+    {{- $description = .Params.seoDescription -}}
+{{- end -}}
+
+{{- /* Get image URL */}}
+{{- $imageURL := "" -}}
+{{- if .Params.images -}}
+    {{- $imageURL = absURL (index .Params.images 0) -}}
+{{- else if .Params.Cover -}}
+    {{- $imageURL = .Params.Cover | absURL -}}
+{{- end -}}
+
+{{- if and (.IsPage) (not .IsHome) -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink | absURL }}"
+  },
+  "headline": "{{ $pageTitle }}",
+  {{- if $imageURL }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ $imageURL }}"
+  },
+  {{- end }}
+  "datePublished": "{{ .PublishDate.Format $iso8601 }}",
+  "dateModified": "{{ .Lastmod.Format $iso8601 }}",
+  "wordCount": {{ .WordCount }},
+  "author": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ absURL "images/cover.jpg" }}"
+    }
+  },
+  "description": "{{ $description }}"
+}
+</script>
+{{- end -}}

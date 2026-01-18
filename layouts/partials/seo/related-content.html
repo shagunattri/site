@@ -1,0 +1,89 @@
+{{- /* Related Content Partial */}}
+{{- /* Finds related pages by: same category, overlapping tags, data-driven mappings */}}
+
+{{- $related := slice -}}
+{{- $maxRelated := 5 -}}
+{{- $currentPage := . -}}
+
+{{- /* Method 1: Check data-driven related content mappings */}}
+{{- $dataRelated := slice -}}
+{{- if site.Data.linking -}}
+    {{- if site.Data.linking.related_content -}}
+        {{- $slug := .File.ContentBaseName -}}
+        {{- range site.Data.linking.related_content -}}
+            {{- if eq .source $slug -}}
+                {{- range .related -}}
+                    {{- $relatedSlug := . -}}
+                    {{- range site.RegularPages -}}
+                        {{- if eq .File.ContentBaseName $relatedSlug -}}
+                            {{- $dataRelated = $dataRelated | append . -}}
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Method 2: Check relatedPages frontmatter */}}
+{{- if .Params.relatedPages -}}
+    {{- range .Params.relatedPages -}}
+        {{- $relatedSlug := . -}}
+        {{- range site.RegularPages -}}
+            {{- if eq .File.ContentBaseName $relatedSlug -}}
+                {{- $dataRelated = $dataRelated | append . -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Method 3: Hugo's built-in related content (by tags and categories) */}}
+{{- $hugoRelated := site.RegularPages.Related . | first 10 -}}
+
+{{- /* Combine and deduplicate */}}
+{{- $related = $dataRelated -}}
+{{- range $hugoRelated -}}
+    {{- $page := . -}}
+    {{- $found := false -}}
+    {{- range $related -}}
+        {{- if eq .Permalink $page.Permalink -}}
+            {{- $found = true -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if not $found -}}
+        {{- if ne $page.Permalink $currentPage.Permalink -}}
+            {{- $related = $related | append $page -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Limit to maxRelated */}}
+{{- $related = $related | first $maxRelated -}}
+
+{{- if gt (len $related) 0 -}}
+<aside class="related-content">
+    <h3 class="related-content__title">Related Articles</h3>
+    <div class="related-content__grid">
+        {{- range $related -}}
+        <article class="related-content__item">
+            <a href="{{ .Permalink }}" class="related-content__link">
+                {{- if .Params.Cover -}}
+                <div class="related-content__image">
+                    <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" loading="lazy" />
+                </div>
+                {{- end -}}
+                <div class="related-content__text">
+                    <h4 class="related-content__item-title">{{ .Title }}</h4>
+                    {{- if .Params.Description -}}
+                    <p class="related-content__excerpt">{{ .Params.Description | truncate 100 }}</p>
+                    {{- else -}}
+                    <p class="related-content__excerpt">{{ .Summary | plainify | truncate 100 }}</p>
+                    {{- end -}}
+                    <span class="related-content__date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </div>
+            </a>
+        </article>
+        {{- end -}}
+    </div>
+</aside>
+{{- end -}}

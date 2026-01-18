@@ -1,0 +1,56 @@
+{
+  "templates": {
+    "tool-guide": [
+      {
+        "question": "What is {{tool}}?",
+        "answer": "{{tool}} is a {{category}} tool that helps {{purpose}}."
+      },
+      {
+        "question": "How do I install {{tool}}?",
+        "answer": "You can install {{tool}} by {{installation_steps}}."
+      },
+      {
+        "question": "What are the main features of {{tool}}?",
+        "answer": "The main features include {{features}}."
+      }
+    ],
+    "concept-explainer": [
+      {
+        "question": "What is {{concept}}?",
+        "answer": "{{concept}} is {{definition}}."
+      },
+      {
+        "question": "Why is {{concept}} important?",
+        "answer": "{{concept}} is important because {{importance}}."
+      },
+      {
+        "question": "How does {{concept}} work?",
+        "answer": "{{concept}} works by {{mechanism}}."
+      }
+    ],
+    "comparison": [
+      {
+        "question": "What is the difference between {{item1}} and {{item2}}?",
+        "answer": "The main differences are {{differences}}."
+      },
+      {
+        "question": "Which should I choose: {{item1}} or {{item2}}?",
+        "answer": "Choose {{item1}} if {{use_case1}}. Choose {{item2}} if {{use_case2}}."
+      }
+    ],
+    "how-to": [
+      {
+        "question": "How do I {{task}}?",
+        "answer": "To {{task}}, follow these steps: {{steps}}."
+      },
+      {
+        "question": "What do I need before {{task}}?",
+        "answer": "Before {{task}}, you need {{prerequisites}}."
+      },
+      {
+        "question": "What are common mistakes when {{task}}?",
+        "answer": "Common mistakes include {{mistakes}}."
+      }
+    ]
+  }
+}

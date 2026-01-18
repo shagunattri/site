@@ -15,7 +15,7 @@ publishDir   = "public"
 paginate = 50
 
 [sitemap]
-  changefreq = "monthly"
+  changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
 
@@ -39,6 +39,32 @@ paginate = 50
   series = "series"
   tag = "tags"
   dnd = "dnd"
+  topic = "topics"
+
+# Related content configuration
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+  [[related.indices]]
+    name = "tags"
+    weight = 80
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+# Image processing configuration
+[imaging]
+  quality = 85
+  resampleFilter = "lanczos"
+  [imaging.exif]
+    disableDate = false
+    disableLatLong = true
+    includeFields = ""
+    excludeFields = ""
 
  [author]
   name = "shagun attri"
@@ -57,6 +83,14 @@ paginate = 50
   contentTypeName = "posts"
   gitUrl = "https://github.com/shagunattri/site/commit/"
   images = ["/static/image1.png"]
+
+  # Programmatic SEO configuration
+  [params.programmaticSEO]
+    enableRelatedContent = true
+    enableInternalLinking = true
+    enableBreadcrumbs = true
+    enableFAQSchema = true
+    maxRelatedPosts = 5
 
   [params.Logo]
     logoCursorColor = "#4FC3F7"

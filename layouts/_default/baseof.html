@@ -11,6 +11,9 @@
         <div class="container">
             {{ partial "header.html" . }}
 
+            {{- /* Visual breadcrumb navigation */}}
+            {{ partial "breadcrumbs-visual.html" . }}
+
             <div class="content-wrapper">
                 <div class="content">
                     {{ block "main" . }}{{ end }}

@@ -1,0 +1,58 @@
+{
+  "clusters": [
+    {
+      "id": "cybersecurity",
+      "pillar": {
+        "slug": "cybersecurity-guide",
+        "title": "Complete Cybersecurity Guide"
+      },
+      "spokes": [
+        {"slug": "aspm", "title": "ASPM Guide"},
+        {"slug": "devsecops", "title": "DevSecOps Introduction"},
+        {"slug": "appsec", "title": "Application Security"},
+        {"slug": "securitytools", "title": "Security Tools"}
+      ],
+      "keywords": ["security", "infosec", "cybersecurity", "appsec"]
+    },
+    {
+      "id": "devops",
+      "pillar": {
+        "slug": "devops-guide",
+        "title": "DevOps Fundamentals"
+      },
+      "spokes": [
+        {"slug": "docker", "title": "Docker Guide"},
+        {"slug": "kubernetes", "title": "Kubernetes Basics"},
+        {"slug": "ci-cd", "title": "CI/CD Pipeline"},
+        {"slug": "containerization", "title": "Containerization"}
+      ],
+      "keywords": ["devops", "docker", "kubernetes", "ci-cd", "containers"]
+    },
+    {
+      "id": "product-management",
+      "pillar": {
+        "slug": "product-management-guide",
+        "title": "Product Management Guide"
+      },
+      "spokes": [
+        {"slug": "roadmapping", "title": "Product Roadmapping"},
+        {"slug": "user-research", "title": "User Research"},
+        {"slug": "metrics", "title": "Product Metrics"}
+      ],
+      "keywords": ["product", "pm", "product-management", "roadmap"]
+    },
+    {
+      "id": "startups",
+      "pillar": {
+        "slug": "startup-guide",
+        "title": "Startup Life Guide"
+      },
+      "spokes": [
+        {"slug": "startup-lessons", "title": "Startup Lessons"},
+        {"slug": "fundraising", "title": "Fundraising"},
+        {"slug": "scaling", "title": "Scaling Your Startup"}
+      ],
+      "keywords": ["startup", "entrepreneur", "founder", "saas"]
+    }
+  ]
+}

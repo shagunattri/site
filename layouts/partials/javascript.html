@@ -1,16 +1,51 @@
+{{- /* Optimized JavaScript Loading with Code Splitting */}}
+
+{{- /* Core scripts - always loaded */}}
 {{ $main := resources.Get "js/main.js" }}
 {{ $menu := resources.Get "js/menu.js" }}
-{{ $prism := resources.Get "js/prism.js" }}
-{{ $toc := resources.Get "js/toc.js" }}
-{{ $secureJS := slice $main $menu $prism $toc | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
+{{- /* Bundle core scripts */}}
+{{ $coreJS := slice $main $menu | resources.Concat "js/core.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $coreJS.RelPermalink }}" integrity="{{ $coreJS.Data.Integrity }}" defer></script>
+
+{{- /* Prism.js - only load on pages with code blocks */}}
+{{- $hasCode := false -}}
+{{- if .HasShortcode "highlight" -}}
+    {{- $hasCode = true -}}
+{{- end -}}
+{{- /* Also check for fenced code blocks in content */}}
+{{- if findRE "```" .RawContent -}}
+    {{- $hasCode = true -}}
+{{- end -}}
+{{- if findRE "<pre><code" .Content -}}
+    {{- $hasCode = true -}}
+{{- end -}}
+
+{{- if $hasCode -}}
+{{ $prism := resources.Get "js/prism.js" }}
+{{ if $prism }}
+{{ $prismJS := $prism | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $prismJS.RelPermalink }}" integrity="{{ $prismJS.Data.Integrity }}" defer></script>
+{{ end }}
+{{- end -}}
+
+{{- /* TOC script - only load when TOC is enabled */}}
+{{- if .Params.toc -}}
+{{ $toc := resources.Get "js/toc.js" }}
+{{ if $toc }}
+{{ $tocJS := $toc | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $tocJS.RelPermalink }}" integrity="{{ $tocJS.Data.Integrity }}" defer></script>
+{{ end }}
+{{- end -}}
+
+{{- /* Custom JS */}}
 {{ range $val := $.Site.Params.customJS }}
     {{ if gt (len $val) 0 }}
-        <script src="{{ $val }}"></script>
+        <script src="{{ $val }}" defer></script>
     {{ end }}
 {{ end }}
 
+{{- /* Mermaid - only load when page has mermaid diagrams */}}
 {{ if .Page.Store.Get "hasMermaid" }}
 <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";

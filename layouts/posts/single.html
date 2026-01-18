@@ -56,7 +56,16 @@
       <div class="post-content">
         {{ .Content }}
       </div>
+
+      {{- /* FAQ Section (if defined in frontmatter) */}}
+      {{ partial "seo/faq-section.html" . }}
     </article>
+
+    {{- /* Related Content Section */}}
+    {{ partial "seo/related-content.html" . }}
+
+    {{- /* Internal Links / Topic Navigation */}}
+    {{ partial "seo/internal-links.html" . }}
 
     <hr />
 

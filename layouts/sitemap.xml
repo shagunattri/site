@@ -1,0 +1,55 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+{{- /* Custom sitemap with support for >50k URLs */}}
+{{- $pages := .Data.Pages -}}
+{{- $pageCount := len $pages -}}
+{{- $maxPerSitemap := 50000 -}}
+
+{{- if gt $pageCount $maxPerSitemap -}}
+{{- /* Generate sitemap index for large sites */}}
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {{- $sitemapCount := div (add $pageCount (sub $maxPerSitemap 1)) $maxPerSitemap -}}
+    {{- range $i := seq $sitemapCount -}}
+    <sitemap>
+        <loc>{{ $.Site.BaseURL }}sitemap-{{ $i }}.xml</loc>
+        <lastmod>{{ $.Site.LastChange.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</lastmod>
+    </sitemap>
+    {{- end }}
+</sitemapindex>
+{{- else -}}
+{{- /* Standard sitemap for smaller sites */}}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    {{- range $pages -}}
+    {{- if .Permalink -}}
+    <url>
+        <loc>{{ .Permalink }}</loc>
+        {{- if not .Lastmod.IsZero }}
+        <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</lastmod>
+        {{- end }}
+        {{- with .Sitemap.ChangeFreq }}
+        <changefreq>{{ . }}</changefreq>
+        {{- else }}
+        <changefreq>{{ $.Site.Sitemap.ChangeFreq }}</changefreq>
+        {{- end }}
+        {{- if ge .Sitemap.Priority 0.0 }}
+        <priority>{{ .Sitemap.Priority }}</priority>
+        {{- else if .IsHome }}
+        <priority>1.0</priority>
+        {{- else if eq .Section "blog" }}
+        <priority>0.8</priority>
+        {{- else if eq .Type "topics" }}
+        <priority>0.9</priority>
+        {{- else }}
+        <priority>{{ $.Site.Sitemap.Priority }}</priority>
+        {{- end }}
+        {{- if .IsTranslated -}}
+        {{- range .Translations }}
+        <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+        {{- end }}
+        <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+        {{- end }}
+    </url>
+    {{- end -}}
+    {{- end }}
+</urlset>
+{{- end -}}

@@ -3,7 +3,7 @@
 
 backend:
   name: git-gateway
-  branch: main  # Branch to update (can be main or master)
+  branch: master  # Your repository uses 'master' branch
 
 # Enable editorial workflow for draft/review/publish states
 publish_mode: editorial_workflow

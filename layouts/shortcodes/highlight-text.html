@@ -1,0 +1,7 @@
+{{/* 
+  Text Highlight Shortcode
+  Usage: {{< highlight-text >}}Important text to highlight{{< /highlight-text >}}
+  
+  Renders text with a yellow/gold background highlight like in the reference images.
+*/}}
+<span class="text-highlight">{{ .Inner | markdownify }}</span>

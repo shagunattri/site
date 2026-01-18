@@ -1,0 +1,168 @@
+# Decap CMS Configuration for shagun.xyz
+# Access the admin at: https://www.shagun.xyz/admin/
+
+backend:
+  name: git-gateway
+  branch: main  # Branch to update (can be main or master)
+
+# Enable editorial workflow for draft/review/publish states
+publish_mode: editorial_workflow
+
+# Media files (images) configuration
+media_folder: "static/images/uploads"  # Where media files are stored
+public_folder: "/images/uploads"  # Public URL path for media
+
+# Site URL for preview links
+site_url: https://www.shagun.xyz
+display_url: https://www.shagun.xyz
+logo_url: https://www.shagun.xyz/images/cover.jpg
+
+# Slug configuration
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Collections (content types)
+collections:
+  # Blog Posts Collection
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true  # Allow creating new posts
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    editor:
+      preview: true
+    sortable_fields: ['date', 'title']
+    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+    
+    # Fields for blog posts
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        
+      - label: "Link Title (for URLs)"
+        name: "linktitle"
+        widget: "string"
+        required: false
+        hint: "Short title used in navigation/URLs"
+        
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+        
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Brief description shown in previews and SEO"
+        
+      - label: "Cover Image"
+        name: "cover"
+        widget: "image"
+        required: false
+        hint: "Optional cover image for the post"
+        
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+        required: false
+        hint: "e.g., essay, tutorial, technology"
+        
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Keywords for the post"
+        
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Name"
+            name: "name"
+            widget: "string"
+            default: "Shagun Attri"
+            
+      - label: "Post Type"
+        name: "type"
+        widget: "hidden"
+        default: ["post", "posts"]
+        
+      - label: "Weight"
+        name: "weight"
+        widget: "number"
+        default: 10
+        required: false
+        hint: "Lower numbers appear first"
+        
+      - label: "Enable TOC"
+        name: "toc"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Show table of contents"
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: |
+          Use shortcodes for special formatting:
+          - {{< highlight-text >}}text{{< /highlight-text >}} for yellow highlights
+          - {{< marginnote >}}side note{{< /marginnote >}} for margin notes
+
+  # Projects Collection (optional)
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        
+      - label: "Project URL"
+        name: "projectUrl"
+        widget: "string"
+        required: false
+        
+      - label: "GitHub URL"
+        name: "githubUrl"
+        widget: "string"
+        required: false
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

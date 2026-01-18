@@ -1642,7 +1642,7 @@ body.dark-mode {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 60px; // Increased gap between content and TOC
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
@@ -1677,10 +1677,11 @@ body.dark-mode {
 }
 
 .toc-sidebar {
+  display: block;
   width: 280px;
   flex-shrink: 0;
   position: relative;
-  margin-top: 60px;
+  margin-top: 140px; // Push TOC lower to align with content, not title
 
   opacity: 1;
   transform: translateX(0);
@@ -1690,6 +1691,13 @@ body.dark-mode {
     opacity: 0;
     transform: translateX(20px);
     pointer-events: none;
+  }
+
+  // Show on hover even when auto-hidden (hover area)
+  &.toc-hidden:hover {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
   @media (min-width: 1600px) {
@@ -1848,5 +1856,212 @@ body.dark-mode {
 
   a {
     background: rgba(41, 113, 234, 0.12);
+  }
+}
+
+/* ===========================================
+   ENHANCED BLOG TYPOGRAPHY
+   Centered titles, text highlights, margin notes
+   Using original site fonts for consistency
+   =========================================== */
+
+// Blog-specific variables (using site's existing fonts)
+$blog-highlight-color: #f5e6a3; // Soft gold/yellow highlight
+$blog-highlight-color-dark: #4a4528; // Dark mode highlight
+$blog-margin-note-color: #666;
+$blog-margin-note-color-dark: #999;
+
+// Enhanced blog post container
+.post {
+
+  // Centered post title - truly centered on page
+  .post-title {
+    text-align: center !important;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+
+    // Compensate for TOC offset to appear centered on page
+    @media (min-width: 1200px) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      max-width: 800px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-accent-color;
+      }
+    }
+
+    @media #{$media-size-phone} {
+      font-size: 1.8rem;
+    }
+  }
+
+  // Post excerpt/description centered
+  .post-excerpt {
+    text-align: center;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: $blog-margin-note-color;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+
+    @media (prefers-color-scheme: dark) {
+      color: $blog-margin-note-color-dark;
+    }
+
+    [data-theme=dark] & {
+      color: $blog-margin-note-color-dark;
+    }
+  }
+
+  // Centered post content
+  .post-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.8;
+
+    @media #{$media-size-phone} {
+      padding: 0 10px;
+    }
+
+    // Improved paragraph spacing
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    // Enhanced headings
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    // Styled blockquotes
+    blockquote {
+      font-style: italic;
+      border-left: 3px solid $primary-accent-color;
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      color: $blog-margin-note-color;
+
+      @media (prefers-color-scheme: dark) {
+        color: $blog-margin-note-color-dark;
+      }
+
+      [data-theme=dark] & {
+        color: $blog-margin-note-color-dark;
+      }
+    }
+  }
+}
+
+// Text highlight shortcode style (yellow/gold background)
+.text-highlight {
+  background-color: $blog-highlight-color;
+  padding: 2px 4px;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $blog-highlight-color-dark;
+    color: #f0e6b8;
+  }
+
+  [data-theme=dark] & {
+    background-color: $blog-highlight-color-dark;
+    color: #f0e6b8;
+  }
+}
+
+// Margin note shortcode style
+.margin-note {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: $blog-margin-note-color;
+  font-style: italic;
+
+  // Desktop: Float to the left margin
+  @media (min-width: 1100px) {
+    float: left;
+    clear: left;
+    width: 180px;
+    margin-left: -220px;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    padding-right: 20px;
+    border-right: 2px solid rgba($primary-accent-color, 0.3);
+
+    @media (prefers-color-scheme: dark) {
+      color: $blog-margin-note-color-dark;
+    }
+
+    [data-theme=dark] & {
+      color: $blog-margin-note-color-dark;
+    }
+  }
+
+  // Tablet/Mobile: Show as inline note block
+  @media (max-width: 1099px) {
+    display: block;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba($primary-accent-color, 0.05);
+    border-left: 3px solid $primary-accent-color;
+    border-radius: 0 8px 8px 0;
+
+    @media (prefers-color-scheme: dark) {
+      background: rgba($primary-accent-color, 0.1);
+    }
+
+    [data-theme=dark] & {
+      background: rgba($primary-accent-color, 0.1);
+    }
+  }
+}
+
+// Container for posts with margin notes - needs extra space
+.post-content.has-margin-notes {
+  @media (min-width: 1100px) {
+    margin-left: 260px;
+  }
+}
+
+// Clear floats after paragraphs with margin notes
+.clear-float {
+  clear: both;
+}
+
+// Post info section centering
+.post-info {
+  text-align: center;
+
+  p {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
 }

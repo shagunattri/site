@@ -29,8 +29,9 @@
 {{ end }}
 {{- end -}}
 
-{{- /* TOC script - only load when TOC is enabled */}}
-{{- if .Params.toc -}}
+{{- /* TOC script - load when page has a table of contents */}}
+{{- $hasToc := and (ne .TableOfContents "") (gt (len .TableOfContents) 100) -}}
+{{- if or .Params.toc $hasToc -}}
 {{ $toc := resources.Get "js/toc.js" }}
 {{ if $toc }}
 {{ $tocJS := $toc | resources.Minify | resources.Fingerprint "sha512" }}

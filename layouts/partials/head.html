@@ -59,3 +59,17 @@
     {{ partial "seo/schema-article.html" . }}
     {{ partial "seo/schema-faq.html" . }}
 {{- end -}}
+
+<!-- Netlify Identity Widget for CMS Authentication -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>

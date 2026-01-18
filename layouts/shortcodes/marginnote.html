@@ -1,0 +1,8 @@
+{{/* 
+  Margin Note Shortcode
+  Usage: {{< marginnote >}}Side commentary that appears in the left margin on desktop{{< /marginnote >}}
+  
+  On desktop (>1100px): Floats to the left margin with right border
+  On mobile/tablet: Displays as a highlighted inline block
+*/}}
+<aside class="margin-note">{{ .Inner | markdownify }}</aside>

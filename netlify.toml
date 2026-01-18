@@ -6,6 +6,24 @@ TZ = "America/Los_Angeles"
 publish = "public"
 command = "hugo --gc --minify"
 
+# Enable Netlify Identity for CMS authentication
+[build.processing]
+  skip_processing = false
+[build.processing.html]
+  pretty_urls = true
+
+# Redirect for Netlify Identity
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+# Inject Netlify Identity widget on all pages for redirect after login
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Identity widget will be added via script injection
+
 # Security headers
 [[headers]]
   for = "/*"

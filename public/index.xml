@@ -2,388 +2,395 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shagun Attri on Shagun Attri | shagun.xyz | Product Manager</title>
-    <link>http://localhost:59991/</link>
+    <link>http://localhost:52012/</link>
     <description>Recent content in Shagun Attri on Shagun Attri | shagun.xyz | Product Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
-    <atom:link href="http://localhost:59991/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:52012/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Commoditization Curve, Why 2026 Might Be Your Last First-Mover Advantage</title>
+      <link>http://localhost:52012/blog/softwareandcontentin2026/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:52012/blog/softwareandcontentin2026/</guid>
+      <description>I&amp;rsquo;ve been wrestling with a strange paradox lately: the easier it becomes to build software and create content, the more urgent it feels to start right now.&#xA;Let me explain what I mean.&#xA;The Bell Curve Nobody&amp;rsquo;s Talking About&#xA;When vibecode.dev, Claude Code, Cursor, and Emergent Labs hit the internet, something clicked for me. These weren&amp;rsquo;t products from decade-old companies with hundreds of engineers. These were applications built at speeds that would have seemed impossible a few years ago - vibecoding, as we are now calling it(Terrible name btw, undermines a lot of impactful work being done in this space).</description>
+    </item>
     <item>
       <title>How the Twitter/X Algorithm Actually Works in 2025</title>
-      <link>http://localhost:59991/blog/twitter/</link>
+      <link>http://localhost:52012/blog/twitter/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/twitter/</guid>
+      <guid>http://localhost:52012/blog/twitter/</guid>
       <description>I’m writing this as a living note.&#xA;Not a growth hack thread. Not “10 tips to go viral.” But a clear mental model of how X (Twitter) actually decides who wins in 2025 — especially if you’re building in AI, cybersecurity, startups, or DevSecOps.&#xA;My personal targets are aggressive:&#xA;500 verified followers 3M impressions 3 months No paid growth, no engagement bait So I went deep into the open-source X algorithm, creator data from 2024–25, and real-world testing.</description>
     </item>
     <item>
       <title>Surviving and Thriving in the Startup Jungle - Lessons from the Trenches</title>
-      <link>http://localhost:59991/blog/surviving_startup_life/</link>
+      <link>http://localhost:52012/blog/surviving_startup_life/</link>
       <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/surviving_startup_life/</guid>
+      <guid>http://localhost:52012/blog/surviving_startup_life/</guid>
       <description>Welcome to the startup life.&#xA;Let me ask you something - have you ever been in a meeting where every word you say feels like it’s under a microscope? Where the air feels thinner (metaphorically, but also literally if your nerves are shot), and you’re just trying to breathe while making your point?&#xA;Yeah, welcome to startup life.&#xA;It’s fast. It’s relentless. And sometimes, it feels like you’re climbing Everest with no oxygen tank.</description>
     </item>
     <item>
       <title>Roasting Agentic AI Startups</title>
-      <link>http://localhost:59991/blog/agenticaistartups/</link>
+      <link>http://localhost:52012/blog/agenticaistartups/</link>
       <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/agenticaistartups/</guid>
+      <guid>http://localhost:52012/blog/agenticaistartups/</guid>
       <description>My Deep Dive Into India&amp;rsquo;s Agentic AI Startup Ecosystem After spending weeks researching and testing multiple Indian AI startups, I&amp;rsquo;ve gained invaluable insights into how these companies are reshaping customer experiences and solving real-world problems. As someone who&amp;rsquo;s had hands-on experience with these platforms, I want to share not just what these startups do, but what I learned from actually using them and how they&amp;rsquo;re transforming the AI landscape in India.</description>
     </item>
     <item>
       <title>How UX4G Is Elevating Digital Experiences Across India</title>
-      <link>http://localhost:59991/blog/ux4g/</link>
+      <link>http://localhost:52012/blog/ux4g/</link>
       <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/ux4g/</guid>
+      <guid>http://localhost:52012/blog/ux4g/</guid>
       <description>Introduction: A Welcome Change in Digital Governance India’s UX4G (User Experience for Government) initiative—under the Ministry of Electronics &amp;amp; IT (MeitY) as part of Digital India—is transforming how citizens interact with digital government services. By prioritizing accessibility, usability, and a user-first approach, UX4G is setting a new standard in public digital services.&#xA;(ux4g.gov.in)&#xA;Why this matters: For too long, government services online were functional but not always accessible or intuitive. UX4G breaks that mold, ushering in an era where government digital services are inclusive, efficient, and citizen-centered.</description>
     </item>
     <item>
       <title>Google PM Interview Process and The Truth About VIBE Coding</title>
-      <link>http://localhost:59991/blog/google_pm_interview/</link>
+      <link>http://localhost:52012/blog/google_pm_interview/</link>
       <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/google_pm_interview/</guid>
+      <guid>http://localhost:52012/blog/google_pm_interview/</guid>
       <description>Breaking into product management at Google is notoriously difficult, not just because of the scale and prestige of the company, but also because of the unique interview process. Many candidates hear whispers of something called VIBE and wonder whether it’s a test of culture fit, raw product intuition, or just another buzzword. Let’s cut through the noise.&#xA;What is VIBE? VIBE stands for Values, Imagination, Brainpower, and Execution. It’s Google’s structured way of testing not just whether you can think like a product manager, but whether you can thrive in Google’s environment.</description>
     </item>
     <item>
       <title>Google&#39;s Cybersecurity Power Move with Wiz!</title>
-      <link>http://localhost:59991/blog/wiz/</link>
+      <link>http://localhost:52012/blog/wiz/</link>
       <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wiz/</guid>
+      <guid>http://localhost:52012/blog/wiz/</guid>
       <description>The Biggest Deal Yet in 2025 When the news broke about Google acquiring Wiz for $32 billion, I wasn&amp;rsquo;t just reading another tech headline—I was watching a chapter close in a journey I&amp;rsquo;ve been following from the trenches.&#xA;Having worked in cybersecurity for a few years now, and directly with the Wiz team as part of their technology partner program for a few years, this acquisition feels personal to me in ways that most industry news doesn&amp;rsquo;t.</description>
     </item>
     <item>
       <title>From Office Glitz to AI Blitz - Why the 1% Club Had to Downsize</title>
-      <link>http://localhost:59991/blog/1percentclub/</link>
+      <link>http://localhost:52012/blog/1percentclub/</link>
       <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/1percentclub/</guid>
+      <guid>http://localhost:52012/blog/1percentclub/</guid>
       <description>The 1% Club news and Market Dynamics&#xA;Layoffs unveil the intricate dynamics of the market, as seen in the recent news about the &amp;lsquo;1% club&amp;rsquo; layoffs.&#xA;The 1% Club, founded by social media influencer Sharan Hegde and funded in part by investor Nikhil Kamath, aims to elevate financial literacy in India by providing education, tools, and community support. It focuses on teaching users essential financial skills like budgeting, saving, and investing through resources such as the Finance Academy and accountability partner matching.</description>
     </item>
     <item>
       <title>The CRED Blackhole</title>
-      <link>http://localhost:59991/blog/cred/</link>
+      <link>http://localhost:52012/blog/cred/</link>
       <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/cred/</guid>
+      <guid>http://localhost:52012/blog/cred/</guid>
       <description>Cred has become a household name for top earners seeking a sleek and rewarding credit card management app. However, behind the glossy exterior lies a platform mired in unnecessary gimmicks and slow development cycles, struggling to justify its lofty valuation.&#xA;The Gimmicks and Their Drawbacks Cred’s flashy animations, quirky music, and elaborate effects may grab attention, but they detract from the core functionality that high-earning users crave. These users want efficiency and usability, not distractions.</description>
     </item>
     <item>
       <title>How todo it?</title>
-      <link>http://localhost:59991/blog/know/</link>
+      <link>http://localhost:52012/blog/know/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/know/</guid>
+      <guid>http://localhost:52012/blog/know/</guid>
       <description>How to Know? There are multiple ways to &amp;ldquo;know&amp;rdquo; about something you like or enjoy doing - join a class, enroll in a course, surf the web, talk to peers, get a mentor, and so on.&#xA;Getting to know about something is not a problem. In this internet age of abundance of information sometimes in the form of misinformation, disinformation, and more is not an issue. That was a problem of the past.</description>
     </item>
     <item>
       <title>The Amazon Jungle</title>
-      <link>http://localhost:59991/blog/amazon_search/</link>
+      <link>http://localhost:52012/blog/amazon_search/</link>
       <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/amazon_search/</guid>
+      <guid>http://localhost:52012/blog/amazon_search/</guid>
       <description>Among all things Amazon is involved in it is interstingly also a Search Engine Company!</description>
     </item>
     <item>
       <title>Polisihing Products</title>
-      <link>http://localhost:59991/blog/polishing_products/</link>
+      <link>http://localhost:52012/blog/polishing_products/</link>
       <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/polishing_products/</guid>
+      <guid>http://localhost:52012/blog/polishing_products/</guid>
       <description>Polishing Products wWhen it comes to polishing products, the first step is to solve a fundamental problem for the user and make it as easy and efficient for the user to achieve their desired goal through the product.&#xA;With time, as product adoption grows, feature requests start piling up, and with revenue targets to hit, your initial version of the product needs polishing and selling with limited sales effort with the help of the newest framework in town - Product Led Growth.</description>
     </item>
     <item>
       <title>Tasting the Internet</title>
-      <link>http://localhost:59991/blog/12-05.23/</link>
+      <link>http://localhost:52012/blog/12-05.23/</link>
       <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/12-05.23/</guid>
+      <guid>http://localhost:52012/blog/12-05.23/</guid>
       <description>The art of building taste with online consumption choices of content and the ways it defines you.&#xA;In a world where screen time is through the roof for most, the screentime-healthy-lifestyle-green-vegan-enthusiast-energy-ultra-pro-max folks are trying to figure out ways to manage their screen times while doomscrooling through their day.&#xA;Well aren&amp;rsquo;t we all in some ways guilty of doomscrolling when bored at work or waiting for the metro to arrive and trying to fix it?</description>
     </item>
     <item>
       <title>The Consumption Cycle</title>
-      <link>http://localhost:59991/blog/04-05-23/</link>
+      <link>http://localhost:52012/blog/04-05-23/</link>
       <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/04-05-23/</guid>
+      <guid>http://localhost:52012/blog/04-05-23/</guid>
       <description>How your counsumption pattern defines who you are. In simple terms - You are what you consume.&#xA;Over the years, as we grow and evolve our understanding of the world. We consume information and content from various sources - on the internet, watching something IRL, observing other people behavior and more.&#xA;The consumption patterns and behvaiors are partly influenced by the environment one is in and exposed to. If you have a friend circle in college which is into gaming, you will naturally be exposed to gaming and generate interest over time leading you to explore gaming.</description>
     </item>
     <item>
       <title>Fishing around to end Phishing</title>
-      <link>http://localhost:59991/blog/phishing/</link>
+      <link>http://localhost:52012/blog/phishing/</link>
       <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/phishing/</guid>
+      <guid>http://localhost:52012/blog/phishing/</guid>
       <description>Often times we come across information that doesn&amp;rsquo;t really hit in the moment but one day out of the blue, it all starts making sense. Well that is how information and thinking works.&#xA;Back in the day, information was guarded and not accessible to all. Education was privileged and only accessible to those who belonged to higher social status.&#xA;Feels unfair, right? Why should the top 1% have all the access to years of wisdom?</description>
     </item>
     <item>
       <title>Microsoft 4D Chess Moves</title>
-      <link>http://localhost:59991/blog/microsoft/</link>
+      <link>http://localhost:52012/blog/microsoft/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/microsoft/</guid>
+      <guid>http://localhost:52012/blog/microsoft/</guid>
       <description>Chess is a beautiful game, one that makes you think ahead in time and guess the moves of the opponent to gain an advantage and win a piece over.&#xA;Such is business, you predict markets, understand user needs and sentiments to build a product that can solve users&amp;rsquo; problems.&#xA;Seems easy at first, but building businesses, or playing chess for that matter requires great decision-making skills to stay on top along with other skills we will learn through this essay.</description>
     </item>
     <item>
       <title>Building cults over roles</title>
-      <link>http://localhost:59991/blog/31-03-23/</link>
+      <link>http://localhost:52012/blog/31-03-23/</link>
       <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/31-03-23/</guid>
+      <guid>http://localhost:52012/blog/31-03-23/</guid>
       <description>Comes down to how you switch gears&#xA;When studying in college, I was fascinated by technology and curious about learning about the next big wave to ride on.&#xA;Data analytics was talk of the town back then, now it&amp;rsquo;s Artificial Intelligence.&#xA;These trends come and go with time but the process of figuring out which waves to ride and which one&amp;rsquo;s to avoid is the task at hand. The college journey typically lasts 4 years, and with all external factors considered your aim should to figure out the right role to get your career started.</description>
     </item>
     <item>
       <title>Web3,4,5, and beyond ...</title>
-      <link>http://localhost:59991/blog/21-02-23/</link>
+      <link>http://localhost:52012/blog/21-02-23/</link>
       <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/21-02-23/</guid>
+      <guid>http://localhost:52012/blog/21-02-23/</guid>
       <description>Crypto, web3, bitcoin, doge, luna, token, NFT, trade, sell, decentralized, dip, and dump have been talk of the town during the 21/22 lockdown period on twitter tech bro communities where all they could talk about was web3 being the future.&#xA;Memes were made, money was dumped to create projects, spread the word about decentralization and people casually scrolling through their social feeds got into the web3 and traded crypto for some returns.</description>
     </item>
     <item>
       <title>Free Trials and People</title>
-      <link>http://localhost:59991/blog/10-02-23/</link>
+      <link>http://localhost:52012/blog/10-02-23/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/10-02-23/</guid>
+      <guid>http://localhost:52012/blog/10-02-23/</guid>
       <description>#8 Edition of interesting reads from the week - 10, Feb 2023.&#xA;#1 The optimal free trial length Free Trials for end users are a great way to experience the platform and extract the most value out of it while you have the time, which is a natural behavior for us humans.&#xA;But on the other end are teams deciding whether to have a trial in the first place or a free Plan maybe a freemium plan for their product.</description>
     </item>
     <item>
       <title>Uncertainty, Validation, and Work</title>
-      <link>http://localhost:59991/blog/15-01-23/</link>
+      <link>http://localhost:52012/blog/15-01-23/</link>
       <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/15-01-23/</guid>
+      <guid>http://localhost:52012/blog/15-01-23/</guid>
       <description>#7 Edition of interesting reads from the week - 15, Jan 2023.&#xA;#1 Stability mangoge, chaos denge Getting comfortable with the constant change in life be it your friends, the place you stay, or the people you meet at work. We all aim to achieve a state of stability for all the hard work we do. But the cycle of uncertain events never stops - from one goal you keep moving to the next and sometimes do not even realize it&amp;rsquo;s been like that for a long time.</description>
     </item>
     <item>
       <title>My Beef with JarApp and ways to improve!</title>
-      <link>http://localhost:59991/blog/jarapp/</link>
+      <link>http://localhost:52012/blog/jarapp/</link>
       <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/jarapp/</guid>
+      <guid>http://localhost:52012/blog/jarapp/</guid>
       <description>Jar brings conventional gold investment that is now trusted for generations to the digital world with a simple usecase to solve for - make investing in digital gold seamless and easy.&#xA;Jar added features with gamification and ability to invest with ease by availing rewards and purchasing gold in the process in the simplest way possible.&#xA;It helps invest in a habit that can then be automated with the help of AutoPay.</description>
     </item>
     <item>
       <title>Habits, Philosophy and Branding</title>
-      <link>http://localhost:59991/blog/wutiread080123/</link>
+      <link>http://localhost:52012/blog/wutiread080123/</link>
       <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wutiread080123/</guid>
+      <guid>http://localhost:52012/blog/wutiread080123/</guid>
       <description>#6 Edition of interesting reads from the week - 08, Jan 2023.&#xA;Bringing order to chaos in order&#xA;With the new year, we all have the urge to settle things down and give things a fresh start over and start with a clean slate to build and do what we always wanted to achieve and grow to the best, most successful version of ourselves.&#xA;Binding one to labeled goals is never going to work out as you set yourself out of the blue on a random day of the year.</description>
     </item>
     <item>
       <title>Writing on the internet, Momentum and todos</title>
-      <link>http://localhost:59991/blog/wutiread010123/</link>
+      <link>http://localhost:52012/blog/wutiread010123/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wutiread010123/</guid>
+      <guid>http://localhost:52012/blog/wutiread010123/</guid>
       <description>#5 Edition of interesting reads from the week - 01, Jan 2023.&#xA;It&amp;rsquo;s 2023 already, excited for what&amp;rsquo;s to come!👻&#xA;#1 Why and how to write things on the Internet With writing being more and more part of my day, it is important to get those writing muscles in the best shape. Writing a blog or writing in general is a process in itself. First figure out what you want to write and then make it interesting and not divert from the original topic.</description>
     </item>
     <item>
       <title>Marketing Cycle, Porter&#39;s Strategies and Character Alarms</title>
-      <link>http://localhost:59991/blog/wutiread2512/</link>
+      <link>http://localhost:52012/blog/wutiread2512/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wutiread2512/</guid>
+      <guid>http://localhost:52012/blog/wutiread2512/</guid>
       <description>#4 Edition of interesting reads from the week - 25, Dec 2022.&#xA;#1 Continuum of Marketing Accountability The more you learn about marketing the more interesting it gets with insights into human psychology and the fusion of winnings customers with trust while upholding the values of the brand.&#xA;In a marketing function, it is easy to get lost in the sea of numbers and data from Google Analytics and other intent tools.</description>
     </item>
     <item>
       <title>Great Leader Demands, Ideas and Megaphone Money</title>
-      <link>http://localhost:59991/blog/wutiread1812/</link>
+      <link>http://localhost:52012/blog/wutiread1812/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wutiread1812/</guid>
+      <guid>http://localhost:52012/blog/wutiread1812/</guid>
       <description>#3 Edition of interesting reads from the week - 18, Dec 2022.&#xA;#1 Demanding and Support Covers how the best leaders are both demanding and supportive and why these qualities are not at two ends of a spectrum, but executed by great leaders.&#xA;Link #2 Ideas that changed my life by Morgan Housel List of curated experiences and instances from Morgan Housel that have helped changed his life. Covers insight into experiences, norms, tribes, learning, and more in an easy-to-understand and digestible way.</description>
     </item>
     <item>
       <title>Sunk Cost Fallacy, Twitter and Product Decisions</title>
-      <link>http://localhost:59991/blog/wutiread1112/</link>
+      <link>http://localhost:52012/blog/wutiread1112/</link>
       <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wutiread1112/</guid>
+      <guid>http://localhost:52012/blog/wutiread1112/</guid>
       <description>#2 Edition of interesting reads from the week - 11,Dec 2022.&#xA;#1 Trap of the Sunk Cost Fallacy Covers great insights on the what and how of sunk cost fallacy one goes through in life and work.&#xA;Explains how startups use sunk cost fallacy to their advantage&#xA;Link Sometimes we have to take the punch of regret, in order to stop our life from being wasted.&#xA;#2 Twitter as a City-State Written before all these shenanigans and news of Twitter being overturned by Elon bhai.</description>
     </item>
     <item>
       <title>PMF, Social Connections and Single-player games</title>
-      <link>http://localhost:59991/blog/wutiread412/</link>
+      <link>http://localhost:52012/blog/wutiread412/</link>
       <pubDate>Sun, 04 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/wutiread412/</guid>
+      <guid>http://localhost:52012/blog/wutiread412/</guid>
       <description>Interesting reads and references from the week.&#xA;Will keep this going every week and see how it grows.&#xA;#1 Product Market Fit with Nischay from JarApp This interview covers the importance of PMF and how to build features that comply with the PMF standard set without hampering growth.&#xA;Will cover my experience with the JarApp in the coming blogs - it&amp;rsquo;s a WIP w/ some controversial takes on why it doesn&amp;rsquo;t for me.</description>
     </item>
     <item>
       <title>Suno Beta! This is how you do a Beta Launch.</title>
-      <link>http://localhost:59991/blog/beta/</link>
+      <link>http://localhost:52012/blog/beta/</link>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/beta/</guid>
+      <guid>http://localhost:52012/blog/beta/</guid>
       <description>So, you are trying to do a beta launch of a new Product? Here are the ingredients you&amp;rsquo;ll need for a successful beta launch!&#xA;Launching products is more like event management! You&amp;rsquo;ve to make all arrangements to capture insights from a product that is not fully complete but is in the initial stages of product development.&#xA;The beta launch is a way to take off from the ground and get the initial traction attracting users.</description>
     </item>
     <item>
       <title>My Setup</title>
-      <link>http://localhost:59991/blog/setup/</link>
+      <link>http://localhost:52012/blog/setup/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/setup/</guid>
+      <guid>http://localhost:52012/blog/setup/</guid>
       <description>Hardware MacBook Air M1(2021) My main machine More than enough for day-to-day work Value for money product It&amp;rsquo;s good that I didn&amp;rsquo;t wait for M2 to drop iPhone XR Primary phone iOS has worked its magic on me, now that I&amp;rsquo;m in the Apple ecosystem Works like a charm with the stuff now possible Wacom One Tablet My writing pad I got to make videos like Liveoverflow.🥲 Use it to mostly take notes when I don&amp;rsquo;t feel like typing Realme Noise Cancelling Buds Great deal for noise canceling buds at a budget Xiaomi Wired Headphones Headphones of choice cause why not Great audio and mic quality for office meetings so my Bluetooth headphones don&amp;rsquo;t give up in the middle of a meeting.</description>
     </item>
     <item>
       <title>Network Security - An Introduction</title>
-      <link>http://localhost:59991/blog/networksecurity/</link>
+      <link>http://localhost:52012/blog/networksecurity/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/networksecurity/</guid>
+      <guid>http://localhost:52012/blog/networksecurity/</guid>
       <description>This blogs covers the basic introduction of topics related to Network Security from various resources I used to learn and note my learnings about the topic.&#xA;CIA Triad Confidentiality Integrity Availability DAD Triangles Disclosure Alteration Denial CIA and DAD are mutually exclusive.&#xA;Want the CIA points not the DAD points&#xA;Nonrepudiation Not being able to deny having sent a message&#xA;Leads to integrity.&#xA;Access Control Defines the degree of permission granted to a resource</description>
     </item>
     <item>
       <title>Bookshelf</title>
-      <link>http://localhost:59991/blog/books/</link>
+      <link>http://localhost:52012/blog/books/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/books/</guid>
+      <guid>http://localhost:52012/blog/books/</guid>
       <description>Started picking up books to read. This section of the site is dedicated to writing my thoughts and reviews of books I read.&#xA;The goal is to read a book every month. Let&amp;rsquo;s see.&#xA;GoodReads&#xA;List of Books I&amp;rsquo;ve read Book Author Ratings Everyone has a Story Savi Sharma ⭐️⭐️⭐️ Two Billion Heart Beats MN Raju ⭐️⭐️⭐️⭐️ Hit Refresh Satya Nadella ⭐️⭐️⭐️⭐️ Midnight Machines Arun Mohan Sukumar ⭐️⭐️⭐️ Working Backwards Colin Bryar and Bill Carr ⭐️⭐️⭐️⭐️ Good to Great Jim Collins ⭐️⭐️⭐️ Zero to One Peter Theil ⭐️⭐️⭐️⭐️ Mindset Dr.</description>
     </item>
     <item>
       <title>Tips for better Passwords</title>
-      <link>http://localhost:59991/blog/passwordtips/</link>
+      <link>http://localhost:52012/blog/passwordtips/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/passwordtips/</guid>
+      <guid>http://localhost:52012/blog/passwordtips/</guid>
       <description>Tips for Better Passwords. Recently in my intership with Sennovate,I am writing a few blogs as a technical blogger regarding some security topics and tips for the internet.This one is about passwords.In a few points I have discussed about the tips I would give anyone for a better making a better password/passphrase and Internet Hygiene.So check it out and let me know if there are any other points you would like to add upon that I missed.</description>
     </item>
     <item>
       <title>Docker Architecture</title>
-      <link>http://localhost:59991/blog/dockerarchitechture/</link>
+      <link>http://localhost:52012/blog/dockerarchitechture/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/dockerarchitechture/</guid>
+      <guid>http://localhost:52012/blog/dockerarchitechture/</guid>
       <description>One of the main parts of the docker ecosystem is the Docker Engine.&#xA;Docker engine Consists of:&#xA;Docker CLI &amp;lt;===&amp;gt; API &amp;lt;===&amp;gt; Docker Daemon It has an underlying client server architecture that communicates through a REST API. Thus the client the docker CLI talks to the docker daemon using the API Docker CLI is easy with using built,run,ps and other commands. You can have other clients working with the daemon apart form the CLI,you can build your own client or use a web interface to manage/control the objects.</description>
     </item>
     <item>
       <title>Containerization</title>
-      <link>http://localhost:59991/blog/containerization/</link>
+      <link>http://localhost:52012/blog/containerization/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/containerization/</guid>
+      <guid>http://localhost:52012/blog/containerization/</guid>
       <description>Containerizaiton &amp;amp; Docker Before introduction to docker we used linux contaniers(LXC) and made our suitable environment by configuring different libraries &amp;amp; dependecies to develop our product.&#xA;Most of the time when pushing to production,the production environment/server setup had different or conflictiong dependencies that would not allow for deployment and then you have to manage these packages and dependencies to make sure they don&amp;rsquo;t have conflicts and update.&#xA;Conflicting dependencies The addition of more and more dependencies to your project and making it all a mess when you try to add new projects with packages and dependencies of different version and different modules.</description>
     </item>
     <item>
       <title>Understanding Docker</title>
-      <link>http://localhost:59991/blog/docker/</link>
+      <link>http://localhost:52012/blog/docker/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/docker/</guid>
+      <guid>http://localhost:52012/blog/docker/</guid>
       <description>In the following series of blogs,I try to explain Docker and the DevOps ecosystem.This is the one of many blog posts to be featuring Docker and many other tools utilized in the ecosystem.&#xA;These are notes from my learnings about docker and virtualization.&#xA;Docker docker is a tool for running applications in an isolated environment similar to virtual machine app run in same environment just works standard for software deployement Containers vs VMS Containers containers are an abstraction at the app layer that package code and dependencies together.</description>
     </item>
     <item>
       <title>THM - Printer Hacking 101</title>
-      <link>http://localhost:59991/blog/printerhacking101/</link>
+      <link>http://localhost:52012/blog/printerhacking101/</link>
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/printerhacking101/</guid>
+      <guid>http://localhost:52012/blog/printerhacking101/</guid>
       <description>Printer Hacking Learn about (and get hands on with) printer hacking and understand the basics of IPP.&#xA;Unit 2 Task #1&#xA;What port does IPP run on?&#xA;Google is your friend.&#xA;63?&#xA;Unit 3 Task #1&#xA;How would a simple printer TCP DoS attack look as a one-line command?&#xA;Look around, the answer is hiding in plain sight. http://hacking-printers.net/wiki/index.php/Printer_Security_Testing_Cheat_Sheet&#xA;while true; do nc printer 9100; ????&#xA;Task 2&#xA;Review the cheat sheet provided in the task reading above.</description>
     </item>
     <item>
       <title>THM - c4ptur3-th3-fl4g</title>
-      <link>http://localhost:59991/blog/c4ptur3-th3-fl4g/</link>
+      <link>http://localhost:52012/blog/c4ptur3-th3-fl4g/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/c4ptur3-th3-fl4g/</guid>
+      <guid>http://localhost:52012/blog/c4ptur3-th3-fl4g/</guid>
       <description>c4ptur3-th3-fl4g A beginner level CTF challenge&#xA;Task #1&#xA;c4n y0u c4p7u23 7h3 f149?&#xA;Understanding leet text shouldn&amp;rsquo;t be hard,and if you get stuck use Universal Leet (L337, L33T, 1337) Converter Decrypted:&#xA;can you capture the flag&#xA;Task #2&#xA;01101100 01100101 01110100 01110011 00100000 01110100 01110010 01111001 00100000 01110011 01101111 01101101 01100101 00100000 01100010 01101001 01101110 01100001 01110010 01111001 00100000 01101111 01110101 01110100 00100001&#xA;Straight of this is binary code and to decode it you can either use pen and paper or use rapidTables to decode the text.</description>
     </item>
     <item>
       <title>Password Breaches</title>
-      <link>http://localhost:59991/blog/passwordbreaches/</link>
+      <link>http://localhost:52012/blog/passwordbreaches/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/passwordbreaches/</guid>
+      <guid>http://localhost:52012/blog/passwordbreaches/</guid>
       <description>Password breaches and it&amp;rsquo;s Types As a Developer and software engineer it is always a priority to make the perfect software solution with the best security policies implemented.&#xA;Passwords are often a way to secure products and act as a barrier to access information of an individual or major corporations. We hear about these passwords being leaked and breached by hackers on the internet being referred to as password breaches.</description>
     </item>
     <item>
       <title>THM - Metasploit</title>
-      <link>http://localhost:59991/blog/metasploit/</link>
+      <link>http://localhost:52012/blog/metasploit/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/metasploit/</guid>
+      <guid>http://localhost:52012/blog/metasploit/</guid>
       <description>Metasploit, an open-source pentesting framework, is a powerful tool utilized by security engineers around the world. Maintained by Rapid 7, Metasploit is a collection of not only thoroughly tested exploits but also auxiliary and post-exploitation tools. Throughout this room, we will explore the basics of using this massive framework and a few of the modules it includes.&#xA;Metasploit does support different types of port scans from within the auxiliary modules. Metasploit can also import other scans from nmap and Nessus just to name a few.</description>
     </item>
     <item>
       <title>Getting Good with Git</title>
-      <link>http://localhost:59991/blog/vcs/</link>
+      <link>http://localhost:52012/blog/vcs/</link>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/vcs/</guid>
+      <guid>http://localhost:52012/blog/vcs/</guid>
       <description>Git1 is a tool to keep tracks of files,folders and code.&#xA;Version controls systems such as Git facilitate collaboration.&#xA;Version control systems(VCSs):&#xA;saves files/folders/code in a series of snapshots and encapsulates them together.&#xA;Store metadata including author,messasge,timestamps and so on.&#xA;Why use Git? To look at older versions of code Fixing bugs while working Send patches and resolving conflicts Find module data and figure out all changes and updates Maintain a log of changes Work on parallel branches of development In a scenario where your unit tests are not passing you often look at changes in the code and git helps identify errors and searches the history to look at the change that broke your project.</description>
     </item>
     <item>
       <title>The fundamentals of VIm</title>
-      <link>http://localhost:59991/blog/vim/</link>
+      <link>http://localhost:52012/blog/vim/</link>
       <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/vim/</guid>
+      <guid>http://localhost:52012/blog/vim/</guid>
       <description>Vim (/vɪm/;) is a contraction of Vi IMproved, originated from the Vi editor (1976).&#xA;Vscode is great but have you ever used command-line editors more or less vim for your daily development tasks. I’ve been using Vim for the last few months as my IDE and env of choice for writing all my code and I must say I can never think of switching back.&#xA;Vim is one of the most popular command-line-based editor and comes with a lot of features your IDE isn’t really capable unless it supports Vim emulation mode.</description>
     </item>
     <item>
       <title>Shell Scripting - 101</title>
-      <link>http://localhost:59991/blog/shellscripting/</link>
+      <link>http://localhost:52012/blog/shellscripting/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/shellscripting/</guid>
+      <guid>http://localhost:52012/blog/shellscripting/</guid>
       <description>Shell Scripting Shell scripting is an important utility to improve your workflow and automate tasks.&#xA;Check out my Understanding the shell blogpost to understand the basics of shell.&#xA;Though shell scripting is not fast as compared to your C programs it is useful if you are looking to run regular tasks and schedule jobs on your system. In this article I&amp;rsquo;ll try to highlight a few tips and ways to improve,understand shell scripting a little better.</description>
     </item>
     <item>
       <title>Understanding the Shell</title>
-      <link>http://localhost:59991/blog/shell/</link>
+      <link>http://localhost:52012/blog/shell/</link>
       <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/shell/</guid>
+      <guid>http://localhost:52012/blog/shell/</guid>
       <description>Shell Bourne Again SHell, or “bash”&#xA;In computing, a shell is a user interface for access to an operating system&amp;rsquo;s services. In general, operating system shells use either a command-line interface (CLI) or graphical user interface (GUI), depending on a computer&amp;rsquo;s role and particular operation.&#xA;It is named a shell because it is the outermost layer around the operating system.&#xA;Useful Shell Tools:&#xA;grep fzf broot mlocate rg tree bat and many more&amp;hellip;&amp;hellip;&amp;hellip;.</description>
     </item>
     <item>
       <title>Status Update</title>
-      <link>http://localhost:59991/blog/14-06-2020/</link>
+      <link>http://localhost:52012/blog/14-06-2020/</link>
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/14-06-2020/</guid>
+      <guid>http://localhost:52012/blog/14-06-2020/</guid>
       <description>Health One thing that we often neglect to look after in this busy life schedule is to look after our health,start to take care of your health and making sure that health should be the first priority kyuki jaan he to jaha he,as someone told. The quarantine has helped me focus on my health and things are amazing.Take care of your health y&amp;rsquo;all.&#xA;Vim I am in love with vim,not that is use it as my main &amp;ldquo;IDE&amp;rdquo; editor.</description>
     </item>
     <item>
       <title>Open Source Software</title>
-      <link>http://localhost:59991/blog/opensource/</link>
+      <link>http://localhost:52012/blog/opensource/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/opensource/</guid>
+      <guid>http://localhost:52012/blog/opensource/</guid>
       <description>Open-Source and the free software community has flourished in the recent years with developments and collaborative projects from multi-million dollar corporations to individual ninja devs across the globe many systems across the globe rely on opensource software and their maintainers.&#xA;From servers running the linux kernel to sending encrypted emails with confidential data,opensource libraries and projects have made the software world flourish with projects like flutter,to the code editor I&amp;rsquo;m using to write this blog Vscode,the framework that is used to serve this website Hugo,to the shell that I run on my computer oh-my-fish are made possible by countless opensource software contributors on platforms like Github,Gitlab and Bitbucket that have made this dream come true.</description>
     </item>
     <item>
       <title>Encoding,Encryption and Hashing</title>
-      <link>http://localhost:59991/blog/encoding_encryption_hashing/</link>
+      <link>http://localhost:52012/blog/encoding_encryption_hashing/</link>
       <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/encoding_encryption_hashing/</guid>
+      <guid>http://localhost:52012/blog/encoding_encryption_hashing/</guid>
       <description>Encoding, Encryption, and Hashing are terms that are often confused with each other.&#xA;Securing things is important and you need tools and technologies to secure products.&#xA;Encoding,Encryption and hashing are techniques to convert the format of data and play a important role in the infosec world in terms of securing data.&#xA;There is often significant confusion around the differences between encryption, encoding, hashing,&#xA;ENCODING Encoding is to transform data so that it can be properly (and safely) be consumed by a different type of system,whether it be sending binary data over email, or viewing special characters on a web page.</description>
     </item>
     <item>
       <title>Open-Source Intelligence and Digital Foot printing</title>
-      <link>http://localhost:59991/blog/osint/</link>
+      <link>http://localhost:52012/blog/osint/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/osint/</guid>
+      <guid>http://localhost:52012/blog/osint/</guid>
       <description>Malicious actors have been using specially crafted tools to collect information (like the police have search tools across a number of databases) and data companies collect so much information about us that a lot of free tools (OSINT) can be used to collect that information.&#xA;So, what does an innocent individual have in their arsenal to defend himself? Knowing what information is out there using OSINT tools.&#xA;Digital Footprint&#xA;Your digital footprint comprises every email you’ve ever sent, every post you’ve shared on social media, or every picture you’ve taken and uploaded on Instagram.</description>
     </item>
     <item>
       <title>Protecting Your Digital Self</title>
-      <link>http://localhost:59991/blog/protecting_your_digital_self/</link>
+      <link>http://localhost:52012/blog/protecting_your_digital_self/</link>
       <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/protecting_your_digital_self/</guid>
+      <guid>http://localhost:52012/blog/protecting_your_digital_self/</guid>
       <description>This simple advice will help to protect you against hackers and government surveillance.&#xA;The internet today is filled with news of breached and compromised accounts on various platforms and how the governments are able to surveil there own citizens.&#xA;The question now is Whether the government is the good guy or the bad guy and I certainly have had a hard time figuring it out.&#xA;Well if you are like, “I got nothing to hide” then you should probably reconsider.</description>
     </item>
     <item>
       <title>Loopie.ai -  Strategic Market Research and Competitive Intelligence Report</title>
-      <link>http://localhost:59991/blog/loopie_market_research/</link>
+      <link>http://localhost:52012/blog/loopie_market_research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/loopie_market_research/</guid>
+      <guid>http://localhost:52012/blog/loopie_market_research/</guid>
       <description>Prepared by: Shagun Attri&#xA;Report Date: December 25, 2025&#xA;Engagement Reference: Market Research Engagement&#xA;Classification: Confidential – Client Proprietary&#xA;Table of Contents Executive Summary Market Opportunity Analysis Slack Ecosystem Context Competitive Intelligence Strategic Positioning Assessment Target Market Expansion Prospect Intelligence: Community Research Prospect Intelligence: Professional Networks Go-to-Market Framework Strategic Recommendations and Roadmap Appendix 1. Executive Summary 1.1 Engagement Overview This report presents a comprehensive market analysis for Loopie.ai, an AI-powered execution layer that transforms Slack conversations into trackable commitments and automated workflows.</description>
     </item>
     <item>
       <title>PostCraft - Social Content Optimizer</title>
-      <link>http://localhost:59991/projects/postcraft/</link>
+      <link>http://localhost:52012/projects/postcraft/</link>
       <pubDate>Mon, 26 Jan 2026 12:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/projects/postcraft/</guid>
+      <guid>http://localhost:52012/projects/postcraft/</guid>
       <description>Create high-engagement social media posts with real-time analysis and suggestions</description>
     </item>
     <item>
       <title>India&#39;s Patent Revolution - How Research Led to PatentPilot!</title>
-      <link>http://localhost:59991/blog/patent/</link>
+      <link>http://localhost:52012/blog/patent/</link>
       <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/blog/patent/</guid>
+      <guid>http://localhost:52012/blog/patent/</guid>
       <description>When I began investigating India&amp;rsquo;s patent ecosystem six months ago, I approached it as a systematic research endeavour. What emerged was not only a comprehensive understanding of our nation&amp;rsquo;s intellectual property transformation but also a clear recognition of unprecedented opportunities. Opportunities that ultimately led me to develop PatentPilot, a platform designed to democratise sophisticated patent intelligence for Indian innovators.&#xA;The Data That Revealed India&amp;rsquo;s Patent Renaissance The numbers that fundamentally shifted my perspective on India&amp;rsquo;s innovation landscape tell a remarkable story.</description>
     </item>
     <item>
       <title>Indian Agentic AI startup analysis</title>
-      <link>http://localhost:59991/projects/indian-agentic-ai-startups/</link>
+      <link>http://localhost:52012/projects/indian-agentic-ai-startups/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/projects/indian-agentic-ai-startups/</guid>
+      <guid>http://localhost:52012/projects/indian-agentic-ai-startups/</guid>
       <description>Interactive dashboard exploring Indian agentic AI startups with filters, charts and AI-powered analysis.</description>
     </item>
     <item>
       <title>PatentPilot - AI-Powered Patent Filing Platform</title>
-      <link>http://localhost:59991/projects/patentpilot/</link>
+      <link>http://localhost:52012/projects/patentpilot/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/projects/patentpilot/</guid>
+      <guid>http://localhost:52012/projects/patentpilot/</guid>
       <description>India&amp;rsquo;s leading patent filing platform with AI-powered analysis. File patents with expert guidance, accurate fee calculation, and complete support.</description>
     </item>
     <item>
       <title>Knownsense Labs - YouTube Channel</title>
-      <link>http://localhost:59991/projects/knownsense-labs/</link>
+      <link>http://localhost:52012/projects/knownsense-labs/</link>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/projects/knownsense-labs/</guid>
+      <guid>http://localhost:52012/projects/knownsense-labs/</guid>
       <description>A YouTube channel exploring product management, cybersecurity, AI, and technology through in-depth videos and live coding sessions.</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:59991/about/</link>
+      <link>http://localhost:52012/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59991/about/</guid>
+      <guid>http://localhost:52012/about/</guid>
       <description>$ whoami Shagun Attri $ cat profile.json { &amp;#34;role&amp;#34;: &amp;#34;Senior Product Manager&amp;#34;, &amp;#34;company&amp;#34;: &amp;#34;ArmorCode&amp;#34;, &amp;#34;focus&amp;#34;: [&amp;#34;ASPM&amp;#34;, &amp;#34;RBVM&amp;#34;, &amp;#34;B2B SaaS&amp;#34;, &amp;#34;DevSecOps&amp;#34;], &amp;#34;location&amp;#34;: &amp;#34;Chandigarh, India&amp;#34;, &amp;#34;interests&amp;#34;: [&amp;#34;Products&amp;#34;, &amp;#34;Cybersecurity&amp;#34;, &amp;#34;Startups&amp;#34;, &amp;#34;AI&amp;#34;], &amp;#34;hobbies&amp;#34;: [&amp;#34;Photography&amp;#34;, &amp;#34;Writing&amp;#34;, &amp;#34;Travel&amp;#34;, &amp;#34;Reading&amp;#34;], &amp;#34;sports&amp;#34;: [&amp;#34;F1&amp;#34;, &amp;#34;Cricket&amp;#34;] } Hi, I&amp;rsquo;m Shagun Attri — a Senior Product Manager, cybersecurity enthusiast, and perpetual learner. This site serves as my digital notebook and library where I share insights from my professional life, technical explorations, book reviews, and guides.</description>
     </item>
   </channel>

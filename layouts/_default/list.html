@@ -4,9 +4,6 @@
     
     <main class="posts">
         <h1>{{ .Title }}</h1>
-        <div class="post-info">
-            <p>There are RSS feeds for <i>all</i> of the categories and tags here. If you want to subscribe to one of them, navigate to that list and <a href="index.xml">click here</a>; it'll take you to that specific feed.</p>
-        </div>
         {{ if .Content }}
             <div class="content">{{ .Content }}</div>
         {{ end }}
@@ -42,5 +39,57 @@
             </div>
         {{ end }}
     {{ partial "pagination-list.html" . }}
+    
+    <!-- RSS Feeds Footer -->
+    <div class="rss-feeds-footer">
+        <div class="rss-trigger" id="rss-trigger" aria-label="Subscribe to RSS feeds" tabindex="0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+            <span>RSS Feeds</span>
+        </div>
+        <div class="rss-dropdown" id="rss-dropdown">
+            <div class="rss-dropdown-header">Subscribe to RSS Feeds</div>
+            <ul class="rss-list">
+                <li><a href="{{ "blog/index.xml" | relURL }}" aria-label="All Blog Posts RSS Feed"><span class="rss-icon">📝</span> All Blog Posts</a></li>
+                {{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+                <li><a href="{{ .Permalink }}index.xml" aria-label="{{ .Title }} RSS Feed"><span class="rss-icon">📁</span> {{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            <div class="rss-dropdown-footer">
+                <small>Click any feed to subscribe in your RSS reader</small>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        (function() {
+            const trigger = document.getElementById('rss-trigger');
+            const dropdown = document.getElementById('rss-dropdown');
+            
+            if (trigger && dropdown) {
+                trigger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('show');
+                });
+                
+                trigger.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        dropdown.classList.toggle('show');
+                    }
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target) && e.target !== trigger) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
+        })();
+    </script>
     </main>
 {{ end }}
+

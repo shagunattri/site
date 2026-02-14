@@ -23,11 +23,11 @@
                     {{ partial "toc-sidebar.html" . }}
                 {{ end }}
             </div>
-
-            {{ block "footer" . }}
-                {{ partial "footer.html" . }} {{/* Reverted to always use theme's default footer */}}
-            {{ end }}
         </div>
+
+        {{ block "footer" . }}
+            {{ partial "footer.html" . }}
+        {{ end }}
 
         {{ partial "javascript.html" . }}
     </body>

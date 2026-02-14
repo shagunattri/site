@@ -37,6 +37,33 @@
 {{ $tocJS := $toc | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $tocJS.RelPermalink }}" integrity="{{ $tocJS.Data.Integrity }}" defer></script>
 {{ end }}
+
+{{/* Mobile ToC toggle */}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.getElementById('toc-mobile-toggle');
+    var content = document.getElementById('toc-mobile-content');
+    var chevron = document.getElementById('toc-mobile-chevron');
+    if (!toggle || !content) return;
+
+    toggle.addEventListener('click', function() {
+        var expanded = content.classList.toggle('expanded');
+        chevron && chevron.classList.toggle('expanded', expanded);
+        toggle.setAttribute('aria-expanded', expanded);
+        content.setAttribute('aria-hidden', !expanded);
+    });
+
+    // Collapse after clicking a ToC link
+    content.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            content.classList.remove('expanded');
+            chevron && chevron.classList.remove('expanded');
+            toggle.setAttribute('aria-expanded', 'false');
+            content.setAttribute('aria-hidden', 'true');
+        });
+    });
+});
+</script>
 {{- end -}}
 
 {{- /* Custom JS */}}

@@ -5,6 +5,7 @@ external_url: "/aisummit/"
 summary: "Interactive explorer for 363+ live stream sessions from the IndiaAI Impact Summit 2026. Browse by topic, watch videos, search transcripts, and ask AI questions."
 type: "project"
 draft: false
+featured: true
 ---
 
 # India AI Summit Explorer

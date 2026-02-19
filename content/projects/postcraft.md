@@ -6,6 +6,7 @@ external_url: "https://chromewebstore.google.com/detail/postcraft-social-content
 summary: "Create high-engagement social media posts with real-time analysis and suggestions"
 type: "project"
 draft: false
+featured: true
 ---
 **Create high-engagement social media posts with real-time analysis, scoring, and improvement suggestions. PostCraft helps you write better social posts that get noticed.**
 

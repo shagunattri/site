@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Summit Explorer — IndiaAI Impact Summit 2026</title>
+  <meta name="description" content="Explore, categorize, and interact with 364+ live streams from the IndiaAI Impact Summit 2026. Browse by topic, watch videos, and search transcripts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">🇮🇳</span>
+        <div class="logo-text">
+          <h1>AI Summit Explorer</h1>
+          <span class="logo-subtitle">IndiaAI Impact Summit 2026</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="search-box">
+        <span class="material-icons-round search-icon">search</span>
+        <input type="text" id="searchInput" placeholder="Search 364 sessions..." autocomplete="off">
+        <kbd class="search-shortcut">⌘K</kbd>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number" id="totalVideos">364</span>
+          <span class="stat-label">Sessions</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="totalCategories">7</span>
+          <span class="stat-label">Topics</span>
+        </div>
+      </div>
+      <button class="chat-toggle-btn" id="chatToggleBtn" title="Ask about the summit">
+        <span class="material-icons-round">forum</span>
+        <span class="chat-toggle-label">Ask AI</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Topics</h2>
+      </div>
+      <nav class="category-tree" id="categoryTree">
+        <!-- Dynamic: populated by app.js -->
+      </nav>
+      <div class="favorites-section" id="favoritesSection">
+        <div class="favorites-header">
+          <span class="material-icons-round" style="font-size:18px;color:var(--accent-primary)">bookmark</span>
+          <h3>Favorites</h3>
+          <span class="favorites-count" id="favoritesCount">0</span>
+        </div>
+        <div class="favorites-list" id="favoritesList">
+          <!-- Dynamic: populated by app.js -->
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <button class="show-all-btn" id="showAllBtn">
+          <span class="material-icons-round">grid_view</span>
+          Show All Sessions
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <!-- Active Filter Bar -->
+      <div class="filter-bar" id="filterBar">
+        <div class="breadcrumb" id="breadcrumb">
+          <span class="breadcrumb-item active">All Sessions</span>
+        </div>
+        <div class="filter-actions">
+          <span class="results-count" id="resultsCount">364 sessions</span>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid" title="Grid view">
+              <span class="material-icons-round">grid_view</span>
+            </button>
+            <button class="view-btn" data-view="list" title="List view">
+              <span class="material-icons-round">view_list</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="video-grid" id="videoGrid">
+        <!-- Dynamic: populated by app.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="emptyState">
+        <span class="material-icons-round">search_off</span>
+        <h3>No sessions found</h3>
+        <p>Try a different search term or browse a category</p>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>Data sourced from <a href="https://impact.indiaai.gov.in" target="_blank">impact.indiaai.gov.in</a> and <a href="https://www.youtube.com/@IndiaAI_Official" target="_blank">IndiaAI YouTube</a> · Not an official site</p>
+      </footer>
+    </main>
+
+    <!-- Chat Panel -->
+    <aside class="chat-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <span class="material-icons-round">smart_toy</span>
+          <div>
+            <h3>Summit Assistant</h3>
+            <span class="chat-header-sub">Search transcripts & all sessions</span>
+          </div>
+        </div>
+        <button class="chat-close-btn" id="chatCloseBtn">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-welcome">
+          <div class="chat-welcome-icon">💬</div>
+          <h4>Ask about the Summit</h4>
+          <p>I'll search across session transcripts to find relevant information. Try questions like:</p>
+          <div class="chat-suggestions">
+            <button class="chat-suggestion" data-q="What was discussed about sovereign AI?">What was discussed about sovereign AI?</button>
+            <button class="chat-suggestion" data-q="What are the key AI safety frameworks?">What are the key AI safety frameworks?</button>
+            <button class="chat-suggestion" data-q="How is AI being used in healthcare?">How is AI being used in healthcare?</button>
+            <button class="chat-suggestion" data-q="What role does India play in global AI?">What role does India play in global AI?</button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="chat-input-wrapper">
+          <textarea id="chatInput" placeholder="Ask about any summit topic..." rows="1"></textarea>
+          <button class="chat-send-btn" id="chatSendBtn">
+            <span class="material-icons-round">send</span>
+          </button>
+        </div>
+        <span class="chat-disclaimer">Searches transcripts for relevant content. Results link to source videos.</span>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal-overlay hidden" id="videoModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Video Title</h2>
+        <button class="modal-close-btn" id="modalCloseBtn">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-player">
+          <iframe id="modalPlayer" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <div class="modal-info">
+          <div class="modal-meta">
+            <span class="modal-category-badge" id="modalCategory"></span>
+            <span class="modal-duration" id="modalDuration"></span>
+          </div>
+          <div class="modal-transcript" id="modalTranscript">
+            <div class="transcript-header">
+              <span class="material-icons-round">description</span>
+              <h4>Transcript</h4>
+            </div>
+            <div class="transcript-content" id="transcriptContent">
+              <p class="transcript-loading">Loading transcript...</p>
+            </div>
+          </div>
+        </div>
+        <footer class="site-footer" style="margin-top:20px;border-radius:var(--radius-md)">
+          <p>Data sourced from <a href="https://impact.indiaai.gov.in" target="_blank">impact.indiaai.gov.in</a> and <a href="https://www.youtube.com/@IndiaAI_Official" target="_blank">IndiaAI YouTube</a> · Not an official site</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile sidebar toggle -->
+  <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+    <span class="material-icons-round">menu</span>
+  </button>
+
+  <script src="videos_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

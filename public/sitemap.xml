@@ -246,6 +246,11 @@
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url><url>
+        <loc>http://localhost:1313/projects/aisummit/</loc>
+        <lastmod>2026-02-19T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url><url>
         <loc>http://localhost:1313/tags/ai/</loc>
         <lastmod>2026-01-30T00:52:57+05:30</lastmod>
         <changefreq>weekly</changefreq>

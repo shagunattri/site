@@ -17,7 +17,7 @@
                         {{ if .Params.thumbnail }}
                             <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}">
                         {{ else }}
-                            <div class="project-thumb-placeholder">{{ .Title | substr 0 1 }}</div>
+                            <div class="project-thumb-placeholder">{{ slicestr .Title 0 1 }}</div>
                         {{ end }}
                     </div>
                     <div class="project-meta">

@@ -17,8 +17,7 @@
             <div class="hero-visual animate-float">
                 <div class="visual-card main-card">
                     {{ if .Site.Params.Portrait.Path }}
-                        {{ $p_src := index (last 1 (split .Site.Params.Portrait.Path "/")) 0 }}
-                        {{ partial "responsive-img.html" (dict "src" $p_src "alt" (.Site.Params.Portrait.Alt | default .Site.Author.name) "class" "profile-image" "loading" "eager") }}
+                        <img src="{{ .Site.Params.Portrait.Path }}" alt="{{ .Site.Params.Portrait.Alt | default .Site.Author.name }}" class="profile-image" />
                     {{ end }}
                     <div class="card-glow"></div>
                 </div>
@@ -140,8 +139,7 @@
                     <a href="{{ with .Params.external_url }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}" class="featured-project-card animate-on-scroll" {{ with .Params.external_url }}target="_blank" rel="noopener"{{ end }}>
                         {{ if .Params.thumbnail }}
                         <div class="featured-project-thumb">
-                            {{ $thumb_src := index (last 1 (split .Params.thumbnail "/")) 0 }}
-                            {{ partial "responsive-img.html" (dict "src" $thumb_src "alt" .Title "class" "" "loading" "lazy") }}
+                            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy" />
                         </div>
                         {{ else }}
                         <div class="featured-project-thumb featured-project-thumb-placeholder">

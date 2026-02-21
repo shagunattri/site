@@ -1,8 +1,21 @@
 {{- /* WebSite Schema */}}
-{{- $websiteSchema := dict "@context" "https://schema.org" "@type" "WebSite" "name" "shagun.xyz" "url" .Site.BaseURL "description" .Site.Params.description "publisher" (dict "@type" "Organization" "name" .Site.Title) -}}
-{{- if .IsHome -}}
-    {{- $websiteSchema = merge $websiteSchema (dict "potentialAction" (dict "@type" "SearchAction" "target" (printf "%ssearch?q={search_term_string}" .Site.BaseURL) "query-input" "required name=search_term_string")) -}}
-{{- end -}}
 <script type="application/ld+json">
-{{ $websiteSchema | jsonify (dict "indent" "  ") | safeJS }}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "shagun.xyz",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}"
+  }
+  {{- if .IsHome }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ .Site.BaseURL }}search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+  {{- end }}
+}
 </script>

@@ -1,3 +1,6 @@
+{{- /* BlogPosting Schema for article pages */}}
+{{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
+
 {{- /* Build person schema */}}
 {{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
 {{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Senior Product Manager" "worksFor" (dict "@type" "Organization" "name" "ArmorCode") -}}
@@ -35,15 +38,35 @@
     {{- $imageURL = .Params.Cover | absURL -}}
 {{- end -}}
 
-{{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
-{{- $articleSchema := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" $pageTitle "datePublished" (.PublishDate.Format $iso8601) "dateModified" (.Lastmod.Format $iso8601) "wordCount" .WordCount "author" $personSchema "description" $description -}}
-{{- $articleSchema = merge $articleSchema (dict "mainEntityOfPage" (dict "@type" "WebPage" "@id" (.Permalink | absURL))) -}}
-{{- if $imageURL -}}
-    {{- $articleSchema = merge $articleSchema (dict "image" (dict "@type" "ImageObject" "url" $imageURL)) -}}
-{{- end -}}
-{{- $articleSchema = merge $articleSchema (dict "publisher" (dict "@type" "Organization" "name" .Site.Title "logo" (dict "@type" "ImageObject" "url" (absURL "images/cover.jpg")))) -}}
 {{- if and (.IsPage) (not .IsHome) -}}
 <script type="application/ld+json">
-{{ $articleSchema | jsonify (dict "indent" "  ") | safeJS }}
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink | absURL }}"
+  },
+  "headline": "{{ $pageTitle }}",
+  {{- if $imageURL }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ $imageURL }}"
+  },
+  {{- end }}
+  "datePublished": "{{ .PublishDate.Format $iso8601 }}",
+  "dateModified": "{{ .Lastmod.Format $iso8601 }}",
+  "wordCount": {{ .WordCount }},
+  "author": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }},
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ absURL "images/cover.jpg" }}"
+    }
+  },
+  "description": "{{ $description }}"
+}
 </script>
 {{- end -}}

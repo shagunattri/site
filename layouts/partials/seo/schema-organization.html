@@ -3,14 +3,7 @@
 {{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
 {{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" "shagunattri" "jobTitle" "Senior Product Manager" -}}
 
+{{- $orgSchema := dict "@context" "https://schema.org" "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL "description" .Site.Params.description "alternateName" (slice "shagun.xyz" "shagunattri") "founder" $personSchema -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "{{ .Site.Title }}",
-  "url": "{{ .Site.BaseURL }}",
-  "description": "{{ .Site.Params.description }}",
-  "alternateName": ["shagun.xyz", "shagunattri"],
-  "founder": {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }}
-}
+{{ $orgSchema | jsonify (dict "indent" "  ") | safeJS }}
 </script>

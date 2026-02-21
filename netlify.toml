@@ -6,11 +6,18 @@ TZ = "America/Los_Angeles"
 publish = "public"
 command = "hugo --gc --minify"
 
-# Enable Netlify Identity for CMS authentication
+# Avoid double redirects by letting Hugo handle the URL structure
 [build.processing]
   skip_processing = false
 [build.processing.html]
-  pretty_urls = true
+  pretty_urls = false
+
+# Canonical redirect to www
+[[redirects]]
+  from = "https://shagun.xyz/*"
+  to = "https://www.shagun.xyz/:splat"
+  status = 301
+  force = true
 
 # Redirect for Netlify Identity
 [[redirects]]
@@ -78,6 +85,11 @@ command = "hugo --gc --minify"
     Cache-Control = "public, max-age=31536000, immutable"
 
 # Font files
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
   for = "/*.woff2"
   [headers.values]

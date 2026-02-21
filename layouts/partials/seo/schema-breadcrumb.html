@@ -29,21 +29,13 @@
 {{- end -}}
 {{- $breadcrumbs = $breadcrumbs | append (dict "name" $pageTitle "url" .Permalink "position" $position) -}}
 
+{{- $breadcrumbList := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" slice -}}
+{{- $elements := slice -}}
+{{- range $i, $crumb := $breadcrumbs -}}
+    {{- $elements = $elements | append (dict "@type" "ListItem" "position" $crumb.position "name" $crumb.name "item" $crumb.url) -}}
+{{- end -}}
+{{- $breadcrumbList = merge $breadcrumbList (dict "itemListElement" $elements) -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {{- range $i, $crumb := $breadcrumbs -}}
-    {{- if $i }},{{ end }}
-    {
-      "@type": "ListItem",
-      "position": {{ $crumb.position }},
-      "name": "{{ $crumb.name }}",
-      "item": "{{ $crumb.url }}"
-    }
-    {{- end }}
-  ]
-}
+{{ $breadcrumbList | jsonify (dict "indent" "  ") | safeJS }}
 </script>
 {{- end -}}

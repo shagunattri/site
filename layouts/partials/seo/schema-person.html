@@ -16,8 +16,6 @@
 {{- end -}}
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  {{ $personSchema | jsonify (dict "indent" "  ") | safeJS }}
-}
+{{- $schema := merge (dict "@context" "https://schema.org") $personSchema -}}
+{{ $schema | jsonify (dict "indent" "  ") | safeJS }}
 </script>

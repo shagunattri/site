@@ -96,7 +96,7 @@ paginate = 50
     logoCursorColor = "#4FC3F7"
 
 [params.Portrait]
-  Path = "images/cover.jpg"
+  Path = "images/cover.png"
   Alt = "Shagun"
   MaxWidth = "150px"
 

@@ -1,7 +1,7 @@
 ---
 title: "PostCraft - Social Content Optimizer"
 date: 2026-01-26T12:00:00Z
-thumbnail: "/images/postcraft-logo.png"
+thumbnail: "/images/postcraft-logo.jpg"
 external_url: "https://chromewebstore.google.com/detail/postcraft-social-content/bppfkfonbomhenodedcmonjddbgnlnip?hl=en-GB&utm_source=ext_sidebar"
 summary: "Create high-engagement social media posts with real-time analysis and suggestions"
 type: "project"

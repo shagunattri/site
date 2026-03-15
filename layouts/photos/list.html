@@ -1,0 +1,191 @@
+{{ define "main" }}
+<main class="photos-page">
+    <div class="photos-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}
+            <p class="photos-description">{{ . }}</p>
+        {{ end }}
+        <div class="layout-toggle" role="group" aria-label="Gallery layout">
+            <button class="layout-btn" data-layout="list" title="List view" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <rect x="0" y="1"   width="16" height="3" rx="1.5"/>
+                    <rect x="0" y="6.5" width="16" height="3" rx="1.5"/>
+                    <rect x="0" y="12"  width="16" height="3" rx="1.5"/>
+                </svg>
+            </button>
+            <button class="layout-btn active" data-layout="grid" title="Grid view" aria-pressed="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <rect x="0" y="0" width="7" height="7" rx="1"/>
+                    <rect x="9" y="0" width="7" height="7" rx="1"/>
+                    <rect x="0" y="9" width="7" height="7" rx="1"/>
+                    <rect x="9" y="9" width="7" height="7" rx="1"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    {{ $images := .Resources.ByType "image" }}
+    {{/* Build sortable slice: attach EXIF date to each image */}}
+    {{ $dated := slice }}
+    {{ range $images }}
+      {{ $d := time "1970-01-01T00:00:00Z" }}
+      {{ with .Exif }}{{ with .Date }}{{ $d = . }}{{ end }}{{ end }}
+      {{ $dated = $dated | append (dict "img" . "date" $d) }}
+    {{ end }}
+    {{ $dated = sort $dated "date" "desc" }}
+
+    {{ if $dated }}
+        <div class="photos-gallery" data-layout="grid">
+            {{ range $index, $entry := $dated }}
+                {{ $img := $entry.img }}
+                {{/* Always read EXIF from the original before any processing */}}
+                {{ $exif := $img.Exif }}
+
+                {{/* Correct EXIF orientation */}}
+                {{ $oriented := $img.Process "auto-orient" }}
+                {{ $thumb := $oriented.Resize "1600x q85" }}
+
+                {{/* Extract EXIF fields safely */}}
+                {{ $model := "" }}
+                {{ $iso := "" }}
+                {{ $fnum := "" }}
+                {{ $shutter := "" }}
+                {{ $focal := "" }}
+                {{ $lens := "" }}
+                {{ $date := "" }}
+
+                {{ with $exif }}
+                    {{ with .Tags.Model }}{{ $model = . }}{{ end }}
+                    {{ with .Tags.ISOSpeedRatings }}{{ $iso = printf "ISO %v" . }}{{ end }}
+                    {{ with .Tags.FNumber }}{{ $fnum = printf "f/%.2f" . }}{{ end }}
+                    {{ with .Tags.ExposureTime }}{{ $shutter = printf "%vs" . }}{{ end }}
+                    {{ with .Tags.FocalLength }}{{ $focal = printf "%.0fmm" . }}{{ end }}
+                    {{ with .Tags.LensModel }}{{ $lens = . }}{{ end }}
+                    {{ with .Date }}{{ $date = .Format "Jan 2006" }}{{ end }}
+                {{ end }}
+
+                {{/* Derive a display name from the filename */}}
+                {{ $name := $img.Name | replaceRE `\.[^.]+$` "" | replaceRE `[-_]` " " | title }}
+
+                <div class="photo-card" data-lightbox="photo-{{ $index }}">
+                    <img
+                        src="{{ $thumb.RelPermalink }}"
+                        alt="{{ $name }}"
+                        width="{{ $thumb.Width }}"
+                        height="{{ $thumb.Height }}"
+                        loading="lazy"
+                    >
+                    <div class="photo-exif-overlay">
+                        {{ if $model }}<span class="exif-model">{{ $model }}</span>{{ end }}
+                        <div class="exif-tags">
+                            {{ if $iso }}<span class="exif-tag">{{ $iso }}</span>{{ end }}
+                            {{ if $fnum }}<span class="exif-tag">{{ $fnum }}</span>{{ end }}
+                            {{ if $shutter }}<span class="exif-tag">{{ $shutter }}</span>{{ end }}
+                            {{ if $focal }}<span class="exif-tag">{{ $focal }}</span>{{ end }}
+                        </div>
+                    </div>
+                </div>
+
+                {{/* Lightbox — uses oriented image so rotation is always correct */}}
+                <div id="photo-{{ $index }}" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="{{ $name }}">
+                    <div class="lightbox-overlay"></div>
+                    <div class="lightbox-content">
+                        <button class="lightbox-close" aria-label="Close">&times;</button>
+                        <div class="lightbox-inner">
+                            <div class="lightbox-image-wrap">
+                                <img src="{{ $oriented.RelPermalink }}" alt="{{ $name }}" loading="lazy">
+                            </div>
+                            <div class="lightbox-exif-panel">
+                                {{ if $date }}<p class="lightbox-date">{{ $date }}</p>{{ end }}
+                                <dl class="exif-list">
+                                    {{ if $model }}
+                                        <dt>Camera</dt>
+                                        <dd>{{ $model }}</dd>
+                                    {{ end }}
+                                    {{ if $lens }}
+                                        <dt>Lens</dt>
+                                        <dd>{{ $lens }}</dd>
+                                    {{ end }}
+                                    {{ if $iso }}
+                                        <dt>ISO</dt>
+                                        <dd>{{ $iso }}</dd>
+                                    {{ end }}
+                                    {{ if $fnum }}
+                                        <dt>Aperture</dt>
+                                        <dd>{{ $fnum }}</dd>
+                                    {{ end }}
+                                    {{ if $shutter }}
+                                        <dt>Shutter</dt>
+                                        <dd>{{ $shutter }}</dd>
+                                    {{ end }}
+                                    {{ if $focal }}
+                                        <dt>Focal Length</dt>
+                                        <dd>{{ $focal }}</dd>
+                                    {{ end }}
+                                </dl>
+                                {{ if not (or $model $iso $fnum $shutter $focal) }}
+                                    <p class="no-exif">No EXIF data available.</p>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    {{ else }}
+        <div class="photos-empty">
+            <p>No photos yet — check back soon.</p>
+        </div>
+    {{ end }}
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // ── Lightbox ──────────────────────────────────────────────
+    document.querySelectorAll('.photo-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+            const lb = document.getElementById(this.getAttribute('data-lightbox'));
+            if (lb) { lb.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        });
+    });
+
+    document.querySelectorAll('.lightbox-close, .lightbox-overlay').forEach(function (el) {
+        el.addEventListener('click', function () {
+            const lb = this.closest('.photo-lightbox');
+            if (lb) { lb.classList.remove('active'); document.body.style.overflow = ''; }
+        });
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.photo-lightbox.active').forEach(function (lb) {
+                lb.classList.remove('active'); document.body.style.overflow = '';
+            });
+        }
+    });
+
+    // ── Layout toggle ─────────────────────────────────────────
+    var gallery = document.querySelector('.photos-gallery');
+    var btns    = document.querySelectorAll('.layout-btn');
+
+    function setLayout(layout) {
+        gallery.setAttribute('data-layout', layout);
+        btns.forEach(function (b) {
+            var active = b.dataset.layout === layout;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        try { localStorage.setItem('photos-layout', layout); } catch(e) {}
+    }
+
+    // Restore saved preference (default: grid)
+    var saved = 'grid';
+    try { saved = localStorage.getItem('photos-layout') || 'grid'; } catch(e) {}
+    setLayout(saved);
+
+    btns.forEach(function (btn) {
+        btn.addEventListener('click', function () { setLayout(this.dataset.layout); });
+    });
+});
+</script>
+{{ end }}

@@ -1,1 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Shagun Attri | shagun.xyz | Product Manager</title><link>https://www.shagun.xyz/categories/</link><description>Recent content in Categories on Shagun Attri | shagun.xyz | Product Manager</description><generator>Hugo</generator><language>en</language><copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright><lastBuildDate>Fri, 30 Jan 2026 00:52:57 +0530</lastBuildDate><atom:link href="https://www.shagun.xyz/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Essay</title><link>https://www.shagun.xyz/categories/essay/</link><pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/essay/</guid><description/></item><item><title>Product</title><link>https://www.shagun.xyz/categories/product/</link><pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/product/</guid><description/></item><item><title>Ux</title><link>https://www.shagun.xyz/categories/ux/</link><pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/ux/</guid><description/></item><item><title>Startups</title><link>https://www.shagun.xyz/categories/startups/</link><pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/startups/</guid><description/></item><item><title>Security</title><link>https://www.shagun.xyz/categories/security/</link><pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/security/</guid><description/></item><item><title>Reads</title><link>https://www.shagun.xyz/categories/reads/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/reads/</guid><description/></item><item><title>Update</title><link>https://www.shagun.xyz/categories/update/</link><pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/update/</guid><description/></item><item><title>Books</title><link>https://www.shagun.xyz/categories/books/</link><pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/books/</guid><description/></item><item><title>Dev</title><link>https://www.shagun.xyz/categories/dev/</link><pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate><guid>https://www.shagun.xyz/categories/dev/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Shagun Attri | shagun.xyz | Product Manager</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Shagun Attri | shagun.xyz | Product Manager</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/categories/ai/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PM</title>
+      <link>http://localhost:1313/categories/pm/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/pm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Essay</title>
+      <link>http://localhost:1313/categories/essay/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/essay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Product</title>
+      <link>http://localhost:1313/categories/product/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/product/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ux</title>
+      <link>http://localhost:1313/categories/ux/</link>
+      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/ux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Startups</title>
+      <link>http://localhost:1313/categories/startups/</link>
+      <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/startups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/categories/security/</link>
+      <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reads</title>
+      <link>http://localhost:1313/categories/reads/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/reads/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Update</title>
+      <link>http://localhost:1313/categories/update/</link>
+      <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/update/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Books</title>
+      <link>http://localhost:1313/categories/books/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/books/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dev</title>
+      <link>http://localhost:1313/categories/dev/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/dev/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

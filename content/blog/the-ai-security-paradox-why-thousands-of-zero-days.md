@@ -75,26 +75,22 @@ You input your stack details and it estimates your exposure window: how long vul
 
 It's a simple tool, but I think it makes the urgency real in a way that reading about it doesn't.
 
-![security readiness image](/images/uploads/screenshot-2026-04-25-at-10.14.05-am.png)
-
 ## The timeline
 
 Based on how AI model capabilities have been progressing:
 
-Now: Mythos-level capabilities are restricted to major vendors
-
-12-18 months: Open-source models reach similar capability
-
-24 months: These capabilities are commoditized
+* **Now:** Mythos-level capabilities are restricted to major vendors
+* **12-18 months:** Open-source models reach similar capability
+* **24 months:** These capabilities are commoditized
 
 You have roughly 12-18 months to build the muscle memory for AI-assisted security before everyone else has the same tools. That's your window.
 
-The bottom line
+## The bottom line
 
 Every vulnerability that Claude Mythos finds responsibly is one that attackers can't exploit silently.
 
-The AI security paradox is this: the thing we fear is the only thing that can save us. But only if we act.
+The AI security paradox is this: **the thing we fear is the only thing that can save us. But only if we act.**
 
 The question isn't whether AI will change cybersecurity. It already has. The question is whether your organization will adapt fast enough to benefit from it before attackers do.
 
-What's your take? Are you seeing this shift play out in your organization? I'm curious how different teams are approaching this.
+*What's your take?* Are you seeing this shift play out in your organization? I'm curious how different teams are approaching this.

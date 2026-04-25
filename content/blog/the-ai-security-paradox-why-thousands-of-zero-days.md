@@ -1,6 +1,6 @@
 ---
-title: "The AI Security Paradox: Your Attack Surface Just Grew by Thousands
-  of   Zero-Days"
+title: "The AI Security Paradox: Your Attack Surface Just Grew by Thousands of
+  Zero-Days"
 date: 2026-04-25
 description: ""
 author:

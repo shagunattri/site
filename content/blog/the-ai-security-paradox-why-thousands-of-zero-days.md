@@ -71,7 +71,7 @@ Talking about this in the abstract only goes so far. So I built a small interact
 
 You input your stack details and it estimates your exposure window: how long vulnerabilities sit undiscovered without AI-assisted scanning vs. with it. Then it scores your organization's readiness across the three shifts above and gives you tailored action items.
 
-**Try it here:** https://shagun.xyz/ai%20security/ai-security-readiness-preview.html
+**Try it here:** [AI Security Assessment](https://shagun.xyz/ai%20security/ai-security-readiness-preview.html)
 
 It's a simple tool, but I think it makes the urgency real in a way that reading about it doesn't.
 

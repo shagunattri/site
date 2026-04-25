@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Security Readiness Assessment</title>
+<meta name="description" content="Assess your organization's vulnerability exposure and readiness for the AI security era. Impact calculator + security posture quiz.">
+<meta property="og:title" content="AI Security Readiness Assessment">
+<meta property="og:description" content="Is your organization ready for AI-powered threats? Calculate your vulnerability exposure and get a readiness score.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0f;
+  --text: #e8e8ed;
+  --text-dim: rgba(255,255,255,0.5);
+  --text-muted: rgba(255,255,255,0.3);
+  --surface: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
+  --border-light: rgba(255,255,255,0.12);
+  --green: #00ff88;
+  --green-dim: rgba(0,255,136,0.08);
+  --green-border: rgba(0,255,136,0.2);
+  --blue: #00ccff;
+  --blue-light: #88ddff;
+  --orange: #ff8844;
+  --red: #ff4444;
+  --yellow: #ffcc00;
+  --font-display: 'JetBrains Mono', monospace;
+  --font-body: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-grid {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.container {
+  position: relative; z-index: 1;
+  max-width: 720px; margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.fade-up { animation: fade-up 0.6s ease both; }
+.fade-up-d1 { animation: fade-up 0.6s ease 0.1s both; }
+.fade-up-d2 { animation: fade-up 0.6s ease 0.2s both; }
+.fade-up-d3 { animation: fade-up 0.6s ease 0.3s both; }
+
+/* --- PHASE CONTAINER --- */
+.phase { display: none; }
+.phase.active { display: block; }
+
+/* --- TYPOGRAPHY --- */
+.tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 20px;
+  background: var(--green-dim); border: 1px solid var(--green-border);
+  font-size: 12px; font-weight: 600; color: var(--green);
+  font-family: var(--font-display); letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+.tag-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); animation: pulse-glow 2s infinite;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 700; line-height: 1.15; margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700; line-height: 1.2; margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 16px; color: var(--text-dim);
+  line-height: 1.6; margin-bottom: 40px; max-width: 540px;
+}
+.section-label {
+  font-family: var(--font-display); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: rgba(0,255,136,0.5); margin-bottom: 12px;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  padding: 14px 28px; border-radius: 8px; border: none;
+  cursor: pointer; transition: all 0.25s ease;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--green), #00ddaa); color: var(--bg);
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.06); color: var(--text);
+  border: 1px solid var(--border-light);
+}
+.btn:disabled { opacity: 0.4; pointer-events: none; }
+.btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-stack { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+
+.back-btn {
+  background: none; border: none; color: rgba(255,255,255,0.4);
+  cursor: pointer; font-size: 13px; font-family: var(--font-body);
+  margin-bottom: 24px; padding: 0; display: flex; align-items: center; gap: 6px;
+}
+.back-btn:hover { color: rgba(255,255,255,0.7); }
+
+/* --- CHIPS --- */
+.chip-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 18px; border-radius: 10px; cursor: pointer;
+  font-size: 14px; font-weight: 500; transition: all 0.2s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--surface); color: rgba(255,255,255,0.6);
+  user-select: none;
+}
+.chip:hover { border-color: rgba(255,255,255,0.2); }
+.chip.active {
+  border-color: var(--green); background: var(--green-dim); color: var(--green);
+}
+
+/* --- INPUT --- */
+.text-input {
+  font-family: var(--font-display); font-size: 16px;
+  padding: 14px 18px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--surface); color: var(--text);
+  width: 100%; max-width: 240px; outline: none;
+  transition: border-color 0.2s ease;
+}
+.text-input:focus { border-color: rgba(0,255,136,0.4); }
+.text-input::placeholder { color: var(--text-muted); }
+
+.field { margin-bottom: 32px; }
+.field-label {
+  font-size: 14px; font-weight: 600; margin-bottom: 12px;
+  display: block; color: rgba(255,255,255,0.8);
+}
+.field-hint { color: var(--text-muted); font-weight: 400; }
+
+/* --- QUIZ --- */
+.quiz-option {
+  display: block; width: 100%; text-align: left;
+  padding: 16px 20px; border-radius: 10px; cursor: pointer;
+  font-size: 14px; font-weight: 500; line-height: 1.5;
+  border: 1px solid var(--border); background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.65); transition: all 0.2s ease;
+  font-family: var(--font-body); margin-bottom: 10px;
+}
+.quiz-option:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); }
+.quiz-option.selected {
+  border-color: var(--blue); background: rgba(0,204,255,0.08); color: var(--blue-light);
+}
+
+.nav-dots { display: flex; gap: 8px; align-items: center; margin-bottom: 32px; }
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 4px;
+  background: rgba(255,255,255,0.1); transition: all 0.3s ease;
+}
+.nav-dot.active { width: 24px; background: var(--green); }
+.nav-dot.completed { background: rgba(0,255,136,0.4); }
+
+/* --- CARDS --- */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px; margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.card-title {
+  font-size: 14px; font-weight: 600; margin-bottom: 16px; color: rgba(255,255,255,0.7);
+}
+
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 24px; flex: 1; min-width: 160px;
+  position: relative; overflow: hidden;
+}
+.stat-card .accent-line {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+}
+.stat-card .stat-icon { font-size: 14px; margin-bottom: 8px; font-family: var(--font-display); color: var(--text-dim); letter-spacing: 1px; }
+.stat-card .stat-value {
+  font-family: var(--font-display); font-size: 28px; font-weight: 700;
+  line-height: 1.1; margin-bottom: 4px;
+}
+.stat-card .stat-label { font-size: 13px; color: var(--text-dim); font-weight: 500; line-height: 1.3; }
+.stat-card .stat-sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+.stat-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+
+/* --- PROGRESS BAR --- */
+.progress-track {
+  width: 100%; height: 10px; background: rgba(255,255,255,0.06);
+  border-radius: 5px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; border-radius: 5px;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bar-row { margin-bottom: 14px; }
+.bar-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.bar-label { font-size: 13px; color: rgba(255,255,255,0.4); }
+.bar-value { font-family: var(--font-display); font-size: 18px; font-weight: 700; }
+.bar-value-sm { font-family: var(--font-display); font-size: 14px; }
+
+/* --- RESULT BLOCKS --- */
+.insight-box {
+  padding: 20px 24px; border-radius: 12px;
+  background: rgba(0,255,136,0.04); border: 1px solid rgba(0,255,136,0.15);
+  margin-bottom: 32px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6);
+}
+.insight-box strong { color: var(--green); }
+
+.reduction-hero {
+  text-align: center; padding: 16px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.reduction-value {
+  font-family: var(--font-display); font-size: 32px; font-weight: 700;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.reduction-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+.action-item { margin-bottom: 12px; }
+.action-item strong { color: rgba(255,255,255,0.8); }
+
+.info-box {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  padding: 20px 24px; border-radius: 12px;
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6;
+}
+.info-box strong { color: rgba(255,255,255,0.6); }
+
+.cta-box {
+  text-align: center; padding: 28px 24px;
+  background: var(--surface); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+}
+.cta-box p { font-size: 14px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.6; }
+.cta-box .btn-group { justify-content: center; }
+
+.actions-card {
+  background: rgba(0,255,136,0.03); border: 1px solid rgba(0,255,136,0.12);
+  border-radius: 16px; padding: 24px; margin-bottom: 32px;
+}
+.actions-title {
+  font-size: 14px; font-weight: 600; margin-bottom: 16px; color: var(--green);
+}
+.actions-body { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.6); }
+
+@media (max-width: 480px) {
+  .container { padding: 24px 16px 40px; }
+  .stat-row { flex-direction: column; }
+  .stat-card { min-width: auto; }
+  .btn { width: 100%; justify-content: center; }
+  .btn-group { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="container" id="app">
+
+  <!-- ===== LANDING ===== -->
+  <div class="phase active" id="phase-landing">
+    <div class="fade-up">
+      <div class="tag">
+        <span class="tag-dot"></span>
+        SECURITY ASSESSMENT
+      </div>
+    </div>
+    <h1 class="fade-up-d1">Is Your Organization Ready for AI-Powered Threats?</h1>
+    <p class="subtitle fade-up-d2">
+      AI models can now discover thousands of zero-day vulnerabilities autonomously.
+      This tool helps you understand your exposure and readiness for the AI security era.
+    </p>
+    <div class="btn-stack fade-up-d2">
+      <button class="btn btn-primary" onclick="goTo('calculator')">Start with Impact Calculator</button>
+      <button class="btn btn-secondary" onclick="goTo('quiz')">Jump to Security Posture Quiz</button>
+    </div>
+    <div class="info-box fade-up-d3">
+      <strong>Recommended path:</strong> Start with the Impact Calculator to see your vulnerability exposure,
+      then take the Security Posture Quiz for a complete readiness score with personalized recommendations.
+    </div>
+  </div>
+
+  <!-- ===== CALCULATOR ===== -->
+  <div class="phase" id="phase-calculator">
+    <button class="back-btn" onclick="goTo('landing')">&#8592; Back</button>
+    <div class="section-label">Step 1 of 2</div>
+    <h2>Vulnerability Impact Calculator</h2>
+    <p class="subtitle">Tell us about your tech stack and we'll estimate your vulnerability exposure window.</p>
+
+    <div class="field">
+      <label class="field-label">What are you building? <span class="field-hint">(select all that apply)</span></label>
+      <div class="chip-group" id="stack-chips"></div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Primary languages <span class="field-hint">(select all that apply)</span></label>
+      <div class="chip-group" id="lang-chips"></div>
+    </div>
+
+    <div class="field" style="margin-bottom:40px">
+      <label class="field-label">Approximate dependency count <span class="field-hint">(optional &mdash; we'll estimate if blank)</span></label>
+      <input type="number" class="text-input" id="dep-count" placeholder="e.g. 250">
+    </div>
+
+    <button class="btn btn-primary" id="calc-submit" disabled onclick="runCalculator()">Calculate My Exposure &#8594;</button>
+  </div>
+
+  <!-- ===== CALC RESULTS ===== -->
+  <div class="phase" id="phase-calc-results">
+    <div class="section-label">Your Exposure Profile</div>
+    <h2>Vulnerability Exposure Analysis</h2>
+    <div style="margin-bottom:32px"></div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="accent-line" style="background:linear-gradient(90deg,transparent,#88ddff,transparent)"></div>
+        <div class="stat-icon">[DEPS]</div>
+        <div class="stat-value" style="color:#88ddff" id="r-deps">--</div>
+        <div class="stat-label">Estimated Dependencies</div>
+      </div>
+      <div class="stat-card">
+        <div class="accent-line" style="background:linear-gradient(90deg,transparent,#ff8844,transparent)"></div>
+        <div class="stat-icon">[VULN]</div>
+        <div class="stat-value" style="color:#ff8844" id="r-vulns">--</div>
+        <div class="stat-label">Potential Vulnerabilities</div>
+        <div class="stat-sub">Based on industry averages</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Average Exposure Window</div>
+      <div class="bar-row">
+        <div class="bar-header">
+          <span class="bar-label">Without AI-assisted scanning</span>
+          <span class="bar-value" style="color:#ff4444" id="r-without">--</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="bar-without" style="width:0;background:#ff4444;box-shadow:0 0 12px rgba(255,68,68,0.3)"></div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-header">
+          <span class="bar-label">With AI-assisted scanning</span>
+          <span class="bar-value" style="color:#00ff88" id="r-with">--</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="bar-with" style="width:0;background:#00ff88;box-shadow:0 0 12px rgba(0,255,136,0.3)"></div>
+        </div>
+      </div>
+      <div class="reduction-hero">
+        <div class="reduction-value" id="r-reduction">--%</div>
+        <div class="reduction-label">reduction in exposure window</div>
+      </div>
+    </div>
+
+    <div class="insight-box" id="r-insight"></div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="goTo('quiz')">Now Take the Security Posture Quiz &#8594;</button>
+      <button class="btn btn-secondary" onclick="goTo('results')">Skip to Summary</button>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ ===== -->
+  <div class="phase" id="phase-quiz">
+    <button class="back-btn" id="quiz-back-btn" onclick="quizBack()">&#8592; Back</button>
+    <div class="nav-dots" id="quiz-dots"></div>
+    <div class="section-label" id="quiz-category"></div>
+    <h2 id="quiz-question" style="font-size:clamp(18px,3.5vw,24px);margin-bottom:28px;background:none;-webkit-text-fill-color:var(--text);color:var(--text)"></h2>
+    <div id="quiz-options"></div>
+    <button class="btn btn-primary" id="quiz-finish-btn" style="display:none" onclick="finishQuiz()">See My Results &#8594;</button>
+  </div>
+
+  <!-- ===== RESULTS ===== -->
+  <div class="phase" id="phase-results">
+    <div class="section-label">Assessment Complete</div>
+    <h2>Your AI Security Readiness Report</h2>
+    <div style="margin-bottom:32px"></div>
+
+    <div class="stat-row" id="results-stats"></div>
+
+    <div id="results-exposure"></div>
+    <div id="results-quiz"></div>
+    <div id="results-actions"></div>
+
+    <div class="cta-box">
+      <p>The AI security shift is happening now. Share your results and join the conversation.</p>
+      <div class="btn-group" id="results-cta-btns"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===== DATA =====
+const STACKS = [
+  { id: "web", label: "Web Application", avgDeps: 180 },
+  { id: "mobile", label: "Mobile App", avgDeps: 120 },
+  { id: "api", label: "API / Backend", avgDeps: 95 },
+  { id: "infra", label: "Infrastructure / Cloud", avgDeps: 60 },
+  { id: "iot", label: "IoT / Embedded", avgDeps: 40 },
+];
+
+const LANGUAGES = [
+  { id: "js", label: "JavaScript/TS", vulnRate: 1.2 },
+  { id: "python", label: "Python", vulnRate: 1.0 },
+  { id: "java", label: "Java", vulnRate: 0.9 },
+  { id: "go", label: "Go", vulnRate: 0.6 },
+  { id: "rust", label: "Rust", vulnRate: 0.3 },
+  { id: "c", label: "C/C++", vulnRate: 1.8 },
+  { id: "other", label: "Other", vulnRate: 1.0 },
+];
+
+const QUIZ = [
+  { id:"q1", category:"Secure Design", question:"How does your team handle dependency updates?",
+    options:[
+      { text:"Manually, when we remember", score:1 },
+      { text:"Scheduled quarterly reviews", score:2 },
+      { text:"Automated with Dependabot/Renovate", score:3 },
+      { text:"Automated + AI-assisted risk scoring", score:4 },
+    ]},
+  { id:"q2", category:"Secure Design", question:"What's your zero-trust architecture adoption level?",
+    options:[
+      { text:"What's zero-trust?", score:1 },
+      { text:"Perimeter-based with some segmentation", score:2 },
+      { text:"Partial zero-trust (identity-based access)", score:3 },
+      { text:"Full zero-trust with blast radius containment", score:4 },
+    ]},
+  { id:"q3", category:"AI Integration", question:"How are you using AI in your security workflow today?",
+    options:[
+      { text:"Not at all", score:1 },
+      { text:"Basic SIEM/log analysis", score:2 },
+      { text:"AI-powered scanning tools (SAST/DAST)", score:3 },
+      { text:"AI-assisted vuln discovery + automated remediation", score:4 },
+    ]},
+  { id:"q4", category:"AI Integration", question:"Do you evaluate the AI capabilities of your security vendors?",
+    options:[
+      { text:"No, we trust the marketing", score:1 },
+      { text:"We ask basic questions during procurement", score:2 },
+      { text:"We benchmark against known vuln datasets", score:3 },
+      { text:"We test with custom challenges and track model versions", score:4 },
+    ]},
+  { id:"q5", category:"Internal Readiness", question:"How quickly can your team patch a critical vulnerability?",
+    options:[
+      { text:"Days to weeks", score:1 },
+      { text:"Within 48 hours", score:2 },
+      { text:"Within 24 hours for critical systems", score:3 },
+      { text:"Automated patching pipeline, hours or less", score:4 },
+    ]},
+  { id:"q6", category:"Internal Readiness", question:"Does your team have a plan for when AI-assisted exploit tools become widely available?",
+    options:[
+      { text:"No, we haven't thought about it", score:1 },
+      { text:"We've discussed it but no concrete plan", score:2 },
+      { text:"We have a roadmap for AI-augmented defense", score:3 },
+      { text:"Already running red team exercises with AI tools", score:4 },
+    ]},
+];
+
+// ===== STATE =====
+let selectedStacks = [];
+let selectedLangs = [];
+let quizAnswers = {};
+let quizStep = 0;
+let calcDone = false;
+let quizDone = false;
+let exposure = null;
+
+// ===== NAVIGATION =====
+function goTo(phase) {
+  document.querySelectorAll('.phase').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('phase-' + phase);
+  if (el) {
+    el.classList.add('active');
+    el.querySelectorAll('.fade-up,.fade-up-d1,.fade-up-d2,.fade-up-d3').forEach(c => {
+      c.style.animation = 'none';
+      c.offsetHeight; // reflow
+      c.style.animation = '';
+    });
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (phase === 'quiz') renderQuizStep();
+  if (phase === 'results') renderResults();
+}
+
+// ===== CALCULATOR =====
+function initChips() {
+  const stackContainer = document.getElementById('stack-chips');
+  STACKS.forEach(s => {
+    const chip = document.createElement('div');
+    chip.className = 'chip';
+    chip.textContent = s.label;
+    chip.dataset.id = s.id;
+    chip.onclick = () => toggleChip('stack', s.id, chip);
+    stackContainer.appendChild(chip);
+  });
+
+  const langContainer = document.getElementById('lang-chips');
+  LANGUAGES.forEach(l => {
+    const chip = document.createElement('div');
+    chip.className = 'chip';
+    chip.textContent = l.label;
+    chip.dataset.id = l.id;
+    chip.onclick = () => toggleChip('lang', l.id, chip);
+    langContainer.appendChild(chip);
+  });
+}
+
+function toggleChip(type, id, el) {
+  const list = type === 'stack' ? selectedStacks : selectedLangs;
+  const idx = list.indexOf(id);
+  if (idx > -1) { list.splice(idx, 1); el.classList.remove('active'); }
+  else { list.push(id); el.classList.add('active'); }
+  updateCalcButton();
+}
+
+function updateCalcButton() {
+  document.getElementById('calc-submit').disabled = !(selectedStacks.length > 0 && selectedLangs.length > 0);
+}
+
+function runCalculator() {
+  const baseRate = 4.2;
+  const langMult = selectedLangs.reduce((s, id) => {
+    const l = LANGUAGES.find(x => x.id === id);
+    return s + (l ? l.vulnRate : 1);
+  }, 0) / selectedLangs.length;
+
+  const depInput = parseInt(document.getElementById('dep-count').value) || 0;
+  const deps = depInput || selectedStacks.reduce((s, id) => {
+    const st = STACKS.find(x => x.id === id);
+    return s + (st ? st.avgDeps : 80);
+  }, 0);
+
+  const vulns = Math.round((deps / 100) * baseRate * langMult);
+  const without = Math.round(vulns * 42);
+  const withAI = Math.round(vulns * 3.5);
+  const reduction = Math.round(((without - withAI) / without) * 100);
+
+  exposure = { deps, vulns, without, withAI, reduction };
+  calcDone = true;
+
+  // Populate results
+  document.getElementById('r-deps').textContent = deps;
+  document.getElementById('r-vulns').textContent = vulns;
+  document.getElementById('r-without').textContent = without + ' days';
+  document.getElementById('r-with').textContent = withAI + ' days';
+  document.getElementById('r-reduction').textContent = reduction + '%';
+  document.getElementById('r-insight').innerHTML =
+    '<strong>What this means:</strong> Your stack has an estimated ' +
+    '<strong style="color:#ff8844">' + vulns + ' undiscovered vulnerabilities</strong> at any given time. ' +
+    'Without AI scanning, each sits exposed for an average of <strong style="color:#ff4444">42 days</strong>. ' +
+    'AI-assisted discovery could reduce that to <strong style="color:#00ff88">~3.5 days</strong>.';
+
+  goTo('calc-results');
+
+  // Animate bars after transition
+  setTimeout(() => {
+    document.getElementById('bar-without').style.width = '100%';
+    document.getElementById('bar-with').style.width = Math.round((withAI / without) * 100) + '%';
+  }, 100);
+}
+
+// ===== QUIZ =====
+function renderQuizStep() {
+  const q = QUIZ[quizStep];
+
+  // Dots
+  const dotsEl = document.getElementById('quiz-dots');
+  dotsEl.innerHTML = '';
+  QUIZ.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot';
+    if (i === quizStep) dot.classList.add('active');
+    else if (quizAnswers[QUIZ[i].id] !== undefined) dot.classList.add('completed');
+    dotsEl.appendChild(dot);
+  });
+
+  document.getElementById('quiz-category').textContent = q.category;
+  document.getElementById('quiz-question').textContent = q.question;
+
+  const optionsEl = document.getElementById('quiz-options');
+  optionsEl.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    if (quizAnswers[q.id] === opt.score) btn.classList.add('selected');
+    btn.textContent = opt.text;
+    btn.onclick = () => selectQuizOption(q.id, opt.score);
+    optionsEl.appendChild(btn);
+  });
+
+  // Show finish button only on last question when answered
+  const finishBtn = document.getElementById('quiz-finish-btn');
+  finishBtn.style.display = (quizStep === QUIZ.length - 1 && quizAnswers[q.id] !== undefined) ? 'inline-flex' : 'none';
+}
+
+function selectQuizOption(qId, score) {
+  quizAnswers[qId] = score;
+  renderQuizStep();
+
+  if (quizStep < QUIZ.length - 1) {
+    setTimeout(() => {
+      quizStep++;
+      renderQuizStep();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 400);
+  }
+}
+
+function quizBack() {
+  if (quizStep > 0) { quizStep--; renderQuizStep(); }
+  else if (calcDone) goTo('calc-results');
+  else goTo('landing');
+}
+
+function finishQuiz() {
+  quizDone = true;
+  goTo('results');
+}
+
+// ===== RESULTS =====
+function getGrade(total) {
+  const pct = (total / (QUIZ.length * 4)) * 100;
+  if (pct >= 85) return { grade:"A", label:"AI-Ready", color:"#00ff88", desc:"Your security posture is well-prepared for the AI era. Keep pushing the boundary." };
+  if (pct >= 65) return { grade:"B", label:"Progressing", color:"#88ddff", desc:"Solid foundation, but gaps remain. Focus on the weakest category below." };
+  if (pct >= 45) return { grade:"C", label:"At Risk", color:"#ffcc00", desc:"Significant exposure. You have 12-18 months before AI-assisted attacks become commodity." };
+  return { grade:"D", label:"Critical", color:"#ff4444", desc:"Urgent action needed. Your current posture won't survive the AI security shift." };
+}
+
+function getCatScores() {
+  const cats = {};
+  QUIZ.forEach(q => {
+    if (!cats[q.category]) cats[q.category] = { total:0, max:0 };
+    cats[q.category].max += 4;
+    if (quizAnswers[q.id] !== undefined) cats[q.category].total += quizAnswers[q.id];
+  });
+  return cats;
+}
+
+function renderResults() {
+  const statsEl = document.getElementById('results-stats');
+  statsEl.innerHTML = '';
+
+  if (exposure) {
+    statsEl.innerHTML +=
+      '<div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,transparent,#ff8844,transparent)"></div>' +
+      '<div class="stat-icon">[VULN]</div><div class="stat-value" style="color:#ff8844">' + exposure.vulns + '</div>' +
+      '<div class="stat-label">Est. Vulnerabilities</div></div>' +
+      '<div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,transparent,#00ff88,transparent)"></div>' +
+      '<div class="stat-icon">[REDUCTION]</div><div class="stat-value" style="color:#00ff88">' + exposure.reduction + '%</div>' +
+      '<div class="stat-label">Exposure Reduction</div><div class="stat-sub">with AI scanning</div></div>';
+  }
+
+  if (quizDone) {
+    const total = Object.values(quizAnswers).reduce((s,v) => s+v, 0);
+    const grade = getGrade(total);
+    statsEl.innerHTML +=
+      '<div class="stat-card"><div class="accent-line" style="background:linear-gradient(90deg,transparent,' + grade.color + ',transparent)"></div>' +
+      '<div class="stat-icon">[GRADE]</div><div class="stat-value" style="color:' + grade.color + '">' + grade.grade + '</div>' +
+      '<div class="stat-label">Readiness Grade</div><div class="stat-sub">' + grade.label + '</div></div>';
+  }
+
+  // Exposure detail
+  const expEl = document.getElementById('results-exposure');
+  expEl.innerHTML = '';
+  if (exposure) {
+    expEl.innerHTML =
+      '<div class="card"><div class="card-title">Exposure Window Comparison</div>' +
+      '<div class="bar-row"><div class="bar-header"><span class="bar-label">Without AI</span>' +
+      '<span class="bar-value-sm" style="color:#ff4444">' + exposure.without + 'd</span></div>' +
+      '<div class="progress-track"><div class="progress-fill" style="width:100%;background:#ff4444;box-shadow:0 0 12px rgba(255,68,68,0.3)"></div></div></div>' +
+      '<div class="bar-row"><div class="bar-header"><span class="bar-label">With AI</span>' +
+      '<span class="bar-value-sm" style="color:#00ff88">' + exposure.withAI + 'd</span></div>' +
+      '<div class="progress-track"><div class="progress-fill" style="width:' + Math.round((exposure.withAI / exposure.without) * 100) + '%;background:#00ff88;box-shadow:0 0 12px rgba(0,255,136,0.3)"></div></div></div></div>';
+  }
+
+  // Quiz breakdown
+  const quizEl = document.getElementById('results-quiz');
+  quizEl.innerHTML = '';
+  if (quizDone) {
+    const total = Object.values(quizAnswers).reduce((s,v) => s+v, 0);
+    const grade = getGrade(total);
+    const cats = getCatScores();
+    let catHTML = '';
+    for (const [cat, data] of Object.entries(cats)) {
+      const pct = Math.round((data.total / data.max) * 100);
+      const color = pct >= 75 ? '#00ff88' : pct >= 50 ? '#88ddff' : pct >= 25 ? '#ffcc00' : '#ff4444';
+      catHTML +=
+        '<div class="bar-row"><div class="bar-header"><span class="bar-label" style="color:rgba(255,255,255,0.6)">' + cat + '</span>' +
+        '<span class="bar-value-sm" style="color:' + color + '">' + pct + '%</span></div>' +
+        '<div class="progress-track"><div class="progress-fill" style="width:' + pct + '%;background:' + color + '"></div></div></div>';
+    }
+    quizEl.innerHTML =
+      '<div class="card"><div class="card-title">Security Posture Breakdown</div>' +
+      '<p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:20px;line-height:1.6">' + grade.desc + '</p>' +
+      catHTML + '</div>';
+  }
+
+  // Actions
+  const actEl = document.getElementById('results-actions');
+  const total = quizDone ? Object.values(quizAnswers).reduce((s,v) => s+v, 0) : 0;
+  let actions = '';
+  if (!quizDone || total <= 12) {
+    actions =
+      '<div class="action-item"><strong>1. Adopt AI-assisted vulnerability scanning</strong><br>Start with tools like Snyk, Semgrep, or CodeQL. Integrate into CI/CD within 30 days.</div>' +
+      '<div class="action-item"><strong>2. Build your zero-trust foundation</strong><br>Implement network segmentation and identity-based access controls. Assume RCE, not just breach.</div>' +
+      '<div class="action-item"><strong>3. Create your AI security roadmap</strong><br>You have 12-18 months before AI exploit tools are commoditized. Start planning now.</div>';
+  } else if (total <= 18) {
+    actions =
+      '<div class="action-item"><strong>1. Level up your AI integration</strong><br>Move beyond basic tools. Evaluate vendors on model capabilities and update cadence.</div>' +
+      '<div class="action-item"><strong>2. Run AI-assisted red team exercises</strong><br>Test your defenses against AI-powered attack scenarios quarterly.</div>' +
+      '<div class="action-item"><strong>3. Automate your patch pipeline</strong><br>Target sub-24hr critical patching. AI discovery means faster disclosure timelines.</div>';
+  } else {
+    actions =
+      '<div class="action-item"><strong>1. Lead the conversation</strong><br>Share your practices. The industry needs organizations like yours setting the standard.</div>' +
+      '<div class="action-item"><strong>2. Push the frontier</strong><br>Explore custom AI models for your specific threat landscape and codebase patterns.</div>' +
+      '<div class="action-item"><strong>3. Build the talent pipeline</strong><br>Invest in training your team on AI-security intersection skills -- this is the next differentiator.</div>';
+  }
+  actEl.innerHTML =
+    '<div class="actions-card"><div class="actions-title">Your Action Items</div>' +
+    '<div class="actions-body">' + actions + '</div></div>';
+
+  // CTA buttons
+  const ctaEl = document.getElementById('results-cta-btns');
+  ctaEl.innerHTML = '';
+  if (!calcDone) ctaEl.innerHTML += '<button class="btn btn-primary" onclick="goTo(\'calculator\')">Take the Impact Calculator</button>';
+  if (!quizDone) ctaEl.innerHTML += '<button class="btn btn-primary" onclick="quizStep=0;goTo(\'quiz\')">Take the Security Quiz</button>';
+  ctaEl.innerHTML += '<button class="btn btn-secondary" onclick="resetAll()">Start Over</button>';
+}
+
+function resetAll() {
+  selectedStacks = []; selectedLangs = [];
+  quizAnswers = {}; quizStep = 0;
+  calcDone = false; quizDone = false; exposure = null;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  document.getElementById('dep-count').value = '';
+  updateCalcButton();
+  goTo('landing');
+}
+
+// ===== INIT =====
+initChips();
+</script>
+</body>
+</html>

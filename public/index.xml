@@ -9,6 +9,13 @@
     <copyright>This work is licensed under Creative Commons Attribution 4.0 International License.</copyright>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The AI Security Paradox: Your Attack Surface Just Grew by Thousands of Zero-Days</title>
+      <link>http://localhost:1313/blog/the-ai-security-paradox-why-thousands-of-zero-days/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/the-ai-security-paradox-why-thousands-of-zero-days/</guid>
+      <description>I&amp;rsquo;ve been sitting with a thought for the past few weeks that I can&amp;rsquo;t shake.&#xA;Anthropic Claude Mythos is finding thousands of zero-day vulnerabilities autonomously. The security community is split between panic and denial. And I think both reactions are missing the point.&#xA;Here&amp;rsquo;s what&amp;rsquo;s been on my mind.&#xA;We&amp;rsquo;re asking the wrong question.&#xA;Everyone&amp;rsquo;s asking: &amp;ldquo;How fast will attackers weaponize AI for exploitation?&amp;rdquo;&#xA;The question we should be asking: &amp;ldquo;Why are there still thousands of exploitable vulnerabilities sitting in critical infrastructure in 2026?</description>
+    </item>
+    <item>
       <title>Shadow AI - The Innovation Race Nobody Expected</title>
       <link>http://localhost:1313/blog/shadowai/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>

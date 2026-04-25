@@ -73,6 +73,8 @@ You input your stack details and it estimates your exposure window: how long vul
 
 **Try it here:** [AI Security Assessment](https://shagun.xyz/ai%20security/ai-security-readiness-preview.html)
 
+![AI Security Assessment](https://github-production-user-asset-6210df.s3.amazonaws.com/29366864/583718877-b8a586cd-b2b3-46bf-b53c-61d834e1b93d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260425%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260425T045833Z&X-Amz-Expires=300&X-Amz-Signature=b96e75ced6ca0ae7a0bdc17bdcf80a5a3f54e89c7c0b0df2baacbdcc2c193b77&X-Amz-SignedHeaders=host&response-content-type=image%2Fpng)
+
 It's a simple tool, but I think it makes the urgency real in a way that reading about it doesn't.
 
 ## The timeline

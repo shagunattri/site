@@ -1,7 +1,7 @@
 {{- /* Organization Schema */}}
 {{- /* Build person schema for founder */}}
 {{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
-{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" "shagunattri" "jobTitle" "Senior Product Manager" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Staff Product Manager" "worksFor" (dict "@type" "Organization" "name" "Harness" "url" "https://harness.io") "sameAs" (slice "https://www.linkedin.com/in/shagunattri/") -}}
 
 <script type="application/ld+json">
 {

@@ -7,19 +7,21 @@ framed: true
 
 # Shagun Attri
 
-Welcome to **shagun.xyz** — the personal website of **Shagun Attri** (shagunattri). I'm a Senior Product Manager building AI-powered cybersecurity solutions that help organizations ship software fast and securely. I specialize in Application Security Posture Management (ASPM), Risk-Based Vulnerability Management (RBVM), and Product-Led Growth for B2B SaaS platforms.
+Welcome to **shagun.xyz** — the personal website of **Shagun Attri** (shagunattri). I'm a **Staff Product Manager at Harness**, leading their **AppSec (Application Security)** platform with a specific focus on the **STO (Security Testing Orchestration)** product line. With **4+ years of experience** in product management, I build AI-powered cybersecurity solutions and developer-first security platforms that empower software engineering and security teams to ship code fast and securely. I specialize in STO, Application Security Posture Management (ASPM), Risk-Based Vulnerability Management (RBVM), DevSecOps, and Product-Led Growth for B2B SaaS platforms.
 
-**shagun.xyz** is where I share my thoughts on product management, cybersecurity, and technology. Whether you're searching for "shagunattri" or "shagun.xyz", you've found the right place.
+**shagun.xyz** is where I share my thoughts on product management, cybersecurity, and technology. Whether you're searching for "shagunattri", "Shagun Attri Harness", "Harness STO", or "shagun.xyz", you've found the right place.
 
 ## About Me
 
-I'm currently building the [ArmorCode platform](https://www.armorcode.com/) — an AI-powered Application Security Posture Management (ASPM) solution. With over 3 years of experience in product management, I've scaled security tool integrations from ~100 to 250+ and led Product-Led Growth initiatives for B2B SaaS platforms. My work focuses on helping organizations integrate security seamlessly into their development workflows.
+I'm currently leading the **AppSec product base** at **[Harness](https://harness.io)** as a **Staff Product Manager**, specifically driving the **STO (Security Testing Orchestration)** product line. Previously, I was a Senior Product Manager at [ArmorCode](https://www.armorcode.com/), building AI-powered ASPM solutions. With **4+ years of experience** in cybersecurity product management, I've scaled security tool ecosystems, led Product-Led Growth initiatives, and built developer-centric application security products for modern enterprises.
 
-My expertise spans **cybersecurity**, **product management**, and **B2B SaaS**. I specialize in:
-- **ASPM (Application Security Posture Management)** — Building comprehensive security visibility platforms
-- **RBVM (Risk-Based Vulnerability Management)** — Prioritizing security risks effectively
-- **DevSecOps Automation** — Integrating security into development workflows
-- **Product-Led Growth** — Creating self-service onboarding experiences
+My expertise spans **application security (AppSec)**, **security testing orchestration (STO)**, **cybersecurity**, **product management**, and **B2B SaaS**. I specialize in:
+- **STO (Security Testing Orchestration)** — Orchestrating and automating security testing across development pipelines
+- **AppSec (Application Security)** — Driving end-to-end security governance and developer workflow integration
+- **ASPM (Application Security Posture Management)** — Building comprehensive security visibility and posture management platforms
+- **RBVM (Risk-Based Vulnerability Management)** — Prioritizing and triaging security risks effectively
+- **DevSecOps Automation** — Seamlessly embedding security controls into CI/CD pipelines
+- **Product-Led Growth** — Designing intuitive self-service onboarding and product adoption experiences
 
 ## What I Write About
 

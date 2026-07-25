@@ -2,6 +2,7 @@
 title = "About"
 date = "2014-04-09"
 aliases = ["about","about me","contact"]
+toc = true
 [ author ]
   name = "Shagun Attri"
 +++
@@ -12,7 +13,7 @@ aliases = ["about","about me","contact"]
 <div class="about-profile-wrapper">
 <img src="/images/cover.jpg" alt="Shagun Attri" class="about-profile-img" />
 </div>
-<div class="about-subtitle">Senior Product Manager, builder, and cybersecurity enthusiast. I build secure products that scale.</div>
+<div class="about-subtitle">Staff Product Manager at Harness, leading the AppSec platform & STO (Security Testing Orchestration). Building secure products that scale.</div>
 </div>
 
 <div class="console-container">
@@ -28,10 +29,10 @@ aliases = ["about","about me","contact"]
 </div>
 <div class="console-line">
 <span class="output">{
-  <span class="json-key">"role"</span>: <span class="json-string">"Senior Product Manager"</span>,
-  <span class="json-key">"company"</span>: <span class="json-string">"ArmorCode"</span>,
-  <span class="json-key">"focus"</span>: [<span class="json-string">"ASPM"</span>, <span class="json-string">"RBVM"</span>, <span class="json-string">"B2B SaaS"</span>, <span class="json-string">"DevSecOps"</span>],
-  <span class="json-key">"location"</span>: <span class="json-string">"Chandigarh, India"</span>,
+  <span class="json-key">"role"</span>: <span class="json-string">"Staff Product Manager"</span>,
+  <span class="json-key">"company"</span>: <span class="json-string">"Harness"</span>,
+  <span class="json-key">"focus"</span>: [<span class="json-string">"Harness STO"</span>, <span class="json-string">"Security Testing Orchestration"</span>, <span class="json-string">"AppSec"</span>, <span class="json-string">"ASPM"</span>, <span class="json-string">"DevSecOps"</span>],
+  <span class="json-key">"location"</span>: <span class="json-string">"India"</span>,
   <span class="json-key">"interests"</span>: [<span class="json-string">"Products"</span>, <span class="json-string">"Cybersecurity"</span>, <span class="json-string">"Startups"</span>, <span class="json-string">"AI"</span>],
   <span class="json-key">"hobbies"</span>: [<span class="json-string">"Photography"</span>, <span class="json-string">"Writing"</span>, <span class="json-string">"Travel"</span>, <span class="json-string">"Reading"</span>],
   <span class="json-key">"sports"</span>: [<span class="json-string">"F1"</span>, <span class="json-string">"Cricket"</span>]
@@ -42,10 +43,10 @@ aliases = ["about","about me","contact"]
 
 <div class="about-text">
 <p>
-Hi, I'm <strong>Shagun Attri</strong>. For over 3 years, I've been building products at the intersection of cybersecurity, AI, and developer experience. I specialize in turning complex technical problems into scalable B2B SaaS solutions.
+Hi, I'm <strong>Shagun Attri</strong>. For 4+ years, I've been building products at the intersection of cybersecurity, AI, and developer experience. I specialize in turning complex technical security challenges into scalable, developer-friendly B2B SaaS solutions.
 </p>
 <p>
-Currently, I'm a Senior Product Manager at <strong>ArmorCode</strong>, building AI-powered ASPM (Application Security Posture Management) solutions. I help organizations ship software fast and securely by bridging the gap between security needs and developer workflows.
+Currently, I'm a <strong>Staff Product Manager</strong> at <strong><a href="https://harness.io" target="_blank" rel="noopener">Harness</a></strong>, leading their <strong>AppSec platform</strong> with a specific focus on the <strong>STO (Security Testing Orchestration)</strong> product line. Previously, I was a Senior Product Manager at <strong>ArmorCode</strong> building AI-powered ASPM solutions. My mission is helping organizations ship software fast and securely by bridging the gap between security teams and developer workflows.
 </p>
 <p>
 Beyond my day job, I'm a perpetual learner. This site is my digital garden where I share insights on product strategy, security research, book reviews, and technical guides.
@@ -54,7 +55,7 @@ Beyond my day job, I'm a perpetual learner. This site is my digital garden where
 
 <div class="about-stats">
   <div class="stat-item">
-    <div class="stat-value">3+</div>
+    <div class="stat-value">4+</div>
     <div class="stat-label">Years in Product</div>
   </div>
   <div class="stat-item">
@@ -68,12 +69,27 @@ Beyond my day job, I'm a perpetual learner. This site is my digital garden where
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Professional Journey</h2>
+
+## Professional Journey
+
 <div class="about-timeline">
 
 <div class="timeline-entry">
 <div class="timeline-meta">
-<div class="timeline-date">Jun 2025 — Present</div>
+<div class="timeline-date">2026 — Present</div>
+</div>
+<div class="timeline-body">
+<div class="timeline-role">Staff Product Manager</div>
+<div class="timeline-org">Harness (Harness.io)</div>
+<div class="timeline-desc">
+Leading product strategy, vision, and execution for the <strong>Harness AppSec platform</strong>, specifically driving the <strong>STO (Security Testing Orchestration)</strong> product line. Empowering development and security teams with automated security testing orchestration, developer-first controls, ASPM, and AI-driven posture management.
+</div>
+</div>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-meta">
+<div class="timeline-date">Jun 2025 — 2026</div>
 </div>
 <div class="timeline-body">
 <div class="timeline-role">Senior Product Manager</div>
@@ -168,7 +184,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Education</h2>
+
+## Education
+
 <div class="about-timeline">
 
 <div class="timeline-entry">
@@ -197,7 +215,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Core Expertise</h2>
+
+## Core Expertise
+
 <div class="about-skills-grid">
 
 <div class="skill-group">
@@ -216,6 +236,10 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 <div class="skill-group">
 <div class="skill-group-title">Security & Identity</div>
 <div class="skill-list">
+<span class="skill-pill">Harness STO</span>
+<span class="skill-pill">STO (Security Testing Orchestration)</span>
+<span class="skill-pill">Harness AppSec</span>
+<span class="skill-pill">AppSec (Application Security)</span>
 <span class="skill-pill">ASPM</span>
 <span class="skill-pill">RBVM</span>
 <span class="skill-pill">DevSecOps</span>
@@ -256,7 +280,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 
 
 <div class="about-section">
-<h2 class="about-section-title">Security Deep Dives</h2>
+
+## Security Deep Dives
+
 <div class="about-text">
 <p>My interest in security extends beyond my day job. On this site, I frequently explore topics ranging from defensive best practices and privacy:</p>
 <ul>
@@ -273,7 +299,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Technical Explorations</h2>
+
+## Technical Explorations
+
 <div class="about-text">
 <p>While my primary focus is product strategy, I enjoy diving into the technical weeds. I’m comfortable in Linux environments (having previously run Arch Linux, now primarily on macOS) and enjoy working with various development tools and technologies:</p>
 <h3>Containerization & Infrastructure</h3>
@@ -297,7 +325,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Reading & Writing</h2>
+
+## Reading & Writing
+
 <div class="about-text">
 <p>As an avid reader, I share my thoughts on books I’ve found insightful, particularly around technology, product, business, and personal development:</p>
 <ul>
@@ -309,7 +339,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Beyond Work</h2>
+
+## Beyond Work
+
 <div class="about-text">
 <p>When I’m not building products or exploring technology, you’ll find me:</p>
 <ul>
@@ -324,7 +356,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Certifications</h2>
+
+## Certifications
+
 <div class="achievements-list">
 <div class="achievement-item">
 <span class="achievement-title">Stoa Charter</span>
@@ -350,7 +384,9 @@ Conducted pentests for web applications and infrastructure. Analyzed vulnerabili
 </div>
 
 <div class="about-section">
-<h2 class="about-section-title">Get In Touch</h2>
+
+## Get In Touch
+
 <div class="about-text">
 <p>I’m always interested in connecting with fellow product enthusiasts, technologists, security professionals, and curious minds. Whether you want to discuss product strategy, cybersecurity, or just chat about F1 and books — feel free to reach out!</p>
 <ul>

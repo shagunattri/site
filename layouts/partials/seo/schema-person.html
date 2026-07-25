@@ -1,19 +1,20 @@
 {{- /* Person Schema */}}
 {{- $alternateNames := slice "shagunattri" "Shagun Attri" -}}
-{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Senior Product Manager" "worksFor" (dict "@type" "Organization" "name" "ArmorCode") -}}
+{{- $knowsAbout := slice "Harness STO" "Security Testing Orchestration" "Harness AppSec" "Application Security" "AppSec" "ASPM" "RBVM" "DevSecOps" "Cybersecurity" "Product Management" -}}
+{{- $personSchema := dict "@type" "Person" "name" .Site.Author.name "url" .Site.BaseURL "alternateName" $alternateNames "jobTitle" "Staff Product Manager" "worksFor" (dict "@type" "Organization" "name" "Harness" "url" "https://harness.io") "knowsAbout" $knowsAbout -}}
 
 {{- /* Add social links */}}
-{{- $sameAs := slice -}}
+{{- $sameAs := slice "https://www.linkedin.com/in/shagunattri/" -}}
 {{- if .Site.Params.social -}}
     {{- range .Site.Params.social -}}
         {{- if or (eq .name "linkedin") (eq .name "twitter") (eq .name "github") -}}
-            {{- $sameAs = $sameAs | append .url -}}
+            {{- if not (in $sameAs .url) -}}
+                {{- $sameAs = $sameAs | append .url -}}
+            {{- end -}}
         {{- end -}}
     {{- end -}}
-    {{- if gt (len $sameAs) 0 -}}
-        {{- $personSchema = merge $personSchema (dict "sameAs" $sameAs) -}}
-    {{- end -}}
 {{- end -}}
+{{- $personSchema = merge $personSchema (dict "sameAs" $sameAs) -}}
 
 <script type="application/ld+json">
 {
